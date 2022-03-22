@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98e65951_1846ff60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "Thanks for uploading initial commit! I think the file configuration feels good enough for an initial commit.\nI expect that the README.md and INFO.yaml files in other repositories (smo-ves and smo-o1) will be added in a later patch.\n\nI have some comments that are nits and it may be problems with the file based on it, but could you fix it?",
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8c79b81_d7e7157c",
+        "filename": "docs/api-docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "unnecessary space characters.",
+      "range": {
+        "startLine": 17,
+        "startChar": 91,
+        "endLine": 18,
+        "endChar": 3
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c22eb544_bdb75951",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "unnecessary space characters.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 3
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "383789a1_6dc4e239",
+        "filename": "docs/installation-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "unnecessary space character.",
+      "range": {
+        "startLine": 57,
+        "startChar": 72,
+        "endLine": 57,
+        "endChar": 73
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8577704_d2f0db33",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "typo: edditing",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88d44d86_5a46f723",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "typo: target",
+      "range": {
+        "startLine": 21,
+        "startChar": 16,
+        "endLine": 21,
+        "endChar": 22
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8116e5ff_842f215c",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "typo: project",
+      "range": {
+        "startLine": 21,
+        "startChar": 36,
+        "endLine": 21,
+        "endChar": 43
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26f1f468_8b7ef5ef",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "typo: Describe",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee2840f9_93e87e24",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "unnecessary space characters.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 4
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9e9b415_7a57b225",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "unnecessary space character.",
+      "range": {
+        "startLine": 11,
+        "startChar": 6,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28301f80_d5fccb55",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-03-22T14:32:25Z",
+      "side": 1,
+      "message": "ditto.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 4
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
