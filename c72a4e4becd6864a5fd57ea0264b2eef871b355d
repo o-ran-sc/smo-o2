@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc1a0f87_4ba797b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-03-23T10:49:54Z",
+      "side": 1,
+      "message": "For the first line of the commit message it is good practice to add a one line (\u003c80 char) slogan/description of the change. \n(Additional comments can also be added below that)\nThe slogan is then the description that appears in Gerrit change description, etc.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 9
+      },
+      "revId": "c72a4e4becd6864a5fd57ea0264b2eef871b355d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
