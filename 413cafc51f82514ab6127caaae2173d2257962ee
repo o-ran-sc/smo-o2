@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "52fdef19_d92fa0d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-03-23T10:51:31Z",
+      "side": 1,
+      "message": "i guess this change can be abandoned so .. Review https://gerrit.o-ran-sc.org/r/c/smo/o2/+/7972 replaces it? ",
+      "revId": "413cafc51f82514ab6127caaae2173d2257962ee",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "096d7651_2e6269de",
         "filename": "INFO.yaml",
         "patchSetId": 1
