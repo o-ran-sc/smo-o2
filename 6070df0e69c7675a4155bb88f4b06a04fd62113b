@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8456d54a_ecb47a8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:55:14Z",
+      "side": 1,
+      "message": "Thank you for your comments.\nI fully agree with you, but I think this is for initial commit for whole O2. In next patch, we should create /docs/tacker and create specific contents. And I think docs/+ files are required in order to write while O2 description.\n\nIn addition, now I\u0027m asking other Tacker members to add Tacker\u0027s contents into this repository. So I\u0027d like to merge this once, and other Tacker members will update these files. As you said, I will ask them to create docs/tacker directory and create specific contents under the directory.",
+      "parentUuid": "59179fc3_9ecd1cac",
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8c79b81_d7e7157c",
         "filename": "docs/api-docs.rst",
         "patchSetId": 1
