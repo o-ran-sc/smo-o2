@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2c9533fd_42510448",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Thank you so much. I\u0027ve fix all points you pointed out. Could you confirm them.\n\nBTW, these files are almost created by some tool... This may have to be fixed.\n\nhttps://wiki.o-ran-sc.org/display/DOC\nhttps://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-rtdv3-jobs.html \nhttps://github.com/lfit-sandbox/test",
+      "parentUuid": "98e65951_1846ff60",
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8c79b81_d7e7157c",
         "filename": "docs/api-docs.rst",
         "patchSetId": 1
@@ -48,6 +66,30 @@
       "writtenOn": "2022-03-22T14:32:25Z",
       "side": 1,
       "message": "unnecessary space characters.",
+      "range": {
+        "startLine": 17,
+        "startChar": 91,
+        "endLine": 18,
+        "endChar": 3
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96a49f97_558987c1",
+        "filename": "docs/api-docs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "a8c79b81_d7e7157c",
       "range": {
         "startLine": 17,
         "startChar": 91,
@@ -83,6 +125,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7387b3e7_e6ec4013",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "c22eb544_bdb75951",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 3
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "383789a1_6dc4e239",
         "filename": "docs/installation-guide.rst",
         "patchSetId": 1
@@ -106,6 +172,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b09c46a4_4f2b9eaa",
+        "filename": "docs/installation-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "383789a1_6dc4e239",
+      "range": {
+        "startLine": 57,
+        "startChar": 72,
+        "endLine": 57,
+        "endChar": 73
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8577704_d2f0db33",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -117,6 +207,30 @@
       "writtenOn": "2022-03-22T14:32:25Z",
       "side": 1,
       "message": "typo: edditing",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddb1135e_b430743e",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "b8577704_d2f0db33",
       "range": {
         "startLine": 16,
         "startChar": 30,
@@ -175,6 +289,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8b0a1a87_689c0385",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "8116e5ff_842f215c",
+      "range": {
+        "startLine": 21,
+        "startChar": 36,
+        "endLine": 21,
+        "endChar": 43
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5993c2c_df42b244",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "88d44d86_5a46f723",
+      "range": {
+        "startLine": 21,
+        "startChar": 16,
+        "endLine": 21,
+        "endChar": 22
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26f1f468_8b7ef5ef",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -186,6 +348,30 @@
       "writtenOn": "2022-03-22T14:32:25Z",
       "side": 1,
       "message": "typo: Describe",
+      "range": {
+        "startLine": 22,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a104c43a_d0477b21",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "26f1f468_8b7ef5ef",
       "range": {
         "startLine": 22,
         "startChar": 3,
@@ -221,6 +407,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "39194d3b_4b488fc1",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "ee2840f9_93e87e24",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 4
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d9e9b415_7a57b225",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -244,6 +454,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "944247f0_e51250e0",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "d9e9b415_7a57b225",
+      "range": {
+        "startLine": 11,
+        "startChar": 6,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "28301f80_d5fccb55",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -255,6 +489,30 @@
       "writtenOn": "2022-03-22T14:32:25Z",
       "side": 1,
       "message": "ditto.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 4
+      },
+      "revId": "6070df0e69c7675a4155bb88f4b06a04fd62113b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9de8548_91da663a",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-03-27T13:47:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "28301f80_d5fccb55",
       "range": {
         "startLine": 17,
         "startChar": 0,
