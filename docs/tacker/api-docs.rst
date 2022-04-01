@@ -3,10 +3,10 @@
 
 
 
-API-Docs
-========
+Tacker API-Docs
+===============
 
-This is the API-docs of SMO O2.
+This is the API-docs of Tacker.
 
 .. contents::
    :depth: 3
@@ -19,19 +19,16 @@ This is the API-docs of SMO O2.
 .. This note must be removed after content has been added.
 
 
-Individual components
----------------------
+API Introduction
+-----------------
+.. Please add what API a component have exposed.
 
-See below for individual components.
+See the following documents.
 
 .. toctree::
    :maxdepth: 1
 
-   tacker/api-docs.rst
-
-API Introduction
------------------
-.. Please add what API a component have exposed.
+   https://docs.openstack.org/api-ref/nfv-orchestration/#nfv-orchestration-api-v2-0
 
 API Functions
 -------------
