@@ -50,6 +50,24 @@
       "message": "Is this enough, or do you need to have:\n\n    \u0027http://localhost.*\u0027,\n    \u0027http://127.0.0.1.*\u0027,\n    \u0027https://gerrit.o-ran-sc.org.*\u0027",
       "revId": "b4da97cf107352a6b2c99693b20f0a00278595a5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "582da7eb_cc86e460",
+        "filename": "docs/conf.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-04-06T14:39:38Z",
+      "side": 1,
+      "message": "I think they are needed. Done.",
+      "parentUuid": "76e9564a_17ed8558",
+      "revId": "b4da97cf107352a6b2c99693b20f0a00278595a5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
