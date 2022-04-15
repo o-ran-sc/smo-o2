@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "413638e2_857e3747",
+        "filename": "docs/tacker/api-docs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-04-15T14:32:47Z",
+      "side": 1,
+      "message": "Agree, I\u0027ve added it.",
+      "parentUuid": "696e9ae2_34146cea",
+      "revId": "a7e2cd13913c4a74f8f93a7d1f0661350446aa52",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "01a60b63_0a84d59a",
         "filename": "docs/tacker/api-docs.rst",
         "patchSetId": 4
@@ -48,6 +66,30 @@
       "writtenOn": "2022-04-12T04:55:46Z",
       "side": 1,
       "message": "Why do you specify the url fragment of V2 API?\nSince V1 API is also used, I think it is unnecessary.",
+      "range": {
+        "startLine": 31,
+        "startChar": 57,
+        "endLine": 31,
+        "endChar": 83
+      },
+      "revId": "a7e2cd13913c4a74f8f93a7d1f0661350446aa52",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24bb7b67_bf9205b1",
+        "filename": "docs/tacker/api-docs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2022-04-15T14:32:47Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "01a60b63_0a84d59a",
       "range": {
         "startLine": 31,
         "startChar": 57,
