@@ -84,9 +84,14 @@ This section describes the installation of the Tacker installation on the refere
 
 Installation Using Install Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Usage: ./install.sh [HOST_IP]
 
-(T.B.D. We will provide install script in smo/o2 repository.)
-
+This script installs the Tacker via Devstack(Standalone mode).
+It uses the latest repositories(Devstack and Tacker).
+If you want to use other version, you have to change the URL.
+e.g.
+git clone https://opendev.org/openstack-dev/devstack -b stable/yoga
+wget https://opendev.org/openstack/tacker/raw/branch/stable/yoga/devstack/local.conf.standalone
 
 Manual Installation
 ~~~~~~~~~~~~~~~~~~~
