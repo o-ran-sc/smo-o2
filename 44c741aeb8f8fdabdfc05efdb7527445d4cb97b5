@@ -16,6 +16,69 @@
       "message": "Thank you so much. I\u0027ve fix all points you pointed out. Could you confirm them.",
       "revId": "44c741aeb8f8fdabdfc05efdb7527445d4cb97b5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6668a019_2a60bf96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-06-07T00:18:51Z",
+      "side": 1,
+      "message": "Thanks for your rework, please kindly check my additional comments.",
+      "revId": "44c741aeb8f8fdabdfc05efdb7527445d4cb97b5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d42968f0_4ce7d06b",
+        "filename": "docs/tacker/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-06-07T00:18:51Z",
+      "side": 1,
+      "message": "Could you delete unnecessary space character?",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 92,
+        "endChar": 5
+      },
+      "revId": "44c741aeb8f8fdabdfc05efdb7527445d4cb97b5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b81000a_8a3fd958",
+        "filename": "docs/tacker/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-06-07T00:18:51Z",
+      "side": 1,
+      "message": "It does not seem to have changed from the original script.\nDoesn\u0027t user need to change here?",
+      "range": {
+        "startLine": 94,
+        "startChar": 53,
+        "endLine": 94,
+        "endChar": 59
+      },
+      "revId": "44c741aeb8f8fdabdfc05efdb7527445d4cb97b5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
