@@ -82,6 +82,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d82ebdb_677ef75b",
+        "filename": "docs/tacker/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-06-09T06:38:01Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "b83b466d_b996b02a",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 92,
+        "endChar": 5
+      },
+      "revId": "44c741aeb8f8fdabdfc05efdb7527445d4cb97b5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b81000a_8a3fd958",
@@ -119,6 +143,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "1b81000a_8a3fd958",
+      "range": {
+        "startLine": 94,
+        "startChar": 53,
+        "endLine": 94,
+        "endChar": 59
+      },
+      "revId": "44c741aeb8f8fdabdfc05efdb7527445d4cb97b5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62b54a69_98faf371",
+        "filename": "docs/tacker/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-06-09T06:38:01Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "0b6dd97e_c0275097",
       "range": {
         "startLine": 94,
         "startChar": 53,
