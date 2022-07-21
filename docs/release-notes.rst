@@ -6,7 +6,7 @@ Release-Notes
 =============
 
 
-This document provides the release notes for <RELEASE> of SMO O2.
+This document provides the release notes for releases related to SMO O2.
 
 .. contents::
    :depth: 3
@@ -20,13 +20,13 @@ Version history
 | **Date**           | **Ver.**           | **Author**         | **Comment**        |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
-| 20XX-XX-XX         | 0.1.0              |                    | First draft        |
+| 2022-07-21         | 1.0                | Toshiaki Takahashi | First Release      |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
-|                    | 0.1.1              |                    |                    |
+|                    |                    |                    |                    |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
-|                    | 1.0                |                    |                    |
+|                    |                    |                    |                    |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
 
@@ -34,42 +34,38 @@ Version history
 Summary
 -------
 
-<SUMMARIZE THE RELEASE - THE CONTENT - AND OTHER IMPORTANT HIGH LEVEL PROPERTIES>
+F-release:
 
-
+The F release was targeted towards implementation of the O2 interface itself
+and getting an initial implementation in place.
+The OpenStack Tacker is used to implement the O2 interface.
 
 
 Release Data
 ------------
-<STATE RELEVANT RELEASE DATA/RECORDS>
 
-<EXAMPLE>:
-
-+--------------------------------------+--------------------------------------+
-| **Project**                          | E.g. project  		              |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
-| **Repo/commit-ID**                   | E.g. genesis/adf634a0d4.....         |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
-| **Release designation**              | E.g. Arno RC2                        |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
-| **Release date**                     | E.g. 2015-04-16                      |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
-| **Purpose of the delivery**          | 	 		     	      |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
++--------------------------------------+------------------------------------------+
+| **Project**                          | SMO O2        		                  |
+|                                      |                                          |
++--------------------------------------+------------------------------------------+
+| **Repo/commit-ID**                   | Repo: smo/o2  Commit id:                 |
+|                                      | e2ec3b250ce953309be3eb8ac1d972131431147c |
++--------------------------------------+------------------------------------------+
+| **Release designation**              |                                          |
+|                                      |                                          |
++--------------------------------------+------------------------------------------+
+| **Release date**                     | 2022-07-21                               |
+|                                      |                                          |
++--------------------------------------+------------------------------------------+
+| **Purpose of the delivery**          | 	 		     	          |
+|                                      |                                          |
++--------------------------------------+------------------------------------------+
 
 
 
 
 Feature Additions
 ^^^^^^^^^^^^^^^^^
-<STATE ADDED FEATURES BY REFERENCE TO JIRA>
-
-<EXAMPLE>:
 
 **JIRA BACK-LOG:**
 
@@ -110,14 +106,12 @@ Deliverables
 Software Deliverables
 +++++++++++++++++++++
 
-<STATE WHAT SOFTWARE DELIVERABLES THAT ARE RELATED TO THIS VERSION, AND WHERE THOSE CAN BE RETRIEVED>
 
 
 
 Documentation Deliverables
 ++++++++++++++++++++++++++
 
-<STATE WHAT DOCUMENTATION DELIVERABLES THAT ARE RELATED TO THIS VERSION, AND WHERE THOSE CAN BE RETRIEVED>
 
 
 
@@ -127,15 +121,12 @@ Known Limitations, Issues and Workarounds
 
 System Limitations
 ^^^^^^^^^^^^^^^^^^
-<STATE ALL RELEVANT SYSTEM LIMITATIONS, IF THERE IS ANY>
 
 
 
 Known Issues
 ^^^^^^^^^^^^
-<STATE ALL KNOWN ISSUES WITH JIRA REFERENCE>
 
-<EXAMPLE>:
 
 **JIRA TICKETS:**
 
@@ -155,14 +146,12 @@ Known Issues
 Workarounds
 ^^^^^^^^^^^
 
-<STATE ALL KNOWN WORKAROUNDS TO THE ISSUES STATED ABOVE, IF THERE IS ANY>
 
 
 
 
 References
 ----------
-<STATE RELEVANT REFERENCES FOR THIS RELEASE/VERSION>
 
 
 
