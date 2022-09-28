@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1592ef68_ffb36115",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-09-28T17:08:26Z",
+      "side": 1,
+      "message": "As pointed out in the SMO call, all contributions into O-RAN SC repo are governed by Apache license. As such this addition is redundant.",
+      "revId": "cb7f5f4d7e8e3d53214c0adc3b848167db69849f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
