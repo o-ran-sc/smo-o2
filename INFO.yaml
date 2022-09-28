@@ -44,6 +44,11 @@ committers:
       company: 'highstreet technologies'
       id: 'demx8as6'
       timezone: 'America/New_York'
+    - name: 'Ayumu Ueha'
+      email: 'ueha.ayumu@jp.fujitsu.com'
+      company: 'Fujitsu'
+      id: 'AyumuUeha'
+      timezone: 'Asia/Tokyo'
 tsc:
     # yamllint disable rule:line-length
     approval: 'https://wiki.o-ran-sc.org/display/TOC#ORANSCTechnicalOversightCommittee(TOC)-20220209'
