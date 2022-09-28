@@ -3,13 +3,13 @@ project: 'smo_o2'
 project_creation_date: '2022-03-17'
 project_category: ''
 lifecycle_state: 'Incubation'
-project_lead: &oran_smo_ptl
-    name: 'Mahesh Jethanandani'
-    email: 'mjethanandani@gmail.com'
-    id: 'mjethanandani '
-    company: 'Arrcus'
-    timezone: 'America/Los_Angeles'
-primary_contact: *oran_smo_ptl
+project_lead: &oran_smo_o2_ptl
+    name: 'Ayumu Ueha'
+    email: 'ueha.ayumu@fujitsu.com'
+    id: 'AyumuUeha'
+    company: 'Fujitsu'
+    timezone: 'Asia/Tokyo'
+primary_contact: *oran_smo_o2_ptl
 issue_tracking:
     type: 'jira'
     url: 'https://jira.o-ran-sc.org/projects/'
@@ -33,7 +33,12 @@ meetings:
 repositories:
     - smo/o2
 committers:
-    - <<: *oran_smo_ptl
+    - <<: *oran_smo_o2_ptl
+    - name: 'Mahesh Jethanandani'
+      email: 'mjethanandani@gmail.com'
+      id: 'mjethanandani'
+      company: 'Arrcus'
+      timezone: 'America/Los_Angeles'
     - name: 'David Kinsey'
       email: 'dk8126@att.com'
       company: 'ATT'
