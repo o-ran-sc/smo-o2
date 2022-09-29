@@ -34,6 +34,24 @@
       "parentUuid": "b1a2e35f_30242e87",
       "revId": "255f0fcd2bb4c58f33d0e436f70cf1343e0b9501",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9855612_abbbedb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-09-29T01:49:09Z",
+      "side": 1,
+      "message": "Yes, it means updating the committers section to add your information. That will allow you to review and approve commits in the repository.",
+      "parentUuid": "9932578b_2b067e8a",
+      "revId": "255f0fcd2bb4c58f33d0e436f70cf1343e0b9501",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
