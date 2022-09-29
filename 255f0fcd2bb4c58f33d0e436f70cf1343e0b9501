@@ -52,6 +52,24 @@
       "parentUuid": "9932578b_2b067e8a",
       "revId": "255f0fcd2bb4c58f33d0e436f70cf1343e0b9501",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3508c181_a8655101",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-09-29T02:38:27Z",
+      "side": 1,
+      "message": "Thanks for your quickly response! I changed it with new patchset.\nPlease kindly confirm it.\n\nBut verification job is not passed..\n\u003e 11:30:09  \u003e git fetch --tags --force --progress -- ssh://oran-jobbuilder@gerrit.o-ran-sc.org:29418/smo/o2 +refs/heads/*:refs/remotes/origin/* # timeout\u003d10\n\u003e 11:30:10 ERROR: Error cloning remote repo \u0027origin\u0027\n\nThis issue seems to occur in other patch\u0027s job, so I will wait rechecking.",
+      "parentUuid": "f9855612_abbbedb4",
+      "revId": "255f0fcd2bb4c58f33d0e436f70cf1343e0b9501",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
