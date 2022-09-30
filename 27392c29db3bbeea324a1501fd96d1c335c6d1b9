@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90acd86e_fcb4ff43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-09-30T00:07:35Z",
+      "side": 1,
+      "message": "recheck - \"Error cloning remote repo \u0027origin\u0027\" seems to be resolved",
+      "revId": "27392c29db3bbeea324a1501fd96d1c335c6d1b9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
