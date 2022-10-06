@@ -18,22 +18,24 @@ This is the API-docs of SMO O2.
 
 .. This note must be removed after content has been added.
 
+API Introduction
+-----------------
+.. Please add what API a component have exposed.
 
-Individual components
----------------------
-
-See below for individual components.
+Tacker API Introduction
+~~~~~~~~~~~~~~~~~~~~~~~
+Tacker provides NFV-SOL compliant API.
+See the following documents.
 
 .. toctree::
    :maxdepth: 1
 
-   tacker/api-docs.rst
-
-API Introduction
------------------
-.. Please add what API a component have exposed.
+   https://docs.openstack.org/api-ref/nfv-orchestration/
 
 API Functions
 -------------
 .. Please states the API functions.
 
+Tacker API Function
+~~~~~~~~~~~~~~~~~~~
+See Tacker API Reference above.
