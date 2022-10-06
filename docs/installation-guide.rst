@@ -50,20 +50,14 @@ Introduction
 
 .. <INTRODUCTION TO THE SCOPE AND INTENTION OF THIS DOCUMENT AS WELL AS TO THE SYSTEM TO BE INSTALLED>
 
-.<EXAMPLE>:
-
-This document describes the supported software and hardware configurations for the reference component as well as providing guidelines on how to install and configure such reference system.
-
-The audience of this document is assumed to have good knowledge in RAN network nd Linux system.
+See Individual components page.
 
 
 Preface
 -------
 .. <DESCRIBE NEEDED PREREQUISITES, PLANNING, ETC.>
 
-<EXAMPLE>:
-
-Before starting the installation of <project name>, some planning must preceed.
+See Individual components page.
 
 .. note:any preperation you need before setting up sotfware and hardware
 
@@ -72,43 +66,14 @@ Hardware Requirements
 ---------------------
 .. <PROVIDE A LIST OF MINIMUM HARDWARE REQUIREMENTS NEEDED FOR THE INSTALL>
 
-<EXAMPLE>:
-
-Following minimum hardware requirements must be met for installation of <project name>:
-
-+--------------------+----------------------------------------------------+
-| **HW Aspect**      | **Requirement**                                    |
-|                    |                                                    |
-+--------------------+----------------------------------------------------+
-| **# of servers**   | 		                                          |
-+--------------------+----------------------------------------------------+
-| **CPU**            | 						          |
-|                    |                                                    |
-+--------------------+----------------------------------------------------+
-| **RAM**            | 							  |
-|                    |                                                    |
-+--------------------+----------------------------------------------------+
-| **Disk**           | 					                  |
-|                    |                                                    |
-+--------------------+----------------------------------------------------+
-| **NICs**           | 							  |
-|                    |                                                    |
-|                    | 							  |
-|                    |                                                    |
-|                    |  					 	  |
-|                    |                                                    |
-+--------------------+----------------------------------------------------+
-
+See Individual components page.
 
 
 Software Installation and Deployment
 ------------------------------------
 .. <DESCRIBE THE FULL PROCEDURES FOR THE INSTALLATION OF THE O-RAN COMPONENT INSTALLATION AND DEPLOYMENT>
 
-<EXAMPLE>:
-
-This section describes the installation of the <project name> installation on the reference hardware.
-
+See Individual components page.
 
 
 References

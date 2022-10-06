@@ -33,7 +33,10 @@ API Introduction
 -----------------
 .. Please add what API a component have exposed.
 
+See Individual components page.
+
 API Functions
 -------------
 .. Please states the API functions.
 
+See Individual components page.
