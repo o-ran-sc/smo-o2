@@ -8,7 +8,7 @@ then
 fi
 
 if [ $# != 1 ]; then
-    echo Parameter error: usage: ./install.sh [HOST_IP]
+    echo Parameter error: usage: ./install.sh <HOST_IP>
     exit 1
 fi
 

@@ -45,25 +45,24 @@ Hardware Requirements
 
 Tacker:
 
-(T.B.D.)
 Following minimum hardware requirements must be met for installation of Tacker:
 
 +--------------------+----------------------------------------------------+
 | **HW Aspect**      | **Requirement**                                    |
 |                    |                                                    |
 +--------------------+----------------------------------------------------+
-| **# of servers**   | 		                                          |
+| **# of servers**   | 	1	                                          |
 +--------------------+----------------------------------------------------+
-| **CPU**            | 						          |
+| **CPU**            | 	4					          |
 |                    |                                                    |
 +--------------------+----------------------------------------------------+
-| **RAM**            | 							  |
+| **RAM**            | 	16G						  |
 |                    |                                                    |
 +--------------------+----------------------------------------------------+
-| **Disk**           | 					                  |
+| **Disk**           | 	80G				                  |
 |                    |                                                    |
 +--------------------+----------------------------------------------------+
-| **NICs**           | 							  |
+| **NICs**           | 	1						  |
 |                    |                                                    |
 |                    | 							  |
 |                    |                                                    |
@@ -84,14 +83,24 @@ This section describes the installation of the Tacker installation on the refere
 
 Installation Using Install Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Usage: ./install.sh [HOST_IP]
+The install script can be retrieved from smo-o2 repository::
 
-This script installs the Tacker via Devstack(Standalone mode).
-It uses the latest repositories(Devstack and Tacker).
+    $ git clone https://gerrit.o-ran-sc.org/r/smo/o2
+
+Usage::
+
+    $ cd o2/tacker/scripts
+    $ ./install.sh <HOST_IP>
+
+This script installs the Tacker via Devstack (Standalone mode).
+It uses the latest repositories (Devstack and Tacker).
+
 If you want to use other version, you have to change the URL.
-e.g.
-git clone https://opendev.org/openstack-dev/devstack -b stable/yoga
-wget https://opendev.org/openstack/tacker/raw/branch/stable/yoga/devstack/local.conf.standalone
+
+e.g.::
+
+    git clone https://opendev.org/openstack-dev/devstack -b stable/yoga
+    wget https://opendev.org/openstack/tacker/raw/branch/stable/yoga/devstack/local.conf.standalone
 
 Manual Installation
 ~~~~~~~~~~~~~~~~~~~
