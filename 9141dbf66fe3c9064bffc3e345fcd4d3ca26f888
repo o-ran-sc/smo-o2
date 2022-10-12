@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6caa4128_8b2de91d",
+        "filename": "docs/api-docs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-10-12T02:21:12Z",
+      "side": 1,
+      "message": "In the following documents, I keep items such as Introduction as a template and describe to refer to \"individual components page\". If there is no problem deleting each item, I will correct it.\n* docs/api-docs.rst\n* docs/installation-guide.rst\n\nWhat do you think?",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 16
+      },
+      "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
