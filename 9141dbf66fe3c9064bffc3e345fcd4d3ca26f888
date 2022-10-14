@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2946777c_1355a817",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-10-14T18:05:05Z",
+      "side": 1,
+      "message": "I do not understand these changes. What is \"Individual Component page\", and where is it? Is this somewhere on the Tacker project website?\n\nEither ways, the documentation seems incomplete to me.",
+      "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6caa4128_8b2de91d",
         "filename": "docs/api-docs.rst",
         "patchSetId": 2
@@ -92,6 +109,47 @@
         "endLine": 32,
         "endChar": 16
       },
+      "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "561a4f6d_44874539",
+        "filename": "docs/api-docs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-10-14T18:05:05Z",
+      "side": 1,
+      "message": "That is correct. Thanks.",
+      "parentUuid": "0827c9e5_6cd8b916",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 16
+      },
+      "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b830036e_9d76e936",
+        "filename": "docs/tacker/api-docs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-10-14T18:05:05Z",
+      "side": 1,
+      "message": "Spelling of reference.",
       "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
