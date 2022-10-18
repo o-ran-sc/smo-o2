@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dec350f7_722bfc2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-10-18T04:37:44Z",
+      "side": 1,
+      "message": "\"Individual components page\" doesn\u0027t point to a Tacker project website, it points to a section on each page that added in F-Release by Takahashi-san.\n\n* https://docs.o-ran-sc.org/projects/o-ran-sc-smo-o2/en/latest/installation-guide.html#individual-components\n* https://docs.o-ran-sc.org/projects/o-ran-sc-smo-o2/en/latest/api-docs.html#individual-components\n\nAnd this patch is intended for SMO-78 to:\n\u003e * How to access the install script in Gerrit repository\n\u003e * Hardware requirement\n\u003e * Remove unnecessary/duplicate parts in documents\nIf there is anything else to add, please let me know.\nWe will also post the UserGuide as a separate patch.",
+      "parentUuid": "2946777c_1355a817",
+      "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6caa4128_8b2de91d",
         "filename": "docs/api-docs.rst",
         "patchSetId": 2
