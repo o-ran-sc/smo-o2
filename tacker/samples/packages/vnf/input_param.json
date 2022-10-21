@@ -1,0 +1,43 @@
+{
+  "flavourId": "simple",
+  "extVirtualLinks": [
+    {
+      "id": "test1",
+      "resourceId": "0e1cc46a-6808-4738-8b84-9e99a775c9eb",
+      "extCps": [
+        {
+          "cpdId": "CP1",
+          "cpConfig": [
+            {
+              "cpProtocolData": [
+                {
+                  "layerProtocol": "IP_OVER_ETHERNET",
+                  "ipOverEthernet": {
+                    "ipAddresses": [
+                      {
+                        "type": "IPV4",
+                        "numDynamicAddresses": 1,
+                        "subnetId": "309614e6-4aab-4424-977f-fd9c8dfe493e"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "vimConnectionInfo": [
+    {
+      "id": "e24f9796-a8e9-4cb0-85ce-5920dcddafa1",
+      "vimId": "d8d886e4-fd98-4493-81e2-0e2b9991d629",
+      "vimType": "openstack"
+    }
+  ],
+  "additionalParams": {
+    "lcm-operation-user-data": "./UserData/lcm_user_data.py",
+    "lcm-operation-user-data-class": "SampleUserData"
+  }
+}
