@@ -1,0 +1,169 @@
+  {
+    "id": "ABCDEFGHIJKL",
+    "callbackUri": "${callback_uri}:${callback_port}${callback_endpoint}",
+    "_links": {
+      "self": {
+        "href": "ABCDEFGHIJKLMNOPQR"
+      }
+    },
+    "filter": {
+      "notificationTypes": [
+        "VnfPackageChangeNotification"
+      ],
+      "vnfProductsFromProviders": [
+        {
+          "vnfProvider": "ABCDEFGHIJKLMNOPQRSTUVW",
+          "vnfProducts": [
+            {
+              "vnfProductName": "ABCDEFGHIJKLMNOPQRSTUVWX",
+              "versions": [
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQ",
+                    "ABCDE"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWXYZA",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+                  ]
+                }
+              ]
+            },
+            {
+              "vnfProductName": "ABCDEFGHIJKLM",
+              "versions": [
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMN",
+                  "vnfdVersions": [
+                    "ABCDEF",
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNO",
+                    "ABCDEFGH",
+                    "ABCDEF"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCD",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQRSTUVWXY",
+                    "ABCDEFGHIJ",
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRST",
+                  "vnfdVersions": [
+                    "ABCDEFG",
+                    "ABCDEFGHIJKLMNOPQRSTU"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "vnfProvider": "ABCDEF",
+          "vnfProducts": [
+            {
+              "vnfProductName": "ABCDEFGH",
+              "versions": [
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRST",
+                  "vnfdVersions": [
+                    "ABCDE",
+                    "ABCDE",
+                    "ABCDEFGHIJKLMNOPQR"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWX",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOP"
+                  ]
+                }
+              ]
+            },
+            {
+              "vnfProductName": "ABCDE",
+              "versions": [
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNO",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJ",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQRS"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJK",
+                  "vnfdVersions": [
+                    "ABCD"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCD",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKL",
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+                  ]
+                }
+              ]
+            },
+            {
+              "vnfProductName": "ABCD",
+              "versions": [
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRST",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQ",
+                    "ABCDEFGHIJKL"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWXY",
+                  "vnfdVersions": [
+                    "ABCDEF",
+                    "ABCDEFGHIJKLMNOPQRST"
+                  ]
+                },
+                {
+                  "vnfSoftwareVersion": "ABCDEF",
+                  "vnfdVersions": [
+                    "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+                    "ABCDEFGHIJKLMNOPQR",
+                    "ABCDEFGHIJKLMNOP"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "vnfdId": [
+        "ABCDEFGHIJKLMNOPQRS",
+        "ABCDEFGHIJKLMNO",
+        "ABCDEFGHIJKLM",
+        "ABCDEFGHIJK"
+      ],
+      "vnfPkgId": [
+        "ABCDEFGH",
+        "ABCDEFGHIJKLMNOPQ",
+        "ABCDE",
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+      ],
+      "operationalState": "DISABLED",
+      "usageState": {}
+    }
+  }

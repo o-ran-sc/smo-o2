@@ -1,0 +1,59 @@
+*** Variables ***
+${instantiatedVnfInstanceId}       6fc3539c-e602-4afa-8e13-962fb5a7d81f
+${anotherInstantiatedVnfInstanceId}    6fc3539c-e602-4afa-8e13-962fb5a7d81f
+${notInstantiatedVnfInstanceId}       6fc3539c-e602-4afa-8e13-962fb5a7d81f
+${notExistingVnfInstanceId}     6fc3539c-e602-4afa-8e13-962fb5a7d81f   
+${vnfInstanceId}       6fc3539c-e602-4afa-8e13-962fb5a7d81f
+${subscriptionId}    6fc3539c-e602-4afa-8e13-962fb5a7d81f
+${conflicVnfInstanceId}    6fc3539c-e602-4afa-8e13-962fb5a7d81f
+
+${invalid_etag}    invalid etag
+
+${namespaces}    namespace
+${name}    name
+
+${vnfLcmOpOccId}    6fc3539c-e602-4afa-8e13-962fb5a7d81d
+${notExistingVnfLcmOpOccId}    6fc3539c-e602-4afa-8e13-962fb5a7d81d
+${vnfLcmOpOccIdNotStartingProcessingRollingback}    6fc3539c-e602-4afa-8e13-962fb5a7d81d
+${vnfLcmOpOccIdNotFailedTemp}    6fc3539c-e602-4afa-8e13-962fb5a7d81d
+
+${VnfLcmOperationOccurrenceNotification}    {}
+${VnfIdentifierCreationNotification}    {}
+${VnfIdentifierDeletionNotification}    {}
+${response}    {}
+${json}    {}
+${requestedFlavour}    test
+
+${sub_filter}    filter
+${sub_filter_invalid}    filter_invalid
+
+${fields}         criteria,objectInstanceIds
+
+${vnfInstanceName}    Test-VnfInstance
+${vnfInstanceDescription}    description vnf
+${vnfInstanceDescription_Update}    Updated description vnf 
+${vnfPkgId_processing}    007c111c-38a1-42c0-a666-7475ecb1567c
+
+${changeVnfFlavourRequest}    {}
+${changeVnfOperateRequest}    {}
+${requestedState}   test
+${changeVnfExtConnectivityRequest}    {}
+${patchBodyRequest}   {}
+${total_polling_time}   2 min
+${polling_interval}     10 sec
+
+${notification_request}    []
+${notification_response}    []
+
+${sleep_interval}    20s
+
+${callback_endpoint}    /endpoint
+${callback_endpoint_fwd}    /endpoint/check
+${callback_endpoint_error}    /endpoint_404
+
+${callback_uri}    http://localhost
+${callback_port}    9091
+
+${nextPageUri}    someuri
+${vnfPkgId}     bf6ce418-af04-472d-89e0-66227115fae9
+${vnfdId}     f671f008-908b-47b6-9c76-b9b30b2523f8

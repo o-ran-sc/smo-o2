@@ -1,0 +1,39 @@
+{
+    "description": "This type represents API version information.\n",
+    "type": "object",
+    "required": [
+      "uriPrefix",
+      "apiVersions"
+    ],
+    "properties": {
+      "uriPrefix": {
+        "description": "Specifies the URI prefix for the API, in the following form {apiRoot}/{apiName}/{apiMajorVersion}/.\n",
+        "type": "string"
+      },
+      "apiVersions": {
+        "description": "Version(s) supported for the API signaled by the uriPrefix attribute.\n",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "version"
+          ],
+          "properties": {
+            "version": {
+              "description": "Identifies a supported version. The value of the version attribute shall be a version identifier as specified in clause 9.1 (SOL013).\n",
+              "type": "string"
+            },
+            "isDeprecated": {
+              "description": "If such information is available, this attribute indicates whether use of the version signaled by the version attribute is deprecated (true) or not (false).\nA deprecated version is still supported by the API producer but is recommended not to be used any longer. When a version is no longer supported, it does not appear in the response body.\n",
+              "type": "boolean"
+            },
+            "retirementDate": {
+              "description": "Date-time stamp. Representation: String formatted according to IETF RFC 3339.\n",
+              "type": "string",
+              "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

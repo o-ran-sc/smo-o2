@@ -1,0 +1,30 @@
+---
+tiers:
+  - name: samples
+    description: ''
+    testcases:
+      - case_name: first
+        project_name: xtesting
+        criteria: 100
+        blocking: true
+        clean_flag: false
+        description: ''
+        run:
+          name: robotframework
+          args:
+            suites:
+              - >-
+                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm.robot
+      - case_name: second
+        project_name: xtesting
+        criteria: 100
+        blocking: true
+        clean_flag: false
+        description: ''
+        run:
+          name: robotframework
+          args:
+            suites:
+              - >-
+                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurence.robot
+

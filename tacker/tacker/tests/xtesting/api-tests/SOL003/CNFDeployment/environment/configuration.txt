@@ -1,0 +1,44 @@
+*** Variables ***
+${VNFM_HOST}      localhost    # Hostname of the VNFM
+${VNFM_PORT}      8080    # Listening port of the VNFM
+${VNFM_SCHEMA}    http
+${ACCEPT}         application/json
+${ACCEPT_JSON}         application/json
+${CONTENT_TYPE}    application/json
+${AUTHORIZATION_HEADER}    Authorization
+${AUTHORIZATION_TOKEN}    Bearer    QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+${AUTH_USAGE}     1
+${CONTENT_TYPE_PATCH}    application/merge-patch+json
+
+${PODS_SCHEMA}    http
+${PODS_HOST}      localhost    # Hostname of the VNFM
+${PODS_PORT}      8080    # Listening port of the VNFM
+
+
+${apiRoot}        /
+${apiName}        vnflcm
+${apiVersion}     v1
+
+${CancelMode}    GRACEFUL
+${VNFM_DUPLICATION}    0
+
+
+
+
+
+${NFVO_HOST}      localhost    # Hostname of the NFVO
+${NFVO_PORT}      8081    # Listening port of the NFVO
+${NFVO_SCHEMA}    https
+${WRONG_AUTHORIZATION}    Bearer    XXXXXWRONGXXXXX
+${SINGLE_FILE_VNFD}    1    # If VNFD is PLAIN TEXT
+${ACCEPT_PLAIN}    text/plain
+${ACCEPT_ZIP}     application/zip
+${vnfPkgId_processing}    007c111c-38a1-42c0-a666-7475ecb1567c
+${ARTIFACT_TYPE}    application/octet-stream
+${ARTIFACT_ID}    artifactId
+${WRONG_ACCEPT}    application/json
+${SYNC_MODE}    0
+${sleep_interval}    20s
+${callback_uri}    http://localhost
+${callback_port}    9091
+${MOCK_SERVER_JAR}    ../../../bin/mockserver-netty-5.5.0-jar-with-dependencies.jar

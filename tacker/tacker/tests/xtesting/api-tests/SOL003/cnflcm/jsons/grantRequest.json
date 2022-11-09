@@ -1,0 +1,16 @@
+{
+  "vnfInstanceId": "myVnfInstanceId",
+  "vnfLcmOpOccId": "myLcmOccId",
+  "vnfdId": "myVnF",
+  "flavourId": "string",
+  "operation": "INSTANTIATE",
+  "isAutomaticInvocation": true,
+  "_links": {
+    "vnfLcmOpOcc": {
+      "href": "string"
+    },
+    "vnfInstance": {
+      "href": "string"
+    }
+  }
+}

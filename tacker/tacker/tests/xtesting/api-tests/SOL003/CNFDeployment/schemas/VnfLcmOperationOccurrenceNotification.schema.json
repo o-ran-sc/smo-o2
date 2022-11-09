@@ -1,0 +1,568 @@
+{
+      "description": "This type represents a VNF lifecycle management operation occurrence notification, which informs the receiver of changes in the VNF lifecycle caused by a VNF LCM operation occurrence. The support of the notification is mandatory. This notification shall be triggered by the VNFM when there is a change in the state of a VNF LCM operation occurrence that changes the VNF lifecycle, which represents an occurrence of one the following LCM operations: * Instantiation of the VNF * Scaling of the VNF instance (including auto-scaling) * Healing of the VNF instance (including auto-healing) * Change of the state of the VNF instance (i.e. Operate VNF) * Change of the deployment flavour of the VNF instance * Change of the external connectivity of the VNF instance * Termination of the VNF instance * Modification of VNF instance information and/or VNF configurable\n  properties through the \"PATCH\" method on the \"Individual VNF instance\"\n  resource.\nClause 5.6.2 defines the states and state transition of a VNF LCM operation occurrence, and also specifies details of the notifications to be emitted at each state transition. If this is the initial notification about the start of a VNF LCM operation occurrence, it is assumed that the notification is sent by the VNFM before any action (including sending the grant request) is taken as part of the LCM operation. Due to possible race conditions, the \"start\" notification, the grant request and the LCM operation acknowledgment (i.e. the \"202 Accepted\" response) can arrive in any order at the NFVO, and the NFVO shall be able to handle such a situation. If this is a notification about a final or intermediate result state of a VNF LCM operation occurrence, the notification shall be sent after all related actions of the LCM operation that led to this state have been executed. The new state shall be set in the \"Individual VNF LCM operation occurrence\" resource before the notification about the state change is sent. See clause 5.6.2.2 for further provisions regarding sending this notification, including in cases of handling LCM operation errors.\n",
+      "type": "object",
+      "required": [
+        "id",
+        "notificationType",
+        "subscriptionId",
+        "timeStamp",
+        "notificationStatus",
+        "operationState",
+        "vnfInstanceId",
+        "operation",
+        "isAutomaticInvocation",
+        "vnfLcmOpOccId",
+        "_links"
+      ],
+      "properties": {
+        "id": {
+          "description": "An identifier with the intention of being globally unique.\n",
+          "type": "string"
+        },
+        "notificationType": {
+          "description": "Discriminator for the different notification types. Shall be set to \"VnfLcmOperationOccurrenceNotification\" for this notification type.\n",
+          "type": "string",
+          "enum": [
+            "VnfLcmOperationOccurrenceNotification"
+          ]
+        },
+        "subscriptionId": {
+          "description": "An identifier with the intention of being globally unique.\n",
+          "type": "string"
+        },
+        "timeStamp": {
+          "description": "Date-time stamp. Representation: String formatted according to IETF RFC 3339.\n",
+          "type": "string",
+          "format": "date-time"
+        },
+        "notificationStatus": {
+          "description": "Indicates whether this notification reports about the start of a lifecycle operation or the result of a lifecycle operation. Permitted values: * START: Informs about the start of the VNF LCM operation\n  occurrence.\n* RESULT: Informs about the final or intermediate result of the VNF\n  LCM operation occurrence.\n",
+          "type": "string",
+          "enum": [
+            "START",
+            "RESULT"
+          ]
+        },
+        "operationState": {
+          "description": "STARTING: The LCM operation is starting. PROCESSING: The LCM operation is currently in execution. COMPLETED: The LCM operation has been completed successfully. FAILED_TEMP: The LCM operation has failed and execution has stopped, but the execution of the operation is not considered to be closed. FAILED: The LCM operation has failed and it cannot be retried or rolled back, as it is determined that such action won't succeed. ROLLING_BACK: The LCM operation is currently being rolled back. ROLLED_BACK: The LCM operation has been successfully rolled back, i.e. The state of the VNF prior to the original operation invocation has been restored as closely as possible.\n",
+          "type": "string",
+          "enum": [
+            "STARTING",
+            "PROCESSING",
+            "COMPLETED",
+            "FAILED_TEMP",
+            "FAILED",
+            "ROLLING_BACK",
+            "ROLLED_BACK"
+          ]
+        },
+        "vnfInstanceId": {
+          "description": "An identifier with the intention of being globally unique.\n",
+          "type": "string"
+        },
+        "operation": {
+          "description": "Value | Description ------|------------ INSTANTIATE | Represents the \"Instantiate VNF\" LCM operation.    SCALE | Represents the \"Scale VNF\" LCM operation. SCALE_TO_LEVEL | Represents the \"Scale VNF to Level\" LCM operation. CHANGE_FLAVOUR | Represents the \"Change VNF Flavour\" LCM operation. TERMINATE | Represents the \"Terminate VNF\" LCM operation. HEAL | Represents the \"Heal VNF\" LCM operation. OPERATE | Represents the \"Operate VNF\" LCM operation. CHANGE_EXT_CONN | Represents the \"Change external VNF connectivity\" LCM operation. MODIFY_INFO | Represents the \"Modify VNF Information\" LCM operation.     \n",
+          "type": "string",
+          "enum": [
+            "INSTANTIATE",
+            "SCALE",
+            "SCALE_TO_LEVEL",
+            "CHANGE_FLAVOUR",
+            "TERMINATE",
+            "HEAL",
+            "OPERATE",
+            "CHANGE_EXT_CONN",
+            "MODIFY_INFO"
+          ]
+        },
+        "isAutomaticInvocation": {
+          "description": "Set to true if this VNF LCM operation occurrence has been triggered by an automated procedure inside the VNFM (i.e. ScaleVnf / ScaleVnfToLevel triggered by auto-scale, or HealVnf triggered by auto-heal). Set to false otherwise.\n",
+          "type": "boolean"
+        },
+        "vnfLcmOpOccId": {
+          "description": "An identifier with the intention of being globally unique.\n",
+          "type": "string"
+        },
+        "affectedVnfcs": {
+          "description": "Information about VNFC instances that were affected during the lifecycle operation. Shall be present if the \"notificationStatus\" is set to \"RESULT\" and the operation has performed any resource modification. Shall be absent otherwise. This attribute contains information about the cumulative changes to virtualised resources that were performed so far by the VNF LCM operation occurrence and by any of the error handling procedures for that operation occurrence.\n",
+          "type": "array",
+          "items": {
+            "description": "This type provides information about added, deleted, modified and temporary VNFCs.\n",
+            "type": "object",
+            "required": [
+              "id",
+              "vduId",
+              "changeType",
+              "computeResource"
+            ],
+            "properties": {
+              "id": {
+                "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                "type": "string"
+              },
+              "vduId": {
+                "description": "An identifier that is unique within a VNF descriptor.\n",
+                "type": "string"
+              },
+              "changeType": {
+                "description": "Signals the type of change. Permitted values: * ADDED * REMOVED * MODIFIED * TEMPORARY For a temporary resource, an AffectedVnfc structure exists as long as the temporary resource exists.\n",
+                "type": "string",
+                "enum": [
+                  "ADDED",
+                  "REMOVED",
+                  "MODIFIED",
+                  "TEMPORARY"
+                ]
+              },
+              "computeResource": {
+                "required": [
+                  "resourceId"
+                ],
+                "type": "object",
+                "description": "This type represents the information that allows addressing a virtualised resource that is used by a VNF instance. Information about the resource is available from the VIM.\n",
+                "properties": {
+                  "vimConnectionId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceProviderId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceId": {
+                    "description": "An identifier maintained by the VIM or other resource provider. It is expected to be unique within the VIM instance.\n",
+                    "type": "string"
+                  },
+                  "vimLevelResourceType": {
+                    "description": "The value set of the \"vimLevelResourceType\" attribute is within the scope of the VIM or the resource provider and can be used as information that complements the ResourceHandle. This value set is different from the value set of the \"type\" attribute in the ResourceDefinition (refer to clause 9.5.3.2 in SOL003).\n",
+                    "type": "string"
+                  }
+                }
+              },
+              "resourceDefinitionId": {
+                "description": "An identifier that is unique within a limited local scope other than above listed identifiers, such as within a complex data structure or within a request-response pair. Representation: string of variable length.\n",
+                "type": "string"
+              },
+              "zoneId": {
+                "description": "An identifier with the intention of being globally unique.\n",
+                "type": "string"
+              },
+              "metadata": {
+                "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+                "type": "object"
+              },
+              "affectedVnfcCpIds": {
+                "description": "Identifiers of CP(s) of the VNFC instance that were affected by the change. Shall be present for those affected CPs of the VNFC instance that are associated to an external CP of the VNF instance. May be present for further affected CPs of the VNFC instance.\n",
+                "type": "array",
+                "items": {
+                  "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                  "type": "string"
+                }
+              },
+              "addedStorageResourceIds": {
+                "description": "References to VirtualStorage resources that have been added. Each value refers to a VirtualStorageResourceInfo item in the VnfInstance that was added to the VNFC. It shall be provided if at least one storage resource was added to the VNFC.\n",
+                "type": "array",
+                "items": {
+                  "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                  "type": "string"
+                }
+              },
+              "removedStorageResourceIds": {
+                "description": "References to VirtualStorage resources that have been removed. The value contains the identifier of a VirtualStorageResourceInfo item that has been removed from the VNFC, and might no longer exist in the VnfInstance. It shall be provided if at least one storage resource was removed from the VNFC.\n",
+                "type": "array",
+                "items": {
+                  "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "affectedVirtualLinks": {
+          "description": "Information about VL instances that were affected during the lifecycle operation. Shall be present if the \"notificationStatus\" is set to \"RESULT\" and the operation has performed any resource modification. Shall be absent otherwise. This attribute contains information about the cumulative changes to virtualised resources that were performed so far by the VNF LCM operation occurrence and by any of the error handling procedures for that operation occurrence.\n",
+          "type": "array",
+          "items": {
+            "description": "This type provides information about added, deleted, modified and temporary VLs.\n",
+            "type": "object",
+            "required": [
+              "id",
+              "vnfVirtualLinkDescId",
+              "changeType",
+              "networkResource"
+            ],
+            "properties": {
+              "id": {
+                "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                "type": "string"
+              },
+              "vnfVirtualLinkDescId": {
+                "description": "An identifier that is unique within a VNF descriptor.\n",
+                "type": "string"
+              },
+              "changeType": {
+                "description": "Signals the type of change. Permitted values: * ADDED * REMOVED * MODIFIED * TEMPORARY * LINK_PORT_ADDED * LINK_PORT_REMOVED For a temporary resource, an AffectedVirtualLink structure exists as long as the temporary resource exists.\n",
+                "type": "string",
+                "enum": [
+                  "ADDED",
+                  "REMOVED",
+                  "MODIFIED",
+                  "TEMPORARY",
+                  "LINK_PORT_ADDED",
+                  "LINK_PORT_REMOVED"
+                ]
+              },
+              "networkResource": {
+                "required": [
+                  "resourceId"
+                ],
+                "type": "object",
+                "description": "This type represents the information that allows addressing a virtualised resource that is used by a VNF instance. Information about the resource is available from the VIM.\n",
+                "properties": {
+                  "vimConnectionId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceProviderId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceId": {
+                    "description": "An identifier maintained by the VIM or other resource provider. It is expected to be unique within the VIM instance.\n",
+                    "type": "string"
+                  },
+                  "vimLevelResourceType": {
+                    "description": "The value set of the \"vimLevelResourceType\" attribute is within the scope of the VIM or the resource provider and can be used as information that complements the ResourceHandle. This value set is different from the value set of the \"type\" attribute in the ResourceDefinition (refer to clause 9.5.3.2 in SOL003).\n",
+                    "type": "string"
+                  }
+                }
+              },
+              "resourceDefinitionId": {
+                "description": "An identifier that is unique within a limited local scope other than above listed identifiers, such as within a complex data structure or within a request-response pair. Representation: string of variable length.\n",
+                "type": "string"
+              },
+              "zoneId": {
+                "description": "An identifier with the intention of being globally unique.\n",
+                "type": "string"
+              },
+              "metadata": {
+                "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "affectedVirtualStorages": {
+          "description": "Information about virtualised storage instances that were affected during the lifecycle operation. Shall be present if the \"notificationStatus\" is set to \"RESULT\" and the operation has performed any resource modification. Shall be absent otherwise. This attribute contains information about the cumulative changes to virtualised resources that were performed so far by the VNF LCM operation occurrence and by any of the error handling procedures for that operation occurrence.\n",
+          "type": "array",
+          "items": {
+            "description": "This type provides information about added, deleted, modified and temporary virtual storage resources.\n",
+            "type": "object",
+            "required": [
+              "id",
+              "virtualStorageDescId",
+              "changeType",
+              "storageResource"
+            ],
+            "properties": {
+              "id": {
+                "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                "type": "string"
+              },
+              "virtualStorageDescId": {
+                "description": "An identifier that is unique within a VNF descriptor.\n",
+                "type": "string"
+              },
+              "changeType": {
+                "description": "Signals the type of change. Permitted values: * ADDED * REMOVED * MODIFIED * TEMPORARY For a temporary resource, an AffectedVirtualStorage structure exists as long as the temporary resource exists.\n",
+                "type": "string",
+                "enum": [
+                  "ADDED",
+                  "REMOVED",
+                  "MODIFIED",
+                  "TEMPORARY"
+                ]
+              },
+              "storageResource": {
+                "required": [
+                  "resourceId"
+                ],
+                "type": "object",
+                "description": "This type represents the information that allows addressing a virtualised resource that is used by a VNF instance. Information about the resource is available from the VIM.\n",
+                "properties": {
+                  "vimConnectionId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceProviderId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceId": {
+                    "description": "An identifier maintained by the VIM or other resource provider. It is expected to be unique within the VIM instance.\n",
+                    "type": "string"
+                  },
+                  "vimLevelResourceType": {
+                    "description": "The value set of the \"vimLevelResourceType\" attribute is within the scope of the VIM or the resource provider and can be used as information that complements the ResourceHandle. This value set is different from the value set of the \"type\" attribute in the ResourceDefinition (refer to clause 9.5.3.2 in SOL003).\n",
+                    "type": "string"
+                  }
+                }
+              },
+              "resourceDefinitionId": {
+                "description": "An identifier that is unique within a limited local scope other than above listed identifiers, such as within a complex data structure or within a request-response pair. Representation: string of variable length.\n",
+                "type": "string"
+              },
+              "metadata": {
+                "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+                "type": "object"
+              }
+            }
+          }
+        },
+        "changedInfo": {
+          "description": "This type represents attribute modifications that were performed on an \"Individual VNF instance\" resource. The attributes that can be included consist of those requested to be modified explicitly in the \"VnfInfoModificationRequest\" data structure, and additional attributes of the \"VnfInstance\" data structure that were modified implicitly e.g. when modifying the referenced VNF package.\n",
+          "type": "object",
+          "properties": {
+            "vnfInstanceName": {
+              "description": "If present, this attribute signals modifications of the \"vnfInstanceName\" attribute in \"VnfInstance\".\n",
+              "type": "string"
+            },
+            "vnfInstanceDescription": {
+              "description": "If present, this attribute signals modifications of the \"vnfInstanceDescription\" attribute in \"VnfInstance\".\n",
+              "type": "string"
+            },
+            "vnfConfigurableProperties": {
+              "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+              "type": "object"
+            },
+            "metadata": {
+              "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+              "type": "object"
+            },
+            "extensions": {
+              "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+              "type": "object"
+            },
+            "vnfdId": {
+              "description": "An identifier with the intention of being globally unique.\n",
+              "type": "string"
+            },
+            "vnfProvider": {
+              "description": "If present, this attribute signals modifications of the \"vnfProvider\" attribute in \"VnfInstance\". If present, this attribute (which depends on the value of the \"vnfPkgId\" attribute) was modified implicitly following a request to modify the \"vnfPkgId\" attribute, by copying the value of this attribute from the VNFD in the VNF Package identified by the \"vnfPkgId\" attribute.\n",
+              "type": "string"
+            },
+            "vnfProductName": {
+              "description": "If present, this attribute signals modifications of the \"vnfProductName\" attribute in \"VnfInstance\". If present, this attribute (which depends on the value of the \"vnfPkgId\" attribute) was modified implicitly following a request to modify the \"vnfPkgId\" attribute, by copying the value of this attribute from the VNFD in the VNF Package identified by the \"vnfPkgId\" attribute.\n",
+              "type": "string"
+            },
+            "vnfSoftwareVersion": {
+              "description": "A version.\n",
+              "type": "string"
+            },
+            "vnfdVersion": {
+              "description": "A version.\n",
+              "type": "string"
+            },
+            "vnfcInfoModifications": {
+              "description": "If present, this attribute signals modifications of certain entries in the \"vnfcInfo\" attribute array in the \"instantiatedVnfInfo\" attribute of \"VnfInstance\", as defined in clause 5.5.2.12\n",
+              "type": "array",
+              "items": {
+                "description": "This type represents modifications of an entry in an array of \"VnfcInfo\" objects. It shall comply with the provisions defined in table 5.5.3.24-1.\n",
+                "type": "object",
+                "required": [
+                  "id",
+                  "vnfcConfigurableProperties"
+                ],
+                "properties": {
+                  "id": {
+                    "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                    "type": "string"
+                  },
+                  "vnfcConfigurableProperties": {
+                    "description": "This type represents a list of key-value pairs. The order of the pairs in the list is not significant. In JSON, a set of keyvalue pairs is represented as an object. It shall comply with the provisions defined in clause 4 of IETF RFC 8259. In the following example, a list of key-value pairs with four keys (\"aString\", \"aNumber\", \"anArray\" and \"anObject\") is provided to illustrate that the values associated with different keys can be of different type.\n",
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "vnfcInfoModificationsDeleteIds": {
+              "description": "If present, this attribute signals the deletion of certain entries in the \"vnfcInfo\" attribute array in the \"instantiatedVnfInfo\" attribute of \"VnfInstance\", as defined in clause 5.5.2.12\n",
+              "type": "array",
+              "items": {
+                "description": "An identifier with the intention of being globally unique.\n",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "changedExtConnectivity": {
+          "description": "Information about changed external connectivity, if this notification represents the result of a lifecycle operation occurrence. Shall be present if the \"notificationStatus\" is set to \"RESULT\" and the \"operation\" has made any changes to the external connectivity of the VNF instance. Shall be absent otherwise. Only information about external VL instances that have been added or modified shall be provided.\n",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "resourceHandle"
+            ],
+            "properties": {
+              "id": {
+                "description": "An identifier with the intention of being globally unique.\n",
+                "type": "string"
+              },
+              "resourceHandle": {
+                "required": [
+                  "resourceId"
+                ],
+                "type": "object",
+                "description": "This type represents the information that allows addressing a virtualised resource that is used by a VNF instance. Information about the resource is available from the VIM.\n",
+                "properties": {
+                  "vimConnectionId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceProviderId": {
+                    "description": "An identifier with the intention of being globally unique.\n",
+                    "type": "string"
+                  },
+                  "resourceId": {
+                    "description": "An identifier maintained by the VIM or other resource provider. It is expected to be unique within the VIM instance.\n",
+                    "type": "string"
+                  },
+                  "vimLevelResourceType": {
+                    "description": "The value set of the \"vimLevelResourceType\" attribute is within the scope of the VIM or the resource provider and can be used as information that complements the ResourceHandle. This value set is different from the value set of the \"type\" attribute in the ResourceDefinition (refer to clause 9.5.3.2 in SOL003).\n",
+                    "type": "string"
+                  }
+                }
+              },
+              "extLinkPorts": {
+                "description": "Link ports of this VL.\n",
+                "type": "array",
+                "items": {
+                  "description": "This type represents information about a link port of an external VL, i.e. a port providing connectivity for the VNF to an NS VL.\n",
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "resourceHandle"
+                  ],
+                  "properties": {
+                    "id": {
+                      "description": "An identifier with the intention of being globally unique.\n",
+                      "type": "string"
+                    },
+                    "resourceHandle": {
+                      "required": [
+                        "resourceId"
+                      ],
+                      "type": "object",
+                      "description": "This type represents the information that allows addressing a virtualised resource that is used by a VNF instance. Information about the resource is available from the VIM.\n",
+                      "properties": {
+                        "vimConnectionId": {
+                          "description": "An identifier with the intention of being globally unique.\n",
+                          "type": "string"
+                        },
+                        "resourceProviderId": {
+                          "description": "An identifier with the intention of being globally unique.\n",
+                          "type": "string"
+                        },
+                        "resourceId": {
+                          "description": "An identifier maintained by the VIM or other resource provider. It is expected to be unique within the VIM instance.\n",
+                          "type": "string"
+                        },
+                        "vimLevelResourceType": {
+                          "description": "The value set of the \"vimLevelResourceType\" attribute is within the scope of the VIM or the resource provider and can be used as information that complements the ResourceHandle. This value set is different from the value set of the \"type\" attribute in the ResourceDefinition (refer to clause 9.5.3.2 in SOL003).\n",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "cpInstanceId": {
+                      "description": "An identifier that is unique for the respective type within a VNF instance, but may not be globally unique.\n",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "error": {
+          "description": "The definition of the general \"ProblemDetails\" data structure from IETF RFC 7807 [19] is reproduced inthis structure. Compared to the general framework defined in IETF RFC 7807 [19], the \"status\" and \"detail\" attributes are mandated to be included by the present document, to ensure that the response contains additional textual information about an error. IETF RFC 7807 [19] foresees extensibility of the \"ProblemDetails\" type. It is possible that particular APIs in the present document, or particular implementations, define extensions to define additional attributes that provide more information about the error. The description column only provides some explanation of the meaning to Facilitate understanding of the design. For a full description, see IETF RFC 7807 [19].\n",
+          "type": "object",
+          "required": [
+            "status",
+            "detail"
+          ],
+          "properties": {
+            "type": {
+              "description": "A URI reference according to IETF RFC 3986 [5] that identifies the problem type. It is encouraged that the URI provides human-readable documentation for the problem (e.g. using HTML) when dereferenced. When this member is not present, its value is assumed to be \"about:blank\".\n",
+              "type": "string",
+              "format": "URI"
+            },
+            "title": {
+              "description": "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization. If type is given and other than \"about:blank\", this attribute shall also be provided. A short, human-readable summary of the problem type.  It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation; see [RFC7231], Section 3.4).\n",
+              "type": "string"
+            },
+            "status": {
+              "description": "The HTTP status code for this occurrence of the problem. The HTTP status code ([RFC7231], Section 6) generated by the origin server for this occurrence of the problem.\n",
+              "type": "integer"
+            },
+            "detail": {
+              "description": "A human-readable explanation specific to this occurrence of the problem.\n",
+              "type": "string"
+            },
+            "instance": {
+              "description": "A URI reference that identifies the specific occurrence of the problem. It may yield further information if dereferenced.\n",
+              "type": "string",
+              "format": "URI"
+            }
+          }
+        },
+        "_links": {
+          "description": "This type represents the links to resources that a notification can contain.\n",
+          "type": "object",
+          "required": [
+            "vnfInstance",
+            "subscription"
+          ],
+          "properties": {
+            "vnfInstance": {
+              "description": "This type represents a link to a resource in a notification, using an absolute or relative URI.\n",
+              "type": "object",
+              "required": [
+                "href"
+              ],
+              "properties": {
+                "href": {
+                  "description": "String formatted according to IETF RFC 3986.\n",
+                  "type": "string"
+                }
+              }
+            },
+            "subscription": {
+              "description": "This type represents a link to a resource in a notification, using an absolute or relative URI.\n",
+              "type": "object",
+              "required": [
+                "href"
+              ],
+              "properties": {
+                "href": {
+                  "description": "String formatted according to IETF RFC 3986.\n",
+                  "type": "string"
+                }
+              }
+            },
+            "vnfLcmOpOcc": {
+              "description": "This type represents a link to a resource in a notification, using an absolute or relative URI.\n",
+              "type": "object",
+              "required": [
+                "href"
+              ],
+              "properties": {
+                "href": {
+                  "description": "String formatted according to IETF RFC 3986.\n",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }

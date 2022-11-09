@@ -1,0 +1,65 @@
+{
+  "extVirtualLinks": [
+    {
+      "id": "string",
+      "vimConnectionId": "string",
+      "resourceProviderId": "string",
+      "resourceId": "string",
+      "extCps": [
+        {
+          "cpdId": "string",
+          "cpConfig": [
+            {
+              "cpInstanceId": "string",
+              "linkPortId": "string",
+              "cpProtocolData": [
+                {
+                  "layerProtocol": "IP_OVER_ETHERNET",
+                  "ipOverEthernet": {
+                    "macAddress": "string",
+                    "ipAddresses": [
+                      {
+                        "type": "IPV4",
+                        "fixedAddresses": [
+                          "string"
+                        ],
+                        "numDynamicAddresses": 0,
+                        "addressRange": {
+                          "minAddress": "string",
+                          "maxAddress": "string"
+                        },
+                        "subnetId": "string"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extLinkPorts": [
+        {
+          "id": "string",
+          "resourceHandle": {
+            "vimConnectionId": "string",
+            "resourceProviderId": "string",
+            "resourceId": "string",
+            "vimLevelResourceType": "string"
+          }
+        }
+      ]
+    }
+  ],
+  "vimConnectionInfo": [
+    {
+      "id": "string",
+      "vimId": "string",
+      "vimType": "string",
+      "interfaceInfo": {},
+      "accessInfo": {},
+      "extra": {}
+    }
+  ],
+  "additionalParams": {}
+}

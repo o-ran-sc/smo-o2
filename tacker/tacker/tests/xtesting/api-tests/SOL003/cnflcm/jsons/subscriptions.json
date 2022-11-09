@@ -1,0 +1,6 @@
+{
+	"callbackUri": "http://127.0.0.1/subscribe",
+	"filter": {
+		"vnfPkgId":  ["491ed430-67f5-4c6c-b78e-797f5d718868"]
+	}
+}
