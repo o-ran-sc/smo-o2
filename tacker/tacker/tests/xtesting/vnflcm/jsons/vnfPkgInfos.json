@@ -1,0 +1,313 @@
+[
+  {
+    "id": "ABCDEFGHIJKL",
+    "operationalState": "ENABLED",
+    "usageState": {},
+    "_links": {
+      "self": {
+        "href": "ABCDEFGHIJKLMNOPQR"
+      },
+      "packageContent": {
+        "href": "ABCDEFGHI"
+      },
+      "vnfd": {
+        "href": "ABCDEFGHIJKLMNOPQRSTUVWXYZA"
+      }
+    },
+    "vnfdId": "ABCD",
+    "vnfProvider": "ABCDEFGHIJKLMNOPQRS",
+    "vnfProductName": "ABCDEFGHIJKLMNOPQRS",
+    "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWX",
+    "vnfdVersion": "ABCDEFGHIJK",
+    "checksum": {
+      "algorithm": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+      "hash": "ABCDEFGHIJKLMN"
+    },
+    "softwareImages": [
+      {
+        "id": "ABCDEFGHIJKLMNO",
+        "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZA",
+        "provider": "ABCDE",
+        "version": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLM",
+          "hash": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+        },
+        "containerFormat": "AMI",
+        "diskFormat": "QCOW2",
+        "createdAt": "ABCDEFGHIJKLMNOP",
+        "minDisk": -14,
+        "minRam": 836,
+        "size": 698,
+        "imagePath": "ABCDEFGHIJKLMNOPQRSTUVWX",
+        "userMetadata": {}
+      },
+      {
+        "id": "ABCDEFGHIJKLMNOPQRSTUV",
+        "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZA",
+        "provider": "ABCDEFGHIJK",
+        "version": "ABCD",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOP",
+          "hash": "ABCDEFGHIJKLMNOP"
+        },
+        "containerFormat": "AMI",
+        "diskFormat": "VHDX",
+        "createdAt": "ABCDEFGHIJKLMNOPQRSTUVW",
+        "minDisk": 82,
+        "minRam": 460,
+        "size": 51,
+        "imagePath": "ABCDEFGHI",
+        "userMetadata": {}
+      },
+      {
+        "id": "ABCDEFGHIJK",
+        "name": "ABCDEFGHIJKLMNOPQRST",
+        "provider": "ABCDEFGHIJKLMN",
+        "version": "ABCDEFGHI",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRST",
+          "hash": "ABCDEFGHIJKLMNOPQRSTUVWX"
+        },
+        "containerFormat": "AKI",
+        "diskFormat": "VMDK",
+        "createdAt": "ABCDEFGHIJKLMNOPQRS",
+        "minDisk": 821,
+        "minRam": 358,
+        "size": 589,
+        "imagePath": "ABCDEFGHIJ",
+        "userMetadata": {}
+      }
+    ],
+    "additionalArtifacts": [
+      {
+        "artifactPath": "ABCDEFG",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQ",
+          "hash": "ABCDEFGHIJKLMNO"
+        },
+        "metadata": {}
+      },
+      {
+        "artifactPath": "ABCDEFGHIJ",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTU",
+          "hash": "ABCDEFGHIJKLMNO"
+        },
+        "metadata": {}
+      },
+      {
+        "artifactPath": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+        "checksum": {
+          "algorithm": "ABCD",
+          "hash": "ABCDEFGHIJKLMNOPQ"
+        },
+        "metadata": {}
+      }
+    ],
+    "onboardingState": "CREATED",
+    "userDefinedData": {}
+  },
+  {
+    "id": "ABCDEFGHIJKLMNOPQRS",
+    "operationalState": "DISABLED",
+    "usageState": 215,
+    "_links": {
+      "self": {
+        "href": "ABCDEFGHIJKLMNOPQRSTU"
+      },
+      "packageContent": {
+        "href": "ABCDEFGHIJKLMNO"
+      },
+      "vnfd": {
+        "href": "ABCDEF"
+      }
+    },
+    "vnfdId": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "vnfProvider": "ABCDEFGHIJKLMNOPQRST",
+    "vnfProductName": "ABCDEFGHIJKLMNOPQRST",
+    "vnfSoftwareVersion": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
+    "vnfdVersion": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+    "checksum": {
+      "algorithm": "ABCDEFGHIJKLM",
+      "hash": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB"
+    },
+    "softwareImages": [
+      {
+        "id": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "name": "ABCDEFGHIJKLMNOPQRSTU",
+        "provider": "ABCD",
+        "version": "ABCDEFGHIJKLMNOP",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNO",
+          "hash": "ABCDEFGHIJKLM"
+        },
+        "containerFormat": "DOCKER",
+        "diskFormat": "QCOW2",
+        "createdAt": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+        "minDisk": -98,
+        "minRam": 204,
+        "size": 587,
+        "imagePath": "ABCDEF",
+        "userMetadata": {}
+      },
+      {
+        "id": "ABCDE",
+        "name": "ABCDEFG",
+        "provider": "ABCDEFGH",
+        "version": "ABCDEFGHIJKLMNOPQRSTU",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUV",
+          "hash": "ABCDEFGHIJKLMNOPQRSTUVW"
+        },
+        "containerFormat": "DOCKER",
+        "diskFormat": "AKI",
+        "createdAt": "ABCDEFGHIJKLMNOP",
+        "minDisk": 87,
+        "minRam": 216,
+        "size": 262,
+        "imagePath": "ABCDEFGHIJK",
+        "userMetadata": {}
+      },
+      {
+        "id": "ABCD",
+        "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "provider": "ABCDEFGHIJKLMN",
+        "version": "ABCDEFGHIJKLMNOPQRSTUVW",
+        "checksum": {
+          "algorithm": "ABCDEFG",
+          "hash": "ABCDEFGHIJKLMNOPQRST"
+        },
+        "containerFormat": "AKI",
+        "diskFormat": "QCOW2",
+        "createdAt": "ABCDEFGHIJK",
+        "minDisk": 821,
+        "minRam": 335,
+        "size": 698,
+        "imagePath": "ABCDEFGHIJKLMNOPQRST",
+        "userMetadata": {}
+      },
+      {
+        "id": "ABCDEFG",
+        "name": "ABCDEFGHIJKLMNOPQRSTUVW",
+        "provider": "ABCDEFGHIJKLMNOPQR",
+        "version": "ABCDEFGHIJKLMNOPQRS",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUVW",
+          "hash": "ABCDEFGHIJ"
+        },
+        "containerFormat": "DOCKER",
+        "diskFormat": "QCOW2",
+        "createdAt": "ABCDEFGHIJKLMNOPQRSTUVWXYZA",
+        "minDisk": 709,
+        "minRam": 243,
+        "size": 351,
+        "imagePath": "ABCDEFG",
+        "userMetadata": {}
+      }
+    ],
+    "additionalArtifacts": [
+      {
+        "artifactPath": "ABCDEFGHIJKLMNOPQRSTUVWXYZA",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
+          "hash": "ABCDEFGHIJKLMN"
+        },
+        "metadata": {}
+      },
+      {
+        "artifactPath": "ABCDEFGHIJKLMNOPQRSTU",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUV",
+          "hash": "ABCDEFGHIJKLM"
+        },
+        "metadata": {}
+      }
+    ],
+    "onboardingState": "PROCESSING",
+    "userDefinedData": {}
+  },
+  {
+    "id": "ABCDE",
+    "operationalState": "ENABLED",
+    "usageState": 712,
+    "_links": {
+      "self": {
+        "href": "ABCDEFGHIJKLMNOPQRSTUVWX"
+      },
+      "packageContent": {
+        "href": "ABCDEFGHIJKLMNOPQRSTUVWXYZA"
+      },
+      "vnfd": {
+        "href": "ABCDEFGHIJKLMNOPQRS"
+      }
+    },
+    "vnfdId": "ABCDE",
+    "vnfProvider": "ABCD",
+    "vnfProductName": "ABCDEFGHIJKLMNOPQRSTUV",
+    "vnfSoftwareVersion": "ABCDEFGH",
+    "vnfdVersion": "ABCDEFGHIJKLMN",
+    "checksum": {
+      "algorithm": "ABCDEFGHIJKLMNOPQR",
+      "hash": "ABCDEFGHIJKLM"
+    },
+    "softwareImages": [
+      {
+        "id": "ABCDEFGHIJKLM",
+        "name": "ABCDEFGHIJKLM",
+        "provider": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
+        "version": "ABCDEFGHIJKLM",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNO",
+          "hash": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB"
+        },
+        "containerFormat": "OVA",
+        "diskFormat": "AKI",
+        "createdAt": "ABCDEFGHIJKLMNOPQRSTUVWXY",
+        "minDisk": 803,
+        "minRam": 888,
+        "size": 479,
+        "imagePath": "ABCDEFGH",
+        "userMetadata": {}
+      },
+      {
+        "id": "ABCD",
+        "name": "ABCDEFGH",
+        "provider": "ABCDEFGHIJKL",
+        "version": "ABCDEFGHIJKL",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUV",
+          "hash": "ABCDEFGH"
+        },
+        "containerFormat": "OVA",
+        "diskFormat": "AKI",
+        "createdAt": "ABCDEF",
+        "minDisk": 816,
+        "minRam": 366,
+        "size": 806,
+        "imagePath": "ABCDEFGHI",
+        "userMetadata": {}
+      }
+    ],
+    "additionalArtifacts": [
+      {
+        "artifactPath": "ABCDEFGHIJKLMNOPQR",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUVWX",
+          "hash": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC"
+        },
+        "metadata": {}
+      },
+      {
+        "artifactPath": "ABCDEFGHIJKLMNOPQRSTUVW",
+        "checksum": {
+          "algorithm": "ABCDEFGHIJKLMNOPQRSTUVW",
+          "hash": "ABCDEFGHIJKLMNOPQRSTUVWXY"
+        },
+        "metadata": {}
+      }
+    ],
+    "onboardingState": "CREATED",
+    "userDefinedData": {}
+  }
+]

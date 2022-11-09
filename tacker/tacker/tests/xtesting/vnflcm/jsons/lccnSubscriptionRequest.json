@@ -1,0 +1,10 @@
+{
+  "filter": {
+    "vnfInstanceSubscriptionFilter": {
+      "vnfdIds": [
+        "6fc3539c-e602-4afa-8e13-962fb5a7d81f"
+      ]
+    }
+  },
+  "callbackUri": "${callback_uri}:${callback_port}${callback_endpoint}"
+}
