@@ -1,0 +1,16 @@
+{
+  "flavourId": "simple",
+  "additionalParams": {
+    "lcm-kubernetes-def-files": [
+      "Files/kubernetes/deployment.yaml"
+    ],
+    "namespace": "default"
+  },
+  "vimConnectionInfo": [
+    {
+      "id": "8a3adb69-0784-43c7-833e-aab0b6ab4470",
+      "vimId": "08260b52-c3f6-47a9-bb1f-cec1f0d3956a",
+      "vimType": "kubernetes"
+    }
+  ]
+}
