@@ -16,6 +16,40 @@
       "message": "Hi Mahesh,\nCould you kindly review my update?",
       "revId": "3eeb2baf958165a8ff6aa3ede45bad6527be6184",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4fa79d0_f7e78079",
+        "filename": "docs/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-11-09T05:51:26Z",
+      "side": 1,
+      "message": "s/are installed/is installed",
+      "revId": "3eeb2baf958165a8ff6aa3ede45bad6527be6184",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea7457ed_f6f9b76a",
+        "filename": "docs/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-11-09T05:51:26Z",
+      "side": 1,
+      "message": "What is \u003cHOST_IP\u003e? The IP address where this install is being done? If the system, has multiple interfaces, which IP address should the user choose?",
+      "revId": "3eeb2baf958165a8ff6aa3ede45bad6527be6184",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
