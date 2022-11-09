@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "28054171_3f51a3ef",
+        "filename": "docs/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-09T06:28:13Z",
+      "side": 1,
+      "message": "Thanks for pointing out, I have corrected it.",
+      "parentUuid": "c4fa79d0_f7e78079",
+      "revId": "3eeb2baf958165a8ff6aa3ede45bad6527be6184",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea7457ed_f6f9b76a",
         "filename": "docs/installation-guide.rst",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2022-11-09T05:51:26Z",
       "side": 1,
       "message": "What is \u003cHOST_IP\u003e? The IP address where this install is being done? If the system, has multiple interfaces, which IP address should the user choose?",
+      "revId": "3eeb2baf958165a8ff6aa3ede45bad6527be6184",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1148e59_5d92c8ef",
+        "filename": "docs/installation-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-09T06:28:13Z",
+      "side": 1,
+      "message": "This is API endpoint host IP for Tacker service, so user can set IP what user want to use endpoint host IP.\nhttps://docs.openstack.org/devstack/latest/configuration.html#openrc\n\nIf system has multiple interfaces, user must choose IP what should be set as the endpoint.\nI added description for the parameter to this installation guide.",
+      "parentUuid": "ea7457ed_f6f9b76a",
       "revId": "3eeb2baf958165a8ff6aa3ede45bad6527be6184",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }

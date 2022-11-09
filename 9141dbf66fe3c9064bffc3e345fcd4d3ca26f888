@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dc1c77e0_ad163b27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-09T06:28:13Z",
+      "side": 1,
+      "message": "In PS3, I changed document structures to not pointing \"Individual Component Pages\" and \"doc/tacker folder\" is removed.\nCould you kindly check if the revised document is satisfactory?",
+      "parentUuid": "2b30437c_cb91c457",
+      "revId": "9141dbf66fe3c9064bffc3e345fcd4d3ca26f888",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6caa4128_8b2de91d",
         "filename": "docs/api-docs.rst",
         "patchSetId": 2
