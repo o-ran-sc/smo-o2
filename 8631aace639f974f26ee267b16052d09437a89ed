@@ -1,0 +1,411 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d46066a_164b7805",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "Thanks for your patch, please kindly find my comments.",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c0027f9_dc453abf",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurence.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "typo in filename, I think `Occurrence` is correct.",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0ce1fa9_7217464f",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/configuration.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "I think one line break is enough.",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4653cecd_a881ede1",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/configuration.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "ditto.",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29ab3ab2_383358ca",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/scaleVariables.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "Could you remove trailing space character?\nPlease do the same for the other files.",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 24
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b7bb38b_85daa143",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/schemas/ApiVersionInformation.schema.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "The schema file description is different as follows. Is it possible to unify them?\n* Whether indented with tab or space, and indent space number.\n* Whether there are line breaks\n\nIf you just downloaded from somewhere, I think you can leave it as it is.",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e0c9910_06a1e8b1",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/Definitions/helloworld3_top.vnfd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "Do you need `vdumap` deployment flavour in this definition?\nor do you need `vdumap` to \"valid flavour_id\" to helloworld3_types.yaml? \n```\n      flavour_id:\n        type: string\n        constraints: [ valid_values: [ simple ] ]\n        default: simple                      ^ need to add vdumap here?\n```",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31e42ac9_433aef3a",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/PkgmSubscription.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "I don\u0027t think this indentation is necessary.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 2
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c332a3c_e1be712f",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/VnfPkgInfoModifications.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "Could you replace to space indent from tab?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae4ac5ea_8db86bea",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/VnfPkgInfoModificationsDisabled.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "Could you replace to space indent from tab?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbfbf5a5_5a05275e",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/subscriptions.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "Could you replace to space indent from tab?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9f1b25f_5197fdcb",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "typo: generation",
+      "range": {
+        "startLine": 4,
+        "startChar": 24,
+        "endLine": 4,
+        "endChar": 33
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b108958_96588b40",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "I think this curl command is too long.\nHow about you add break lines (\\) in the middle of command to make it easier to see?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 331
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1030827_d1f32233",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "create?",
+      "range": {
+        "startLine": 10,
+        "startChar": 30,
+        "endLine": 10,
+        "endChar": 36
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eefbbf8b_69625c15",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "I think this curl command is too long.\nHow about you add break lines (\\) in the middle of command to make it easier to see?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 180
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce419adc_01571857",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "I think this curl command is too long.\nHow about you add break lines (\\) in the middle of command to make it easier to see?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 250
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a729943_c5fd86f3",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "I think this curl command is too long.\nHow about you add break lines (\\) in the middle of command to make it easier to see?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 181
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6280cf27_cb616a6e",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "typo: tackerclient",
+      "range": {
+        "startLine": 23,
+        "startChar": 128,
+        "endLine": 23,
+        "endChar": 138
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a85d0b0_6961e1c7",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/testcases.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-11T08:44:51Z",
+      "side": 1,
+      "message": "typo: Occurrence",
+      "range": {
+        "startLine": 29,
+        "startChar": 112,
+        "endLine": 29,
+        "endChar": 121
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
