@@ -1,0 +1,24 @@
+{
+  "flavourId": "helmchart",
+  "additionalParams": {
+    "namespace": "default",
+    "use_helm": "true",
+    "using_helm_install_param": [
+      {
+        "exthelmchart": "false",
+        "helmchartfile_path": "Files/kubernetes/localhelm-0.1.0.tgz",
+        "helmreleasename": "tacker-test-vdu"
+      }
+    ],
+    "helm_replica_values": {
+      "vdu1_aspect": "replicaCount"
+    }
+  },
+  "vimConnectionInfo": [
+    {
+      "id": "742f1fc7-7f00-417d-85a6-d4e788353181",
+      "vimId": "5a5815fa-bf1d-41f4-a824-3e39bbdcebd0",
+      "vimType": "kubernetes"
+    }
+  ]
+}

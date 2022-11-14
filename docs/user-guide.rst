@@ -26,7 +26,16 @@ Feature Introduction
 --------------------
 .. Provide enough information that a user will be able to operate the feature on a deployed scenario. content can be added from administration, management, using, Troubleshooting sections perspectives.
 
+Tacker
+~~~~~~
+An example of the procedure how to deploy VNF or CNF by using Tacker is shown on the following pages.
+If you want to see the other procedure, please refer to `Tacker User Guide`_
+
+.. toctree::
+   :maxdepth: 1
+
+   tacker-user-guide-vnf.rst
+   tacker-user-guide-cnf.rst
 
 
-
-
+.. _Tacker User Guide: https://docs.openstack.org/tacker/latest/user/index.html
