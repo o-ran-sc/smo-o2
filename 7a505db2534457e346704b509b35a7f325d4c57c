@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f567083_191607be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-11-14T09:24:52Z",
+      "side": 1,
+      "message": "Thank you for pointing out. Please kindly check the fix.\n\nFYI, json files in the previous patch set were all removed in this patch set. Also, requirement.txt and testcases.yaml were relocated under xtesting directory.",
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
