@@ -16,6 +16,23 @@
       "message": "Thank you for your comment. Please kindly confirm the change.",
       "revId": "68ff9e1e94ed8c12852189b2827e217b15628bbf",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47832786_6f19b16f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T10:01:40Z",
+      "side": 1,
+      "message": "Thanks for your rework quickly, LGTM.\n\nBTW, where are you going to write about how to run this test?",
+      "revId": "68ff9e1e94ed8c12852189b2827e217b15628bbf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
