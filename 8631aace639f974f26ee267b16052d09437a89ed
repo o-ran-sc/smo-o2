@@ -88,6 +88,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "986a735d_28c250dd",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/configuration.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64625973_f5b68c60",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4653cecd_a881ede1",
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "4653cecd_a881ede1",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89881bdb_be9679a5",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/configuration.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c8e70077_1ce5804c",
       "revId": "8631aace639f974f26ee267b16052d09437a89ed",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -170,6 +206,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c00ba3a_aac3f51c",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/scaleVariables.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4f445cae_8ef2c013",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 24
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b7bb38b_85daa143",
@@ -201,6 +261,24 @@
       "side": 1,
       "message": "The code was referenced from NFV-TST, but it is found that the file is not required in Xtesting. Hence it is removed.\nThe other json files are also removed due to the same reason.",
       "parentUuid": "3b7bb38b_85daa143",
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86bdc49a_cdf39b8f",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/schemas/ApiVersionInformation.schema.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Thank you, I got it.",
+      "parentUuid": "f8cbd5f8_6507fec3",
       "revId": "8631aace639f974f26ee267b16052d09437a89ed",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -242,6 +320,30 @@
       "side": 1,
       "message": "It is found that the file is not required in Xtesting. Hence it is removed.\nThe other files related to jsons are also removed due to the same reason.",
       "parentUuid": "4e0c9910_06a1e8b1",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d860765_1d98c138",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/Definitions/helloworld3_top.vnfd.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0e73f4a4_7c790bd0",
       "range": {
         "startLine": 10,
         "startChar": 2,
@@ -299,6 +401,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d74c58bc_3c99a71b",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/PkgmSubscription.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "be021a8e_af533e8c",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 2
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c332a3c_e1be712f",
@@ -336,6 +462,30 @@
       "side": 1,
       "message": "It is found that the file is not required in Xtesting. Hence it is removed.\nThe other json files are also removed due to the same reason.",
       "parentUuid": "7c332a3c_e1be712f",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9e1e43d_0d2f9d7a",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/VnfPkgInfoModifications.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "58cfcff3_b36525a2",
       "range": {
         "startLine": 2,
         "startChar": 0,
@@ -393,6 +543,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a99b1a46_c4010259",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/VnfPkgInfoModificationsDisabled.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1247bdde_9d557ee8",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cbfbf5a5_5a05275e",
@@ -430,6 +604,30 @@
       "side": 1,
       "message": "It is found that the file is not required in Xtesting. Hence it is removed.\nThe other json files are also removed due to the same reason.",
       "parentUuid": "cbfbf5a5_5a05275e",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4827a878_62126dbe",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/subscriptions.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "583a2c9c_2b285471",
       "range": {
         "startLine": 2,
         "startChar": 0,
@@ -487,6 +685,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f39f72e1_698f31dd",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1fc8802e_191e4c8e",
+      "range": {
+        "startLine": 4,
+        "startChar": 24,
+        "endLine": 4,
+        "endChar": 33
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b108958_96588b40",
@@ -524,6 +746,30 @@
       "side": 1,
       "message": "Divided into multiple lines to be visible easily.",
       "parentUuid": "6b108958_96588b40",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 331
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0094a28_513f65d5",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1f15c5c4_e8adc2bc",
       "range": {
         "startLine": 5,
         "startChar": 0,
@@ -581,6 +827,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82058492_dfec0b71",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e3cd230f_ee994944",
+      "range": {
+        "startLine": 10,
+        "startChar": 30,
+        "endLine": 10,
+        "endChar": 36
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eefbbf8b_69625c15",
@@ -628,6 +898,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9872f68_97840d02",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "49b38b80_72ea06b5",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 180
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce419adc_01571857",
@@ -665,6 +959,30 @@
       "side": 1,
       "message": "Divided into multiple lines to be visible easily.",
       "parentUuid": "ce419adc_01571857",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 250
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b35d17f_b4b6ebce",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "23f4781a_de6482b3",
       "range": {
         "startLine": 18,
         "startChar": 0,
@@ -769,6 +1087,54 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8159aa5_11bb0575",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "512b3f84_0b789d62",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 181
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f8e7bcb_6f56a5e3",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "187d796b_d39ee452",
+      "range": {
+        "startLine": 23,
+        "startChar": 128,
+        "endLine": 23,
+        "endChar": 138
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a85d0b0_6961e1c7",
@@ -806,6 +1172,30 @@
       "side": 1,
       "message": "Fixed in the relocated file.\n(tacker/tacker/tests/xtesting/testcases.yaml)",
       "parentUuid": "2a85d0b0_6961e1c7",
+      "range": {
+        "startLine": 29,
+        "startChar": 112,
+        "endLine": 29,
+        "endChar": 121
+      },
+      "revId": "8631aace639f974f26ee267b16052d09437a89ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a20659b_0cf9f87c",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/testcases.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a38a1625_1ac273de",
       "range": {
         "startLine": 29,
         "startChar": 112,

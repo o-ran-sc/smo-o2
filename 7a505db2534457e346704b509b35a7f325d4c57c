@@ -16,6 +16,299 @@
       "message": "Thank you for pointing out. Please kindly check the fix.\n\nFYI, json files in the previous patch set were all removed in this patch set. Also, requirement.txt and testcases.yaml were relocated under xtesting directory.",
       "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fcc2088_0930e962",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Thanks for your rework, I have additional comment. Please kindly find it.",
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7523b873_57ff8204",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurrence.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space character?",
+      "range": {
+        "startLine": 3,
+        "startChar": 37,
+        "endLine": 3,
+        "endChar": 38
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc99a410_8590e60d",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurrence.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space character?",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 21
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0db33b82_98a495d7",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/variables.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space character?",
+      "range": {
+        "startLine": 5,
+        "startChar": 68,
+        "endLine": 5,
+        "endChar": 71
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a0a8eb2_be296bb2",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/variables.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space character?",
+      "range": {
+        "startLine": 34,
+        "startChar": 59,
+        "endLine": 34,
+        "endChar": 60
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4ea9ecc_d73f1946",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm_keywords.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing tab?",
+      "range": {
+        "startLine": 33,
+        "startChar": 39,
+        "endLine": 33,
+        "endChar": 40
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d7925a_241cdd9f",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm_keywords.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space characters?",
+      "range": {
+        "startLine": 39,
+        "startChar": 39,
+        "endLine": 39,
+        "endChar": 41
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18777693_1ec45282",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm_keywords.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing tab?",
+      "range": {
+        "startLine": 43,
+        "startChar": 99,
+        "endLine": 43,
+        "endChar": 100
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76c7829b_c5305706",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm_keywords.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space character and tab?",
+      "range": {
+        "startLine": 45,
+        "startChar": 56,
+        "endLine": 45,
+        "endChar": 58
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7262188_dcacecaf",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm_keywords.robot",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "Do you want to adjust the indentation?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 1
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa2fcb3a_6abeb7d8",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/environment/scaleVariables.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space characters?",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 24
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8785dfe4_37ee809a",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/environment/variables.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space characters?",
+      "range": {
+        "startLine": 5,
+        "startChar": 68,
+        "endLine": 5,
+        "endChar": 71
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a37c74bb_8d33591a",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/environment/variables.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-15T02:51:23Z",
+      "side": 1,
+      "message": "nit: Could you delete trailing space character?",
+      "range": {
+        "startLine": 34,
+        "startChar": 59,
+        "endLine": 34,
+        "endChar": 60
+      },
+      "revId": "7a505db2534457e346704b509b35a7f325d4c57c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
