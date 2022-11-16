@@ -51,6 +51,24 @@
       "parentUuid": "47832786_6f19b16f",
       "revId": "68ff9e1e94ed8c12852189b2827e217b15628bbf",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71c91df1_b14a8f4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-16T05:03:35Z",
+      "side": 1,
+      "message": "Thanks for your answer, I understand that you will post the testing guide with another patch.\nOr will you add documentation to this patch?",
+      "parentUuid": "6d5c981f_139b76a2",
+      "revId": "68ff9e1e94ed8c12852189b2827e217b15628bbf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
