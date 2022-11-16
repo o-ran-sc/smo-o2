@@ -33,6 +33,24 @@
       "message": "Thanks for your rework quickly, LGTM.\n\nBTW, where are you going to write about how to run this test?",
       "revId": "68ff9e1e94ed8c12852189b2827e217b15628bbf",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d5c981f_139b76a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-11-16T01:52:49Z",
+      "side": 1,
+      "message": "Thank you for your confirming.\n\nAbout the procedure of this test, I am planning to add it to the developer-guide below.\nhttps://docs.o-ran-sc.org/projects/o-ran-sc-smo-o2/en/latest/developer-guide.html",
+      "parentUuid": "47832786_6f19b16f",
+      "revId": "68ff9e1e94ed8c12852189b2827e217b15628bbf",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
