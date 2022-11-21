@@ -33,6 +33,24 @@
       "message": "It looks the Job builder has failed in the last build. There seems be a broken link in the document. My patch posted last week also gets build failure due to the same error point. Can you please confirm it?",
       "revId": "a91a325b61de4d87859a167d496324a2e6935af5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da6124dd_a6a651e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-11-21T06:49:14Z",
+      "side": 1,
+      "message": "Thanks for your information, I fixes link error in the patch [1] and confirmed to build successfully.\n[1] https://gerrit.o-ran-sc.org/r/c/smo/o2/+/9722",
+      "parentUuid": "1a762fc1_13b33047",
+      "revId": "a91a325b61de4d87859a167d496324a2e6935af5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
