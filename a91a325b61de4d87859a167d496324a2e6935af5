@@ -16,6 +16,23 @@
       "message": "Hi Mahesh,\nWe have also completed our internal review of Tacker team.\nIs it okay if I merge by myself?",
       "revId": "a91a325b61de4d87859a167d496324a2e6935af5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a762fc1_13b33047",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-11-21T05:44:31Z",
+      "side": 1,
+      "message": "It looks the Job builder has failed in the last build. There seems be a broken link in the document. My patch posted last week also gets build failure due to the same error point. Can you please confirm it?",
+      "revId": "a91a325b61de4d87859a167d496324a2e6935af5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
