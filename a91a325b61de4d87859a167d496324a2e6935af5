@@ -51,6 +51,24 @@
       "parentUuid": "1a762fc1_13b33047",
       "revId": "a91a325b61de4d87859a167d496324a2e6935af5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6c6e885_883d592c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-11-21T09:18:41Z",
+      "side": 1,
+      "message": "Thanks for your quick action. I’ve confirmed the fix.",
+      "parentUuid": "da6124dd_a6a651e4",
+      "revId": "a91a325b61de4d87859a167d496324a2e6935af5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
