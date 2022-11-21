@@ -139,7 +139,7 @@ Deployment Procedure
 .. note::
 
    This procedure uses the CLI available by installing python-tackerclient.
-   If you want to process with RESTfull API, see the `API-Docs`_ for more information.
+   If you want to process with RESTfull API, see the :doc:`api-docs` for more information.
 
 Create
 ~~~~~~
@@ -324,4 +324,3 @@ Terminate a VNF by specifying the VNF Instance ID.
 .. _ETSI NFV-SOL CNF Deployment by Helm chart: https://docs.openstack.org/tacker/latest/user/mgmt_driver_deploy_k8s_and_cnf_with_helm.html#etsi-nfv-sol-cnf-deployment-by-helm-chart
 .. _INF O2 Service Userguide: https://docs.o-ran-sc.org/projects/o-ran-sc-pti-o2/en/latest/user-guide.html
 .. _Prepare VNF Package: https://docs.openstack.org/tacker/latest/user/mgmt_driver_deploy_k8s_and_cnf_with_helm.html#prepare-vnf-package
-.. _API-Docs: https://docs.o-ran-sc.org/projects/o-ran-sc-smo-o2/en/latest/tacker/api-docs.html

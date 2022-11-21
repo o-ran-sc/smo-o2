@@ -105,7 +105,7 @@ Deployment Procedure
 .. note::
 
    This procedure uses the CLI available by installing python-tackerclient.
-   If you want to process with RESTfull API, see the `API-Docs`_ for more information.
+   If you want to process with RESTfull API, see the :doc:`api-docs` for more information.
 
 Create
 ~~~~~~
@@ -386,4 +386,3 @@ Terminate a VNF by specifying the VNF Instance ID.
 
 .. _ETSI NFV-SOL VNF Deployment: https://docs.openstack.org/tacker/latest/user/etsi_vnf_deployment_as_vm_with_user_data.html
 .. _Prepare VNF Package: https://docs.openstack.org/tacker/latest/user/vnf-package.html
-.. _API-Docs: https://docs.o-ran-sc.org/projects/o-ran-sc-smo-o2/en/latest/tacker/api-docs.html
