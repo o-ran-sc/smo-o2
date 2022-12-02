@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ac70744_d41848f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "Thanks for your patch and sorry for the late review.\nPlease kindly find my comments.",
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ba87a54_a63b9fc7",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "How about you add any reference for ETSI NFV-TST and add description shortly what is \"ETSI NFV-TST\"?",
+      "range": {
+        "startLine": 31,
+        "startChar": 75,
+        "endLine": 31,
+        "endChar": 87
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb89a23e_a6649177",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "How about you add indent like the following?\n```\n* Xtesting environment setup\n\n  1. Check out code from smo/o2 repository into your local machine.\n```\nI think it will look better if you modify other places in the same way. What do you think?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 0
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a8860aa_68d736db",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "\"requirements\" is correct.",
+      "range": {
+        "startLine": 59,
+        "startChar": 25,
+        "endLine": 59,
+        "endChar": 36
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4474fed0_be82edea",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "When I executed this command according to \"Check out \u0027api-tests\u0027 repository in ETSI NFV into \u0027tacker/tacker/tests/xtesting/\u0027 directory\" , below error is occurred.\n```\n(xtesting-py3) ~/work/o2$ cd tacker/tacker/tests/xtesting\n(xtesting-py3) ~/work/o2/tacker/tacker/tests/xtesting$ git clone https://forge.etsi.org/rep/nfv/api-tests.git\nfatal: destination path \u0027api-tests\u0027 already exists and is not an empty directory.\n```\n\nIf you need to copy or replace the contents of an existing api-tests folder, could you add to the procedure?\nOr \"into \u0027tacker/tacker/tests/xtesting/\u0027 directory\" description is wrong?",
+      "range": {
+        "startLine": 65,
+        "startChar": 10,
+        "endLine": 65,
+        "endChar": 64
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a201a92e_11c2cd7d",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "Could you add indent at the beginning of this line?",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 22
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55baf6cb_4d42b77f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "Just a question,\nif user wants to retry testing, must user clean resources (vnf packages/vnf instances) created in above test?\nOr will its be removed at the end of \"run_tests\" above?",
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d382b7c_3e936730",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "How about you give an example of what kind of results are output here if possible?",
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7225d985_baca930b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "Could you use note block like the following?\n\n```\n.. note::\n\n   xxxxxxxxxx\n```",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 7
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}

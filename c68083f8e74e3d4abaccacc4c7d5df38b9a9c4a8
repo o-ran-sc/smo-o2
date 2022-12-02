@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a9ff9978_12f79664",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-02T14:42:39Z",
+      "side": 1,
+      "message": "+1\n\n\"xtesting-py3\" directory exist under \"tacker/tacker/tests/xtesting\" directory in below procedure.",
+      "parentUuid": "017bea20_8f62ea0d",
+      "revId": "c68083f8e74e3d4abaccacc4c7d5df38b9a9c4a8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a56aaed_17040e78",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 3
