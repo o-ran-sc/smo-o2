@@ -16,6 +16,276 @@
       "message": "Thank you for the comments. Please kindly find the fix for them.",
       "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0464bf5d_136347fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "Thanks for your rework, please kindly find my additional comments.",
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f06d3249_2e3aea22",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "\"-r\" option is needed to copy directory.\n\n```\ncp /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment ./api-tests/SOL003\ncp: -r not specified; omitting directory \u0027/tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment\u0027\n```",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 100
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b4aa429_4ebbe544",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "In testcases.yaml, the file path for \"XXX.robot\" is fixed.\nIf the user is working somewhere other than \"/ opt/stack/stack\", the folder path may need to be rewritten.",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09fe97f0_ff63426f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "In \"packageTest.sh\", it sleep 1 second before getting vnfdId after uploading vnf package.\nBut uploading process runs in the background after API accepted, so it appears that vnfdId cannot be retrieved if the upload takes more than 1 second to complete.\n\nHow about you increase sleep second, or change it to wait until onboardingState is \"ONBOARDED\"?",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51044960_6722d84e",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "In packageTest.sh executions, It seems that `Packageid` has not been obtained successfully, and the script execution failed.\n```\n$ Packageid\u003d$(cat ./outtoken | grep id | cut -d \u0027 \u0027 -f 2 |sed \u0027s/.$//\u0027|tail -c +2 | head -c -2)\n$ echo $Packageid \nDISABLED\n```\n\nFor your information, `cat outtoken` shows the following.\n```\n$ cat outtoken \n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n100   365  100   363  100     2   8250     45 --:--:-- --:--:-- --:--:--  8295\nHTTP/1.1 201 Created\nContent-Length: 363\nLocation: http://localhost:9890/vnfpkgm/v1/vnf_packages/1411297a-2424-4bb0-a51d-83f6ef6eefac\nContent-Type: application/json\nX-Openstack-Request-Id: req-615cb95d-89e9-4371-a1e2-9fe1acf0d041\nDate: Wed, 07 Dec 2022 04:51:39 GMT\n\n{\"operationalState\": \"DISABLED\", \"usageState\": \"NOT_IN_USE\", \"onboardingState\": \"CREATED\", \"id\": \"1411297a-2424-4bb0-a51d-83f6ef6eefac\", \"userDefinedData\": {}, \"_links\": {\"self\": {\"href\": \"/vnfpkgm/v1/vnf_packages/1411297a-2424-4bb0-a51d-83f6ef6eefac\"}, \"packageContent\": {\"href\": \"/vnfpkgm/v1/vnf_packages/1411297a-2424-4bb0-a51d-83f6ef6eefac/package_content\"}}}\n```\n\nHow about to fix the script using \"jq\", like following:\n```\nPackageid\u003d$(curl -g -X POST http://localhost:9890/vnfpkgm/v1/vnf_packages -H \"Accept: application/json\" -H \"Content-Type: application/json\" -H \"X-Auth-Token: $token\" -d \u0027{}\u0027 | jq -r .id)\n\n* delete curl \"-i\" option\n* get parameter `id` \n```\nIf you use jq, please add the steps to install it as a precondition.\n\nAlso, `vnfdId` has not been obtained successfully too like `Packageid`..",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59152cb1_ea08218f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "The following error is occur when I executed this command.\n```\n(xtesting-py3) stack@openstack:~/work/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition$ ./packageTest.sh  ../../SOL003/cnflcm/environment/vari\nables.txt\neysto created\nHTTP/1.1 401 Unauthorized\nContent-Type: application/json\nContent-Length: 114\nWww-Authenticate: Keystone uri\u003d\"http://10.10.10.4/identity\"\nX-Openstack-Request-Id: req-6e226ee8-381d-42fb-b60f-b9fb518e0b07\nDate: Wed, 07 Dec 2022 03:01:04 GMT\nConnection: close\n\n{\"error\": {\"code\": 401, \"title\": \"Unauthorized\", \"message\": \"The request you have made requires authentication.\"}}eysto uploaded\n```\n\nThis seems to happen because there is no user \"nfv_user\" in my environment.\nUser may need to modify the \"packageTest.sh\" to suit user\u0027s environment, right?\n\nIt seems that user definition in \"tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/environment/configuration.txt\" is same too.",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 74
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1420c70a_f0e25337",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "\"packageTest.sh\" uses \"dos2unix\" command, so I think the pre-condition to install \"dos2unix\" is necessary.",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb488355_7357a7fb",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "nit: Could you delete unnecessary space character?",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6df72c3b_66e464eb",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcfb9fab_16f4bc4b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "When I execute this command, the following error is happened.\nIt seems to happen due to the folloing:\n* Test using `tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/vnfpackage.zip`.\n* Above package is a package that include helmchart, and \"simple\" flavour is not defined in VNFD.\n\n```\n$ sudo xtesting-py3/bin/run_tests -t first\n{\n    \"seconds\": 0.157978,\n    \"status\": 400,\n    \"body\": {\n        \"title\": \"Bad Request\",\n        \"status\": 400,\n        \"detail\": \"No flavour with id \u0027simple\u0027.\"\n    },\n    \"headers\": {\n        \"Content-Type\": \"application/problem+json; charset\u003dUTF-8\",\n        \"Content-Length\": \"81\",\n        \"X-Openstack-Request-Id\": \"req-2e110915-9063-45a3-bc9b-6983feb67ab9\",\n        \"Date\": \"Wed, 07 Dec 2022 06:42:31 GMT\",\n        \"Connection\": \"keep-alive\"\n    }\n}\n```\n\nDo you need to change the package to be uploaded to \"package_without_helm.zip\"?",
+      "range": {
+        "startLine": 125,
+        "startChar": 11,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b637f6e9_4a4d1e31",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "Could you replace to \".\" from \":\"?",
+      "range": {
+        "startLine": 127,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 5
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd4e9608_b10c42a6",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T08:31:45Z",
+      "side": 1,
+      "message": "In my environment, the Kubernetes Endpoint is https, but it seems to be an error because the robot is trying to get it at http.\nIn general, the kubernetes endpoint will often be the \"https://host:6443\".\nPlease kindly tell me how can the test be executed normally in such an environment?",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
