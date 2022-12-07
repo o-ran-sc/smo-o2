@@ -83,6 +83,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a2e46d1_f74daee4",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-07T09:35:52Z",
+      "side": 1,
+      "message": "Sorry, misspelled.\n\"/ opt/stack/stack\" -\u003e \"/opt/stack/tacker\"",
+      "parentUuid": "1b4aa429_4ebbe544",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "09fe97f0_ff63426f",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 6
