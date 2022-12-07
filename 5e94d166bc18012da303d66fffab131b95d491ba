@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4209414_5bd62099",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "The hyper link for ETSI NFV-TST specification and the short description about it are added.",
+      "parentUuid": "5ba87a54_a63b9fc7",
+      "range": {
+        "startLine": 31,
+        "startChar": 75,
+        "endLine": 31,
+        "endChar": 87
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cb89a23e_a6649177",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 4
@@ -54,6 +78,30 @@
       "writtenOn": "2022-12-02T14:42:39Z",
       "side": 1,
       "message": "How about you add indent like the following?\n```\n* Xtesting environment setup\n\n  1. Check out code from smo/o2 repository into your local machine.\n```\nI think it will look better if you modify other places in the same way. What do you think?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 0
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d152236a_4804d262",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "Thank you for the suggestion. The indent is added into whole description.",
+      "parentUuid": "cb89a23e_a6649177",
       "range": {
         "startLine": 33,
         "startChar": 0,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8dedf751_f2c12dfe",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "5a8860aa_68d736db",
+      "range": {
+        "startLine": 59,
+        "startChar": 25,
+        "endLine": 59,
+        "endChar": 36
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4474fed0_be82edea",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 4
@@ -112,6 +184,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "782b3b24_03de26b1",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "It is changed so that checking out smo/o2 repository should be executed in the other directory (/tmp/), and then necessary files should be copied under \u0027tacker/tacker/tests/xtesting/\u0027.",
+      "parentUuid": "4474fed0_be82edea",
+      "range": {
+        "startLine": 65,
+        "startChar": 10,
+        "endLine": 65,
+        "endChar": 64
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a201a92e_11c2cd7d",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 4
@@ -123,6 +219,30 @@
       "writtenOn": "2022-12-02T14:42:39Z",
       "side": 1,
       "message": "Could you add indent at the beginning of this line?",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 22
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2e0ac86_22d9bd31",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "a201a92e_11c2cd7d",
       "range": {
         "startLine": 93,
         "startChar": 0,
@@ -169,6 +289,42 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "55da6d6a_c8ef2666",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "The user have to clean resources such as vnf packages and vnf instances created in the test.\nThe explanation about that is added into \"Note\" section.",
+      "parentUuid": "55baf6cb_4d42b77f",
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be70a0ff_16a228b9",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "An example of output after executing the command is added.",
+      "parentUuid": "2d382b7c_3e936730",
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7225d985_baca930b",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 4
@@ -180,6 +336,30 @@
       "writtenOn": "2022-12-02T14:42:39Z",
       "side": 1,
       "message": "Could you use note block like the following?\n\n```\n.. note::\n\n   xxxxxxxxxx\n```",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 7
+      },
+      "revId": "5e94d166bc18012da303d66fffab131b95d491ba",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d5c8f63_16188ff3",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-07T01:36:12Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "7225d985_baca930b",
       "range": {
         "startLine": 121,
         "startChar": 0,
