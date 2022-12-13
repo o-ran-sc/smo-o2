@@ -14,7 +14,7 @@ Library    String
 *** Keywords ***
 Get All Pods
     Log    Status information for all the pods.
-    GET    api/v1/pods
+    GET    ${PODS_SCHEMA}://${PODS_HOST}:${PODS_PORT}/api/v1/pods
     ${outputResponse}=    Output    response
     Log    ${outputResponse}
         Set Global Variable    ${response}    ${outputResponse}
