@@ -3,8 +3,8 @@ tiers:
   - name: samples
     description: ''
     testcases:
-      - case_name: first
-        project_name: xtesting
+      - case_name: cnf-instantiate
+        project_name: smo
         criteria: 100
         blocking: true
         clean_flag: false
@@ -15,8 +15,8 @@ tiers:
             suites:
               - >-
                 /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm.robot
-      - case_name: second
-        project_name: xtesting
+      - case_name: cnf-deployments-validation
+        project_name: smo
         criteria: 100
         blocking: true
         clean_flag: false

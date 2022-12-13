@@ -1,15 +1,30 @@
 {
-  "flavourId": "simple",
+  "flavourId": "helmchart",
   "additionalParams": {
-    "lcm-kubernetes-def-files": [
-      "Files/kubernetes/deployment.yaml"
+    "namespace": "default",
+    "use_helm": "true",
+    "using_helm_install_param": [
+      {
+        "exthelmchart": "false",
+        "helmchartfile_path": "Files/kubernetes/localhelm-0.1.0.tgz",
+        "helmreleasename": "tacker-test-vdu"
+      }
     ],
-    "namespace": "default"
+    "helm_replica_values": {
+      "vdu1_aspect": "replicaCount"
+    },
+    "vdu_mapping": {
+      "VDU1": {
+        "kind": "Deployment",
+        "name": "vdu1-localhelm",
+        "helmreleasename": "tacker-test-vdu"
+      }
+    }
   },
   "vimConnectionInfo": [
     {
-      "id": "8a3adb69-0784-43c7-833e-aab0b6ab4470",
-      "vimId": "08260b52-c3f6-47a9-bb1f-cec1f0d3956a",
+      "id": "742f1fc7-7f00-417d-85a6-d4e788353181",
+      "vimId": "d7a811a3-e3fb-41a1-a4e2-4dce2209bcfe",
       "vimType": "kubernetes"
     }
   ]
