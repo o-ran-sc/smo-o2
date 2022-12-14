@@ -82,6 +82,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0e2e3cd_85de064e",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "35211ff2_efada7ac",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 100
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b4aa429_4ebbe544",
@@ -143,6 +167,30 @@
       "side": 1,
       "message": "The explanation about updating the path by user is added to \"note\" section.",
       "parentUuid": "8a2e46d1_f74daee4",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06d0f34f_07eb435f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Could you move the note under this procedure 8.? It is under procedure 10 now.",
+      "parentUuid": "7cf6f968_0b291b5f",
       "range": {
         "startLine": 81,
         "startChar": 12,
@@ -341,6 +389,102 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "146dd172_86a15c6e",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f478d433_d313b896",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 74
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c074a94_fdb994fc",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "11bc1783_f1fe97e2",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c92fc5d4_b280ad13",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "56882d71_d6aa326b",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47cb313d_324bbc10",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2f68e511_51e99be5",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb488355_7357a7fb",
@@ -378,6 +522,30 @@
       "side": 1,
       "message": "Done.",
       "parentUuid": "cb488355_7357a7fb",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af0d7524_c048b294",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "It seems that it has not been deleted.",
+      "parentUuid": "2454e5fb_ec0db7f3",
       "range": {
         "startLine": 100,
         "startChar": 0,
@@ -437,6 +605,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "305ad0a5_f8827334",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "ditto.",
+      "parentUuid": "e965f763_d249ef84",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fcfb9fab_16f4bc4b",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 6
@@ -472,6 +664,30 @@
       "side": 1,
       "message": "In the additional patch (https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106), the vnf package is replaced with the appropriate one, and inst.json is modified so that it can handle the package with helmchart.\nAlso, the step for creating an executable environment for Helm CLI is added to preconditioning procedure in this document.",
       "parentUuid": "fcfb9fab_16f4bc4b",
+      "range": {
+        "startLine": 125,
+        "startChar": 11,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd3b21b4_2d643625",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "I confirmed that the new package has been added and path has changed in your additional patch.\nIs it okay to leave \"vnfpackage.zip\" and \"package_without_helm.zip\" as they are?",
+      "parentUuid": "1ef2b441_0267d35e",
       "range": {
         "startLine": 125,
         "startChar": 11,
@@ -529,6 +745,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07b1e7f6_d51d575b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "29a32ca8_f4de2b28",
+      "range": {
+        "startLine": 127,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 5
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd4e9608_b10c42a6",
@@ -566,6 +806,30 @@
       "side": 1,
       "message": "To avoid such a discrepancy you mentioned, the step of updating appropriate Request Type (http or https) and Port in the configuration file is added into Xtesting setup procedure.",
       "parentUuid": "dd4e9608_b10c42a6",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52803b82_1d3d288f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "For Kubernetes endpoint, are the changes in \"VNFM_PORT\" and \"VNFM_SCHEMA\" correct? Are \"PODS_PORT\" and \"PODS_SCHEMA\" correct?\n\nAnd If the Kubernetes endpoint is not localhost, do user need to change the HOST value as well?",
+      "parentUuid": "91ee623a_4e8f6d01",
       "range": {
         "startLine": 133,
         "startChar": 11,

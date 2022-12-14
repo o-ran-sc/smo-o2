@@ -16,6 +16,46 @@
       "message": "Thank you for the comments. Please kindly find the fix. Also, the following improvement is included in this patchset.\n- Path expression is modified to use \"~/\" at the top.\n- Re-testing step is added.",
       "revId": "3a29d2acf73171c5016301bce3000c0d6145ee85",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "419a9030_00bfe8db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Thanks for your rework, I have additional comments.\nPlease kindly find it.",
+      "revId": "3a29d2acf73171c5016301bce3000c0d6145ee85",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "def2f26c_73a84404",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:27:03Z",
+      "side": 1,
+      "message": "Just a confirmation, \"localhelm\" is used in \"using_helm_install_param\", but here it is \"externalhelm\".\nIs this parameter correct?",
+      "range": {
+        "startLine": 174,
+        "startChar": 34,
+        "endLine": 174,
+        "endChar": 46
+      },
+      "revId": "3a29d2acf73171c5016301bce3000c0d6145ee85",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
