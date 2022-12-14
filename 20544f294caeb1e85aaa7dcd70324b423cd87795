@@ -1,0 +1,141 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79f6effd_16ec8775",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "Thanks for your patch, please kindly find my comments.",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57eb1816_f7024283",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/inst.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "Just a confirmation, \"localhelm\" is used in \"using_helm_install_param\", but here it is \"externalhelm\".\nIs this parameter correct?",
+      "range": {
+        "startLine": 19,
+        "startChar": 22,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7351cbe_fbf618cd",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "How about you add break lines (\\) in the middle of command to make it easier to see like previous one?",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3dd9486_d219a1ad",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "I think 1 minute is a bit too long for the user to wait, so I think it is better to tell the user that waiting for 1 minute.\nWhat do you think?",
+      "range": {
+        "startLine": 33,
+        "startChar": 6,
+        "endLine": 33,
+        "endChar": 30
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c35e5743_4ddbdf35",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "How about you add break lines (\\) in the middle of command to make it easier to see like previous one?",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5993de78_9068dde2",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "typo: onboardinng-\u003eonboarding\n\nAnd how about you change to \"onboarding state is $onboardedState\"?\nI think this is more natural.",
+      "range": {
+        "startLine": 38,
+        "startChar": 22,
+        "endLine": 38,
+        "endChar": 33
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b269bd99_0b1f3055",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-14T08:43:08Z",
+      "side": 1,
+      "message": "How about you add break lines (\\) in the middle of command to make it easier to see like previous one?",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
