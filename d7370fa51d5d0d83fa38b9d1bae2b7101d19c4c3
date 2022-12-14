@@ -60,6 +60,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "35211ff2_efada7ac",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "f06d3249_2e3aea22",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 100
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1b4aa429_4ebbe544",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 6
@@ -95,6 +119,30 @@
       "side": 1,
       "message": "Sorry, misspelled.\n\"/ opt/stack/stack\" -\u003e \"/opt/stack/tacker\"",
       "parentUuid": "1b4aa429_4ebbe544",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cf6f968_0b291b5f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "The explanation about updating the path by user is added to \"note\" section.",
+      "parentUuid": "8a2e46d1_f74daee4",
       "range": {
         "startLine": 81,
         "startChar": 12,
@@ -199,6 +247,102 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f478d433_d313b896",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "The step of creating \u0027nfv_user\u0027 and \u0027nfv\u0027 project is added in preconditioning procedure to avoid the error.",
+      "parentUuid": "59152cb1_ea08218f",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 74
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11bc1783_f1fe97e2",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "In \"packageTest.sh\", the sleep time is extended from 1 second to 1 minute. Also, the script is modified so that vnfdId is obtained only when uploading vnf package is successful.\nPlease find these modification in the additional patch (https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106).",
+      "parentUuid": "09fe97f0_ff63426f",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56882d71_d6aa326b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "The step of installing \"dos2unix\" is added.",
+      "parentUuid": "1420c70a_f0e25337",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f68e511_51e99be5",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "The script regarding getting Packageid and vnfdId is fixed by using \"jq\" as you suggested.",
+      "parentUuid": "51044960_6722d84e",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 27
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cb488355_7357a7fb",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 6
@@ -210,6 +354,30 @@
       "writtenOn": "2022-12-07T08:31:45Z",
       "side": 1,
       "message": "nit: Could you delete unnecessary space character?",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2454e5fb_ec0db7f3",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "cb488355_7357a7fb",
       "range": {
         "startLine": 100,
         "startChar": 0,
@@ -245,6 +413,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e965f763_d249ef84",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "6df72c3b_66e464eb",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fcfb9fab_16f4bc4b",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 6
@@ -256,6 +448,30 @@
       "writtenOn": "2022-12-07T08:31:45Z",
       "side": 1,
       "message": "When I execute this command, the following error is happened.\nIt seems to happen due to the folloing:\n* Test using `tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/vnfpackage.zip`.\n* Above package is a package that include helmchart, and \"simple\" flavour is not defined in VNFD.\n\n```\n$ sudo xtesting-py3/bin/run_tests -t first\n{\n    \"seconds\": 0.157978,\n    \"status\": 400,\n    \"body\": {\n        \"title\": \"Bad Request\",\n        \"status\": 400,\n        \"detail\": \"No flavour with id \u0027simple\u0027.\"\n    },\n    \"headers\": {\n        \"Content-Type\": \"application/problem+json; charset\u003dUTF-8\",\n        \"Content-Length\": \"81\",\n        \"X-Openstack-Request-Id\": \"req-2e110915-9063-45a3-bc9b-6983feb67ab9\",\n        \"Date\": \"Wed, 07 Dec 2022 06:42:31 GMT\",\n        \"Connection\": \"keep-alive\"\n    }\n}\n```\n\nDo you need to change the package to be uploaded to \"package_without_helm.zip\"?",
+      "range": {
+        "startLine": 125,
+        "startChar": 11,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ef2b441_0267d35e",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "In the additional patch (https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106), the vnf package is replaced with the appropriate one, and inst.json is modified so that it can handle the package with helmchart.\nAlso, the step for creating an executable environment for Helm CLI is added to preconditioning procedure in this document.",
+      "parentUuid": "fcfb9fab_16f4bc4b",
       "range": {
         "startLine": 125,
         "startChar": 11,
@@ -291,6 +507,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "29a32ca8_f4de2b28",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "b637f6e9_4a4d1e31",
+      "range": {
+        "startLine": 127,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 5
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dd4e9608_b10c42a6",
         "filename": "docs/developer-guide.rst",
         "patchSetId": 6
@@ -302,6 +542,30 @@
       "writtenOn": "2022-12-07T08:31:45Z",
       "side": 1,
       "message": "In my environment, the Kubernetes Endpoint is https, but it seems to be an error because the robot is trying to get it at http.\nIn general, the kubernetes endpoint will often be the \"https://host:6443\".\nPlease kindly tell me how can the test be executed normally in such an environment?",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91ee623a_4e8f6d01",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-14T07:29:30Z",
+      "side": 1,
+      "message": "To avoid such a discrepancy you mentioned, the step of updating appropriate Request Type (http or https) and Port in the configuration file is added into Xtesting setup procedure.",
+      "parentUuid": "dd4e9608_b10c42a6",
       "range": {
         "startLine": 133,
         "startChar": 11,
