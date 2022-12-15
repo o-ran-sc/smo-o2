@@ -225,6 +225,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe19ae68_48a6d6d1",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-15T04:52:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6c31115e_92caf805",
+      "range": {
+        "startLine": 81,
+        "startChar": 12,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09fe97f0_ff63426f",
@@ -604,6 +628,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71e4baab_122e86d0",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-15T04:52:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "85a577da_c4697a90",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6df72c3b_66e464eb",
@@ -699,6 +747,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94b09f53_7a67e096",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-15T04:52:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7df8b591_727eb7ec",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 1
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcfb9fab_16f4bc4b",
@@ -784,6 +856,30 @@
       "side": 1,
       "message": "These packages are not used any more, so removed in the other patch (https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106).",
       "parentUuid": "bd3b21b4_2d643625",
+      "range": {
+        "startLine": 125,
+        "startChar": 11,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a7e971f_be59b5c5",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-15T04:52:00Z",
+      "side": 1,
+      "message": "\"vnfpackage.zip\" seems not to be removed in the other patch [1].\nDo you need to remove \"vnfpackage.zip\"?\n\n[1] https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106",
+      "parentUuid": "e905550a_6ac4a591",
       "range": {
         "startLine": 125,
         "startChar": 11,
@@ -950,6 +1046,30 @@
       "side": 1,
       "message": "It needs to be changed for each variable you mentioned. The procedure is updated so that all necessary variables should be changed.",
       "parentUuid": "52803b82_1d3d288f",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9796cdab_50d6b13e",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-15T04:52:00Z",
+      "side": 1,
+      "message": "Thanks for updating.\n\nFYI, in case of \"PODS_SCHEMA\u003dhttps\", user need to add header for Authorization like the following before GET [1][2] and [1] need to change like the following:\n```\nGet All Pods\n    Log    Status information for all the pods.\n    Set headers    {\"Authorization\": \"${PODS_TOKEN}\"}\n    GET    ${PODS_SCHEMA}://${PODS_HOST}:${PODS_PORT}/api/v1/pods\n    ...\n```\n\nAlso need to define \"PODS_TOKEN\" in `environment/configuration.txt` like following:\n```\n${PODS_TOKEN}     Bearer    eyJhbGciOiJSUzI1NiIsImtpZCI6IlpGTH(..omit)\n```\n\n\n[1]: https://github.com/o-ran-sc/smo-o2/blob/master/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/CnfLcmMntOperationKeywords.robot#L17\n[2]: https://github.com/o-ran-sc/smo-o2/blob/master/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/CnfLcmMntOperationKeywords.robot#L24",
+      "parentUuid": "451b2a4d_3dec05af",
       "range": {
         "startLine": 133,
         "startChar": 11,

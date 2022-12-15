@@ -80,6 +80,30 @@
       },
       "revId": "3a29d2acf73171c5016301bce3000c0d6145ee85",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "311826ae_5eb5c74f",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-15T04:52:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9ad8b8ac_23bee8a7",
+      "range": {
+        "startLine": 174,
+        "startChar": 34,
+        "endLine": 174,
+        "endChar": 46
+      },
+      "revId": "3a29d2acf73171c5016301bce3000c0d6145ee85",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
