@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3515732a_d2c6d346",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "Thank you for the comment. Please find the fix for that.\nAdditionally, unnecessary vnf packages have been removed in this patchset due to the comment in the other patch review (https://gerrit.o-ran-sc.org/r/c/smo/o2/+/9676).",
+      "revId": "c8e62a59b5e77b7e705999ad1ef6cf885d420a6c",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}

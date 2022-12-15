@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8bbd754_e9979291",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/inst.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "The correct parameter is \"localhelm\", so fixed.",
+      "parentUuid": "57eb1816_f7024283",
+      "range": {
+        "startLine": 19,
+        "startChar": 22,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f7351cbe_fbf618cd",
         "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
         "patchSetId": 2
@@ -54,6 +78,24 @@
       "writtenOn": "2022-12-14T08:43:08Z",
       "side": 1,
       "message": "How about you add break lines (\\) in the middle of command to make it easier to see like previous one?",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "839b9de8_635d17c6",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "Modified to multiple lines.",
+      "parentUuid": "f7351cbe_fbf618cd",
       "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -83,6 +125,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "29f15beb_e6880fbf",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "Thank you for the suggestion. The message for notifying waiting upload is added.",
+      "parentUuid": "c3dd9486_d219a1ad",
+      "range": {
+        "startLine": 33,
+        "startChar": 6,
+        "endLine": 33,
+        "endChar": 30
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c35e5743_4ddbdf35",
         "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
         "patchSetId": 2
@@ -94,6 +160,24 @@
       "writtenOn": "2022-12-14T08:43:08Z",
       "side": 1,
       "message": "How about you add break lines (\\) in the middle of command to make it easier to see like previous one?",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45cb0e38_afbfa1bb",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "Modified to multiple lines.",
+      "parentUuid": "c35e5743_4ddbdf35",
       "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -123,6 +207,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f01dfb98_a06ee9ea",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "The typo is fixed.\nAlso, the message is changed to \"Onboarding state is $onboardedState\".",
+      "parentUuid": "5993de78_9068dde2",
+      "range": {
+        "startLine": 38,
+        "startChar": 22,
+        "endLine": 38,
+        "endChar": 33
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b269bd99_0b1f3055",
         "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
         "patchSetId": 2
@@ -134,6 +242,24 @@
       "writtenOn": "2022-12-14T08:43:08Z",
       "side": 1,
       "message": "How about you add break lines (\\) in the middle of command to make it easier to see like previous one?",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5c0522b_9544004c",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-15T02:13:37Z",
+      "side": 1,
+      "message": "Modified to multiple lines.",
+      "parentUuid": "b269bd99_0b1f3055",
       "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
