@@ -890,6 +890,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e9c78f2_fb56e35d",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:49:54Z",
+      "side": 1,
+      "message": "sorry, I have confirmed that it has been deleted in the patch.",
+      "parentUuid": "5a7e971f_be59b5c5",
+      "range": {
+        "startLine": 125,
+        "startChar": 11,
+        "endLine": 125,
+        "endChar": 51
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b637f6e9_4a4d1e31",
