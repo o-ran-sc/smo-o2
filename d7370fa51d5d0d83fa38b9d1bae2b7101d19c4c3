@@ -1126,6 +1126,30 @@
       },
       "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf1669ea_a42bfa8d",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T09:06:34Z",
+      "side": 1,
+      "message": "Thanks for your answer, I understood it.",
+      "parentUuid": "7f9e7586_ec36e497",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 52
+      },
+      "revId": "d7370fa51d5d0d83fa38b9d1bae2b7101d19c4c3",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
