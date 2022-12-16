@@ -16,6 +16,24 @@
       "message": "Do you have to delete vnfpackage.zip as well as this file?",
       "revId": "33989588efca79fa1a347da0a1f72cbf129e36f0",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78508a0c_ddd4b642",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/package_without_helm.zip",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:48:42Z",
+      "side": 0,
+      "message": "sorry, I see that you have renamed from \"vnfpackage.zip\" to \"package_with_helm.zip\".\n\nI have confirmed that it was deleted by comparing below.\nhttps://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106/2..3",
+      "parentUuid": "e03dee11_52d07c2b",
+      "revId": "33989588efca79fa1a347da0a1f72cbf129e36f0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
