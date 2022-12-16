@@ -65,6 +65,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e88c6f79_b9c0bc4b",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/inst.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:43:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f8bbd754_e9979291",
+      "range": {
+        "startLine": 19,
+        "startChar": 22,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7351cbe_fbf618cd",
@@ -96,6 +120,24 @@
       "side": 1,
       "message": "Modified to multiple lines.",
       "parentUuid": "f7351cbe_fbf618cd",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c738be19_13a7db21",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:43:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "839b9de8_635d17c6",
       "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -147,6 +189,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce666ac6_be1f226e",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:43:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "29f15beb_e6880fbf",
+      "range": {
+        "startLine": 33,
+        "startChar": 6,
+        "endLine": 33,
+        "endChar": 30
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c35e5743_4ddbdf35",
@@ -178,6 +244,24 @@
       "side": 1,
       "message": "Modified to multiple lines.",
       "parentUuid": "c35e5743_4ddbdf35",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9392912_57aa4fa9",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:43:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "45cb0e38_afbfa1bb",
       "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -229,6 +313,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5c7c4c6_44217d6f",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:43:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f01dfb98_a06ee9ea",
+      "range": {
+        "startLine": 38,
+        "startChar": 22,
+        "endLine": 38,
+        "endChar": 33
+      },
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b269bd99_0b1f3055",
@@ -260,6 +368,24 @@
       "side": 1,
       "message": "Modified to multiple lines.",
       "parentUuid": "b269bd99_0b1f3055",
+      "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0e8b7a5_7588de4b",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2022-12-16T07:43:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d5c0522b_9544004c",
       "revId": "20544f294caeb1e85aaa7dcd70324b423cd87795",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
