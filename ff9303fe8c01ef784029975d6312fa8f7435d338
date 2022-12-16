@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d34184ed_443ad183",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-16T08:55:25Z",
+      "side": 1,
+      "message": "According to the review comment in the other patch below, an additional fix has been done in patchset 4.\n(https://gerrit.o-ran-sc.org/r/c/smo/o2/+/9676)",
+      "revId": "ff9303fe8c01ef784029975d6312fa8f7435d338",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
