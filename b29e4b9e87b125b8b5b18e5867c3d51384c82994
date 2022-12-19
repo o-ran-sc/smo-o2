@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81b55aeb_381af73e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-19T00:59:59Z",
+      "side": 1,
+      "message": "In patch set 9, some descriptions has been modified according to the review in https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10106.\nAlso, a necessary step for kubectl has been added.",
+      "revId": "b29e4b9e87b125b8b5b18e5867c3d51384c82994",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
