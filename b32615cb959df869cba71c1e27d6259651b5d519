@@ -16,6 +16,23 @@
       "message": "In patch set 10, additional two corrections have been done.",
       "revId": "b32615cb959df869cba71c1e27d6259651b5d519",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c21fd8f_70ffcdd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2022-12-19T13:33:12Z",
+      "side": 1,
+      "message": "Somebody needs to give another +1 for me to approve the changes ",
+      "revId": "b32615cb959df869cba71c1e27d6259651b5d519",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
