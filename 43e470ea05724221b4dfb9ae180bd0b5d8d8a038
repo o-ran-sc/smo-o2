@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e354de9e_1575f95a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-19T00:41:24Z",
+      "side": 1,
+      "message": "In patch set 5, the case name and the project name defined in testcases.yaml have been improved.",
+      "revId": "43e470ea05724221b4dfb9ae180bd0b5d8d8a038",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
