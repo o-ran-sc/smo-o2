@@ -33,6 +33,23 @@
       "message": "Somebody needs to give another +1 for me to approve the changes ",
       "revId": "b32615cb959df869cba71c1e27d6259651b5d519",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3e7eae3_3172fb61",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2022-12-23T06:09:00Z",
+      "side": 1,
+      "message": "Mahesh-san and Ueha-san, is it possible for you to merge this patch into master branch?",
+      "revId": "b32615cb959df869cba71c1e27d6259651b5d519",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
