@@ -39,6 +39,7 @@ POST instantiate individual cnfInstance
     Set Headers  {"Accept":"${ACCEPT}"}
     Set Headers  {"Content-pe": "${ACCEPT_JSON}"}
     Set Headers    {"${AUTHORIZATION_HEADER}":"${X-Subject-Token}"}
+    Run Process    api-tests/SOL003/cnflcm/update_config.sh  ${Instance_ID}  ${X-Subject-Token}  shell=yes
     ${body}=    Get File    api-tests/SOL003/cnflcm/jsons/inst.json
     Post    ${apiRoot}/${apiName}/${apiVersion}/vnf_instances/${Instance_ID}/instantiate    ${body}
     ${outputResponse}=    Output    response
