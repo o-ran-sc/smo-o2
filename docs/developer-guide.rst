@@ -33,7 +33,12 @@ The following steps are the procedure of API conformance test according to the s
 
 * Xtesting environment setup
 
-   1. Check out code from smo/o2 repository into /tmp/ directory in your local machine.
+   1. Check out code from smo-o2 repository into /tmp/ directory in your local machine.
+
+      .. code:: bash
+
+         $ cd /tmp
+         $ git clone https://gerrit.o-ran-sc.org/r/smo/o2
 
    2. Create a virtual environment for xtesting in '~/tacker/tacker/tests/' directory.
 
@@ -76,6 +81,10 @@ The following steps are the procedure of API conformance test according to the s
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition ./api-tests/SOL005
+         $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot ./api-tests/SOL003/VNFLifecycleManagement-API
+         $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/update_config.sh ./api-tests/SOL003/cnflcm
+         $ mkdir jsons
+         $ cp -r ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons
 
    8. Copy 'testcases.yaml' file from '/tmp/o2/tacker/tacker/tests/xtesting/' directory to the location under the current directory.
 
@@ -99,6 +108,7 @@ The following steps are the procedure of API conformance test according to the s
 
          $ vi api-tests/SOL003/CNFDeployment/environment/configuration.txt
          $ vi api-tests/SOL003/cnflcm/environment/configuration.txt
+         $ vi api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt
 
 * Preconditioning for test execution
 
@@ -201,7 +211,15 @@ The following steps are the procedure of API conformance test according to the s
          $ . xtesting-py3/bin/activate
          $ sudo xtesting-py3/bin/run_tests -t cnf-instantiate
 
-   2. Verify getting all pods and getting specific pod.
+   2. Verify Heal
+
+      .. code:: bash
+
+         $ cd ~/tacker/tacker/tests/xtesting/
+         $ . xtesting-py3/bin/activate
+         $ sudo xtesting-py3/bin/run_tests -t cnf-heal-validation
+
+   3. Verify getting all pods and getting specific pod.
 
       .. code:: bash
 
@@ -236,7 +254,7 @@ The following steps are the procedure of API conformance test according to the s
             |   cnf-deployments-validation  |       smo       |      00:01       |      PASS      |
             +-------------------------------+-----------------+------------------+----------------+
 
-   3. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
+   4. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
 
       .. code:: bash
 
