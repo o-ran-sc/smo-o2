@@ -27,4 +27,15 @@ tiers:
             suites:
               - >-
                 /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurrence.robot
-
+      - case_name: cnf-heal-validation
+        project_name: smo
+        criteria: 100
+        blocking: true
+        clean_flag: false
+        description: ''
+        run:
+          name: robotframework
+          args:
+            suites:
+              - >-
+                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
