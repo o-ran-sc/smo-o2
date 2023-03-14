@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17ef9afe_31588f22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000382
+      },
+      "writtenOn": "2023-03-14T15:22:05Z",
+      "side": 1,
+      "message": "I will wait on Toshiaki-san or Ayumu-san to approve the changes before I respond.",
+      "revId": "a22a9c89946120467f96e95a0256e0f66428dd70",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
