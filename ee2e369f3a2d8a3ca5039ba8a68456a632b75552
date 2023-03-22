@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbb485e9_954fd419",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-22T02:58:47Z",
+      "side": 1,
+      "message": "Thanks for your patch, by following the steps you added, I was able to execute heal testing!\nI found a point that should be corrected, so please kindly find it.",
+      "revId": "ee2e369f3a2d8a3ca5039ba8a68456a632b75552",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "def7bd4c_8251422b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-22T02:58:47Z",
+      "side": 1,
+      "message": "The addition of update_config.sh seems to output extra lines like the following.\n```\n$ grep -nur \"vnfInstanceId\" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm | awk \u0027{print $2}\u0027\n6fc3539c-e602-4afa-8e13-962fb5a7d81f\n\u0027$1\n-i\n```\n\nHow about changing the following?\n```\n$ grep -nur \"^\\${vnfInstanceId}\" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm | awk \u0027{print $2}\u0027\n```",
+      "range": {
+        "startLine": 261,
+        "startChar": 11,
+        "endLine": 262,
+        "endChar": 45
+      },
+      "revId": "ee2e369f3a2d8a3ca5039ba8a68456a632b75552",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
