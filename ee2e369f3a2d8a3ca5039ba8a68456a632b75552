@@ -39,6 +39,30 @@
       },
       "revId": "ee2e369f3a2d8a3ca5039ba8a68456a632b75552",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d47a9082_23415c29",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-22T03:02:47Z",
+      "side": 1,
+      "message": "or \n```\n$ grep -nur \"vnfInstanceId\" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/environment/variables.txt | awk \u0027{print $2}\u0027\n```",
+      "parentUuid": "def7bd4c_8251422b",
+      "range": {
+        "startLine": 261,
+        "startChar": 11,
+        "endLine": 262,
+        "endChar": 45
+      },
+      "revId": "ee2e369f3a2d8a3ca5039ba8a68456a632b75552",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
