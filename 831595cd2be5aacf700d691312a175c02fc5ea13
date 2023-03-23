@@ -16,6 +16,23 @@
       "message": "Ueha-san, thank you for your pointing out and also verifying a test. Please kindly find changes and my comment.",
       "revId": "831595cd2be5aacf700d691312a175c02fc5ea13",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72861522_9039b139",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Thanks for your updating, LGTM.",
+      "revId": "831595cd2be5aacf700d691312a175c02fc5ea13",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }

@@ -65,6 +65,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25784fd5_bc837498",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Thanks for your information, I understand.",
+      "parentUuid": "9ce56dec_bc9a3662",
+      "range": {
+        "startLine": 28,
+        "startChar": 163,
+        "endLine": 28,
+        "endChar": 164
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "39b108ed_602d05ab",
@@ -101,6 +125,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "39b108ed_602d05ab",
+      "range": {
+        "startLine": 36,
+        "startChar": 61,
+        "endLine": 36,
+        "endChar": 62
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "962c4650_c07abb61",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "39b108ed_602d05ab",
       "range": {
         "startLine": 36,
@@ -159,6 +207,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1265e518_434aed25",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e1769744_cca74a94",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 4
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d65d0219_dff4fec0",
@@ -195,6 +267,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "d65d0219_dff4fec0",
+      "range": {
+        "startLine": 41,
+        "startChar": 137,
+        "endLine": 41,
+        "endChar": 138
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29e8be12_ce647ef4",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "d65d0219_dff4fec0",
       "range": {
         "startLine": 41,
@@ -253,6 +349,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bee4c5a_1fd3926e",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cf8b3865_99644c12",
+      "range": {
+        "startLine": 49,
+        "startChar": 61,
+        "endLine": 49,
+        "endChar": 62
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "90fcf752_ca9c7b5d",
@@ -289,6 +409,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "90fcf752_ca9c7b5d",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41e715aa_1656e494",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "90fcf752_ca9c7b5d",
       "range": {
         "startLine": 50,
@@ -347,6 +491,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ee66e76_2700462c",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8bc50205_543225cc",
+      "range": {
+        "startLine": 54,
+        "startChar": 88,
+        "endLine": 54,
+        "endChar": 89
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55b82c0e_96252fb6",
@@ -383,6 +551,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "55b82c0e_96252fb6",
+      "range": {
+        "startLine": 59,
+        "startChar": 32,
+        "endLine": 59,
+        "endChar": 33
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0c614ff_30a08df8",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "55b82c0e_96252fb6",
       "range": {
         "startLine": 59,
@@ -441,6 +633,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f639ac2_69c00e2c",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1c8c8cb2_d1fd1a15",
+      "range": {
+        "startLine": 60,
+        "startChar": 16,
+        "endLine": 60,
+        "endChar": 18
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25ed36cd_27e7b326",
@@ -477,6 +693,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "25ed36cd_27e7b326",
+      "range": {
+        "startLine": 66,
+        "startChar": 88,
+        "endLine": 66,
+        "endChar": 89
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a14d3e7c_bcdf9f89",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "25ed36cd_27e7b326",
       "range": {
         "startLine": 66,
@@ -535,6 +775,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca7a4fd7_a6b6bc8e",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ed51a198_9252ffdb",
+      "range": {
+        "startLine": 72,
+        "startChar": 16,
+        "endLine": 72,
+        "endChar": 18
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c92b6ddf_3882661b",
@@ -571,6 +835,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "c92b6ddf_3882661b",
+      "range": {
+        "startLine": 78,
+        "startChar": 88,
+        "endLine": 78,
+        "endChar": 89
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6d138ee_97dd0bb0",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "c92b6ddf_3882661b",
       "range": {
         "startLine": 78,
@@ -629,6 +917,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50b751e5_aa428244",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dffd232b_2b5f4f73",
+      "range": {
+        "startLine": 84,
+        "startChar": 18,
+        "endLine": 84,
+        "endChar": 20
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4728de2_739e96e7",
@@ -665,6 +977,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "c4728de2_739e96e7",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 4
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ef1ddb1_7637c05a",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "c4728de2_739e96e7",
       "range": {
         "startLine": 86,
@@ -723,6 +1059,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bedba56_34008bf4",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ca3af9cf_d3b17d5b",
+      "range": {
+        "startLine": 90,
+        "startChar": 88,
+        "endLine": 90,
+        "endChar": 89
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09885c4b_7610c3ea",
@@ -759,6 +1119,30 @@
       "writtenOn": "2023-03-23T01:41:49Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "09885c4b_7610c3ea",
+      "range": {
+        "startLine": 96,
+        "startChar": 19,
+        "endLine": 96,
+        "endChar": 21
+      },
+      "revId": "10368e38f019e60b54e4784edd54f0568f2afa72",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa44391b_9e4839b4",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-23T04:14:58Z",
+      "side": 1,
+      "message": "Ack",
       "parentUuid": "09885c4b_7610c3ea",
       "range": {
         "startLine": 96,
