@@ -69,13 +69,14 @@ The following steps are the procedure of API conformance test according to the s
 
          $ git clone https://forge.etsi.org/rep/nfv/api-tests.git
 
-   7. Copy the directories under '/tmp/o2/tacker/tacker/tests/xtesting/' to the location under the current directory.
+   7. Copy the directories and file under '/tmp/o2/tacker/tacker/tests/xtesting/' to the location under the current directory.
 
       .. code:: bash
 
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment ./api-tests/SOL003
-         $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition ./api-tests/SOL005
+         $ mkdir jsons
+         $ cp /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/inst.json ./jsons/instantiateVnfRequest.json
 
    8. Copy 'testcases.yaml' file from '/tmp/o2/tacker/tacker/tests/xtesting/' directory to the location under the current directory.
 
@@ -97,8 +98,84 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ vi api-tests/SOL003/CNFDeployment/environment/configuration.txt
-         $ vi api-tests/SOL003/cnflcm/environment/configuration.txt
+         $ vi api-tests/SOL003/CNFDeployment/environment/variables.txt
+
+   11. Copy necessary files under api-tests directory into the designated location.
+
+      .. code:: bash
+
+         $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/createVnfRequest.json ./jsons
+         $ mkdir schemas
+         $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
+
+   12. Modify robot files under api-tests directory as below.
+
+      .. code:: bash
+
+         $ vi api-tests/SOL003/VNFLifecycleManagement-API/VnfLcmMntOperationKeywords.robot
+
+      E.g: Part of file content
+
+         .. code:: bash
+
+            (Omitted)
+           
+            POST Create a new vnfInstance
+                Log    Create VNF instance by POST to /vnf_instances
+                Set Headers  {"Accept":"${ACCEPT}"}
+                Set Headers  {"Content-Type": "${CONTENT_TYPE}"}
+                Run Keyword If    ${AUTH_USAGE} == 1    Set Headers    {"${AUTHORIZATION_HEADER}":"${AUTHORIZATION_TOKEN}"}
+                Run Keyword If    ${check_descriptors} == 1    PARSE the Descriptor File
+                ${template}=    Get File    jsons/createVnfRequest.json
+                ${body}=        Format String   ${template}     vnfdId=${vnfdId}    vnfProvider=${Provider}    vnfProductName=${Product_Name}    vnfSoftwareVersion=${Software_Version}    vnfdVersion= ${Descriptor_Version}
+                Post    ${apiRoot}/${apiName}/${apiMajorVersion}/vnf_instances    ${body}
+                ${outputResponse}=    Output    response
+                    Set Global Variable    ${response}    ${outputResponse}
+                ${res_body}=    Get From Dictionary     ${outputResponse}    body    # Add this line
+                ${vnfInstanceId}=    Get From Dictionary     ${res_body}    id       # Add this line
+                Set Global Variable    ${vnfInstanceId}                              # Add this line
+           
+            GET multiple vnfInstances
+                Log    Query VNF The GET method queries information about multiple VNF instances.
+
+            (Omitted)
+
+      .. note::
+
+         This change is for avoiding the restriction existing in ETSI NFV TST.
+
+      .. code:: bash
+
+         $ vi api-tests/SOL003/VNFLifecycleManagement-API/VNFInstances.robot
+
+      E.g: Part of file content
+
+         .. code:: bash
+
+            (Omitted)
+
+            POST Create a new vnfInstance
+                [Documentation]    Test ID: 7.3.1.1.1
+                ...    Test title: POST Create a new vnfInstance
+                ...    Test objective: The objective is to create a new VNF instance resource
+                ...    Pre-conditions: none
+                ...    Reference: Clause 5.4.2.3.1 - ETSI GS NFV-SOL 003 [1] v2.8.1
+                ...    Config ID: Config_prod_VNFM
+                ...    Applicability: none
+                ...    Post-Conditions: VNF instance created
+                POST Create a new vnfInstance
+                Check HTTP Response Status Code Is    201
+                Check HTTP Response Body Json Schema Is    vnfInstance
+           
+            *** comment ***                                           # Add this line
+            GET information about multiple VNF instances
+                [Documentation]    Test ID: 7.3.1.1.2
+           
+            (Omitted)
+
+      .. note::
+
+         This change is for avoiding running unnecessary test cases.
 
 * Preconditioning for test execution
 
@@ -127,9 +204,9 @@ The following steps are the procedure of API conformance test according to the s
       .. code:: bash
 
          $ cd ~/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition
-         $ ./packageTest.sh  ../../SOL003/cnflcm/environment/variables.txt
+         $ ./packageTest.sh ../../SOL003/VNFLifecycleManagement-API/environment/variables.txt
 
-   5. Get 'vimId' and change it in the file 'inst.json' as below.
+   5. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
 
       .. code:: bash
 
@@ -147,7 +224,7 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ vi ~/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/jsons/inst.json
+         $ vi ~/tacker/tacker/tests/xtesting/jsons/instantiateVnfRequest.json
 
       E.g: Content of file
 
@@ -171,7 +248,7 @@ The following steps are the procedure of API conformance test according to the s
                 "vdu_mapping": {
                   "VDU1": {
                     "kind": "Deployment",
-                    "name": "vdu1-localhelm",
+                    "name": "tacker-test-vdu-localhelm",
                     "helmreleasename": "tacker-test-vdu"
                   }
                 }
@@ -240,13 +317,13 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ grep -nur "vnfInstanceId" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm | awk '{print $2}'
+         $ grep -nu "vnfInstanceId" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt | awk '{print $2}'
          6fc3539c-e602-4afa-8e13-962fb5a7d81f
 
          $ openstack vnflcm terminate 6fc3539c-e602-4afa-8e13-962fb5a7d81f
          $ openstack vnflcm delete 6fc3539c-e602-4afa-8e13-962fb5a7d81f
 
-         $ grep -nur "{vnfPkgId}" /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm | awk '{print $2}'
+         $ grep -nu "{vnfPkgId}" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt | awk '{print $2}'
          718b9054-2a7a-4489-a893-f2b2b1794825
 
          $ openstack vnf package update --operational-state DISABLED 718b9054-2a7a-4489-a893-f2b2b1794825
