@@ -63,6 +63,30 @@
       },
       "revId": "ee2e369f3a2d8a3ca5039ba8a68456a632b75552",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bd551c7_75067e8b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-03-29T02:26:37Z",
+      "side": 1,
+      "message": "The line changed according to your suggestion.",
+      "parentUuid": "d47a9082_23415c29",
+      "range": {
+        "startLine": 261,
+        "startChar": 11,
+        "endLine": 262,
+        "endChar": 45
+      },
+      "revId": "ee2e369f3a2d8a3ca5039ba8a68456a632b75552",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }

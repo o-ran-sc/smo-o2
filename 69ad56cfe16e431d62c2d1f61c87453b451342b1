@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24ea30dd_9fa1769c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-03-29T02:26:37Z",
+      "side": 1,
+      "message": "Thank you for reviewing. Please kindly find the fix.\nAdditionally, this contains the change which comes from the code change below. \nhttps://gerrit.o-ran-sc.org/r/c/smo/o2/+/10671/3..4",
+      "revId": "69ad56cfe16e431d62c2d1f61c87453b451342b1",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
