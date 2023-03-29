@@ -1,5 +1,4 @@
 *** Settings ***
-Resource    environment/configuration.txt
 Resource    environment/variables.txt
 Library    MockServerLibrary
 Library    REST    ${VNFM_SCHEMA}://${VNFM_HOST}:${VNFM_PORT}    ssl_verify=false
