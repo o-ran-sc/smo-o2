@@ -13,20 +13,8 @@ tiers:
           name: robotframework
           args:
             suites:
-              - >-
-                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/cnflcm.robot
-      - case_name: cnf-deployments-validation
-        project_name: smo
-        criteria: 100
-        blocking: true
-        clean_flag: false
-        description: ''
-        run:
-          name: robotframework
-          args:
-            suites:
-              - >-
-                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurrence.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/VNFInstances.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/InstantiateVNFTask.robot
       - case_name: cnf-heal-validation
         project_name: smo
         criteria: 100
@@ -39,3 +27,15 @@ tiers:
             suites:
               - >-
                 /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+      - case_name: cnf-deployments-validation
+        project_name: smo
+        criteria: 100
+        blocking: true
+        clean_flag: false
+        description: ''
+        run:
+          name: robotframework
+          args:
+            suites:
+              - >-
+                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/IndividualCnfLcmOperationOccurrence.robot

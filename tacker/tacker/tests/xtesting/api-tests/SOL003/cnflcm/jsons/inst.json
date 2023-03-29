@@ -16,7 +16,7 @@
     "vdu_mapping": {
       "VDU1": {
         "kind": "Deployment",
-        "name": "vdu1-localhelm",
+        "name": "tacker-test-vdu-localhelm",
         "helmreleasename": "tacker-test-vdu"
       }
     }
