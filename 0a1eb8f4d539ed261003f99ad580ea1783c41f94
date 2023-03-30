@@ -16,6 +16,23 @@
       "message": "TST robot code is removed from this patch, and instead update_config.sh is modified to update target robot code automatically. Please kindly find the change.",
       "revId": "0a1eb8f4d539ed261003f99ad580ea1783c41f94",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41c05033_e027cbe8",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/update_config.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-03-30T13:46:46Z",
+      "side": 1,
+      "message": "Could you add a easily comment on what this line is doing?",
+      "revId": "0a1eb8f4d539ed261003f99ad580ea1783c41f94",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
