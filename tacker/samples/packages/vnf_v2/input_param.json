@@ -1,0 +1,20 @@
+{
+  "flavourId": "simple",
+  "vimConnectionInfo": {
+    "vim1": {
+      "accessInfo": {
+        "username": "admin",
+        "password": "devstack",
+        "project": "admin",
+        "projectDomain": "Default",
+        "region": "RegionOne",
+        "userDomain": "Default"
+      },
+      "interfaceInfo": {
+        "endpoint": "http://192.168.121.170/identity"
+      },
+      "vimType": "ETSINFV.OPENSTACK_KEYSTONE.V_3",
+      "vimId": "defb2f96-5670-4bef-8036-27bf61267fc1"
+    }
+  }
+}
