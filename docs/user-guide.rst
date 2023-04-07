@@ -31,11 +31,23 @@ Tacker
 An example of the procedure how to deploy VNF or CNF by using Tacker is shown on the following pages.
 If you want to see the other procedure, please refer to `Tacker User Guide`_
 
+V1 API
+""""""
+
 .. toctree::
    :maxdepth: 1
 
    tacker-user-guide-vnf.rst
    tacker-user-guide-cnf.rst
+
+V2 API
+""""""
+
+.. toctree::
+   :maxdepth: 1
+
+   tacker-user-guide-vnf-v2.rst
+   tacker-user-guide-cnf-v2.rst
 
 
 .. _Tacker User Guide: https://docs.openstack.org/tacker/latest/user/index.html
