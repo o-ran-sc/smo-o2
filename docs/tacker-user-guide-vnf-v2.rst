@@ -2,8 +2,8 @@
 .. http://creativecommons.org/licenses/by/4.0
 
 
-How to deploy VNF Deployment
-============================
+How to deploy VNF Deployment (V2 API)
+=====================================
 
 This user guide shows how to deploy VNF (Virtualized Network Function) via Tacker.
 See the `ETSI NFV-SOL VNF Deployment` for the original procedure.
@@ -73,74 +73,22 @@ If you want to access Tacker via API, you need to get auth token by following pr
    # Set ``X-Subject-Token`` to environment variables as ``TOKEN``.
    $ TOKEN=gAAAAABkNlxENR1WGpfgAe8g2Z4z5lCtwCsfUs5GTsg9mvYTMbG7S8HPIZep0vAGUnoPTj0_IYgMP-W1Y0vCDmWFQH7CSq1XWv3qNMd4aFnclk5sHuP1s0JtHSls7IQMM6zbn-FBYUSWTc9d783OSxYKXWqf3qo-CfFjPwrkmNzfkzgtlogkeA4
 
-VIM
-~~~
-Register OpenStack VIM (Virtualized Infrastructure Manager) by following procedure below.
-
-1. Prepare VIM config file, please change the parameters to suit your environment.
-
-   Sample config file:
-
-   .. code:: bash
-
-      $ cat vim_config.yaml
-      auth_url: 'http://192.168.121.170/identity'
-      username: 'admin'
-      password: 'devstack'
-      project_name: 'admin'
-      project_domain_name: 'Default'
-      user_domain_name: 'Default'
-      cert_verify: 'False'
-
-2. Register VIM to Tacker by running following command.
-
-   * via CLI command:
-
-     .. code:: bash
-
-        $ openstack vim register --config-file vim_config.yaml vim-openstack
-
-   * via API:
-
-     .. code:: bash
-
-        $ TACKER_ENDPOINT=http://192.168.121.170:9890
-        $ OS_ENDPOINT=https://192.168.121.170/identity
-
-        $ curl -g -i -X POST ${TACKER_ENDPOINT}/v1.0/vims \
-               -H "Accept: application/json" -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" \
-               -d '{"vim": {"auth_url": "'${OS_ENDPOINT}'", "type": "openstack", "vim_project": {"name": "admin", "project_domain_name": "Default"},
-                    "auth_cred": {"username": "admin", "password": "devstack", "user_domain_name": "Default", "cert_verify": "False"},
-                    "name": "vim-openstack", "is_default": false}}'
-
-3. Check the registered VIM status is ``REACHABLE``.
-
-   .. code:: bash
-
-      $ openstack vim list
-      +--------------------------------------+----------------+----------------------------------+------------+------------+-----------+
-      | ID                                   | Name           | Tenant_id                        | Type       | Is Default | Status    |
-      +--------------------------------------+----------------+----------------------------------+------------+------------+-----------+
-      | d8d886e4-fd98-4493-81e2-0e2b9991d629 | vim-openstack  | a51290751e094e608ad1e5e251b8cd39 | openstack  | True       | REACHABLE |
-      +--------------------------------------+----------------+----------------------------------+------------+------------+-----------+
 
 VNF Package
 ~~~~~~~~~~~
 Create and upload the VNF Package that you want to deploy by following procedure below.
 
 1. Prepare VNF Package.
-   The sample VNF Package used in this guide is stored in ``o2/tacker/samples/packages/vnf`` directory.
+   The sample VNF Package used in this guide is stored in ``o2/tacker/samples/packages/vnf_v2`` directory.
 
    .. code:: bash
 
       $ git clone https://gerrit.o-ran-sc.org/r/smo/o2
-      $ cd o2/tacker/samples/packages/vnf
+      $ cd o2/tacker/samples/packages/vnf_v2
       $ ls
-      BaseHOT  Definitions  Files  input_param.json  TOSCA-Metadata  UserData
+      BaseHOT  Definitions  input_param.json  Scripts  TOSCA-Metadata
 
-      $ wget -P Files/images https://opendev.org/openstack/tacker/raw/branch/master/tacker/tests/etc/samples/etsi/nfv/common/Files/images/cirros-0.5.2-x86_64-disk.img
-
-      $ zip sample_vnf_package.zip -r BaseHOT/ Definitions/ Files/ TOSCA-Metadata/ UserData/
+      $ zip sample_vnf_package_v2.zip -r BaseHOT/ Definitions/ Scripts/ TOSCA-Metadata/
 
 
    About details to prepare VNF Package, please refer to `Prepare VNF Package`_.
@@ -155,13 +103,13 @@ Create and upload the VNF Package that you want to deploy by following procedure
         +-------------------+-------------------------------------------------------------------------------------------------+
         | Field             | Value                                                                                           |
         +-------------------+-------------------------------------------------------------------------------------------------+
-        | ID                | 9f10134f-90ae-4e71-bfdc-de6593552de8                                                            |
+        | ID                | 18e7b0ec-d006-4b84-8bc5-84f85cfbfff9                                                            |
         | Links             | {                                                                                               |
         |                   |     "self": {                                                                                   |
-        |                   |         "href": "/vnfpkgm/v1/vnf_packages/9f10134f-90ae-4e71-bfdc-de6593552de8"                 |
+        |                   |         "href": "/vnfpkgm/v1/vnf_packages/18e7b0ec-d006-4b84-8bc5-84f85cfbfff9"                 |
         |                   |     },                                                                                          |
         |                   |     "packageContent": {                                                                         |
-        |                   |         "href": "/vnfpkgm/v1/vnf_packages/9f10134f-90ae-4e71-bfdc-de6593552de8/package_content" |
+        |                   |         "href": "/vnfpkgm/v1/vnf_packages/18e7b0ec-d006-4b84-8bc5-84f85cfbfff9/package_content" |
         |                   |     }                                                                                           |
         |                   | }                                                                                               |
         | Onboarding State  | CREATED                                                                                         |
@@ -169,23 +117,25 @@ Create and upload the VNF Package that you want to deploy by following procedure
         | Usage State       | NOT_IN_USE                                                                                      |
         | User Defined Data | {}                                                                                              |
         +-------------------+-------------------------------------------------------------------------------------------------+
-  
-        $ openstack vnf package upload --path sample_vnf_package.zip 9f10134f-90ae-4e71-bfdc-de6593552de8
-        Upload request for VNF package 9f10134f-90ae-4e71-bfdc-de6593552de8 has been accepted.
 
+
+        $ openstack vnf package upload --path sample_vnf_package_v2.zip 18e7b0ec-d006-4b84-8bc5-84f85cfbfff9
+        Upload request for VNF package 18e7b0ec-d006-4b84-8bc5-84f85cfbfff9 has been accepted.
 
    * via API:
 
      .. code:: bash
 
+        $ TACKER_ENDPOINT=http://192.168.121.170:9890
         $ VNFP_ID=$(curl -s -X POST ${TACKER_ENDPOINT}/vnfpkgm/v1/vnf_packages \
                     -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" -d '{}' | jq -r '.id')
 
-        $ VNFP_CONTENTS=./sample_vnf_package.zip
+        $ VNFP_CONTENTS=./sample_vnf_package_v2.zip
 
         $ curl -i -X PUT ${TACKER_ENDPOINT}/vnfpkgm/v1/vnf_packages/$VNFP_ID/package_content \
                -H "Content-type: application/zip" -H "X-Auth-Token:$TOKEN" -H "Accept:application/zip" \
                -F vnf_package_content=@${VNFP_CONTENTS}
+
 
 Deployment Procedure
 --------------------
@@ -198,29 +148,28 @@ Create a VNF Instance by specifying the VNFD ID. The VNFD ID is the value define
 
   .. code:: bash
 
-     $ openstack vnflcm create b1bb0ce7-ebca-4fa7-95ed-4840d70a1177
+     $ openstack vnflcm create e9214953-47d5-45bd-91d1-502accfbe967 --os-tacker-api-version 2
      +-----------------------------+------------------------------------------------------------------------------------------------------------------+
      | Field                       | Value                                                                                                            |
      +-----------------------------+------------------------------------------------------------------------------------------------------------------+
-     | ID                          | fba5bda0-0b52-4d80-bffb-709200baf1e3                                                                             |
+     | ID                          | ae844932-730a-4063-ad1d-7e3f7f9d82d1                                                                             |
      | Instantiation State         | NOT_INSTANTIATED                                                                                                 |
      | Links                       | {                                                                                                                |
      |                             |     "self": {                                                                                                    |
-     |                             |         "href": "http://localhost:9890/vnflcm/v1/vnf_instances/fba5bda0-0b52-4d80-bffb-709200baf1e3"             |
+     |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1"             |
      |                             |     },                                                                                                           |
      |                             |     "instantiate": {                                                                                             |
-     |                             |         "href": "http://localhost:9890/vnflcm/v1/vnf_instances/fba5bda0-0b52-4d80-bffb-709200baf1e3/instantiate" |
+     |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1/instantiate" |
      |                             |     }                                                                                                            |
      |                             | }                                                                                                                |
      | VNF Configurable Properties |                                                                                                                  |
-     | VNF Instance Description    | None                                                                                                             |
-     | VNF Instance Name           | vnf-fba5bda0-0b52-4d80-bffb-709200baf1e3                                                                         |
+     | VNF Instance Description    |                                                                                                                  |
+     | VNF Instance Name           |                                                                                                                  |
      | VNF Product Name            | Sample VNF                                                                                                       |
      | VNF Provider                | Company                                                                                                          |
      | VNF Software Version        | 1.0                                                                                                              |
-     | VNFD ID                     | b1bb0ce7-ebca-4fa7-95ed-4840d70a1177                                                                             |
+     | VNFD ID                     | e9214953-47d5-45bd-91d1-502accfbe967                                                                             |
      | VNFD Version                | 1.0                                                                                                              |
-     | vnfPkgId                    |                                                                                                                  |
      +-----------------------------+------------------------------------------------------------------------------------------------------------------+
 
 * via API:
@@ -230,8 +179,8 @@ Create a VNF Instance by specifying the VNFD ID. The VNFD ID is the value define
      $ VNFD_ID=$(curl -s -X GET ${TACKER_ENDPOINT}/vnfpkgm/v1/vnf_packages/$VNFP_ID \
                       -H "X-Auth-Token:$TOKEN" | jq -r '.vnfdId')
 
-     $ VNF_INST_ID=$(curl -sS -X POST ${TACKER_ENDPOINT}/vnflcm/v1/vnf_instances \
-                          -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" \
+     $ VNF_INST_ID=$(curl -sS -X POST ${TACKER_ENDPOINT}/vnflcm/v2/vnf_instances \
+                          -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" -H "Version: 2.0.0" \
                           -d '{ "vnfdId": "'$VNFD_ID'"}' | jq -r '.id')
 
 Instantiate
@@ -246,61 +195,39 @@ Instantiate a VNF by specifying the ID of the created VNF Instance and a file pa
    $ cat input_param.json
    {
      "flavourId": "simple",
-     "extVirtualLinks": [
-       {
-         "id": "test1",
-         "resourceId": "0e1cc46a-6808-4738-8b84-9e99a775c9eb",
-         "extCps": [
-           {
-             "cpdId": "CP1",
-             "cpConfig": [
-               {
-                 "cpProtocolData": [
-                   {
-                     "layerProtocol": "IP_OVER_ETHERNET",
-                     "ipOverEthernet": {
-                       "ipAddresses": [
-                         {
-                           "type": "IPV4",
-                           "numDynamicAddresses": 1,
-                           "subnetId": "309614e6-4aab-4424-977f-fd9c8dfe493e"
-                         }
-                       ]
-                     }
-                   }
-                 ]
-               }
-             ]
-           }
-         ]
+     "vimConnectionInfo": {
+       "vim1": {
+         "accessInfo": {
+           "username": "admin",
+           "password": "devstack",
+           "project": "admin",
+           "projectDomain": "Default",
+           "region": "RegionOne",
+           "userDomain": "Default"
+         },
+         "interfaceInfo": {
+           "endpoint": "http://192.168.121.170/identity"
+         },
+         "vimId": "defb2f96-5670-4bef-8036-27bf61267fc1",
+         "vimType": "ETSINFV.OPENSTACK_KEYSTONE.V_3"
        }
-     ],
-     "vimConnectionInfo": [
-       {
-         "id": "e24f9796-a8e9-4cb0-85ce-5920dcddafa1",
-         "vimId": "d8d886e4-fd98-4493-81e2-0e2b9991d629",
-         "vimType": "openstack"
-       }
-     ],
-     "additionalParams": {
-       "lcm-operation-user-data": "./UserData/lcm_user_data.py",
-       "lcm-operation-user-data-class": "SampleUserData"
      }
    }
+
 
 * via CLI command:
 
   .. code:: bash
 
-     $ openstack vnflcm instantiate b0915924-7e04-4c16-b229-d3dfcc366eee input_param.json
-     Instantiate request for VNF Instance b0915924-7e04-4c16-b229-d3dfcc366eee has been accepted.
+     $ openstack vnflcm instantiate ae844932-730a-4063-ad1d-7e3f7f9d82d1 input_param.json --os-tacker-api-version 2
+     Instantiate request for VNF Instance ae844932-730a-4063-ad1d-7e3f7f9d82d1 has been accepted.
 
 * via API:
 
   .. code:: bash
 
-     $ curl -i -X POST ${TACKER_ENDPOINT}/vnflcm/v1/vnf_instances/$VNF_INST_ID/instantiate \
-            -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" \
+     $ curl -i -X POST ${TACKER_ENDPOINT}/vnflcm/v2/vnf_instances/$VNF_INST_ID/instantiate \
+            -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" -H "Version: 2.0.0" \
             -d @./input_param.json
 
 You can verify that the deployment was successful in the following ways:
@@ -312,172 +239,169 @@ You can verify that the deployment was successful in the following ways:
 
    .. code:: bash
 
-      $ openstack vnflcm show fba5bda0-0b52-4d80-bffb-709200baf1e3
+      $ openstack vnflcm show ae844932-730a-4063-ad1d-7e3f7f9d82d1 --os-tacker-api-version 2
       +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
       | Field                       | Value                                                                                                                |
       +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
-      | ID                          | fba5bda0-0b52-4d80-bffb-709200baf1e3                                                                                 |
+      | ID                          | ae844932-730a-4063-ad1d-7e3f7f9d82d1                                                                                 |
       | Instantiated Vnf Info       | {                                                                                                                    |
       |                             |     "flavourId": "simple",                                                                                           |
       |                             |     "vnfState": "STARTED",                                                                                           |
-      |                             |     "extCpInfo": [                                                                                                   |
+      |                             |     "scaleStatus": [                                                                                                 |
       |                             |         {                                                                                                            |
-      |                             |             "id": "4e9cda91-f625-4790-8efb-273b3fbd03a1",                                                            |
-      |                             |             "cpdId": "CP1",                                                                                          |
-      |                             |             "extLinkPortId": null,                                                                                   |
-      |                             |             "associatedVnfcCpId": "65676b39-1e80-435f-997d-217963d25298",                                            |
-      |                             |             "cpProtocolInfo": [                                                                                      |
-      |                             |                 {                                                                                                    |
-      |                             |                     "layerProtocol": "IP_OVER_ETHERNET",                                                             |
-      |                             |                     "ipOverEthernet": {                                                                              |
-      |                             |                         "macAddress": null,                                                                          |
-      |                             |                         "ipAddresses": [                                                                             |
-      |                             |                             {                                                                                        |
-      |                             |                                 "type": "IPV4",                                                                      |
-      |                             |                                 "subnetId": "309614e6-4aab-4424-977f-fd9c8dfe493e",                                  |
-      |                             |                                 "isDynamic": true,                                                                   |
-      |                             |                                 "addresses": []                                                                      |
-      |                             |                             }                                                                                        |
-      |                             |                         ]                                                                                            |
-      |                             |                     }                                                                                                |
-      |                             |                 }                                                                                                    |
-      |                             |             ]                                                                                                        |
+      |                             |             "aspectId": "VDU1_scale",                                                                                |
+      |                             |             "scaleLevel": 0                                                                                          |
       |                             |         }                                                                                                            |
       |                             |     ],                                                                                                               |
-      |                             |     "extVirtualLinkInfo": [                                                                                          |
+      |                             |     "maxScaleLevels": [                                                                                              |
       |                             |         {                                                                                                            |
-      |                             |             "id": "test1",                                                                                           |
-      |                             |             "resourceHandle": {                                                                                      |
-      |                             |                 "vimConnectionId": null,                                                                             |
-      |                             |                 "resourceId": "0e1cc46a-6808-4738-8b84-9e99a775c9eb",                                                |
-      |                             |                 "vimLevelResourceType": null                                                                         |
-      |                             |             }                                                                                                        |
+      |                             |             "aspectId": "VDU1_scale",                                                                                |
+      |                             |             "scaleLevel": 2                                                                                          |
       |                             |         }                                                                                                            |
       |                             |     ],                                                                                                               |
       |                             |     "vnfcResourceInfo": [                                                                                            |
       |                             |         {                                                                                                            |
-      |                             |             "id": "65676b39-1e80-435f-997d-217963d25298",                                                            |
+      |                             |             "id": "5f201bdf-671b-4ba8-9c19-35eb9717ea9d",                                                            |
       |                             |             "vduId": "VDU1",                                                                                         |
       |                             |             "computeResource": {                                                                                     |
-      |                             |                 "vimConnectionId": "d8d886e4-fd98-4493-81e2-0e2b9991d629",                                           |
-      |                             |                 "resourceId": "0f0ee6b9-cf6c-41c7-a36c-78d41fcba99c",                                                |
+      |                             |                 "vimConnectionId": "defb2f96-5670-4bef-8036-27bf61267fc1",                                           |
+      |                             |                 "resourceId": "5f201bdf-671b-4ba8-9c19-35eb9717ea9d",                                                |
       |                             |                 "vimLevelResourceType": "OS::Nova::Server"                                                           |
       |                             |             },                                                                                                       |
-      |                             |             "storageResourceIds": [],                                                                                |
       |                             |             "vnfcCpInfo": [                                                                                          |
       |                             |                 {                                                                                                    |
-      |                             |                     "id": "a3da58ce-039d-42ee-9569-a0e2a9adf9bb",                                                    |
-      |                             |                     "cpdId": "CP1",                                                                                  |
-      |                             |                     "vnfExtCpId": null,                                                                              |
-      |                             |                     "vnfLinkPortId": "d61dcdf1-d5c6-4add-8b0f-0095b00908cd",                                         |
-      |                             |                     "cpProtocolInfo": [                                                                              |
-      |                             |                         {                                                                                            |
-      |                             |                             "layerProtocol": "IP_OVER_ETHERNET",                                                     |
-      |                             |                             "ipOverEthernet": {                                                                      |
-      |                             |                                 "macAddress": null,                                                                  |
-      |                             |                                 "ipAddresses": [                                                                     |
-      |                             |                                     {                                                                                |
-      |                             |                                         "type": "IPV4",                                                              |
-      |                             |                                         "subnetId": "309614e6-4aab-4424-977f-fd9c8dfe493e",                          |
-      |                             |                                         "isDynamic": true,                                                           |
-      |                             |                                         "addresses": []                                                              |
-      |                             |                                     }                                                                                |
-      |                             |                                 ]                                                                                    |
-      |                             |                             }                                                                                        |
-      |                             |                         }                                                                                            |
-      |                             |                     ]                                                                                                |
+      |                             |                     "id": "VDU1_CP1-5f201bdf-671b-4ba8-9c19-35eb9717ea9d",                                           |
+      |                             |                     "cpdId": "VDU1_CP1",                                                                             |
+      |                             |                     "vnfLinkPortId": "09a8a6ab-9a43-4d3a-9cf8-92b18dd74d17"                                          |
       |                             |                 }                                                                                                    |
-      |                             |             ]                                                                                                        |
+      |                             |             ],                                                                                                       |
+      |                             |             "metadata": {                                                                                            |
+      |                             |                 "creation_time": "2023-04-07T09:49:22Z",                                                             |
+      |                             |                 "stack_id": "vnf-ae844932-730a-4063-ad1d-7e3f7f9d82d1-VDU1_scale_group-4qhp7z3cangj-mc4dbvvk73vc-    |
+      |                             | edjhilnlkdww/de2707cf-f222-4c97-9c29-33404a50df94",                                                                  |
+      |                             |                 "parent_stack_id": "vnf-                                                                             |
+      |                             | ae844932-730a-4063-ad1d-7e3f7f9d82d1-VDU1_scale_group-4qhp7z3cangj/3eecd59f-5476-47f5-8135-62debac7499b",            |
+      |                             |                 "parent_resource_name": "mc4dbvvk73vc",                                                              |
+      |                             |                 "flavor": "m1.tiny",                                                                                 |
+      |                             |                 "image-VDU1": "cirros-0.5.2-x86_64-disk"                                                             |
+      |                             |             }                                                                                                        |
+      |                             |         },                                                                                                           |
+      |                             |         {                                                                                                            |
+      |                             |             "id": "9fcd21b5-301b-44e2-bb25-6bbffee99c26",                                                            |
+      |                             |             "vduId": "VDU2",                                                                                         |
+      |                             |             "computeResource": {                                                                                     |
+      |                             |                 "vimConnectionId": "defb2f96-5670-4bef-8036-27bf61267fc1",                                           |
+      |                             |                 "resourceId": "9fcd21b5-301b-44e2-bb25-6bbffee99c26",                                                |
+      |                             |                 "vimLevelResourceType": "OS::Nova::Server"                                                           |
+      |                             |             },                                                                                                       |
+      |                             |             "vnfcCpInfo": [                                                                                          |
+      |                             |                 {                                                                                                    |
+      |                             |                     "id": "VDU2_CP1-9fcd21b5-301b-44e2-bb25-6bbffee99c26",                                           |
+      |                             |                     "cpdId": "VDU2_CP1",                                                                             |
+      |                             |                     "vnfLinkPortId": "b0e4a59e-5831-4deb-aaba-fd4d0d02248b"                                          |
+      |                             |                 }                                                                                                    |
+      |                             |             ],                                                                                                       |
+      |                             |             "metadata": {                                                                                            |
+      |                             |                 "creation_time": "2023-04-07T09:49:14Z",                                                             |
+      |                             |                 "stack_id": "vnf-ae844932-730a-4063-ad1d-7e3f7f9d82d1/87e00a91-17d7-496e-b30e-a99af1a6726e",         |
+      |                             |                 "flavor": "m1.tiny",                                                                                 |
+      |                             |                 "image-VDU2": "cirros-0.5.2-x86_64-disk"                                                             |
+      |                             |             }                                                                                                        |
       |                             |         }                                                                                                            |
       |                             |     ],                                                                                                               |
       |                             |     "vnfVirtualLinkResourceInfo": [                                                                                  |
       |                             |         {                                                                                                            |
-      |                             |             "id": "006531d5-7bb9-472d-9243-7dd415ca9839",                                                            |
-      |                             |             "vnfVirtualLinkDescId": "internalVL1",                                                                   |
+      |                             |             "id": "c2688b4d-f444-4a9c-b5d1-e25766082a14",                                                            |
+      |                             |             "vnfVirtualLinkDescId": "internalVL3",                                                                   |
       |                             |             "networkResource": {                                                                                     |
-      |                             |                 "vimConnectionId": null,                                                                             |
-      |                             |                 "resourceId": "",                                                                                    |
-      |                             |                 "vimLevelResourceType": null                                                                         |
-      |                             |             },                                                                                                       |
-      |                             |             "vnfLinkPorts": [                                                                                        |
-      |                             |                 {                                                                                                    |
-      |                             |                     "id": "11d2a97d-884d-4943-9539-bc6c8e4e9e2b",                                                    |
-      |                             |                     "resourceHandle": {                                                                              |
-      |                             |                         "vimConnectionId": "d8d886e4-fd98-4493-81e2-0e2b9991d629",                                   |
-      |                             |                         "resourceId": "601c9ce5-91df-4636-9fc3-0ae979781d9a",                                        |
-      |                             |                         "vimLevelResourceType": "OS::Neutron::Port"                                                  |
-      |                             |                     },                                                                                               |
-      |                             |                     "cpInstanceId": "a3da58ce-039d-42ee-9569-a0e2a9adf9bb"                                           |
-      |                             |                 }                                                                                                    |
-      |                             |             ]                                                                                                        |
-      |                             |         },                                                                                                           |
-      |                             |         {                                                                                                            |
-      |                             |             "id": "3a9607a4-0d5a-42da-aca3-2c471544ee86",                                                            |
-      |                             |             "vnfVirtualLinkDescId": "test1",                                                                         |
-      |                             |             "networkResource": {                                                                                     |
-      |                             |                 "vimConnectionId": null,                                                                             |
-      |                             |                 "resourceId": "0e1cc46a-6808-4738-8b84-9e99a775c9eb",                                                |
+      |                             |                 "vimConnectionId": "defb2f96-5670-4bef-8036-27bf61267fc1",                                           |
+      |                             |                 "resourceId": "c2688b4d-f444-4a9c-b5d1-e25766082a14",                                                |
       |                             |                 "vimLevelResourceType": "OS::Neutron::Net"                                                           |
       |                             |             },                                                                                                       |
       |                             |             "vnfLinkPorts": [                                                                                        |
       |                             |                 {                                                                                                    |
-      |                             |                     "id": "d61dcdf1-d5c6-4add-8b0f-0095b00908cd",                                                    |
+      |                             |                     "id": "b0e4a59e-5831-4deb-aaba-fd4d0d02248b",                                                    |
       |                             |                     "resourceHandle": {                                                                              |
-      |                             |                         "vimConnectionId": null,                                                                     |
-      |                             |                         "resourceId": "",                                                                            |
-      |                             |                         "vimLevelResourceType": null                                                                 |
+      |                             |                         "vimConnectionId": "defb2f96-5670-4bef-8036-27bf61267fc1",                                   |
+      |                             |                         "resourceId": "b0e4a59e-5831-4deb-aaba-fd4d0d02248b",                                        |
+      |                             |                         "vimLevelResourceType": "OS::Neutron::Port"                                                  |
       |                             |                     },                                                                                               |
-      |                             |                     "cpInstanceId": "a3da58ce-039d-42ee-9569-a0e2a9adf9bb"                                           |
+      |                             |                     "cpInstanceId": "VDU2_CP1-9fcd21b5-301b-44e2-bb25-6bbffee99c26",                                 |
+      |                             |                     "cpInstanceType": "VNFC_CP"                                                                      |
+      |                             |                 },                                                                                                   |
+      |                             |                 {                                                                                                    |
+      |                             |                     "id": "09a8a6ab-9a43-4d3a-9cf8-92b18dd74d17",                                                    |
+      |                             |                     "resourceHandle": {                                                                              |
+      |                             |                         "vimConnectionId": "defb2f96-5670-4bef-8036-27bf61267fc1",                                   |
+      |                             |                         "resourceId": "09a8a6ab-9a43-4d3a-9cf8-92b18dd74d17",                                        |
+      |                             |                         "vimLevelResourceType": "OS::Neutron::Port"                                                  |
+      |                             |                     },                                                                                               |
+      |                             |                     "cpInstanceId": "VDU1_CP1-5f201bdf-671b-4ba8-9c19-35eb9717ea9d",                                 |
+      |                             |                     "cpInstanceType": "VNFC_CP"                                                                      |
       |                             |                 }                                                                                                    |
       |                             |             ]                                                                                                        |
       |                             |         }                                                                                                            |
       |                             |     ],                                                                                                               |
       |                             |     "vnfcInfo": [                                                                                                    |
       |                             |         {                                                                                                            |
-      |                             |             "id": "341f2d8c-b53f-4d4b-b7f2-2f1726355803",                                                            |
+      |                             |             "id": "VDU1-5f201bdf-671b-4ba8-9c19-35eb9717ea9d",                                                       |
       |                             |             "vduId": "VDU1",                                                                                         |
+      |                             |             "vnfcResourceInfoId": "5f201bdf-671b-4ba8-9c19-35eb9717ea9d",                                            |
+      |                             |             "vnfcState": "STARTED"                                                                                   |
+      |                             |         },                                                                                                           |
+      |                             |         {                                                                                                            |
+      |                             |             "id": "VDU2-9fcd21b5-301b-44e2-bb25-6bbffee99c26",                                                       |
+      |                             |             "vduId": "VDU2",                                                                                         |
+      |                             |             "vnfcResourceInfoId": "9fcd21b5-301b-44e2-bb25-6bbffee99c26",                                            |
       |                             |             "vnfcState": "STARTED"                                                                                   |
       |                             |         }                                                                                                            |
       |                             |     ],                                                                                                               |
-      |                             |     "additionalParams": {                                                                                            |
-      |                             |         "lcm-operation-user-data": "./UserData/lcm_user_data.py",                                                    |
-      |                             |         "lcm-operation-user-data-class": "SampleUserData"                                                            |
+      |                             |     "metadata": {                                                                                                    |
+      |                             |         "stack_id": "87e00a91-17d7-496e-b30e-a99af1a6726e"                                                           |
       |                             |     }                                                                                                                |
       |                             | }                                                                                                                    |
       | Instantiation State         | INSTANTIATED                                                                                                         |
       | Links                       | {                                                                                                                    |
       |                             |     "self": {                                                                                                        |
-      |                             |         "href": "http://localhost:9890/vnflcm/v1/vnf_instances/fba5bda0-0b52-4d80-bffb-709200baf1e3"                 |
+      |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1"                 |
       |                             |     },                                                                                                               |
       |                             |     "terminate": {                                                                                                   |
-      |                             |         "href": "http://localhost:9890/vnflcm/v1/vnf_instances/fba5bda0-0b52-4d80-bffb-709200baf1e3/terminate"       |
+      |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1/terminate"       |
+      |                             |     },                                                                                                               |
+      |                             |     "scale": {                                                                                                       |
+      |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1/scale"           |
       |                             |     },                                                                                                               |
       |                             |     "heal": {                                                                                                        |
-      |                             |         "href": "http://localhost:9890/vnflcm/v1/vnf_instances/fba5bda0-0b52-4d80-bffb-709200baf1e3/heal"            |
+      |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1/heal"            |
       |                             |     },                                                                                                               |
       |                             |     "changeExtConn": {                                                                                               |
-      |                             |         "href": "http://localhost:9890/vnflcm/v1/vnf_instances/fba5bda0-0b52-4d80-bffb-709200baf1e3/change_ext_conn" |
+      |                             |         "href": "http://127.0.0.1:9890/vnflcm/v2/vnf_instances/ae844932-730a-4063-ad1d-7e3f7f9d82d1/change_ext_conn" |
       |                             |     }                                                                                                                |
       |                             | }                                                                                                                    |
-      | VIM Connection Info         | [                                                                                                                    |
-      |                             |     {                                                                                                                |
-      |                             |         "id": "e24f9796-a8e9-4cb0-85ce-5920dcddafa1",                                                                |
-      |                             |         "vimId": "d8d886e4-fd98-4493-81e2-0e2b9991d629",                                                             |
-      |                             |         "vimType": "openstack",                                                                                      |
-      |                             |         "interfaceInfo": {},                                                                                         |
-      |                             |         "accessInfo": {},                                                                                            |
-      |                             |         "extra": {}                                                                                                  |
+      | VIM Connection Info         | {                                                                                                                    |
+      |                             |     "vim1": {                                                                                                        |
+      |                             |         "vimId": "defb2f96-5670-4bef-8036-27bf61267fc1",                                                             |
+      |                             |         "vimType": "ETSINFV.OPENSTACK_KEYSTONE.V_3",                                                                 |
+      |                             |         "interfaceInfo": {                                                                                           |
+      |                             |             "endpoint": "http://192.168.121.170/identity"                                                            |
+      |                             |         },                                                                                                           |
+      |                             |         "accessInfo": {                                                                                              |
+      |                             |             "region": "RegionOne",                                                                                   |
+      |                             |             "project": "admin",                                                                                      |
+      |                             |             "username": "admin",                                                                                     |
+      |                             |             "userDomain": "Default",                                                                                 |
+      |                             |             "projectDomain": "Default"                                                                               |
+      |                             |         }                                                                                                            |
       |                             |     }                                                                                                                |
-      |                             | ]                                                                                                                    |
+      |                             | }                                                                                                                    |
       | VNF Configurable Properties |                                                                                                                      |
-      | VNF Instance Description    | None                                                                                                                 |
-      | VNF Instance Name           | vnf-fba5bda0-0b52-4d80-bffb-709200baf1e3                                                                             |
+      | VNF Instance Description    |                                                                                                                      |
+      | VNF Instance Name           |                                                                                                                      |
       | VNF Product Name            | Sample VNF                                                                                                           |
       | VNF Provider                | Company                                                                                                              |
       | VNF Software Version        | 1.0                                                                                                                  |
-      | VNFD ID                     | b1bb0ce7-ebca-4fa7-95ed-4840d70a1177                                                                                 |
+      | VNFD ID                     | e9214953-47d5-45bd-91d1-502accfbe967                                                                                 |
       | VNFD Version                | 1.0                                                                                                                  |
-      | vnfPkgId                    |                                                                                                                      |
       +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 2. Verify the VM created successfully by :command:`openstack stack list/show` command or OpenStack Dashboard.
@@ -490,15 +414,15 @@ Terminate a VNF by specifying the VNF Instance ID.
 
   .. code:: bash
 
-     $ openstack vnflcm terminate fba5bda0-0b52-4d80-bffb-709200baf1e3
+     $ openstack vnflcm terminate fba5bda0-0b52-4d80-bffb-709200baf1e3 --os-tacker-api-version 2
      Terminate request for VNF Instance 'fba5bda0-0b52-4d80-bffb-709200baf1e3' has been accepted.
 
 * via API:
 
   .. code:: bash
 
-     $ curl -i -X POST ${TACKER_ENDPOINT}/vnflcm/v1/vnf_instances/$VNF_INST_ID/terminate \
-            -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" \
+     $ curl -i -X POST ${TACKER_ENDPOINT}/vnflcm/v2/vnf_instances/$VNF_INST_ID/terminate \
+            -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" -H "Version: 2.0.0" \
             -d '{"terminationType": "FORCEFUL"}'
 
 .. _ETSI NFV-SOL VNF Deployment: https://docs.openstack.org/tacker/latest/user/etsi_vnf_deployment_as_vm_with_user_data.html
