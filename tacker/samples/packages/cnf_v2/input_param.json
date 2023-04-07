@@ -1,0 +1,27 @@
+{
+    "flavourId": "helmchart",
+    "vimConnectionInfo": {
+        "vim1": {
+            "vimType": "ETSINFV.HELM.V_3",
+            "interfaceInfo": {
+                "endpoint": "https://192.168.121.170:6443",
+                "ssl_ca_cert": "-----BEGIN CERTIFICATE-----\nMIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTIzMDMyMjE0MjQ0NVoXDTMzMDMxOTE0MjQ0NVowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMRS\nHyraC+APG08cvJqM3NR76PkFnypekpz1XQrtpEk5Jeo11H+ppHIzVBJt6aPrXC0q\ntmK2L6j3MxknSNVxkjWhRwyD24PcyP1b1qXsZK1up0ek6ip0j0YuyUgszSdF204e\nQBp82v1zqAYbuxjy7e6wMv3pDu8yvBkrhqVHvLs6xJ0puUjX7XejrlgnjRwFuc8Q\nX+3VRuHaN9s+OMeiwm4nFDjGwAB7FpA8QPiwCZlA2QD5c6BzdrJA25xlOht6JvBB\nBk90HS9yHg4kQvnikmudaeohRWv3+xzTK9FjGkFfyV/OBV9F66MsDCE5dGjWySLN\nwwmWlQ7Ad1/6wFfiYCsCAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wHQYDVR0OBBYEFGwlLS7Sye6uTLz3DYfPUlYKxZj+MBUGA1UdEQQO\nMAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAIyCGBpiLsYgTE2WMjYf\nVYjBVZIboDiBfjnAbhn2SdXDjjSGd33gLX/hPOUhE6AkNYeeGD7NcKZfp9Yxg9a5\n0zjEUs19gYjfRx7wP8iSw+Tdml+jibhdvg1oEABfDCy2tZq9R6UwFncRm4dzA3Gc\nt8V94pg6Hd8LgjJBRw9PZ8ui9n5sKtxu1wyXQ1uxyDXoNk8yxnIKnQYadey9LYlp\nFS1jJcArlKfYvXJllNg408I9XJB8gMfJX1gjIBaGOloOCNx69rZ3/LlleKcpTg6V\n6YW/trOaSrZcxIOycBJvemHi8qHxJd1uC9joAT486hT8Bj5jhrFsC3oq3iTgxMNO\nbOc=\n-----END CERTIFICATE-----"
+            },
+            "accessInfo": {
+                "bearer_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkdWN3VydWFwUW1OYUUxcDc5dlU0V1gxQUZZRmVhTkRuWXJQbElKZmFwaE0ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4tY2Z4NW0iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjVkYzQxODUxLTdkNzYtNGZmYS04MmVmLWEwYjVhODJjMTMzMSIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.JFnE29iPCCOXeVroogNWYMe_r1qBoJNust0paR0yuZ7ctmR5EDeal79-HzFctiIYcoL5fPK0nHc4ZsyAIAyfs5eK-NvBMru3TwY4PduXAZ5U1cu_e1e3SPF31taMwgXXC2NpbtnVocUCC5xJ9V9EXLUV7-AFj14raHvjtnVWFIBkJpTshPbWmbdgMdMMkuAe57OR1kY_KoKlC0fBdHoCRlw-MDwkCN5gTf9eYQstVRmBCtJHDJ638o-2I-wu4bsun7uaZWsA_RCCJrxqdvo9G7EIvoq_LrHhqy7MSA41UhqGCKPwdpl58DoG98PBHNCiyVH47SvFTXyxS6BdYe8ZsQ"
+            }
+        }
+    },
+    "additionalParams": {
+        "helm_chart_path": "Files/kubernetes/test-chart-0.1.0.tgz",
+        "helm_parameters": {
+            "service.port": 8081
+        },
+        "helm_value_names": {
+            "VDU1": {
+                "replica": "replicaCount"
+            }
+        },
+        "namespace": "default"
+    }
+}
