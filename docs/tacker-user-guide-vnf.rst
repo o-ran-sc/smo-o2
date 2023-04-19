@@ -39,7 +39,7 @@ Register OpenStack VIM (Virtualized Infrastructure Manager) by following procedu
    .. code:: bash
 
       $ source ${devstack_dir}/openrc admin admin
-      $ openstack vim register --confi-file vim_config.yaml vim-openstack
+      $ openstack vim register --config-file vim_config.yaml vim-openstack
 
 3. Check the registered VIM status is ``REACHABLE``.
 
