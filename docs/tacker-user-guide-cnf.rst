@@ -37,7 +37,7 @@ Register Kubernetes VIM (Virtualized Infrastructure Manager) by following proced
    .. code:: bash
 
       $ source ${devstack_dir}/openrc admin admin
-      $ openstack vim register --confi-file vim_config_k8s.yaml vim-kubernetes
+      $ openstack vim register --config-file vim_config_k8s.yaml vim-kubernetes
 
 3. Check the registered VIM status is ``REACHABLE``.
 
