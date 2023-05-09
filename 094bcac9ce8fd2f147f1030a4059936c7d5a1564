@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4839ff17_e8a1c29f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-05-09T02:51:42Z",
+      "side": 1,
+      "message": "First, please kindly review within the Tacker team. thanks.\n(There is CI error but is not specific to this patch.",
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
