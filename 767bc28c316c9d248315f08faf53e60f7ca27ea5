@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "767bc28c316c9d248315f08faf53e60f7ca27ea5",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b74078d8_5417d385",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-05-10T13:14:59Z",
+      "side": 1,
+      "message": "recheck - related patches of ci-management seems to be merged.",
+      "revId": "767bc28c316c9d248315f08faf53e60f7ca27ea5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
