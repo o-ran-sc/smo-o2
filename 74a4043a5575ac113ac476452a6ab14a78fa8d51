@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49bc50a6_6b0f70f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-15T12:21:55Z",
+      "side": 1,
+      "message": "Currently a build fails due to Jenkins side issue. As mentioned in \u003chttps://gerrit.o-ran-sc.org/r/c/smo/o2/+/10904\u003e, this issue is not specific to this patch, so please kindly start your reviewing. Thank you.",
+      "revId": "74a4043a5575ac113ac476452a6ab14a78fa8d51",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
