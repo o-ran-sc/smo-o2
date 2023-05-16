@@ -16,6 +16,138 @@
       "message": "First, please kindly review within the Tacker team. thanks.\n(There is CI error but is not specific to this patch.",
       "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0137c40b_7749c278",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-16T08:00:43Z",
+      "side": 1,
+      "message": "Thank you for modifying guides. Please find my comments.",
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "656ef1e8_d9833825",
+        "filename": "docs/tacker-user-guide-cnf-v2.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-16T08:00:43Z",
+      "side": 1,
+      "message": "Does the scope of this patch include also \"list\" or \"show\" command? If so, don\u0027t we need a step to check the status via API?",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 307,
+        "endChar": 71
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80963286_69d03fe9",
+        "filename": "docs/tacker-user-guide-cnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-16T08:00:43Z",
+      "side": 1,
+      "message": "Does the scope of this patch include also \"list\" or \"show\" command? If so, don\u0027t we need a step to check the status via API?",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 52
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "495186ea_a0ad9a54",
+        "filename": "docs/tacker-user-guide-cnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-16T08:00:43Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 318,
+        "startChar": 0,
+        "endLine": 318,
+        "endChar": 71
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d94fb11_6cdedeea",
+        "filename": "docs/tacker-user-guide-vnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-16T08:00:43Z",
+      "side": 1,
+      "message": "Does the scope of this patch include also \"list\" or \"show\" command? If so, don\u0027t we need a step to check the status via API?",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 52
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48ec0b27_a040c875",
+        "filename": "docs/tacker-user-guide-vnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-16T08:00:43Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 308,
+        "startChar": 0,
+        "endLine": 308,
+        "endChar": 100
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
