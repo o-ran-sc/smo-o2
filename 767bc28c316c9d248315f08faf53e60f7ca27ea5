@@ -133,6 +133,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ff954c7_e6bc50d5",
+        "filename": "docs/tacker-user-guide-vnf-v2.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-17T08:46:40Z",
+      "side": 1,
+      "message": "Understood, thank you.",
+      "parentUuid": "7342092b_8ba5d10d",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "767bc28c316c9d248315f08faf53e60f7ca27ea5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fa82937_6c695a1c",
@@ -170,6 +194,30 @@
       "side": 1,
       "message": "Thanks for your pointing out, I\u0027ve fixed in PS9.",
       "parentUuid": "3fa82937_6c695a1c",
+      "range": {
+        "startLine": 107,
+        "startChar": 58,
+        "endLine": 107,
+        "endChar": 63
+      },
+      "revId": "767bc28c316c9d248315f08faf53e60f7ca27ea5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36c92c7f_c594770f",
+        "filename": "docs/tacker-user-guide-vnf-v2.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-17T08:46:40Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "10b47d49_6bc925d4",
       "range": {
         "startLine": 107,
         "startChar": 58,
@@ -227,6 +275,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4672bd85_5a2f8979",
+        "filename": "docs/tacker-user-guide-vnf-v2.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-17T08:46:40Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "ab7d259d_d5db1e71",
+      "range": {
+        "startLine": 318,
+        "startChar": 32,
+        "endLine": 318,
+        "endChar": 68
+      },
+      "revId": "767bc28c316c9d248315f08faf53e60f7ca27ea5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f94fa03_9af927e0",
@@ -264,6 +336,30 @@
       "side": 1,
       "message": "Thanks for your pointing out, I\u0027ve fixed in PS9.",
       "parentUuid": "6f94fa03_9af927e0",
+      "range": {
+        "startLine": 319,
+        "startChar": 39,
+        "endLine": 319,
+        "endChar": 75
+      },
+      "revId": "767bc28c316c9d248315f08faf53e60f7ca27ea5",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e7ddbd9_b5a2f7cc",
+        "filename": "docs/tacker-user-guide-vnf-v2.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-17T08:46:40Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "d1e984ca_459aed50",
       "range": {
         "startLine": 319,
         "startChar": 39,
