@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d64079e_843f2e67",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-05-17T13:53:26Z",
+      "side": 1,
+      "message": "This fix is needed to make the `tox-docs` successful.\nCould you review it?\n(This patch based on the patch [1] posted by Anil, thank you)",
+      "revId": "2d5e248bb7cb5a734252f250a220c8546dfe6147",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
