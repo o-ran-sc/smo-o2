@@ -82,6 +82,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b720fba0_51630a07",
+        "filename": "docs/tacker-user-guide-cnf-v2.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-18T02:17:05Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "44a5c614_d9cc810c",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 307,
+        "endChar": 71
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80963286_69d03fe9",
@@ -119,6 +143,30 @@
       "side": 1,
       "message": "Thanks for your comment, I added the API procedure to here. I have added it to the VNF guide as well.",
       "parentUuid": "80963286_69d03fe9",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 52
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34ba8e55_3e076934",
+        "filename": "docs/tacker-user-guide-cnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-18T02:17:05Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "3744dd98_28c82dd6",
       "range": {
         "startLine": 114,
         "startChar": 0,
@@ -176,6 +224,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e90da3d_ae71af86",
+        "filename": "docs/tacker-user-guide-cnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-18T02:17:05Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "c9553681_15355908",
+      "range": {
+        "startLine": 318,
+        "startChar": 0,
+        "endLine": 318,
+        "endChar": 71
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d94fb11_6cdedeea",
@@ -199,6 +271,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "307a32c2_e1726a44",
+        "filename": "docs/tacker-user-guide-vnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-18T02:17:05Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "6d94fb11_6cdedeea",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 52
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "48ec0b27_a040c875",
@@ -212,6 +308,30 @@
       "writtenOn": "2023-05-16T08:00:43Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 308,
+        "startChar": 0,
+        "endLine": 308,
+        "endChar": 100
+      },
+      "revId": "094bcac9ce8fd2f147f1030a4059936c7d5a1564",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "992e05a1_c7592108",
+        "filename": "docs/tacker-user-guide-vnf.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-18T02:17:05Z",
+      "side": 1,
+      "message": "Confirmed.",
+      "parentUuid": "48ec0b27_a040c875",
       "range": {
         "startLine": 308,
         "startChar": 0,
