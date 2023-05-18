@@ -16,6 +16,23 @@
       "message": "This fix is needed to make the `tox-docs` successful.\nCould you review it?\n(This patch based on the patch [1] posted by Anil, thank you)",
       "revId": "2d5e248bb7cb5a734252f250a220c8546dfe6147",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "479a56a1_9f81432c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-18T00:51:36Z",
+      "side": 1,
+      "message": "Thank you for the modification. LGTM.",
+      "revId": "2d5e248bb7cb5a734252f250a220c8546dfe6147",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
