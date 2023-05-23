@@ -33,6 +33,69 @@
       "message": "recheck",
       "revId": "74a4043a5575ac113ac476452a6ab14a78fa8d51",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d6d74f_57b0f0c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-05-23T06:30:19Z",
+      "side": 1,
+      "message": "Sorry for the late review, please kindly find my comments.",
+      "revId": "74a4043a5575ac113ac476452a6ab14a78fa8d51",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1716a3d_9714e204",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-05-23T06:30:19Z",
+      "side": 1,
+      "message": "The following error is shown during this command.\nIs this error no problem for this test?\n\n\u003e [ ERROR ] Error in file \u0027/opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt\u0027 on line 131: Setting variable \u0027${Flavour_ID}${vnfPkgId}\u0027 failed: Invalid variable name \u0027${Flavour_ID}${vnfPkgId}\u0027.",
+      "range": {
+        "startLine": 286,
+        "startChar": 11,
+        "endLine": 286,
+        "endChar": 61
+      },
+      "revId": "74a4043a5575ac113ac476452a6ab14a78fa8d51",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "101ca675_9ddde5d2",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-05-23T06:30:19Z",
+      "side": 1,
+      "message": "When I followed this procedure, The following error is shown on this command:\nThis error seems to occur because a vnfInstanceId different from the VnfInstance created by the `cnf-instantiate` test was specified. \nAre there any omissions in the procedure or in the test code/file of patch[1]?\n\n[1] https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10808\n\n```\n{\n    \"seconds\": 0.027674,\n    \"status\": 404,\n    \"body\": {\n        \"title\": \"Not Found\",\n        \"status\": 404,\n        \"detail\": \"Can not find requested vnf: 6fc3539c-e602-4afa-8e13-962fb5a7d81f\"\n    },\n    \"headers\": {\n        \"Content-Type\": \"application/problem+json; charset\u003dUTF-8\",\n        \"Content-Length\": \"115\",\n        \"X-Openstack-Request-Id\": \"req-ca993852-e844-4168-a6b2-af88714deedd\",\n        \"Date\": \"Tue, 23 May 2023 05:59:03 GMT\",\n        \"Connection\": \"keep-alive\"\n    }\n}\n2023-05-23 05:59:03,872 - xtesting.core.robotframework - INFO - \n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nHealVNFTask                                                                   \n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nPOST Heal a vnfInstance :: Test ID: 7.3.1.8.1 Test title: POST Hea... | FAIL |\n404 !\u003d 202\n------------------------------------------------------------------------------\nHealVNFTask                                                           | FAIL |\n1 test, 0 passed, 1 failed\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nOutput:  /var/lib/xtesting/results/cnf-heal-validation/output.xml\n\n2023-05-23 05:59:03,875 - xtesting.core.robotframework - INFO - Results were successfully parsed\n2023-05-23 05:59:03,897 - xtesting.core.robotframework - INFO - Results were successfully generated\n2023-05-23 05:59:03,897 - xtesting.ci.run_tests - INFO - Test result:\n\n+-----------------------------+-----------------+------------------+----------------+\n|          TEST CASE          |     PROJECT     |     DURATION     |     RESULT     |\n+-----------------------------+-----------------+------------------+----------------+\n|     cnf-heal-validation     |       smo       |      00:00       |      FAIL      |\n+-----------------------------+-----------------+------------------+----------------+\n\n2023-05-23 05:59:03,899 - xtesting.ci.run_tests - ERROR - The test case \u0027cnf-heal-validation\u0027 failed.\n```",
+      "range": {
+        "startLine": 294,
+        "startChar": 11,
+        "endLine": 294,
+        "endChar": 65
+      },
+      "revId": "74a4043a5575ac113ac476452a6ab14a78fa8d51",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
