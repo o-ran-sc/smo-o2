@@ -16,6 +16,24 @@
       "message": "To my understanding, this is not \"unnecessary\".\nThis is necessary but we cannot use this \"Check Individual VNF LCM operation occurrence operationState is\" due to currrent NFV-TST\u0027s bug.\n\nCould you add such information and note that you will remove this comment out after TST bug is fixed.",
       "revId": "f21f0d42504364c2667c4ab7ba6613286b2f5df9",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cb5e7c4_0bab1ecf",
+        "filename": "tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition/packageTest.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-25T08:32:40Z",
+      "side": 1,
+      "message": "A TODO comment added into the script as you pointed out. The word \"unnecessary\" removed.",
+      "parentUuid": "e5ffa0e0_6f0b6802",
+      "revId": "f21f0d42504364c2667c4ab7ba6613286b2f5df9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
