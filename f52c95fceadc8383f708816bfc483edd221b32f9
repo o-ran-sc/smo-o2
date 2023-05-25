@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fedc063f_c17457e8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-05-25T08:06:50Z",
+      "side": 1,
+      "message": "It is found that there were unnecessary steps in existing script, so these were removed in patch set 7.",
+      "revId": "f52c95fceadc8383f708816bfc483edd221b32f9",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
