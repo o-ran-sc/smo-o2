@@ -49,6 +49,16 @@ committers:
       company: 'Fujitsu'
       id: 'AyumuUeha'
       timezone: 'Asia/Tokyo'
+    - name: 'Seshu Kumar Mudiganti'
+      email: 'seshukumar.mudiganti@windriver.com'
+      company: 'Windriver'
+      id: 'seshukm'
+      timezone: 'Utc+5.30, IST'
+    - name: 'Toshiaki Takahashi'
+      email: 'ts-takahashi@nec.com'
+      company: 'NEC'
+      id: 'takahashi-tsc'
+      timezone: 'Asia/Tokyo'
 tsc:
     # yamllint disable rule:line-length
     approval: 'https://wiki.o-ran-sc.org/display/TOC#ORANSCTechnicalOversightCommittee(TOC)-20220209'
