@@ -4,11 +4,11 @@ project_creation_date: '2022-03-17'
 project_category: ''
 lifecycle_state: 'Incubation'
 project_lead: &oran_smo_ptl
-    name: 'Mahesh Jethanandani'
-    email: 'mjethanandani@gmail.com'
-    id: 'mjethanandani '
-    company: 'Arrcus'
-    timezone: 'America/Los_Angeles'
+    name: 'Seshu Kumar Mudiganti'
+    email: 'seshukumar.mudiganti@windriver.com'
+    company: 'Windriver'
+    id: 'seshukm'
+    timezone: 'Asia/Kolkata'
 primary_contact: *oran_smo_ptl
 issue_tracking:
     type: 'jira'
@@ -49,6 +49,16 @@ committers:
       company: 'Fujitsu'
       id: 'AyumuUeha'
       timezone: 'Asia/Tokyo'
+    - name: 'Toshiaki Takahashi'
+      email: 'ts-takahashi@nec.com'
+      company: 'NEC'
+      id: 'takahashi-tsc'
+      timezone: 'Asia/Kolkata'
+    - name: 'Mahesh Jethanandani'
+      email: 'mjethanandani@gmail.com'
+      id: 'mjethanandani '
+      company: 'Arrcus'
+      timezone: 'America/Los_Angeles'
 tsc:
     # yamllint disable rule:line-length
     approval: 'https://wiki.o-ran-sc.org/display/TOC#ORANSCTechnicalOversightCommittee(TOC)-20220209'
