@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3b4f02a_2446a20b",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-06-21T12:52:28Z",
+      "side": 1,
+      "message": "Could you change to \u0027Asia/Kolkata\u0027?",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 31
+      },
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c7f4c4_ce8e09da",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-06-21T12:52:28Z",
+      "side": 1,
+      "message": "Could you move Seshu\u0027s information to `project_lead` section (Line:7~) instead of Mahesh?",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 31
+      },
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
