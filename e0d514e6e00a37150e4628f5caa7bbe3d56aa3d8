@@ -134,6 +134,54 @@
       },
       "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e2a7642_a030754f",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-06-22T06:53:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "08437a23_bfdf6c50",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 31
+      },
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae425c5d_bfd80175",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-06-22T06:53:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2bcbf4ee_e70c365b",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
+        "endLine": 56,
+        "endChar": 31
+      },
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
