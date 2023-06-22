@@ -143,7 +143,7 @@ Instantiate
 Instantiate a VNF by specifying the ID of the created VNF Instance and a file path of input parameters.
 
 .. note::
-  Please change the parameters in ``input_param.json`` to suite your environment.
+  Please change the parameters in ``input_param.json`` to suit your environment.
 
 .. code:: bash
 
