@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d0f3723_422083f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2023-06-22T00:44:13Z",
+      "side": 1,
+      "message": "Thank you for your comments!",
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c3b4f02a_2446a20b",
@@ -40,6 +57,54 @@
       "range": {
         "startLine": 52,
         "startChar": 0,
+        "endLine": 56,
+        "endChar": 31
+      },
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa0dfa1a_261e82bd",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2023-06-22T00:44:13Z",
+      "side": 1,
+      "message": "OK.\n\nBy the way, should I move Mahesh\u0027s information to committers section?",
+      "parentUuid": "c0c7f4c4_ce8e09da",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 31
+      },
+      "revId": "e0d514e6e00a37150e4628f5caa7bbe3d56aa3d8",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bcbf4ee_e70c365b",
+        "filename": "INFO.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2023-06-22T00:44:13Z",
+      "side": 1,
+      "message": "Sure, I\u0027ll change it.",
+      "parentUuid": "c3b4f02a_2446a20b",
+      "range": {
+        "startLine": 56,
+        "startChar": 16,
         "endLine": 56,
         "endChar": 31
       },
