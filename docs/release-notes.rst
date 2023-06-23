@@ -26,13 +26,18 @@ Version history
 | 2022-12-23         | 2.0                | Toshiaki Takahashi | G-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
-|                    |                    |                    |                    |
+| 2022-06-26         | 3.0                | Toshiaki Takahashi | H-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+H-release:
+
+The H release was targeted towards implementation of the O2 interface.
+The API version has been upgraded, the testing scope has been expanded, the testing code has been enhanced, and the documentation has been improved.
 
 G-release:
 
@@ -77,15 +82,13 @@ Feature Additions
 | **JIRA REFERENCE**                   | **SLOGAN**                                     |
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
-| SMO-77                               | TST010 API Conformance                         |
+| SMO-129                              | Improve API-based documentation                |
 +--------------------------------------+------------------------------------------------+
-| SMO-78                               | Release Artifact                               |
+| SMO-130                              | Migrate Tacker API version from v1 to v2       |
 +--------------------------------------+------------------------------------------------+
-| SMO-79                               | Alignment with ETSI NFV SOL014 for VM-base VNF |
+| SMO-131                              | Improve API Conformance testing with NFV-TST010 code |
 +--------------------------------------+------------------------------------------------+
-| SMO-82                               | Update INFO.yaml                               |
 +--------------------------------------+------------------------------------------------+
-| SMO-84                               | Add license info in smo/o2 repo                |
 +--------------------------------------+------------------------------------------------+
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
