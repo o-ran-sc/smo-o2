@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c164cd5_2eeb17b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-06-23T04:29:47Z",
+      "side": 1,
+      "message": "Now the build is successful. Can you please move the verification status to next?",
+      "revId": "a3079fa3faab7cb8458a9a2e6126ece5a5b3ed9f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
