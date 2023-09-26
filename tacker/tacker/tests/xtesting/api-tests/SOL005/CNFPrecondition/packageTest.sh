@@ -1,6 +1,6 @@
 #!/bin/sh
 
-variableFile=$1    # file path of variables.txt in which environmental variables should be updated
+variableFile=$1    # file path of configuration.txt in which environmental variables should be updated
 if [ ! $1 ]; then
         echo "Input parameter is missing"
         exit 1
@@ -48,13 +48,8 @@ else
         exit 1
 fi
 
-#update environmental variables in variables.txt
-vnfdid=$(curl -g -X GET http://localhost:9890/vnfpkgm/v1/vnf_packages/$Packageid \
-        -H "Accept: application/json" -H "User-Agent: python-tackerclient" \
-        -H "X-Auth-Token: $token" | jq -r .vnfdId)
-
+#update environmental variables in configuration.txt
 sed -i '/${vnfPkgId}/d' $variableFile
-sed -i '/${vnfdId}/d' $variableFile
 sed -i '/${AUTHORIZATION_HEADER}/d' $variableFile
 sed -i '/${AUTHORIZATION_TOKEN}/d' $variableFile
 sed -i '/${VNFM_PORT}/d' $variableFile
@@ -62,7 +57,6 @@ sed -i '/${VNFM_SCHEMA}/d' $variableFile
 
 echo "" >> $variableFile
 echo "\${vnfPkgId}     $Packageid" >> $variableFile
-echo "\${vnfdId}     $vnfdid" >> $variableFile
 echo "\${AUTHORIZATION_HEADER}    X-Auth-Token" >> $variableFile
 echo "\${AUTHORIZATION_TOKEN}     $token" >> $variableFile
 echo "\${VNFM_PORT}      9890" >> $variableFile
@@ -73,8 +67,5 @@ echo "\${VNFM_SCHEMA}    http" >> $variableFile
 #       is fixed by ESTI NFV TST, we need to remove the step for commenting it out below.
 sed -i 's/    Check Individual VNF LCM operation occurrence operationState is    STARTING/\#   Check Individual VNF LCM operation occurrence operationState is    STARTING\n\n\*\*\* comment \*\*\*/g' ../../SOL003/VNFLifecycleManagement-API/InstantiateVNFTask.robot
 sed -i 's/    Check Individual VNF LCM operation occurrence operationState is    STARTING/\#   Check Individual VNF LCM operation occurrence operationState is    STARTING\n\n\*\*\* comment \*\*\*/g' ../../SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
-
-#change variable names and values to adapt our test
-sed -i 's/vnfdId=${Descriptor_ID}/vnfdId=${vnfdId}/g' ../../SOL003/VNFLifecycleManagement-API/VnfLcmMntOperationKeywords.robot
 
 exit 0
