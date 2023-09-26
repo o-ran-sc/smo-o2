@@ -73,6 +73,9 @@ The following steps are the procedure of API conformance test according to the s
       .. code:: bash
 
          $ git clone https://forge.etsi.org/rep/nfv/api-tests.git
+         $ cd api-tests
+         $ git checkout origin/2.6.1-fix-plu
+         $ cd ..
 
    7. Copy the directories and file under '/tmp/o2/tacker/tacker/tests/xtesting/' to the location under the current directory.
 
@@ -82,7 +85,7 @@ The following steps are the procedure of API conformance test according to the s
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition ./api-tests/SOL005
          $ mkdir jsons
-         $ cp ./api-tests/SOL003/cnflcm/jsons/inst.json ./jsons/instantiateVnfRequest.json
+         $ cp ./api-tests/SOL003/cnflcm/jsons/* ./jsons
 
    8. Copy 'testcases.yaml' file from '/tmp/o2/tacker/tacker/tests/xtesting/' directory to the location under the current directory.
 
@@ -110,7 +113,6 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/createVnfRequest.json ./jsons
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
@@ -132,10 +134,8 @@ The following steps are the procedure of API conformance test according to the s
                 Set Headers  {"Accept":"${ACCEPT}"}
                 Set Headers  {"Content-Type": "${CONTENT_TYPE}"}
                 Run Keyword If    ${AUTH_USAGE} == 1    Set Headers    {"${AUTHORIZATION_HEADER}":"${AUTHORIZATION_TOKEN}"}
-                Run Keyword If    ${check_descriptors} == 1    PARSE the Descriptor File
-                ${template}=    Get File    jsons/createVnfRequest.json
-                ${body}=        Format String   ${template}     vnfdId=${vnfdId}    vnfProvider=${Provider}    vnfProductName=${Product_Name}    vnfSoftwareVersion=${Software_Version}    vnfdVersion= ${Descriptor_Version}
-                Post    ${apiRoot}/${apiName}/${apiMajorVersion}/vnf_instances    ${body}
+                ${body}=    Get File    jsons/createVnfRequest.json
+                Post    ${apiRoot}/${apiName}/${apiVersion}/vnf_instances    ${body}
                 ${outputResponse}=    Output    response
                     Set Global Variable    ${response}    ${outputResponse}
                 ${res_body}=    Get From Dictionary     ${outputResponse}    body                       # Add this line
@@ -167,9 +167,9 @@ The following steps are the procedure of API conformance test according to the s
                 ...    Test title: POST Create a new vnfInstance
                 ...    Test objective: The objective is to create a new VNF instance resource
                 ...    Pre-conditions: none
-                ...    Reference: Clause 5.4.2.3.1 - ETSI GS NFV-SOL 003 [1] v2.8.1
+                ...    Reference: Clause 5.4.2.3.1 - ETSI GS NFV-SOL 003 [1] v2.6.1
                 ...    Config ID: Config_prod_VNFM
-                ...    Applicability: none
+                ...    Applicability:
                 ...    Post-Conditions: VNF instance created
                 POST Create a new vnfInstance
                 Check HTTP Response Status Code Is    201
@@ -195,6 +195,7 @@ The following steps are the procedure of API conformance test according to the s
          $ openstack project create --domain default nfv
          $ openstack user create --domain default --project nfv --password devstack nfv_user
          $ openstack role add --project nfv --user nfv_user admin
+         $ source ${devstack_dir}/openrc nfv_user nfv
 
    2. Register Kubernetes VIM and create an executable environment for Helm CLI from steps mentioned in below link.
 
@@ -211,10 +212,59 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ cd ~/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition
-         $ ./packageTest.sh ../../SOL003/VNFLifecycleManagement-API/environment/variables.txt
+         $ c ~/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition
+         $ ./packageTest.sh ../../SOL003/VNFLifecycleManagement-API/environment/configuration.txt
 
-   5. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
+   5. Get 'vnfdId' and change it in the file 'createVnfRequest.json' as below.
+
+     .. code:: bash
+
+         $ openstack vnf package list -c "Id"
+
+      E.g: Output of command
+
+         .. code:: bash
+
+            +--------------------------------------+
+            | ID                                   |
+            +--------------------------------------+
+            | 0ca03e2e-1c51-4696-9baa-36f974185825 |
+            +--------------------------------------+
+
+      .. code:: bash
+
+         $ openstack vnf package show 0ca03e2e-1c51-4696-9baa-36f974185825 -c "VNFD ID"
+
+      E.g: Output of command
+
+         .. code:: bash
+
+            +--------------------------------------+
+            | ID                                   |
+            +--------------------------------------+
+            | 4688aff3-b456-4b07-bca6-089db8aec8b0 |
+            +--------------------------------------+
+
+            .. code:: bash
+
+         $ vi ~/tacker/tacker/tests/xtesting/jsons/createVnfRequest.json
+
+      E.g: Content of file
+
+         .. code:: bash
+
+            {
+              "vnfdId": "48471dd8-3ad3-4920-8ee7-607105ef5f9b", # Update value here
+              "vnfInstanceName": "",
+              "vnfInstanceDescription": "",
+              "vnfProvider":"Company",
+              "vnfProductName":"Sample CNF",
+              "vnfSoftwareVersion":"1.0",
+              "vnfdVersion":"1.0",
+              "metadata":{}
+            }
+
+   6. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
 
       .. code:: bash
 
@@ -270,7 +320,7 @@ The following steps are the procedure of API conformance test according to the s
               ]
             }
 
-   6. Start kubectl proxy.
+   7. Start kubectl proxy.
 
       .. code:: bash
 
@@ -333,14 +383,30 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ grep -nu "vnfInstanceId" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt | awk '{print $2}'
-         6fc3539c-e602-4afa-8e13-962fb5a7d81f
+         $ openstack vnflcm list  -c "ID"
+
+      E.g: Output of command
+
+         .. code:: bash
+
+            +--------------------------------------+
+            | ID                                   |
+            +--------------------------------------+
+            | 6fc3539c-e602-4afa-8e13-962fb5a7d81f |
+            +--------------------------------------+
 
          $ openstack vnflcm terminate 6fc3539c-e602-4afa-8e13-962fb5a7d81f
          $ openstack vnflcm delete 6fc3539c-e602-4afa-8e13-962fb5a7d81f
 
-         $ grep -nu "{vnfPkgId}" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt | awk '{print $2}'
-         718b9054-2a7a-4489-a893-f2b2b1794825
+         $ openstack vnf package list -c "Id"
+
+         .. code:: bash
+
+            +--------------------------------------+
+            | ID                                   |
+            +--------------------------------------+
+            | 718b9054-2a7a-4489-a893-f2b2b1794825 |
+            +--------------------------------------+
 
          $ openstack vnf package update --operational-state DISABLED 718b9054-2a7a-4489-a893-f2b2b1794825
          $ openstack vnf package delete 718b9054-2a7a-4489-a893-f2b2b1794825
@@ -351,4 +417,4 @@ The following steps are the procedure of API conformance test according to the s
          If any update in the package with respect to name and namespace, then the name and namespace variables in the file
          '~/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/variables.txt' need to be updated accordingly.
 
-.. _ETSI NFV-TST 010: https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/010/02.08.01_60/gs_NFV-TST010v020801p.pdf
+.. _ETSI NFV-TST 010: https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/010/02.06.01_60/gs_NFV-TST010v020601p.pdf
