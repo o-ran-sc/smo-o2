@@ -1,0 +1,10 @@
+{
+  "vnfdId": "48471dd8-3ad3-4920-8ee7-607105ef5f9b",
+  "vnfInstanceName": "",
+  "vnfInstanceDescription": "",
+  "vnfProvider":"Company",
+  "vnfProductName":"Sample CNF",
+  "vnfSoftwareVersion":"1.0",
+  "vnfdVersion":"1.0",
+  "metadata":{}
+}
