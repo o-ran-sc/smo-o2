@@ -63,9 +63,22 @@ echo "\${VNFM_PORT}      9890" >> $variableFile
 echo "\${VNFM_SCHEMA}    http" >> $variableFile
 
 #comment out test cases in api-tests
-# TODO: After the bug in the test case "Check Individual VNF LCM operation occurrence operationState is"
-#       is fixed by ESTI NFV TST, we need to remove the step for commenting it out below.
-sed -i 's/    Check Individual VNF LCM operation occurrence operationState is    STARTING/\#   Check Individual VNF LCM operation occurrence operationState is    STARTING\n\n\*\*\* comment \*\*\*/g' ../../SOL003/VNFLifecycleManagement-API/InstantiateVNFTask.robot
-sed -i 's/    Check Individual VNF LCM operation occurrence operationState is    STARTING/\#   Check Individual VNF LCM operation occurrence operationState is    STARTING\n\n\*\*\* comment \*\*\*/g' ../../SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+# TODO: Although the bug in the test case "Check Individual VNF LCM operation occurrence operationState is"
+#       was fixed by ESTI NFV TST, we have observed that healing conformance test fails due to this test case.
+#       After this issue is resolved, we need to remove the step for commenting it out below.
+sed -i 's/    Check Individual VNF LCM operation occurrence operationState is    STARTING/\#   Check Individual VNF LCM operation occurrence operationState is    STARTING/g' ../../SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+
+#comment out test cases in api-tests which are unnecessary for conformance test
+robotFile=../../SOL003/VNFLifecycleManagement-API/InstantiateVNFTask.robot
+lineNo=`cat -n $robotFile | sed -n '/Instantiate a vnfInstance/,$p' | grep -E '^([0-9]|[[:space:]])+$' | head -1`
+insertSteps="*** comment ***"
+Command="sed -i '$((lineNo))a $insertSteps' $robotFile"
+eval "$Command"
+
+robotFile=../../SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+lineNo=`cat -n $robotFile | sed -n '/POST Heal a vnfInstance/,$p' | grep -E '^([0-9]|[[:space:]])+$' | head -1`
+insertSteps="*** comment ***"
+Command="sed -i '$((lineNo))a $insertSteps' $robotFile"
+eval "$Command"
 
 exit 0
