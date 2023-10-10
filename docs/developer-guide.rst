@@ -117,6 +117,8 @@ The following steps are the procedure of API conformance test according to the s
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
 
+<<<<<<< PATCH SET (1a7ae9 Improve Xtesting code for interconnecting test cases)
+=======
    12. Modify robot files under api-tests directory as below.
 
       .. code:: bash
@@ -185,6 +187,7 @@ The following steps are the procedure of API conformance test according to the s
 
          This change is for avoiding running unnecessary test cases.
 
+>>>>>>> BASE      (c536c9 Modify Xtesting code according to NFV-TST version)
 * Preconditioning for test execution
 
    1. If there is no 'nfv_user' and 'nfv' project, create them in your local environment.
@@ -279,23 +282,15 @@ The following steps are the procedure of API conformance test according to the s
 
 * Testing steps
 
-   1. Verify Vnflcm Create and Instantiate.
+   1. Verify Vnflcm Create, Instantiate and Heal.
 
       .. code:: bash
 
          $ cd ~/tacker/tacker/tests/xtesting/
          $ . xtesting-py3/bin/activate
-         $ sudo xtesting-py3/bin/run_tests -t cnf-instantiate
+         $ sudo xtesting-py3/bin/run_tests -t cnf-lcm-validation
 
-   2. Verify Heal
-
-      .. code:: bash
-
-         $ cd ~/tacker/tacker/tests/xtesting/
-         $ . xtesting-py3/bin/activate
-         $ sudo xtesting-py3/bin/run_tests -t cnf-heal-validation
-
-   3. Verify getting all pods and getting specific pod.
+   2. Verify getting all pods and getting specific pod.
 
       .. code:: bash
 
@@ -330,7 +325,7 @@ The following steps are the procedure of API conformance test according to the s
             |   cnf-deployments-validation  |       smo       |      00:01       |      PASS      |
             +-------------------------------+-----------------+------------------+----------------+
 
-   4. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
+   3. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
 
       .. code:: bash
 
