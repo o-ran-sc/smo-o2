@@ -117,6 +117,7 @@ The following steps are the procedure of API conformance test according to the s
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
 
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
    12. Modify robot files under api-tests directory as below.
 
       .. code:: bash
@@ -185,6 +186,8 @@ The following steps are the procedure of API conformance test according to the s
 
          This change is for avoiding running unnecessary test cases.
 
+=======
+>>>>>>> CHANGE (56673b Improve Xtesting code for interconnecting test cases)
 * Preconditioning for test execution
 
    1. If there is no 'nfv_user' and 'nfv' project, create them in your local environment.
@@ -215,6 +218,52 @@ The following steps are the procedure of API conformance test according to the s
          $ cd ~/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition
          $ ./packageTest.sh ../../SOL003/VNFLifecycleManagement-API/environment/configuration.txt
 
+<<<<<<< PATCH SET (43c7d7 Improve Xtesting code for interconnecting test cases)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+   5. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
+=======
+   5. Get 'vnfdId' and change it in the file 'createVnfRequest.json' as below.
+
+     .. code:: bash
+
+         $ openstack vnf package list -c "Id"
+
+           E.g: Output of command
+
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 0ca03e2e-1c51-4696-9baa-36f974185825 |
+           +--------------------------------------+
+
+         $ openstack vnf package show 0ca03e2e-1c51-4696-9baa-36f974185825 -c "VNFD ID"
+
+           E.g: Output of command
+
+           +---------+--------------------------------------+
+           | Field   | Value                                |
+           +---------+--------------------------------------+
+           | VNFD ID | 4688aff3-b456-4b07-bca6-089db8aec8b0 |
+           +---------+--------------------------------------+
+
+         $ vi ~/tacker/tacker/tests/xtesting/jsons/createVnfRequest.json
+
+           E.g: Content of file
+
+           {
+             "vnfdId": "4688aff3-b456-4b07-bca6-089db8aec8b0", # Update value here
+             "vnfInstanceName": "",
+             "vnfInstanceDescription": "",
+             "vnfProvider":"Company",
+             "vnfProductName":"Sample CNF",
+             "vnfSoftwareVersion":"1.0",
+             "vnfdVersion":"1.0",
+             "metadata":{}
+           }
+
+   6. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
+>>>>>>> CHANGE (56673b Improve Xtesting code for interconnecting test cases)
+=======
    5. Get 'vnfdId' and change it in the file 'createVnfRequest.json' as below.
 
      .. code:: bash
@@ -265,60 +314,55 @@ The following steps are the procedure of API conformance test according to the s
             }
 
    6. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
+>>>>>>> BASE      (e14b20 Modify Xtesting script based on the fix in NFV-TST)
 
       .. code:: bash
 
          $ openstack vim list -c "ID"
 
-      E.g: Output of command
+           E.g: Output of command
 
-         .. code:: bash
-
-            +--------------------------------------+
-            | ID                                   |
-            +--------------------------------------+
-            | 08260b52-c3f6-47a9-bb1f-cec1f0d3956a |
-            +--------------------------------------+
-
-      .. code:: bash
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 08260b52-c3f6-47a9-bb1f-cec1f0d3956a |
+           +--------------------------------------+
 
          $ vi ~/tacker/tacker/tests/xtesting/jsons/instantiateVnfRequest.json
 
-      E.g: Content of file
+           E.g: Content of file
 
-         .. code:: bash
-
-            {
-              "flavourId": "helmchart",
-              "additionalParams": {
-                "namespace": "default",
-                "use_helm": "true",
-                "using_helm_install_param": [
-                  {
-                    "exthelmchart": "false",
-                    "helmchartfile_path": "Files/kubernetes/localhelm-0.1.0.tgz",
-                    "helmreleasename": "tacker-test-vdu"
-                  }
-                ],
-                "helm_replica_values": {
-                  "vdu1_aspect": "replicaCount"
-                },
-                "vdu_mapping": {
-                  "VDU1": {
-                    "kind": "Deployment",
-                    "name": "tacker-test-vdu-localhelm",
-                    "helmreleasename": "tacker-test-vdu"
-                  }
-                }
-              },
-              "vimConnectionInfo": [
-                {
-                  "id": "742f1fc7-7f00-417d-85a6-d4e788353181",
-                  "vimId": "d7a811a3-e3fb-41a1-a4e2-4dce2209bcfe",  # Update value here
-                  "vimType": "kubernetes"
-                }
-              ]
-            }
+           {
+             "flavourId": "helmchart",
+             "additionalParams": {
+               "namespace": "default",
+               "use_helm": "true",
+               "using_helm_install_param": [
+                 {
+                   "exthelmchart": "false",
+                   "helmchartfile_path": "Files/kubernetes/localhelm-0.1.0.tgz",
+                   "helmreleasename": "tacker-test-vdu"
+                 }
+               ],
+               "helm_replica_values": {
+                 "vdu1_aspect": "replicaCount"
+               },
+               "vdu_mapping": {
+                 "VDU1": {
+                   "kind": "Deployment",
+                   "name": "tacker-test-vdu-localhelm",
+                   "helmreleasename": "tacker-test-vdu"
+                 }
+               }
+             },
+             "vimConnectionInfo": [
+               {
+                 "id": "742f1fc7-7f00-417d-85a6-d4e788353181",
+                 "vimId": "d7a811a3-e3fb-41a1-a4e2-4dce2209bcfe",  # Update value here
+                 "vimType": "kubernetes"
+               }
+             ]
+           }
 
    7. Start kubectl proxy.
 
@@ -328,23 +372,15 @@ The following steps are the procedure of API conformance test according to the s
 
 * Testing steps
 
-   1. Verify Vnflcm Create and Instantiate.
+   1. Verify Vnflcm Create, Instantiate and Heal.
 
       .. code:: bash
 
          $ cd ~/tacker/tacker/tests/xtesting/
          $ . xtesting-py3/bin/activate
-         $ sudo xtesting-py3/bin/run_tests -t cnf-instantiate
+         $ sudo xtesting-py3/bin/run_tests -t cnf-lcm-validation
 
-   2. Verify Heal
-
-      .. code:: bash
-
-         $ cd ~/tacker/tacker/tests/xtesting/
-         $ . xtesting-py3/bin/activate
-         $ sudo xtesting-py3/bin/run_tests -t cnf-heal-validation
-
-   3. Verify getting all pods and getting specific pod.
+   2. Verify getting all pods and getting specific pod.
 
       .. code:: bash
 
@@ -379,10 +415,26 @@ The following steps are the procedure of API conformance test according to the s
             |   cnf-deployments-validation  |       smo       |      00:01       |      PASS      |
             +-------------------------------+-----------------+------------------+----------------+
 
-   4. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
+   3. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
 
       .. code:: bash
 
+<<<<<<< PATCH SET (43c7d7 Improve Xtesting code for interconnecting test cases)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+         $ grep -nu "vnfInstanceId" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt | awk '{print $2}'
+         6fc3539c-e602-4afa-8e13-962fb5a7d81f
+=======
+         $ openstack vnflcm list  -c "ID"
+
+           E.g: Output of command
+
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 6fc3539c-e602-4afa-8e13-962fb5a7d81f |
+           +--------------------------------------+
+>>>>>>> CHANGE (56673b Improve Xtesting code for interconnecting test cases)
+=======
          $ openstack vnflcm list  -c "ID"
 
       E.g: Output of command
@@ -394,10 +446,27 @@ The following steps are the procedure of API conformance test according to the s
             +--------------------------------------+
             | 6fc3539c-e602-4afa-8e13-962fb5a7d81f |
             +--------------------------------------+
+>>>>>>> BASE      (e14b20 Modify Xtesting script based on the fix in NFV-TST)
 
          $ openstack vnflcm terminate 6fc3539c-e602-4afa-8e13-962fb5a7d81f
          $ openstack vnflcm delete 6fc3539c-e602-4afa-8e13-962fb5a7d81f
 
+<<<<<<< PATCH SET (43c7d7 Improve Xtesting code for interconnecting test cases)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+         $ grep -nu "{vnfPkgId}" ~/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/environment/variables.txt | awk '{print $2}'
+         718b9054-2a7a-4489-a893-f2b2b1794825
+=======
+         $ openstack vnf package list -c "Id"
+
+           E.g: Output of command
+
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 718b9054-2a7a-4489-a893-f2b2b1794825 |
+           +--------------------------------------+
+>>>>>>> CHANGE (56673b Improve Xtesting code for interconnecting test cases)
+=======
          $ openstack vnf package list -c "Id"
 
          .. code:: bash
@@ -407,6 +476,7 @@ The following steps are the procedure of API conformance test according to the s
             +--------------------------------------+
             | 718b9054-2a7a-4489-a893-f2b2b1794825 |
             +--------------------------------------+
+>>>>>>> BASE      (e14b20 Modify Xtesting script based on the fix in NFV-TST)
 
          $ openstack vnf package update --operational-state DISABLED 718b9054-2a7a-4489-a893-f2b2b1794825
          $ openstack vnf package delete 718b9054-2a7a-4489-a893-f2b2b1794825
