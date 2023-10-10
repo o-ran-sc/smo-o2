@@ -81,4 +81,22 @@ insertSteps="*** comment ***"
 Command="sed -i '$((lineNo))a $insertSteps' $robotFile"
 eval "$Command"
 
+#change variable names and values to adapt our test
+sed -i 's/vnfdId=${Descriptor_ID}/vnfdId=${vnfdId}/g' ../../SOL003/VNFLifecycleManagement-API/VnfLcmMntOperationKeywords.robot
+
+#comment out test cases in api-tests which are unnecessary for conformance test
+robotFile=../../SOL003/VNFLifecycleManagement-API/VNFInstances.robot
+lineNo=`cat -n $robotFile | sed -n '/POST Create a new vnfInstance/,$p' | grep -E '^([0-9]|[[:space:]])+$' | head -1`
+insertSteps="*** comment ***"
+Command="sed -i '$((lineNo))a $insertSteps' $robotFile"
+eval "$Command"
+
+#modify api-tests code so that vnfInstanceId is treated as global variable
+# TODO: After the modification is officially done in api-tests by ETSI NFV TST, we need to remove below step.
+robotFile=../../SOL003/VNFLifecycleManagement-API/VnfLcmMntOperationKeywords.robot
+lineNo=`cat -n $robotFile | sed -n '/POST Create a new vnfInstance/,$p' | grep -E '^([0-9]|[[:space:]])+$' | head -1`
+insertSteps="\    \${res_body}=    Get From Dictionary     \${outputResponse}    body\n    \${res_id}=    Get From Dictionary     \${res_body}    id\n    Set Global Variable    \${vnfInstanceId}     \${res_id}"
+Command="sed -i '$((lineNo))i $insertSteps' $robotFile"
+eval "$Command"
+
 exit 0
