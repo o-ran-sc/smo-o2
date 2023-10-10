@@ -117,74 +117,6 @@ The following steps are the procedure of API conformance test according to the s
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
 
-   12. Modify robot files under api-tests directory as below.
-
-      .. code:: bash
-
-         $ vi api-tests/SOL003/VNFLifecycleManagement-API/VnfLcmMntOperationKeywords.robot
-
-      E.g: Part of file content
-
-         .. code:: bash
-
-            (Omitted)
-           
-            POST Create a new vnfInstance
-                Log    Create VNF instance by POST to /vnf_instances
-                Set Headers  {"Accept":"${ACCEPT}"}
-                Set Headers  {"Content-Type": "${CONTENT_TYPE}"}
-                Run Keyword If    ${AUTH_USAGE} == 1    Set Headers    {"${AUTHORIZATION_HEADER}":"${AUTHORIZATION_TOKEN}"}
-                ${body}=    Get File    jsons/createVnfRequest.json
-                Post    ${apiRoot}/${apiName}/${apiVersion}/vnf_instances    ${body}
-                ${outputResponse}=    Output    response
-                    Set Global Variable    ${response}    ${outputResponse}
-                ${res_body}=    Get From Dictionary     ${outputResponse}    body                       # Add this line
-                ${vnfInstanceId}=    Get From Dictionary     ${res_body}    id                          # Add this line
-                Set Global Variable    ${vnfInstanceId}                                                 # Add this line
-                Run Process    api-tests/SOL003/cnflcm/update_variable.sh  ${vnfInstanceId}  shell=yes  # Add this line
-           
-            GET multiple vnfInstances
-                Log    Query VNF The GET method queries information about multiple VNF instances.
-
-            (Omitted)
-
-      .. note::
-
-         This change is for holding variable between test cases.
-
-      .. code:: bash
-
-         $ vi api-tests/SOL003/VNFLifecycleManagement-API/VNFInstances.robot
-
-      E.g: Part of file content
-
-         .. code:: bash
-
-            (Omitted)
-
-            POST Create a new vnfInstance
-                [Documentation]    Test ID: 7.3.1.1.1
-                ...    Test title: POST Create a new vnfInstance
-                ...    Test objective: The objective is to create a new VNF instance resource
-                ...    Pre-conditions: none
-                ...    Reference: Clause 5.4.2.3.1 - ETSI GS NFV-SOL 003 [1] v2.6.1
-                ...    Config ID: Config_prod_VNFM
-                ...    Applicability:
-                ...    Post-Conditions: VNF instance created
-                POST Create a new vnfInstance
-                Check HTTP Response Status Code Is    201
-                Check HTTP Response Body Json Schema Is    vnfInstance
-           
-            *** comment ***                                           # Add this line
-            GET information about multiple VNF instances
-                [Documentation]    Test ID: 7.3.1.1.2
-           
-            (Omitted)
-
-      .. note::
-
-         This change is for avoiding running unnecessary test cases.
-
 * Preconditioning for test execution
 
    1. If there is no 'nfv_user' and 'nfv' project, create them in your local environment.
@@ -221,48 +153,38 @@ The following steps are the procedure of API conformance test according to the s
 
          $ openstack vnf package list -c "Id"
 
-      E.g: Output of command
+           E.g: Output of command
 
-         .. code:: bash
-
-            +--------------------------------------+
-            | ID                                   |
-            +--------------------------------------+
-            | 0ca03e2e-1c51-4696-9baa-36f974185825 |
-            +--------------------------------------+
-
-      .. code:: bash
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 0ca03e2e-1c51-4696-9baa-36f974185825 |
+           +--------------------------------------+
 
          $ openstack vnf package show 0ca03e2e-1c51-4696-9baa-36f974185825 -c "VNFD ID"
 
-      E.g: Output of command
+           E.g: Output of command
 
-         .. code:: bash
-
-            +--------------------------------------+
-            | ID                                   |
-            +--------------------------------------+
-            | 4688aff3-b456-4b07-bca6-089db8aec8b0 |
-            +--------------------------------------+
-
-            .. code:: bash
+           +---------+--------------------------------------+
+           | Field   | Value                                |
+           +---------+--------------------------------------+
+           | VNFD ID | 4688aff3-b456-4b07-bca6-089db8aec8b0 |
+           +---------+--------------------------------------+
 
          $ vi ~/tacker/tacker/tests/xtesting/jsons/createVnfRequest.json
 
-      E.g: Content of file
+           E.g: Content of file
 
-         .. code:: bash
-
-            {
-              "vnfdId": "48471dd8-3ad3-4920-8ee7-607105ef5f9b", # Update value here
-              "vnfInstanceName": "",
-              "vnfInstanceDescription": "",
-              "vnfProvider":"Company",
-              "vnfProductName":"Sample CNF",
-              "vnfSoftwareVersion":"1.0",
-              "vnfdVersion":"1.0",
-              "metadata":{}
-            }
+           {
+             "vnfdId": "4688aff3-b456-4b07-bca6-089db8aec8b0", # Update value here
+             "vnfInstanceName": "",
+             "vnfInstanceDescription": "",
+             "vnfProvider":"Company",
+             "vnfProductName":"Sample CNF",
+             "vnfSoftwareVersion":"1.0",
+             "vnfdVersion":"1.0",
+             "metadata":{}
+           }
 
    6. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
 
@@ -270,55 +192,49 @@ The following steps are the procedure of API conformance test according to the s
 
          $ openstack vim list -c "ID"
 
-      E.g: Output of command
+           E.g: Output of command
 
-         .. code:: bash
-
-            +--------------------------------------+
-            | ID                                   |
-            +--------------------------------------+
-            | 08260b52-c3f6-47a9-bb1f-cec1f0d3956a |
-            +--------------------------------------+
-
-      .. code:: bash
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 08260b52-c3f6-47a9-bb1f-cec1f0d3956a |
+           +--------------------------------------+
 
          $ vi ~/tacker/tacker/tests/xtesting/jsons/instantiateVnfRequest.json
 
-      E.g: Content of file
+           E.g: Content of file
 
-         .. code:: bash
-
-            {
-              "flavourId": "helmchart",
-              "additionalParams": {
-                "namespace": "default",
-                "use_helm": "true",
-                "using_helm_install_param": [
-                  {
-                    "exthelmchart": "false",
-                    "helmchartfile_path": "Files/kubernetes/localhelm-0.1.0.tgz",
-                    "helmreleasename": "tacker-test-vdu"
-                  }
-                ],
-                "helm_replica_values": {
-                  "vdu1_aspect": "replicaCount"
-                },
-                "vdu_mapping": {
-                  "VDU1": {
-                    "kind": "Deployment",
-                    "name": "tacker-test-vdu-localhelm",
-                    "helmreleasename": "tacker-test-vdu"
-                  }
-                }
-              },
-              "vimConnectionInfo": [
-                {
-                  "id": "742f1fc7-7f00-417d-85a6-d4e788353181",
-                  "vimId": "d7a811a3-e3fb-41a1-a4e2-4dce2209bcfe",  # Update value here
-                  "vimType": "kubernetes"
-                }
-              ]
-            }
+           {
+             "flavourId": "helmchart",
+             "additionalParams": {
+               "namespace": "default",
+               "use_helm": "true",
+               "using_helm_install_param": [
+                 {
+                   "exthelmchart": "false",
+                   "helmchartfile_path": "Files/kubernetes/localhelm-0.1.0.tgz",
+                   "helmreleasename": "tacker-test-vdu"
+                 }
+               ],
+               "helm_replica_values": {
+                 "vdu1_aspect": "replicaCount"
+               },
+               "vdu_mapping": {
+                 "VDU1": {
+                   "kind": "Deployment",
+                   "name": "tacker-test-vdu-localhelm",
+                   "helmreleasename": "tacker-test-vdu"
+                 }
+               }
+             },
+             "vimConnectionInfo": [
+               {
+                 "id": "742f1fc7-7f00-417d-85a6-d4e788353181",
+                 "vimId": "d7a811a3-e3fb-41a1-a4e2-4dce2209bcfe",  # Update value here
+                 "vimType": "kubernetes"
+               }
+             ]
+           }
 
    7. Start kubectl proxy.
 
@@ -328,23 +244,15 @@ The following steps are the procedure of API conformance test according to the s
 
 * Testing steps
 
-   1. Verify Vnflcm Create and Instantiate.
+   1. Verify Vnflcm Create, Instantiate and Heal.
 
       .. code:: bash
 
          $ cd ~/tacker/tacker/tests/xtesting/
          $ . xtesting-py3/bin/activate
-         $ sudo xtesting-py3/bin/run_tests -t cnf-instantiate
+         $ sudo xtesting-py3/bin/run_tests -t cnf-lcm-validation
 
-   2. Verify Heal
-
-      .. code:: bash
-
-         $ cd ~/tacker/tacker/tests/xtesting/
-         $ . xtesting-py3/bin/activate
-         $ sudo xtesting-py3/bin/run_tests -t cnf-heal-validation
-
-   3. Verify getting all pods and getting specific pod.
+   2. Verify getting all pods and getting specific pod.
 
       .. code:: bash
 
@@ -379,34 +287,32 @@ The following steps are the procedure of API conformance test according to the s
             |   cnf-deployments-validation  |       smo       |      00:01       |      PASS      |
             +-------------------------------+-----------------+------------------+----------------+
 
-   4. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
+   3. For Re-testing, user must delete all the VNF instances and packages created in the above test. An example of steps is below.
 
       .. code:: bash
 
          $ openstack vnflcm list  -c "ID"
 
-      E.g: Output of command
+           E.g: Output of command
 
-         .. code:: bash
-
-            +--------------------------------------+
-            | ID                                   |
-            +--------------------------------------+
-            | 6fc3539c-e602-4afa-8e13-962fb5a7d81f |
-            +--------------------------------------+
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 6fc3539c-e602-4afa-8e13-962fb5a7d81f |
+           +--------------------------------------+
 
          $ openstack vnflcm terminate 6fc3539c-e602-4afa-8e13-962fb5a7d81f
          $ openstack vnflcm delete 6fc3539c-e602-4afa-8e13-962fb5a7d81f
 
          $ openstack vnf package list -c "Id"
 
-         .. code:: bash
+           E.g: Output of command
 
-            +--------------------------------------+
-            | ID                                   |
-            +--------------------------------------+
-            | 718b9054-2a7a-4489-a893-f2b2b1794825 |
-            +--------------------------------------+
+           +--------------------------------------+
+           | ID                                   |
+           +--------------------------------------+
+           | 718b9054-2a7a-4489-a893-f2b2b1794825 |
+           +--------------------------------------+
 
          $ openstack vnf package update --operational-state DISABLED 718b9054-2a7a-4489-a893-f2b2b1794825
          $ openstack vnf package delete 718b9054-2a7a-4489-a893-f2b2b1794825
