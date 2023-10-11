@@ -81,6 +81,7 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
+         $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL002/cnflcm ./api-tests/SOL002
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition ./api-tests/SOL005
@@ -114,6 +115,7 @@ The following steps are the procedure of API conformance test according to the s
       .. code:: bash
 
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons
+         $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons/healVnfcRequest.json
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
 
@@ -213,7 +215,11 @@ The following steps are the procedure of API conformance test according to the s
       .. code:: bash
 
          $ cd ~/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition
+<<<<<<< PATCH SET (3ad2e9 Add Heal VNFC conformance test in Xtesting)
+         $ ./packageTest.sh
+=======
          $ ./packageTest.sh ../../SOL003/VNFLifecycleManagement-API/environment/configuration.txt
+>>>>>>> BASE      (c536c9 Modify Xtesting code according to NFV-TST version)
 
    5. Get 'vimId' and change it in the file 'instantiateVnfRequest.json' as below.
 
