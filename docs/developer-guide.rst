@@ -81,6 +81,7 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
+         $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL002/cnflcm ./api-tests/SOL002
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm ./api-tests/SOL003
          $ cp -r /tmp/o2/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition ./api-tests/SOL005
@@ -114,6 +115,7 @@ The following steps are the procedure of API conformance test according to the s
       .. code:: bash
 
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons
+         $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons/healVnfcRequest.json
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
 
@@ -145,7 +147,7 @@ The following steps are the procedure of API conformance test according to the s
       .. code:: bash
 
          $ cd ~/tacker/tacker/tests/xtesting/api-tests/SOL005/CNFPrecondition
-         $ ./packageTest.sh ../../SOL003/VNFLifecycleManagement-API/environment/configuration.txt
+         $ ./packageTest.sh
 
    5. Get 'vnfdId' and change it in the file 'createVnfRequest.json' as below.
 
