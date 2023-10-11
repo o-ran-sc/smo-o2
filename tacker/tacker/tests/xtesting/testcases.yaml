@@ -3,7 +3,7 @@ tiers:
   - name: samples
     description: ''
     testcases:
-      - case_name: cnf-instantiate
+      - case_name: cnf-lcm-validation
         project_name: smo
         criteria: 100
         blocking: true
@@ -15,18 +15,11 @@ tiers:
             suites:
                 - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/VNFInstances.robot
                 - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/InstantiateVNFTask.robot
-      - case_name: cnf-heal-validation
-        project_name: smo
-        criteria: 100
-        blocking: true
-        clean_flag: false
-        description: ''
-        run:
-          name: robotframework
-          args:
-            suites:
-              - >-
-                /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/SleepTestCase.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/SleepTestCase.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL002/cnflcm/PrepareHealVnfc.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL002/VNFLifecycleManagement-API/HealVNFTask.robot
       - case_name: cnf-deployments-validation
         project_name: smo
         criteria: 100
