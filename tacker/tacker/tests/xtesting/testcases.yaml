@@ -17,6 +17,12 @@ tiers:
                 - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/InstantiateVNFTask.robot
                 - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/SleepTestCase.robot
                 - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/VNFLifecycleManagement-API/HealVNFTask.robot
+<<<<<<< PATCH SET (82ce95 Add Heal VNFC conformance test in Xtesting)
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL003/cnflcm/SleepTestCase.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL002/cnflcm/PrepareHealVnfc.robot
+                - /opt/stack/tacker/tacker/tests/xtesting/api-tests/SOL002/VNFLifecycleManagement-API/HealVNFTask.robot
+=======
+>>>>>>> BASE      (dc9644 Improve Xtesting code for interconnecting test cases)
       - case_name: cnf-deployments-validation
         project_name: smo
         criteria: 100
