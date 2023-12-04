@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8955c86_6000ba0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2023-12-04T00:58:13Z",
+      "side": 1,
+      "message": "LGTM, I would like Ueha-san to check this patch.",
+      "revId": "c536c96854bd51b646a7c6d1915ce834e249dc5b",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
