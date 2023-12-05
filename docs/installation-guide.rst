@@ -110,6 +110,23 @@ This section describes the installation of the Tacker installation on the refere
       git clone https://opendev.org/openstack-dev/devstack -b stable/yoga
       wget https://opendev.org/openstack/tacker/raw/branch/stable/yoga/devstack/local.conf.standalone
 
+* Installation using openstack-helm
+
+  Below is the method for installing INF o-cloud and Tacker using openstack-helm.
+  Please refer to Step 3, 4, and 5 for Tacker installation.
+
+  .. toctree::
+     :maxdepth: 1
+
+     https://wiki.o-ran-sc.org/display/IN/ETSI-DMS+on+INF+O-Cloud%2C+Tacker+installation+guide
+
+  Reference: About openstack-helm
+
+  .. toctree::
+     :maxdepth: 1
+
+     https://wiki.openstack.org/wiki/Openstack-helm
+
 * Manual Installation
 
   See the following documents.
