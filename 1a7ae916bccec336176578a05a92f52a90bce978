@@ -56,6 +56,30 @@
       },
       "revId": "1a7ae916bccec336176578a05a92f52a90bce978",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c43fee1_969207c2",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-05T02:48:06Z",
+      "side": 1,
+      "message": "This patch has been modified to conflict with the patch of [1], so could you set [1] as the parent patch and check its operation? Thanks.",
+      "parentUuid": "ee594ce7_b0bba1c5",
+      "range": {
+        "startLine": 217,
+        "startChar": 11,
+        "endLine": 217,
+        "endChar": 64
+      },
+      "revId": "1a7ae916bccec336176578a05a92f52a90bce978",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
