@@ -49,5 +49,14 @@ V2 API
    tacker-user-guide-vnf-v2.rst
    tacker-user-guide-cnf-v2.rst
 
+O2dms FM/PM
+"""""""""""
+Please refer to the following document for Monitor fault of VNF(App)
+using O2dms NFV Profile/SOL002
+
+.. toctree::
+   :maxdepth: 1
+
+   https://docs.openstack.org/tacker/latest/user/etsi_cnf_auto_healing_fm.html
 
 .. _Tacker User Guide: https://docs.openstack.org/tacker/latest/user/index.html
