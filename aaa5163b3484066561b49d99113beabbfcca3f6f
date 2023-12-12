@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85539ab0_c9a68287",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2023-12-12T05:57:14Z",
+      "side": 1,
+      "message": "To avoid conflicts with the other patches, set https://gerrit.o-ran-sc.org/r/c/smo/o2/+/11886 as the parent of this patch.",
+      "revId": "aaa5163b3484066561b49d99113beabbfcca3f6f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
