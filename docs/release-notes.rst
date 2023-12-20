@@ -29,10 +29,21 @@ Version history
 | 2022-06-26         | 3.0                | Toshiaki Takahashi | H-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2023-12-21         | 4.0                | Toshiaki Takahashi | I-Release          |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+I-release:
+
+The I release was targeted towards implementation of the O2 interface.
+Tacker installation method using Helm has beend provided
+in relation to the NFs LCM total sequence consideration,
+a feature for O2 DMS FM/PM has beed provided,
+and Automated API Conformance testing has beed improved.
 
 H-release:
 
@@ -63,7 +74,7 @@ Release Data
 | **Release designation**              |                                          |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
-| **Release date**                     | 2022-12-23                               |
+| **Release date**                     | 2023-12-21                               |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
 | **Purpose of the delivery**          | 	 		     	          |
@@ -82,12 +93,11 @@ Feature Additions
 | **JIRA REFERENCE**                   | **SLOGAN**                                     |
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
-| SMO-129                              | Improve API-based documentation                |
+| SMO-119                              | Automated API Conformance testing              |
 +--------------------------------------+------------------------------------------------+
-| SMO-130                              | Migrate Tacker API version from v1 to v2       |
+| SMO-137                              | O2dms FM/PM                                    |
 +--------------------------------------+------------------------------------------------+
-| SMO-131                              | Improve API Conformance testing with           |
-|                                      | NFV-TST010 code                                |
+| SMO-139                              | Update whole sequence flow diagram             |
 +--------------------------------------+------------------------------------------------+
 +--------------------------------------+------------------------------------------------+
 +--------------------------------------+------------------------------------------------+
@@ -103,9 +113,8 @@ Bug Corrections
 | **JIRA REFERENCE**                   | **SLOGAN**                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| 		                       | 				      |
-|                                      | 				      |
-|                                      |                                      |
+| SMO-132                              | O2 Tacker install script raise       |
+|                                      | syntax error                         |
 +--------------------------------------+--------------------------------------+
 | 	                               |  				      |
 |                                      |  				      |
