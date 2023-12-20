@@ -29,16 +29,38 @@ Version history
 | 2022-06-26         | 3.0                | Toshiaki Takahashi | H-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2023-12-21         | 4.0                | Toshiaki Takahashi | I-Release          |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+<<<<<<< PATCH SET (918268 Update Release note for I-release)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+=======
+I-release:
+
+The I release was targeted towards implementation of the O2 interface.
+Tacker installation method using Helm has been provided
+in relation to the NFs LCM total sequence consideration,
+a feature for O2 DMS FM/PM has been provided,
+and Automated API Conformance testing has been improved.
 
 H-release:
 
 The H release was targeted towards implementation of the O2 interface.
 The API version has been upgraded, the testing scope has been expanded, the testing code has been enhanced, and the documentation has been improved.
 
+>>>>>>> CHANGE (223905 Update Release note for I-release)
+=======
+H-release:
+
+The H release was targeted towards implementation of the O2 interface.
+The API version has been upgraded, the testing scope has been expanded, the testing code has been enhanced, and the documentation has been improved.
+
+>>>>>>> BASE      (f368c5 Update Release note for H-release)
 G-release:
 
 The G release was targeted towards implementation of the O2 interface for
@@ -63,7 +85,7 @@ Release Data
 | **Release designation**              |                                          |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
-| **Release date**                     | 2022-12-23                               |
+| **Release date**                     | 2023-12-21                               |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
 | **Purpose of the delivery**          | 	 		     	          |
@@ -82,12 +104,36 @@ Feature Additions
 | **JIRA REFERENCE**                   | **SLOGAN**                                     |
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
+<<<<<<< PATCH SET (918268 Update Release note for I-release)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+| SMO-77                               | TST010 API Conformance                         |
+=======
+| SMO-119                              | Automated API Conformance testing              |
+>>>>>>> CHANGE (223905 Update Release note for I-release)
+=======
 | SMO-129                              | Improve API-based documentation                |
+>>>>>>> BASE      (f368c5 Update Release note for H-release)
 +--------------------------------------+------------------------------------------------+
+<<<<<<< PATCH SET (918268 Update Release note for I-release)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+| SMO-78                               | Release Artifact                               |
+=======
+| SMO-137                              | O2dms FM/PM                                    |
+>>>>>>> CHANGE (223905 Update Release note for I-release)
+=======
 | SMO-130                              | Migrate Tacker API version from v1 to v2       |
+>>>>>>> BASE      (f368c5 Update Release note for H-release)
 +--------------------------------------+------------------------------------------------+
+<<<<<<< PATCH SET (918268 Update Release note for I-release)
+<<<<<<< HEAD   (4857aa Merge "Improve Xtesting for using NFV-TST code directly")
+| SMO-79                               | Alignment with ETSI NFV SOL014 for VM-base VNF |
+=======
+| SMO-139                              | Update whole sequence flow diagram             |
+>>>>>>> CHANGE (223905 Update Release note for I-release)
+=======
 | SMO-131                              | Improve API Conformance testing with           |
 |                                      | NFV-TST010 code                                |
+>>>>>>> BASE      (f368c5 Update Release note for H-release)
 +--------------------------------------+------------------------------------------------+
 +--------------------------------------+------------------------------------------------+
 +--------------------------------------+------------------------------------------------+
@@ -103,9 +149,8 @@ Bug Corrections
 | **JIRA REFERENCE**                   | **SLOGAN**                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| 		                       | 				      |
-|                                      | 				      |
-|                                      |                                      |
+| SMO-132                              | O2 Tacker install script raise       |
+|                                      | syntax error                         |
 +--------------------------------------+--------------------------------------+
 | 	                               |  				      |
 |                                      |  				      |
