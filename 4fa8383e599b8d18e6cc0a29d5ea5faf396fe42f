@@ -65,6 +65,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7604fb01_f7acebc1",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T09:29:58Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "f6c3a3e3_aecf66d9",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 52
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1f4aab3_6543caf9",
@@ -112,6 +136,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff9aa6fc_3d1719c9",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T09:29:58Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "f42815be_acfe9281",
+      "range": {
+        "startLine": 189,
+        "startChar": 24,
+        "endLine": 189,
+        "endChar": 62
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef3ab4ae_7a41ee96",
@@ -149,6 +197,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "ef3ab4ae_7a41ee96",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 13
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c8a0bf7_22f66773",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T09:29:58Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "f2d281b6_7545e8c0",
       "range": {
         "startLine": 150,
         "startChar": 0,
@@ -220,6 +292,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "407fe9e4_46e72761",
+      "range": {
+        "startLine": 312,
+        "startChar": 0,
+        "endLine": 336,
+        "endChar": 76
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "001c8283_e68b50bf",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T09:29:58Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "6bbbd95e_05c5847b",
       "range": {
         "startLine": 312,
         "startChar": 0,

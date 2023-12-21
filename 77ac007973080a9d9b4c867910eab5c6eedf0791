@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0622a2de_c82c6f6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T09:29:58Z",
+      "side": 1,
+      "message": "Thanks for your rework, I will put CR+2 after resolving Merge Conflict.",
+      "revId": "77ac007973080a9d9b4c867910eab5c6eedf0791",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
