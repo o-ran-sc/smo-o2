@@ -1,0 +1,11 @@
+Code-Review+2: Ayumu Ueha <ueha.ayumu@jp.fujitsu.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Koichi Edagawa <edagawa.kc@nec.com>
+Verified+1: Ayumu Ueha <ueha.ayumu@jp.fujitsu.com>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Code-Review+1: Ashutosh Mishra <ashutosh.mishra1@india.nec.com>
+Submitted-by: Ayumu Ueha <ueha.ayumu@jp.fujitsu.com>
+Submitted-at: Thu, 21 Dec 2023 07:10:27 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/smo/o2/+/12169
+Project: smo/o2
+Branch: refs/heads/master
