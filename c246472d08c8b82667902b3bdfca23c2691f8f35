@@ -1,0 +1,9 @@
+Code-Review+2: Toshiaki Takahashi <ts-takahashi@nec.com>
+Code-Review+1: Koichi Edagawa <edagawa.kc@nec.com>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: Toshiaki Takahashi <ts-takahashi@nec.com>
+Submitted-by: Toshiaki Takahashi <ts-takahashi@nec.com>
+Submitted-at: Thu, 21 Dec 2023 05:30:48 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/smo/o2/+/11280
+Project: smo/o2
+Branch: refs/heads/master
