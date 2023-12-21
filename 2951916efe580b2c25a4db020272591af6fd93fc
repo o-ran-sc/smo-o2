@@ -16,6 +16,23 @@
       "message": "Thanks for your patch, LGTM.",
       "revId": "2951916efe580b2c25a4db020272591af6fd93fc",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "656eab0e_59e33721",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T06:19:50Z",
+      "side": 1,
+      "message": "I proceed to merge it, because this is Tacker content and the release date is approaching.",
+      "revId": "2951916efe580b2c25a4db020272591af6fd93fc",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
