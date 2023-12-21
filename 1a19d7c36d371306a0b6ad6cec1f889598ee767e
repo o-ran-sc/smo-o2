@@ -50,6 +50,24 @@
       "message": "Merge Conflict is occurring after parent patch was merged, could you resolve it?",
       "revId": "1a19d7c36d371306a0b6ad6cec1f889598ee767e",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6328fd5b_48b21e47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T08:34:49Z",
+      "side": 1,
+      "message": "Thanks for your resolving.",
+      "parentUuid": "8c5265eb_0c2d0b53",
+      "revId": "1a19d7c36d371306a0b6ad6cec1f889598ee767e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
