@@ -41,6 +41,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6c3a3e3_aecf66d9",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2023-12-21T06:46:08Z",
+      "side": 1,
+      "message": "Yes, your understanding is correct. Please see the change in patchset 7.",
+      "parentUuid": "5e4e125f_094fd963",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 52
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1f4aab3_6543caf9",
@@ -64,6 +88,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f42815be_acfe9281",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2023-12-21T06:46:08Z",
+      "side": 1,
+      "message": "Yes, your understanding is correct. Please see the change in patchset 7.",
+      "parentUuid": "e1f4aab3_6543caf9",
+      "range": {
+        "startLine": 189,
+        "startChar": 24,
+        "endLine": 189,
+        "endChar": 62
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef3ab4ae_7a41ee96",
@@ -77,6 +125,30 @@
       "writtenOn": "2023-12-21T02:07:30Z",
       "side": 1,
       "message": "The display is broken when viewed in HTML.\nHow about including them in one code block like the comment below?",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 13
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2d281b6_7545e8c0",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2023-12-21T06:46:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef3ab4ae_7a41ee96",
       "range": {
         "startLine": 150,
         "startChar": 0,
@@ -124,6 +196,30 @@
       "side": 1,
       "message": "Note that this is just a suggestion to not break display in the HTML, so if you prefer to match it with the other parts, you can write it differently.",
       "parentUuid": "ecab592c_990df5a2",
+      "range": {
+        "startLine": 312,
+        "startChar": 0,
+        "endLine": 336,
+        "endChar": 76
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bbbd95e_05c5847b",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2023-12-21T06:46:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "407fe9e4_46e72761",
       "range": {
         "startLine": 312,
         "startChar": 0,
