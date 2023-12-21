@@ -108,6 +108,30 @@
       },
       "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "407fe9e4_46e72761",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T02:19:08Z",
+      "side": 1,
+      "message": "Note that this is just a suggestion to not break display in the HTML, so if you prefer to match it with the other parts, you can write it differently.",
+      "parentUuid": "ecab592c_990df5a2",
+      "range": {
+        "startLine": 312,
+        "startChar": 0,
+        "endLine": 336,
+        "endChar": 76
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
