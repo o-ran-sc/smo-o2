@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c17d22e7_0cd88492",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T02:07:30Z",
+      "side": 1,
+      "message": "Thanks for your rework, please kindly find my additional comments.",
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e4e125f_094fd963",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T02:07:30Z",
+      "side": 1,
+      "message": "It looks like the output example is an ID, not a VNFD ID. Is that correct?",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 52
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1f4aab3_6543caf9",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T02:07:30Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it be the `VNFD ID` value obtained from `vnf package show`?",
+      "range": {
+        "startLine": 189,
+        "startChar": 24,
+        "endLine": 189,
+        "endChar": 62
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef3ab4ae_7a41ee96",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T02:07:30Z",
+      "side": 1,
+      "message": "The display is broken when viewed in HTML.\nHow about including them in one code block like the comment below?",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 13
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecab592c_990df5a2",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1001741
+      },
+      "writtenOn": "2023-12-21T02:07:30Z",
+      "side": 1,
+      "message": "When I look at it in HTML, the display is broken.\nHow about including them all in the same code block like the following?\nAlso how about add `E.g: Output of command` under `openstack vnf package list` like `openstack vnflcm list as below?\n```\n      .. code:: bash\n\n         $ openstack vnflcm list  -c \"ID\"\n           E.g: Output of command\n           +--------------------------------------+\n           | ID                                   |\n           +--------------------------------------+\n           | 6fc3539c-e602-4afa-8e13-962fb5a7d81f |\n           +--------------------------------------+\n         $ openstack vnflcm terminate 6fc3539c-e602-4afa-8e13-962fb5a7d81f\n         $ openstack vnflcm delete 6fc3539c-e602-4afa-8e13-962fb5a7d81f\n\n         $ openstack vnf package list -c \"Id\"\n           E.g: Output of command\n           +--------------------------------------+\n           | ID                                   |\n           +--------------------------------------+\n           | 718b9054-2a7a-4489-a893-f2b2b1794825 |\n           +--------------------------------------+\n         $ openstack vnf package update --operational-state DISABLED 718b9054-2a7a-4489-a893-f2b2b1794825\n```",
+      "range": {
+        "startLine": 312,
+        "startChar": 0,
+        "endLine": 336,
+        "endChar": 76
+      },
+      "revId": "4fa8383e599b8d18e6cc0a29d5ea5faf396fe42f",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
