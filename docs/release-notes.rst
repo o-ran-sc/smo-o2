@@ -26,13 +26,29 @@ Version history
 | 2022-12-23         | 2.0                | Toshiaki Takahashi | G-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2022-06-26         | 3.0                | Toshiaki Takahashi | H-Release          |
 |                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
+| 2023-12-21         | 4.0                | Toshiaki Takahashi | I-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+I-release:
+
+The I release was targeted towards implementation of the O2 interface.
+Tacker installation method using Helm has been provided
+in relation to the NFs LCM total sequence consideration,
+a feature for O2 DMS FM/PM has been provided,
+and Automated API Conformance testing has been improved.
+
+H-release:
+
+The H release was targeted towards implementation of the O2 interface.
+The API version has been upgraded, the testing scope has been expanded, the testing code has been enhanced, and the documentation has been improved.
 
 G-release:
 
@@ -58,7 +74,7 @@ Release Data
 | **Release designation**              |                                          |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
-| **Release date**                     | 2022-12-23                               |
+| **Release date**                     | 2023-12-21                               |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
 | **Purpose of the delivery**          | 	 		     	          |
@@ -77,15 +93,13 @@ Feature Additions
 | **JIRA REFERENCE**                   | **SLOGAN**                                     |
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
-| SMO-77                               | TST010 API Conformance                         |
+| SMO-119                              | Automated API Conformance testing              |
 +--------------------------------------+------------------------------------------------+
-| SMO-78                               | Release Artifact                               |
+| SMO-137                              | O2dms FM/PM                                    |
 +--------------------------------------+------------------------------------------------+
-| SMO-79                               | Alignment with ETSI NFV SOL014 for VM-base VNF |
+| SMO-139                              | Update whole sequence flow diagram             |
 +--------------------------------------+------------------------------------------------+
-| SMO-82                               | Update INFO.yaml                               |
 +--------------------------------------+------------------------------------------------+
-| SMO-84                               | Add license info in smo/o2 repo                |
 +--------------------------------------+------------------------------------------------+
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
@@ -99,9 +113,8 @@ Bug Corrections
 | **JIRA REFERENCE**                   | **SLOGAN**                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| 		                       | 				      |
-|                                      | 				      |
-|                                      |                                      |
+| SMO-132                              | O2 Tacker install script raise       |
+|                                      | syntax error                         |
 +--------------------------------------+--------------------------------------+
 | 	                               |  				      |
 |                                      |  				      |
