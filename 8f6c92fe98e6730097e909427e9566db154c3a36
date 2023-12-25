@@ -1,0 +1,11 @@
+Code-Review+2: Seshu Kumar Mudiganti <seshukumar.mudiganti@windriver.com>
+Code-Review+2: Ayumu Ueha <ueha.ayumu@jp.fujitsu.com>
+Code-Review+2: Toshiaki Takahashi <ts-takahashi@nec.com>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: Toshiaki Takahashi <ts-takahashi@nec.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Toshiaki Takahashi <ts-takahashi@nec.com>
+Submitted-at: Mon, 25 Dec 2023 01:07:00 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/smo/o2/+/11445
+Project: smo/o2
+Branch: refs/heads/master
