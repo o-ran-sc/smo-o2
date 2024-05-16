@@ -16,6 +16,23 @@
       "message": "This is the initial commit for the SMO NFO",
       "revId": "9196760ad5a56c7e6158a9362341ccbcbb30dc30",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edd19dd9_abb8dbb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-05-16T05:19:46Z",
+      "side": 1,
+      "message": "Hello,\n\nThanks for your first contribution and welcome. I have couple of questions:\n- As this was not clear in the commit message, has the API design work being proposed/endorsed by Nephio? For J-Release, do we have agreement to use OAI Helm charts at https://gitlab.eurecom.fr/oai/cn5g/charts/helm-charts/-/packages\n- Are there plans to create release artifacts? This may be resolved in follow-up patches but right now there are IMHO some unnecessary files, copyright issues (you may get inspired by some work done e.g. in OSC NONRTRIC project). I let open OSC folks including John provide more detailed reviews on the actual code.\n\nThanks again.",
+      "revId": "9196760ad5a56c7e6158a9362341ccbcbb30dc30",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
