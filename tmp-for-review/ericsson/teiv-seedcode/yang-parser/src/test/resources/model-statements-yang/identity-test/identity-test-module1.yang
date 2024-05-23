@@ -1,0 +1,37 @@
+module identity-test-module1 {
+
+    namespace "test:identity-test-module1";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-11-11" {
+        description "initial revision";
+    }
+
+	identity identity1;
+
+	identity identity2 {
+		base identity1;
+	}
+
+	identity identity3 {
+		if-feature "blue-moon";
+		base identity2;
+	}
+
+	identity identity4;
+
+	identity identity5 {
+		status deprecated;
+		base identity1;
+		base this:identity4;
+	}
+
+	feature blue-moon {
+		description "It is a full blue moon.";
+	}
+
+}

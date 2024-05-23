@@ -1,0 +1,169 @@
+{
+    "entity_map_CNA_1": {
+        "id": "CloudNativeApplication_1",
+        "name": "Test_CloudNativeApplication_1"
+    },
+    "entity_map_CNA_2": {
+        "id": "CloudNativeApplication_2",
+        "name": "Test_CloudNativeApplication_2"
+    },
+    "entity_map_CNA_3": {
+        "id": "CloudNativeApplication_3",
+        "name": "Test_CloudNativeApplication_3"
+    },
+    "entity_map_CNA_4": {
+        "id": "CNA_SED_1",
+        "name": "CNA_1"
+    },
+    "entity_map_GNBDU_1": {
+        "id": "GNBDU_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction[@id=1]",
+        "dUpLMNId": {
+            "mcc": "110",
+            "mnc": "210"
+        },
+        "gNBDUId": 12,
+        "gNBId": 1234,
+        "gNBIdLength": 4,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+        }
+    },
+    "entity_map_GNBDU_2": {
+        "id": "GNBDU_SED_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00009,ManagedElement=NR01gNodeBRadio00009,GNBDUFunction=1",
+        "dUpLMNId": {
+            "mcc": "110",
+            "mnc": "210"
+        },
+        "gNBDUId": 111,
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1929103B15999999",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00009]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+        }
+    },
+    "entity_map_GNBCUUP_1": {
+        "id": "GNBCUUP_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,GNBCUUPFunction=1",
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=GNBCUUPFunction]/o-ran-smo-GNBCUUP:GNBCUUPFunction[@id=1]"
+        }
+    },
+    "entity_map_GNBCUCP_1": {
+        "id": "GNBCUCP_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,GNBCUCPFunction=1",
+        "gNBCUName": "Test_gNBCU",
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "pLMNId": {
+            "mcc": "110",
+            "mnc": "210"
+        },
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=GNBCUCPFunction]/o-ran-smo-GNBCUCP:GNBCUCPFunction[@id=1]"
+        }
+    },
+    "entity_map_GNBCUCP_2": {
+        "id": "GNBCUCP_SED_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00009,ManagedElement=NR01gNodeBRadio00009,GNBCUCPFunction=1",
+        "gNBCUName": "Test_sed_gNBCU",
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "pLMNId": {
+            "mcc": "110",
+            "mnc": "210"
+        },
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1929103B15999999",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00009]/o-ran-smo-GNBCUCP:GNBCUCPFunction[@id=1]"
+        }
+    },
+    "entity_map_NRCellDU_1": {
+        "id": "NRCellDU_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,NRCellDU=1",
+        "cellLocalId": 4589,
+        "nCI": 1,
+        "nRPCI": 12,
+        "nRTAC": 310,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NRCellDU_1]/o-ran-smo-NRCellDU:NRCellDU[@id=1]"
+        }
+    },
+    "entity_map_NRCellDU_2": {
+        "id": "NRCellDU_2",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,NRCellDU=2",
+        "cellLocalId": 45891,
+        "nCI": 2,
+        "nRPCI": 121,
+        "nRTAC": 3101,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NRCellDU_2]/o-ran-smo-NRCellDU:NRCellDU[@id=2]"
+        }
+    },
+    "entity_map_NRCellDU_3": {
+        "id": "NRCellDU_3",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,NRCellDU=3",
+        "cellLocalId": 469,
+        "nCI": 3,
+        "nRPCI": 15,
+        "nRTAC": 301,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NRCellDU_3]/o-ran-smo-NRCellDU:NRCellDU[@id=3]"
+        }
+    },
+    "relation_map_GNBDU_CNA_1": {
+        "id": "relation_1",
+        "aSide_GNBDUFunction": "GNBDU_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_1"
+    },
+    "relation_map_GNBCUUP_CNA_2": {
+        "id": "relation_2",
+        "aSide_GNBCUUPFunction": "GNBCUUP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_2"
+    },
+    "relation_map_GNBCUCP_CNA_3": {
+        "id": "relation_3",
+        "aSide_GNBCUCPFunction": "GNBCUCP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_3"
+    },
+    "relation_map_GNBDU_CNA_4": {
+        "id": "relation_4",
+        "aSide_GNBDUFunction": "GNBDU_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_2"
+    },
+    "relation_map_GNBCUUP_CNA_5": {
+        "id": "relation_5",
+        "aSide_GNBCUUPFunction": "GNBCUUP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_3"
+    },
+    "relation_map_GNBCUCP_CNA_6": {
+        "id": "relation_6",
+        "aSide_GNBCUCPFunction": "GNBCUCP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_1"
+    },
+    "relation_map_GNBDU_NRCellDU_1": {
+        "id": "NRCellDU_1",
+        "REL_FK_provided-by-gnbduFunction": "GNBDU_1",
+        "REL_ID_GNBDUFUNCTION_PROVIDES_NRCELLDU": "relation_7"
+    },
+    "relation_map_GNBDU_NRCellDU_2": {
+        "id": "NRCellDU_2",
+        "REL_FK_provided-by-gnbduFunction": "GNBDU_1",
+        "REL_ID_GNBDUFUNCTION_PROVIDES_NRCELLDU": "relation_8"
+    },
+    "relation_map_GNBDU_NRCellDU_3": {
+        "id": "NRCellDU_3",
+        "REL_FK_provided-by-gnbduFunction": "GNBDU_1",
+        "REL_ID_GNBDUFUNCTION_PROVIDES_NRCELLDU": "relation_9"
+    }
+}

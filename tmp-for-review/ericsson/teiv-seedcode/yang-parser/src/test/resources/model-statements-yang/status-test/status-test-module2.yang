@@ -1,0 +1,102 @@
+module status-test-module2 {
+
+    namespace "test:module2";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2021-02-17" {
+        description "initial revision";
+    }
+
+  	// -------------------- status under uses --------------------
+
+	grouping grouping1 {
+        leaf leaf97 {
+        	status current;
+            type uint32;
+        }
+
+        leaf leaf98 {
+        	status deprecated;
+            type uint32;
+        }
+
+        leaf leaf99 {
+        	status obsolete;
+            type uint32;
+        }
+	}
+
+	container cont1 {
+		uses grouping1 {
+			status current;
+		}
+	}
+
+	container cont2 {
+		uses grouping1 {
+			status deprecated;
+		}
+	}
+
+	container cont3 {
+		uses grouping1 {
+			status obsolete;
+		}
+	}
+
+	  	// -------------------- status under grouping --------------------
+
+	grouping grouping3 {
+		status current;
+
+        leaf leaf91 {
+            type uint32;
+        }
+	}
+
+	grouping grouping4 {
+		status deprecated;
+
+        leaf leaf92 {
+            type uint32;
+        }
+	}
+
+	grouping grouping5 {
+		status obsolete;
+
+        leaf leaf93 {
+            type uint32;
+        }
+	}
+
+	container cont11 {
+		status current;
+
+		uses grouping3;
+		uses grouping4;
+		uses grouping5;
+	}
+
+	container cont12 {
+		status deprecated;
+
+		uses grouping3;
+		uses grouping4;
+		uses grouping5;
+	}
+
+	container cont13 {
+		status obsolete;
+
+		uses grouping3;
+		uses grouping4;
+		uses grouping5;
+	}
+
+
+}

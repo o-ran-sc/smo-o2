@@ -1,0 +1,20 @@
+module missing-prefix-name-under-import {
+	yang-version 1.0;
+
+    namespace "test:missing-prefix-name-under-import";
+
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27";
+
+    import basic-empty-module {
+    	prefix;
+    }
+
+    container cont1;
+
+}

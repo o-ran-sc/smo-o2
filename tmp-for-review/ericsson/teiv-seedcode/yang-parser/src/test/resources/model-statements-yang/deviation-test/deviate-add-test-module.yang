@@ -1,0 +1,88 @@
+module deviate-add-test-module {
+
+	namespace "urn:ietf:params:xml:ns:yang:deviate-add-test-module";
+	prefix dev;
+
+	import deviation-host-test-module {
+		prefix host;
+	}
+
+	import _3gpp-common-yang-extensions {
+		prefix yext3gpp;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2019-10-09" {
+		description "initial revision";
+	}
+
+// ---------------- These deviations are just fine ---------------------
+
+	deviation /host:cont1/host:leaf11 {
+		deviate add {
+			default "Hello World!";
+			must "strlen(.) > 5";
+			units "seconds";
+			yext3gpp:initial-value "Hello World";
+		}
+	}
+
+	deviation /host:list11 {
+		deviate add {
+			unique "leaf111 leaf112";
+		}
+	}
+
+	deviation /host:list11/host:leaflist113 {
+		deviate add {
+			must ". < 98";
+		}
+	}
+
+// ---------------- These deviations try to add things which already exist in the host model ---------------------
+
+	deviation /host:cont2/host:leaf21 {
+		deviate add {
+			type string;
+			config true;
+			mandatory false;
+			units "hours";
+		}
+	}
+
+	deviation /host:list21 {
+		deviate add {
+			min-elements 67;
+			max-elements 82;
+		}
+	}
+
+// ---------------- Various other findings ---------------------
+
+	deviation /host:unknownelement {		// schema node unknown
+		deviate add {
+			default "";
+		}
+	}
+
+	deviation /host:cont4 {
+		deviate add;		// Missing substatements
+	}
+
+	deviation /host:cont3 {
+		deviate add {
+			min-elements 67;		// not allowed under 'container'
+			max-elements 82;		// same
+		}
+	}
+
+	deviation /host:list11/host:leaf112 {
+		deviate add {
+			default 34;		// It's a leaf so only a single 'default' can be supplied here.
+			default 37;
+		}
+	}
+}

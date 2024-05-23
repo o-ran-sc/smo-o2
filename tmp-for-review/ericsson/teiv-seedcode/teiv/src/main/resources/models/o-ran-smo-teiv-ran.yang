@@ -1,0 +1,877 @@
+module o-ran-smo-teiv-ran {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-ran";
+    prefix or-teiv-ran;
+
+    import o-ran-smo-teiv-common-yang-types {prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+    import _3gpp-common-yang-types { prefix types3gpp; }
+
+    import ietf-geo-location {
+        prefix geo;
+        reference "RFC 9179: A YANG Grouping for Geographic Locations";
+    }
+
+    organization "ORAN";
+    contact "The Authors";
+    description
+    "RAN Logical topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the topology entities and relations in the
+    RAN Logical domain, which represents the functional capability
+    of the deployed RAN that are relevant to rApps use cases.";
+
+    revision "2024-05-02" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain RAN;
+
+    list GNBDUFunction {
+        description "gNodeB Distributed Unit (gNB-DU).
+
+                    A gNB may consist of a gNB-Centralized Unit
+                    (gNB-CU) and a gNB-DU. The CU processes non-real
+                    time protocols and services, and the DU processes
+                    PHY level protocol and real time services. The
+                    gNB-CU and the gNB-DU units are connected via
+                    F1 logical interface.
+
+                    The following is true for a gNB-DU:
+                    Is connected to the gNB-CU-CP through the F1-C
+                    interface.Is connected to the gNB-CU-UP through
+                    the F1-U interface. One gNB-DU is connected to only
+                    one gNB-CU-CP. One gNB-DU can be connected to
+                    multiple gNB-CU-UPs under the control of the same
+                    gNB-CU-CP.
+                    Note: A gNB may consist of a gNB-CU-CP, multiple
+                    gNB-CU-UPs and multiple gNB-DUs. gNB-DU is a concrete
+                    class that extends the NG-RAN node object. In Topology, you
+                    can create, read, update, and delete the gNB-DU object.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the GNBDUFunction MO. It contains
+                            the full path from the Subnetwork to the
+                            GNBDUFunction.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            container dUpLMNId {
+                description "PLMN identifier used as part of PM Events data";
+                uses types3gpp:PLMNId;
+            }
+
+            leaf gNBDUId {
+                description "Unique identifier for the DU within a gNodeB";
+                type uint32;
+            }
+
+            leaf gNBId {
+                description "Identity of gNodeB within a PLMN";
+                type uint32;
+            }
+
+            leaf gNBIdLength {
+                description "Length of gNBId bit string representation";
+                type uint32;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list GNBCUCPFunction {
+        description "gNodeB Centralized Unit Control Plane (gNB-CU-CP)
+
+                    This is a logical node hosting the Radio Resource
+                    Control (RRC) and the control plane part of the
+                    Packet Data Convergence Protocol (PDCP) of the
+                    gNodeB Centralized Unit (gNB-CU) for an E-UTRAN gNodeB
+                    (en-gNB) or a gNodeB (gNB). The gNB-CU-CP terminates
+                    the E1 interface connected with the gNB-CU-UP and the
+                    F1-C interface connected with the gNodeB
+                    Distributed Unit (gNB-DU).
+
+                    The following is true for a gNB-CU-CP:
+                    Is connected to the gNB-DU through the F1-C interface.
+                    Is connected to the gNB-CU-UP through the E1 interface.
+                    Only one gNB-CU-CP is connected to one gNB-DU.
+                    Only one gNB-CU-CP is connected to one gNB-CU-UP.
+                    One gNB-DU can be connected to multiple gNB-CU-UPs
+                    under the control of the same gNB-CU-CP.One gNB-CU-UP
+                    can be connected to multiple DUs under the control of
+                    the same gNB-CU-CP.
+                    Note: A gNB may consist of a gNB-CU-CP, multiple
+                    gNB-CU-UPs and multiple gNB-DUs. A gNB-CU-CP is a
+                    concrete class that extends the NG-RAN node object.
+                    In Topology, you can create, read, update, and delete
+                    the gNB-CU-CP object.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the GNBCUCPFunction MO. It contains
+                            the full path from the Subnetwork to the
+                            GNBCUCPFunction.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf gNBCUName {
+                description "Name of gNodeB-CU";
+                type string;
+            }
+
+            leaf gNBId {
+                description "Identity of gNodeB within a PLMN";
+                type uint32;
+            }
+
+            leaf gNBIdLength {
+                description "Length of gNBId bit string representation";
+                type uint32;
+            }
+
+            container pLMNId {
+                description "PLMN identifier to be used as part
+                            of global RAN node identity";
+                uses types3gpp:PLMNId;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list GNBCUUPFunction {
+        description "gNodeB Centralized Unit User Plane (gNB-CU-UP)
+
+                    A gNB-CU-UP is a logical node hosting the User
+                    Plane part of the Packet Data Convergence,
+                    Protocol (PDCP) of the gNodeB Centralized Unit
+                    (gNB-CU) for an E-UTRAN gNodeB (en-gNB), and the
+                    User Plane part of the PDCP protocol and the
+                    Service Data Adaptation Protocol (SDAP) of the
+                    gNB-CU for a gNodeB (gNB). The gNB-CU-UP terminates
+                    the E1 interface connected with the gNB-CU-CP and
+                    the F1-U interface connected with the gNodeB
+                    Distributed Unit (gNB-DU).
+
+                    The following is true for a gNB-CU-UP:
+                    Is connected to the gNB-DU through the
+                    F1-U interface. Is connected to the gNB-CU-CP through
+                    the E1 interface. One gNB-CU-UP is connected to only one
+                    gNB-CU-CP. One gNB-DU can be connected to multiple
+                    gNB-CU-UPs under the control of the same gNB-CU-CP. One
+                    gNB-CU-UP can be connected to multiple DUs under the
+                    control of the same gNB-CU-CP.
+                    Note: A gNB may consist of a gNB-CU-CP, multiple gNB-CU-UPs
+                    and multiple gNB-DUs. A gNB-CU-UP is a concrete class that
+                    extends the NG-RAN node object. In Topology, you can
+                    create, read, update, and delete the gNB-CU-UP object.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the GNBCUUPFunction MO. It contains
+                            the full path from the Subnetwork to the
+                            GNBCUUPFunction.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf gNBId {
+                description "Identity of gNodeB within a PLMN";
+                type uint32;
+            }
+
+            leaf gNBIdLength {
+                description "Length of gNBId bit string representation";
+                type uint32;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list NRCellCU {
+        description "Represents an NR Cell in gNodeB-CU.
+
+                    5G NR is a new radio access technology (RAT)
+                    developed by 3GPP for the 5G (fifth generation)
+                    mobile network. It is designed to be the global
+                    standard for the air interface of 5G networks.
+
+                    5G NR has synchronization signal that is known as
+                    Primary Synchronization signal (PSS) and Secondary
+                    Synchronization signal (SSS). These signals are
+                    specific to NR physical layer and provide the
+                    following information required by UE for downlink
+                    synchronization: PSS provides Radio Frame Boundary
+                    (Position of 1st Symbol in a Radio frame) SSS provides
+                    Subframe Boundary (Position of 1st Symbol in a Subframe)
+                    Physical Layer Cell ID (PCI) information using both
+                    PSS and SSS.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the NRCellCU MO. It contains
+                            the full path from the Subnetwork to the
+                            NRCellCU.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf cellLocalId {
+                description "Used together with gNodeB identifier to
+                            identify NR cell in PLMN. Used together
+                            with gNBId to form NCI.";
+                type uint32;
+            }
+
+            container plmnId {
+                description "PLMN ID for NR CGI. If empty,
+                            GNBCUCPFunction::pLMNId is used
+                            for PLMN ID in NR CGI";
+                uses types3gpp:PLMNId;
+            }
+
+            leaf nCI {
+                description "NR Cell Identity";
+                type uint32;
+            }
+
+            leaf nRTAC {
+                description "NR Tracking Area Code (TAC)";
+                type uint32;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list NRCellDU {
+        description "Represents an NR Cell in gNodeB-DU.
+
+                    5G NR is a new radio access technology (RAT)
+                    developed by 3GPP for the 5G (fifth generation)
+                    mobile network. It is designed to be the global
+                    standard for the air interface of 5G networks.
+
+                    5G NR has synchronization signal that is known as
+                    Primary Synchronization signal (PSS) and Secondary
+                    Synchronization signal (SSS). These signals are
+                    specific to NR physical layer and provide the
+                    following information required by UE for downlink
+                    synchronization: PSS provides Radio Frame Boundary
+                    (Position of 1st Symbol in a Radio frame) SSS provides
+                    Subframe Boundary (Position of 1st Symbol in a Subframe)
+                    Physical Layer Cell ID (PCI) information using both
+                    PSS and SSS.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the NRCellDU MO. It contains
+                            the full path from the Subnetwork to the
+                            NRCellDU.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf cellLocalId {
+                description "Used together with gNodeB identifier to identify NR
+                             cell in PLMN. Used together with gNBId to form NCI.";
+                type uint32;
+            }
+
+            leaf nCI {
+                description "NR Cell Identity.";
+                type uint32;
+            }
+
+            leaf nRPCI {
+                description "The Physical Cell Identity (PCI) of the NR cell.";
+                type uint32;
+            }
+
+            leaf nRTAC {
+                description "NR Tracking Area Code (TAC).";
+                type uint32;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list ENodeBFunction {
+        description "An Evolved Node B (eNodeB) is the only mandatory
+                    node in the radio access network (RAN) of Long-Term
+                    Evolution (LTE). The eNodeB is a complex base
+                    station that handles radio communications
+                    in the cell and carries out radio resource
+                    management and handover decisions. Unlike 2/3G
+                    wireless RAN, there is no centralized radio network
+                    controller in LTE. It is the hardware that is connected
+                    to the mobile phone network that communicates
+                    directly with mobile handsets (User Equipment), like a base
+                    transceiver station (BTS) in GSM networks. This simplifies
+                    the architecture and allows lower response times.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the ENodeBFunction MO. It contains
+                            the full path from the Subnetwork to the
+                            ENodeBFunction.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf eNBId {
+                description "The ENodeB ID that forms part of
+                            the Cell Global Identity, and is
+                            also used to identify the node over
+                            the S1 interface";
+                type uint32;
+            }
+
+            container eNodeBPlmnId {
+                description "The ENodeB Public Land Mobile Network
+                            (PLMN) ID that forms part of the ENodeB
+                            Global ID used to identify the node over
+                            the S1 interface. Note: The value (MCC=001, MNC=01)
+                            indicates that the PLMN is not initiated.
+                            The value can not be used as a valid PLMN Identity.";
+
+                leaf mcc {
+                    description "The MCC part of a PLMN identity
+                                used in the radio network.";
+                    type int32 {
+                        range 0..999;
+                    }
+                }
+                leaf mnc {
+                    description "The MNC part of a PLMN identity
+                                used in the radio network.";
+                    type int32 {
+                        range 0..999;
+                    }
+                }
+                leaf mncLength {
+                    description "The length of the MNC part of a
+                                PLMN identity used in the radio network.";
+                    type int32 {
+                        range 2..3;
+                    }
+                }
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list EUtranCell {
+        description "Represents an FDD or TDD EUtranCell and
+                    contains parameters needed by the cell.
+                    It also contains parameters for the
+                    mandatory common channels. An EUTRAN stands
+                    for Evolved Universal Mobile Telecommunications
+                    System (UMTS) Terrestrial Radio Access Network
+                    which contains an eNodeB. The eNodeB concrete
+                    class is extended from the EUTRAN Node abstract class.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of either the EUtranCellFDD MO or
+                            the EUtranCellTDD MO. It contains the full
+                            path from the Subnetwork to the EUtranCellFDD or
+                            EUtranCellTDD.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf cellId{
+                description "RBS internal ID attribute for EUtranCell.
+                            Must be unique in the RBS. Together with the
+                            Node ID and Public Land Mobile Network (PLMN)
+                            this is a universally unique cell ID";
+                type uint32;
+            }
+
+            leaf earfcndl {
+                description "The channel number for the central downlink frequency.";
+                type uint32;
+            }
+
+            leaf earfcnul {
+                description "Channel number for the central uplink frequency";
+                type uint32;
+            }
+
+            leaf dlChannelBandwidth {
+                description "The downlink channel bandwidth in the FDD cell.";
+                type uint32;
+            }
+
+            leaf earfcn {
+                description "The E-UTRA Absolute Radio Frequency Channel
+                            Number (EARFCN) for the TDD cell";
+                type uint32;
+            }
+
+            leaf channelBandwidth {
+                description "The channel bandwidth in the TDD cell.";
+                type uint32;
+            }
+
+            leaf tac {
+                description "Tracking Area Code for the EUtran Cell";
+                type uint32;
+            }
+
+            leaf duplexType {
+                description "Indicator of EUtranCell type, FDD or TDD";
+                type enumeration {
+                    enum fdd {
+                        value 0;
+                        description "FDD";
+                    }
+                    enum tdd {
+                        value 1;
+                        description "TDD";
+                    }
+                }
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list NRSectorCarrier {
+        description "The NR Sector Carrier object provides
+                    the attributes for defining the logical
+                    characteristics of a carrier (cell) in a
+                    sector. A sector is a coverage area associated
+                    with a base station having its own antennas,
+                    radio ports, and control channels. The concept
+                    of sectors was developed to improve co-channel
+                    interference in cellular systems, and most wireless
+                    systems use three sector cells.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the NRSectorCarrier MO. It contains
+                            the full path from the Subnetwork to the
+                            NRSectorCarrier.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf arfcnDL {
+                description "NR Absolute Radio Frequency Channel
+                            Number (NR-ARFCN) for downlink";
+                type uint32;
+            }
+
+            leaf arfcnUL {
+                description "NR Absolute Radio frequency Channel Number
+                            (NR-ARFCN) for uplink.";
+                type uint32;
+            }
+
+            leaf frequencyDL {
+                description "RF Reference Frequency of downlink channel";
+                type uint32;
+            }
+
+            leaf frequencyUL {
+                description "RF Reference Frequency of uplink channel";
+                type uint32;
+            }
+
+            leaf bSChannelBwDL {
+                description "BS Channel bandwidth in MHz for downlink.";
+                type uint32;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list LTESectorCarrier {
+        description "The LTE Sector Carrier object provides the
+                    attributes for defining the logical characteristics
+                    of a carrier (cell) in a sector. A sector is a coverage
+                    area associated with a base station having
+                    its own antennas, radio ports, and control channels.
+                    The concept of sectors was developed to improve co-channel
+                    interference in cellular systems, and most wireless systems
+                    use three sector cells.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the SectorCarrier MO. It contains
+                            the full path from the Subnetwork to the
+                            SectorCarrier.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf sectorCarrierType {
+                description "Indicates whether or not the sector carrier
+                            modelled by MO SectorCarrier is a digital sector.";
+                type enumeration {
+                    enum normal_sector {
+                        value 0;
+                        description "Not a digital sector";
+                    }
+                    enum left_digital_sector {
+                        value 1;
+                        description "Left digital sector for 2DS";
+                    }
+                    enum right_digital_sector {
+                        value 2;
+                        description "Right digital sector for 2DS";
+                    }
+                    enum left_digital_sector_3ds {
+                        value 3;
+                        description "Left digital sector for 3DS";
+                    }
+                    enum right_digital_sector_3ds {
+                        value 4;
+                        description "Right digital sector for 3DS";
+                    }
+                    enum middle_digital_sector {
+                        value 5;
+                        description "Middle digital sector for 3DS";
+                    }
+                }
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list AntennaCapability {
+        description "This MO serves as a mapping between the cell
+                    and the RBS equipment used to provide coverage
+                    in a certain geographical area. The MO also
+                    controls the maximum output power of the sector.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf fdn {
+                description "This Full Distinguished Name (FDN) identifies
+                            an instance of the SectorEquipmentFunction MO.
+                            It contains the full path from the Subnetwork
+                            to the SectorEquipmentFunction.";
+                type or-teiv-types:_3GPP_FDN_Type;
+            }
+
+            leaf-list eUtranFqBands {
+                description "List of LTE frequency bands
+                            that associated hardware supports";
+                type string;
+            }
+
+            leaf-list geranFqBands {
+                description "List of GERAN frequency bands
+                            that associated hardware supports";
+                type string;
+            }
+
+            leaf-list nRFqBands {
+                description "List of NR frequency bands
+                            associated hardware supports";
+                type string;
+            }
+
+            container cmId {
+                uses or-teiv-types:CM_ID;
+            }
+        }
+    }
+
+    list Sector {
+        description "A group of co-located Cells that
+                    have a shared coverage area.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf sectorId {
+                description "Universally unique ID generated by the
+                            sector's discovery mechanism.";
+                type uint64;
+            }
+
+            uses geo:geo-location;
+
+            leaf azimuth {
+                description "Average value of the azimuths of the cells
+                            comprising the sector, determined during
+                            sector discovery.";
+                type decimal64{
+                    fraction-digits 6;
+                }
+                units "degrees";
+            }
+        }
+    }
+
+
+    or-teiv-yext:biDirectionalTopologyRelationship ENODEBFUNCTION_PROVIDES_EUTRANCELL { // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list provided-euTranCell {
+            description "eNodeB Function provides EUTRAN Cell.";
+            or-teiv-yext:aSide ENodeBFunction;
+            type instance-identifier;
+        }
+
+        leaf provided-by-enodebFunction {
+            description "EUTRAN Cell provided by eNodeB Function.";
+            or-teiv-yext:bSide EUtranCell;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ENODEBFUNCTION_PROVIDES_LTESECTORCARRIER { // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list provided-lteSectorCarrier {
+            description "eNodeB Function provides LTE Sector Carrier.";
+            or-teiv-yext:aSide ENodeBFunction;
+            type instance-identifier;
+        }
+
+        leaf provided-by-enodebFunction {
+            description "LTE Sector Carrier provided by eNodeB Function.";
+            or-teiv-yext:bSide LTESectorCarrier;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship GNBDUFUNCTION_PROVIDES_NRCELLDU { // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list provided-nrCellDu {
+            description "gNodeB-DU Function provides NR Cell-DU.";
+            or-teiv-yext:aSide GNBDUFunction;
+            type instance-identifier;
+        }
+
+        leaf provided-by-gnbduFunction {
+            description "NR Cell-DU provided by gNodeB-DU Function.";
+            or-teiv-yext:bSide NRCellDU;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship GNBDUFUNCTION_PROVIDES_NRSECTORCARRIER { // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list provided-nrSectorCarrier {
+            description "gNodeB-DU Function provides NR Sector Carrier.";
+            or-teiv-yext:aSide GNBDUFunction;
+            type instance-identifier;
+        }
+
+        leaf provided-by-gnbduFunction {
+            description "NR Sector Carrier provided by gNodeB-DU Function.";
+            or-teiv-yext:bSide NRSectorCarrier;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship GNBCUCPFUNCTION_PROVIDES_NRCELLCU { // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list provided-nrCellCu {
+            description "gNodeB-CUCP Function provides NR Cell-CU.";
+            or-teiv-yext:aSide GNBCUCPFunction;
+            type instance-identifier;
+        }
+
+        leaf provided-by-gnbcucpFunction {
+            description "NR Cell-CU provided by gNodeB-CUCP Function.";
+            or-teiv-yext:bSide NRCellCU;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship EUTRANCELL_USES_LTESECTORCARRIER { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list used-lteSectorCarrier {
+            description "EUTRAN Cell uses LTE Sector Carrier.";
+            or-teiv-yext:aSide EUtranCell;
+            type instance-identifier;
+        }
+
+        leaf used-by-euTranCell {
+            description "LTE Sector Carrier used by EUTRAN Cell.";
+            or-teiv-yext:bSide LTESectorCarrier;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship LTESECTORCARRIER_USES_ANTENNACAPABILITY { // 0..n to 0..1
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf used-antennaCapability {
+            description "LTE Sector Carrier uses Antenna Capability.";
+            or-teiv-yext:aSide LTESectorCarrier;
+            type instance-identifier;
+        }
+
+        leaf-list used-by-lteSectorCarrier {
+            description "Antenna Capability used by LTE Sector Carrier.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NRCELLDU_USES_NRSECTORCARRIER { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list used-nrSectorCarrier {
+            description "NR Cell-DU uses NR Sector Carrier.";
+            or-teiv-yext:aSide NRCellDU;
+            type instance-identifier;
+        }
+
+        leaf used-by-nrCellDu {
+            description "NR Sector Carrier used by NR Cell-DU.";
+            or-teiv-yext:bSide NRSectorCarrier;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NRSECTORCARRIER_USES_ANTENNACAPABILITY { // 0..n to 0..1
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf used-antennaCapability {
+            description "NR Sector Carrier uses Antenna Capability.";
+            or-teiv-yext:aSide NRSectorCarrier;
+            type instance-identifier;
+        }
+
+        leaf-list used-by-nrSectorCarrier {
+            description "Antenna Capability used by NR Sector Carrier.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship SECTOR_GROUPS_NRCELLDU { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list grouped-nrCellDu {
+            description "Sector groups NR Cell-DU.";
+            or-teiv-yext:aSide Sector;
+            type instance-identifier;
+        }
+
+        leaf grouped-by-sector {
+            description "NR Cell-DU grouped by Sector.";
+            or-teiv-yext:bSide NRCellDU;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship SECTOR_GROUPS_EUTRANCELL { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list grouped-euTranCell {
+            description "Sector groups EUTRAN Cell.";
+            or-teiv-yext:aSide Sector;
+            type instance-identifier;
+        }
+
+        leaf grouped-by-sector {
+            description "EUTRAN Cell grouped by Sector.";
+            or-teiv-yext:bSide EUtranCell;
+            type instance-identifier;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+module revision-test-module {
+
+    namespace "test:revision-test-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27" {
+        description "valid revision";
+    }
+
+    revision "2019-9-27" {
+        description "invalid revision";
+    }
+
+    revision "20190927" {
+        description "invalid revision";
+    }
+
+    revision "2019.09.27" {
+        description "invalid revision";
+    }
+
+    revision "19-09-27" {
+        description "invalid revision";
+    }
+
+    revision "blurb" {
+        description "invalid revision";
+    }
+
+    revision "" {
+        description "invalid revision";
+    }
+
+    revision {
+        description "invalid revision";
+    }
+
+    container cont1 {
+        leaf leaf1 {
+            type uint32;
+        }
+    }
+}

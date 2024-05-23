@@ -1,0 +1,105 @@
+module deviation-host-test-module {
+
+    namespace "urn:ietf:params:xml:ns:yang:deviation-host-test-module";
+    prefix test;
+
+	import _3gpp-common-yang-extensions {
+		prefix yext3gpp;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-09" {
+        description "initial revision";
+    }
+
+    container cont1 {
+        leaf leaf11 {
+            type string;
+        }
+    }
+
+    container cont2 {
+        leaf leaf21 {
+            type int16;
+            config false;
+            mandatory true;
+            units "minutes";
+        }
+    }
+
+    container cont3 {
+    }
+
+    container cont4 {
+    }
+
+    container cont5 {
+        leaf leaf51 {
+            type string;
+        }
+        choice choice1 {
+            case case11 {
+                container cont55 {
+                }
+                container cont56 {
+                    config false;
+                }
+            }
+            case case12 {
+                container cont67 {
+                }
+                container cont68 {
+                }
+            }
+        }
+    }
+
+    list list11 {
+        key leaf111;
+
+        leaf leaf111 {
+            type string {
+                length 7..23;
+            }
+        }
+        leaf leaf112 {
+            type int16;
+        }
+        leaf-list leaflist113 {
+            type int16;
+            default 10;
+            default 13;
+            default 18;
+            must ". > 4";
+            yext3gpp:initial-value 50;
+        }
+        leaf leaf114 {
+            type int16;
+            default 48;
+        }
+    }
+
+    list list21 {
+        key leaf211;
+        min-elements 4;
+        max-elements 16;
+
+        leaf leaf211 {
+            type string;
+        }
+    }
+
+     list list22 {
+        key leaf221;
+        min-elements 4;
+        max-elements 16;
+
+        leaf leaf221 {
+            type string;
+        }
+    }
+
+}

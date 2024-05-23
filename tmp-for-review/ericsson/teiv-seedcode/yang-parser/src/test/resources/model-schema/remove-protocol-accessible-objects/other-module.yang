@@ -1,0 +1,24 @@
+module other-module {
+
+	namespace "test:other-module";
+	prefix "this";
+	revision 2024-01-30;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	container cont5 {
+
+		leaf leaf51 {
+			type string;
+		}
+	}
+
+	container cont6 {
+
+		leaf leaf61 {
+			type string;
+		}
+	}
+}

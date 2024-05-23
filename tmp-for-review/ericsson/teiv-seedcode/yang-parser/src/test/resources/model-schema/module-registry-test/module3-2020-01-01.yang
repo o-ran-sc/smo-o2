@@ -1,0 +1,18 @@
+module module3 {
+
+    namespace "test:module3";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-01-01" {
+        description "initial revision";
+    }
+
+    include module3-submodule1 {
+        revision-date "1999-09-09";
+    }
+
+}

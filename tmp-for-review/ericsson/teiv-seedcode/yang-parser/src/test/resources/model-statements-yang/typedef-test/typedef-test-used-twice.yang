@@ -1,0 +1,57 @@
+module typedef-test-used-twice {
+
+	namespace "test:typedef-test-used-twice";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2021-08-11";
+
+	typedef typedef1 {
+		type int32;
+		default "5";
+	}
+
+	typedef typedef2 {
+		type this:typedef1;
+		default "20";
+	}
+
+	typedef typedef3 {
+		type this:typedef1;
+	}
+
+	container cont1 {
+
+		leaf leaf2 {
+			type this:typedef1;
+			default 10;
+		}
+
+		leaf leaf3 {				// default = 5
+			type this:typedef1;
+		}
+
+		leaf leaf4 {				// default = 5
+			type this:typedef1;
+		}
+
+		leaf leaf5 {				// default = 20
+			type this:typedef2;
+		}
+
+		leaf leaf6 {				// default = 20
+			type this:typedef2;
+		}
+
+		leaf leaf7 {				// default = 5
+			type this:typedef3;
+		}
+
+		leaf leaf8 {				// default = 5
+			type this:typedef3;
+		}
+	}
+}

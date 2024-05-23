@@ -1,0 +1,35 @@
+module module {
+
+    namespace "test:module";
+    prefix module;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-10";
+
+	include submodule1;
+	include submodule2;
+	include submodule3;
+
+	container cont1 {
+
+		container cont51;		// deviated-out
+		container cont52;
+	}
+
+	container cont2 {
+
+		container cont54;
+	}
+
+	leaf leaf1 {
+		type typedef31;		// sits in submodule3
+	}
+
+	leaf leaf2 {
+		type module:typedef31;		// sits in submodule3
+	}
+
+}

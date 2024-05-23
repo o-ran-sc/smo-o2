@@ -1,0 +1,11 @@
+{
+    "module1:cont1": {
+        "leaf1": "the array below contains a mixture of primitive and object",
+        "element2": [
+            "should be all primitive or all objects",
+            {
+                "member1": null
+            }
+        ]
+    }
+}

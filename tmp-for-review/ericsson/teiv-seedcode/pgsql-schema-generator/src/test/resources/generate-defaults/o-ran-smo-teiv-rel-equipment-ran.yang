@@ -1,0 +1,48 @@
+module o-ran-smo-teiv-rel-equipment-ran {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-rel-equipment-ran";
+    prefix or-teiv-rel-equipran;
+
+    import o-ran-smo-teiv-common-yang-types { prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions { prefix or-teiv-yext; }
+
+    import o-ran-smo-teiv-equipment { prefix or-teiv-equip; }
+
+    import o-ran-smo-teiv-ran { prefix or-teiv-ran; }
+
+    organization "ORAN";
+    contact "The Authors";
+    description
+    "Equipment and RAN topology relation model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the topology relations between Equipment and RAN.";
+
+    revision "2024-05-14" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain REL_EQUIPMENT_RAN;
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNAMODULE_SERVES_ANTENNACAPABILITY { // 0..n to 0..m
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-antennaCapability {
+            description "Antenna Capability serviced by this Antenna Module.";
+            or-teiv-yext:aSide or-teiv-equip:AntennaModule;
+            type instance-identifier;
+        }
+
+        leaf-list serving-antennaModule {
+            description "Antenna Module serves this Antenna Capability.";
+            or-teiv-yext:bSide or-teiv-ran:AntennaCapability;
+            type instance-identifier;
+        }
+    }
+}

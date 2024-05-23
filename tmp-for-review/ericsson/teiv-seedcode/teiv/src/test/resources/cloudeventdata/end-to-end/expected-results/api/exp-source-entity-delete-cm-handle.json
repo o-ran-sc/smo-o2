@@ -1,0 +1,14 @@
+{
+    "RAN/entity-types/GNBDUFunction/entities/GNBDU_SED_1": {
+
+    },
+    "RAN/entity-types/GNBCUCPFunction/entities/GNBCUCP_SED_1": {
+
+    },
+    "CLOUD_TO_RAN/relationship-types/GNBDUFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION/relationships/relation_sed_1": {
+
+    },
+    "CLOUD_TO_RAN/relationship-types/GNBCUCPFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION/relationships/relation_sed_2": {
+
+    }
+}

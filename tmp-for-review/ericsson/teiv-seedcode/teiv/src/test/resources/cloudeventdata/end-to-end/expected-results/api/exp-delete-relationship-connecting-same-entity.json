@@ -1,0 +1,17 @@
+{
+    "EQUIPMENT/entity-types/AntennaModule/entities/AntennaModule_1": {
+
+    },
+    "EQUIPMENT/entity-types/AntennaModule/entities/AntennaModule_2": {
+
+    },
+    "EQUIPMENT/relationship-types/ANTENNAMODULE_REALISED_BY_ANTENNAMODULE/relationships/many_to_many_relation_1": {
+
+    },
+    "EQUIPMENT/relationship-types/ANTENNAMODULEEEEEEEEEEEE_REALISED_BY_ANTENNAMODULEEEEEEEEEEEEEEE/relationships/one_to_many_relation_1": {
+
+    },
+    "EQUIPMENT/relationship-types/ANTENNAMODULEEEEEEEEEEEE_DEPLOYED_ON_ANTENNAMODULEEEEEEEEEEEEEEE/relationships/one_to_one_relation_1": {
+
+    }
+}

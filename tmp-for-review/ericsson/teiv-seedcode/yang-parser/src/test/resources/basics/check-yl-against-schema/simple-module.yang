@@ -1,0 +1,25 @@
+module simple-module {
+
+	namespace "test:simple-module";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	 Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-12-10";
+
+	feature feature1;
+	feature feature2;
+
+	container cont1 {
+		leaf leaf1 {
+			type uint32;
+			if-feature feature1;
+		}
+		leaf leaf2 {
+			type uint32;
+			if-feature feature2;
+		}
+	}
+}

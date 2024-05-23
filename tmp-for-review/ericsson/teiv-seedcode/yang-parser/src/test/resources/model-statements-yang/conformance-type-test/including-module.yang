@@ -1,0 +1,22 @@
+module including-module {
+
+    namespace "test:including-module";
+    prefix "this";
+
+	include submodule;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+    container cont1 {
+        leaf leaf1 {
+            type uint32;
+        }
+    }
+
+}

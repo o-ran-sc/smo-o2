@@ -1,0 +1,63 @@
+{
+    "module1:cont1": {
+        "leaf11": "hello",
+        "leaf12": "",
+        "leaf13": null,
+        "leaf14": 123,
+        "leaf15": true,
+        "leaflist21": [
+            "one",
+            "two"
+        ],
+        "leaflist22": [
+            "",
+            null
+        ],
+        "leaflist23": [
+            null,
+            true
+        ],
+        "leaflist24": [
+            10,
+            -999,
+            1234567890.123456
+        ]
+    },
+    "module2:cont2": {
+        "leaf31": "world",
+        "module99:leaf32": false,
+        "cont3": {
+            "leaf33": [
+                null
+            ],
+            "leaflist34": [
+                "one",
+                "two"
+            ],
+            "leaflist35": [
+                [
+                    null
+                ],
+                true
+            ]
+        }
+    },
+    "module5:list5": [
+        {
+            "leaf51": 1234,
+            "leaf52": null,
+            "leaflist53": [
+                false,
+                true
+            ]
+        },
+        {
+            "leaf51": 1235,
+            "leaf52": "hello",
+            "leaflist53": [
+                false,
+                false
+            ]
+        }
+    ]
+}

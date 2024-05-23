@@ -1,0 +1,105 @@
+module augment-test-module3 {
+
+    namespace "test:augment-test3";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+	container cont1 {
+	    action action1;
+	}
+
+	augment /this:cont1/list2 {
+	    action action3;
+	}
+
+	augment /this:cont1 {
+	    list list2 {
+	    	key leaf6;
+
+	    	leaf leaf6 {
+		        type string;
+	    	}
+	    	leaf leaf7 {
+		        type string;
+	    	}
+	    }
+	    choice choice8 {
+	    	case case1 {
+	    		container cont96;
+	    	}
+	    	case case2 {
+	    		container cont97;
+	    	}
+	    }
+	}
+
+	augment /cont1/action1/this:input {
+		container input-container;
+		when "leaf-at-root = true";
+	}
+
+	augment /this:cont1/choice8 {
+		if-feature feature1;
+		container shorthand-container;
+	}
+
+	augment /this:cont1/choice8 {
+		if-feature feature2;
+		case case3 {
+			if-feature feature3;
+			container case-container;
+		}
+	}
+
+	augment /this:cont1/choice8/case3 {
+		container second-case-container;
+	}
+
+	// -------------------------- failure cases -------------------------
+
+	leaf leaf-at-root {
+		type boolean;
+	}
+
+	augment /leaf-at-root {			// should not be possible to augment that
+	    container cont1;
+	}
+
+	augment /unknownprefix:somenode {		// prefix not resolvable.
+	    container cont1;
+	}
+
+	augment /this:unknown-node {			// data node not resolvable.
+	    container cont1;
+	}
+
+	augment "" {							// empty path.
+	    container cont1;
+	}
+
+	augment "cont1" {						// relative path
+	    container cont1;
+	}
+
+	augment {								// null path to target node
+	    container cont1;
+	}
+
+	// -------------------------- not-allowed statements -------------------------
+
+	augment /this:cont1/choice8/case1 {
+		action action1;
+	}
+
+	augment /this:cont1/choice8/case2 {
+		notification notification1;
+	}
+
+}

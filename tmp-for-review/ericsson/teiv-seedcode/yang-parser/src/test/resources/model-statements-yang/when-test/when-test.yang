@@ -1,0 +1,45 @@
+module when-test {
+
+    namespace "urn:o-ran:yang:when-test";
+    prefix this;
+
+    organization "ORAN";
+    contact "o-ran-sc.org";
+
+    description "yang test module for when
+    Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+
+    revision "2015-10-20" {
+        description "Initial revision";
+    }
+
+    container cont1 {
+        leaf leaf11 {
+            type string;
+        }
+        leaf leaf12 {
+            when "../leaf11 = 'Hello'";
+            type string;
+        }
+    }
+
+    container cont2 {
+
+    }
+
+    augment "/this:cont2" {
+        when "/this:cont1/this:leaf11 = 'World'";
+        leaf leaf22 {
+            type string;
+        }
+    }
+
+    augment "/this:cont2" {
+        leaf leaf23 {
+            type string;
+        }
+    }
+
+}

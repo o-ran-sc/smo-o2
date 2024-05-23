@@ -1,0 +1,31 @@
+module module2 {
+
+    namespace "test:module2";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	import module1 {
+		prefix mod1;
+	}
+
+    revision "2021-02-14" {
+        description "initial revision";
+    }
+
+
+	augment "/mod1:cont7" {
+
+		leaf leaf71 {
+			type int32;
+			default -12345;
+		}
+
+		leaf leaf72 {
+			type int32;
+		}
+	}
+
+}

@@ -1,0 +1,40 @@
+module deviate-not-supported-multi-level-test-module {
+
+    namespace "test:deviate-not-supported-multi-level-test-module";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-09" {
+        description "initial revision";
+    }
+
+	container cont1 {
+		container cont2 {
+			container cont3 {
+				container cont4;
+			}
+		}
+	}
+
+	/*
+		Deviations happen to be processed in the order in which they are defined in
+		the model, so we can provoke a deviation where we try to not-support a
+		container that a different deviation has already not-supported.
+	*/
+
+	deviation /this:cont1/this:cont2/this:cont3/this:cont4 {
+        deviate not-supported;
+	}
+
+	deviation /this:cont1/this:cont2 {
+        deviate not-supported;
+	}
+
+	deviation /this:cont1/this:cont2/this:cont3 {
+        deviate not-supported;
+	}
+
+}

@@ -1,0 +1,17 @@
+submodule test-submodule {
+
+	// yang-version "1.1";		so it's yang version 1
+
+	belongs-to include-test-module {
+		prefix this;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "1999-01-01" {
+        description "initial revision";
+    }
+
+}

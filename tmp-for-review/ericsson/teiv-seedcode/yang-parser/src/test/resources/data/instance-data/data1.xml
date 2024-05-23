@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============LICENSE_START=======================================================
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+  ================================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  SPDX-License-Identifier: Apache-2.0
+  ============LICENSE_END=========================================================
+ -->
+<instance-data-set xmlns="urn:ietf:params:xml:ns:yang:ietf-yang-instance-data">
+  <name>test instance data</name>
+  <content-data>
+
+  	<!-- Simple stuff -->
+
+    <cont1 xmlns="test:module1">
+      <leaf11>42</leaf11>
+      <leaf14 />
+    </cont1>
+
+    <!-- A few NPs and defaults -->
+
+    <list2 xmlns="test:module1">
+      <leaf21>4</leaf21>
+      <cont22>
+        <leaf23>One</leaf23>
+        <leaf24>Two</leaf24>
+      </cont22>
+      <leaf25>Three</leaf25>
+      <leaflist26>Six</leaflist26>
+    </list2>
+
+    <list2 xmlns="test:module1">
+      <leaf21>5</leaf21>
+      <cont22>
+        <leaf23>One</leaf23>
+      </cont22>
+    </list2>
+
+    <list2 xmlns="test:module1">
+      <leaf21>6</leaf21>
+    </list2>
+
+    <!-- anydata / anyxml -->
+
+    <cont6 xmlns="test:module1">
+      <anydata61>
+        <aa>aaaaaa</aa>
+        <bb>bbbbbb</bb>
+      </anydata61>
+      <anyxml62>
+        <dd>dddddd</dd>
+        <ee>eeeeee</ee>
+      </anyxml62>
+    </cont6>
+
+	<cont8 xmlns="test:module1">
+		<leaf81>    should ignore whitespaces      </leaf81>
+		<leaf82>
+					should also ignore whitespaces
+		   </leaf82>
+		<leaf83><![CDATA[  should be 2 whitespaces either side  ]]></leaf83>
+		<leaf84>Before<![CDATA[  should be 2 whitespaces either side  ]]>After</leaf84>
+		<leaf85>
+
+
+					</leaf85>
+		<leaf86>blurb<!-- comment --> more blurb</leaf86>
+	</cont8>
+
+  </content-data>
+</instance-data-set>

@@ -1,0 +1,38 @@
+module simple-module {
+
+	namespace "urn:test:simple-module";
+	prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision 2023-02-27;
+
+	typedef typedef01 {				// references unknown type but the typedef itself is not used.
+		type unknown-type;
+	}
+
+	grouping grouping01 {			// contains wrong statement, but the grouping is never used.
+		unknown-statement "Hello!";
+	}
+
+	container cont1 {
+
+		leaf leaf01 {
+			type string;
+		}
+
+		leaf leaf02 {				// uses unknown type but will be deviated-out.
+			type unknown-type;
+		}
+
+		leaf leaf03 {				// uses unknown type
+			type unknown-type;
+		}
+	}
+
+	deviation /this:cont1/leaf02 {
+		deviate not-supported;
+	}
+}

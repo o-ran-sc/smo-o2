@@ -1,0 +1,100 @@
+module range-test-module-typedefs {
+
+    namespace "urn:rdns:o-ran:oammodel:range-test-module-typedefs";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Ranges and typedefs that are fine --------------------
+
+    typedef typeInt8noRange {
+        type int8;
+    }
+
+    typedef typeInt64noRange {
+        type int64;
+    }
+
+    typedef typeUint8noRange {
+        type uint8;
+    }
+
+    typedef typeUint64noRange {
+        type uint64;
+    }
+
+    typedef typeInt8WithRange {
+        type int8 {
+            range 10..20;
+        }
+    }
+
+    typedef typeUsingTypeInt8WithRange {
+        type this:typeInt8WithRange;
+    }
+
+    container cont1 {
+
+        leaf leaf1 {
+            type this:typeInt8noRange;
+        }
+
+        leaf leaf2 {
+            type this:typeInt8noRange {
+                range min..max;
+            }
+        }
+
+        leaf leaf3 {
+            type this:typeInt64noRange {
+                range min..max;
+            }
+        }
+
+        leaf leaf4 {
+            type this:typeUint8noRange {
+                range min..max;
+            }
+        }
+
+        leaf leaf5 {
+            type this:typeUint64noRange {
+                range min..max;
+            }
+        }
+
+        leaf leaf6 {
+            type this:typeInt8WithRange;
+        }
+
+        leaf leaf7 {
+            type this:typeInt8noRange {
+                range "-50..-20 | 30..60";
+            }
+        }
+
+        leaf leaf8 {
+            type this:typeUint64noRange {
+                range "5 | 10..10 | 70";
+            }
+        }
+
+        leaf leaf9 {
+            type this:typeUsingTypeInt8WithRange;
+        }
+
+        leaf leaf10 {
+            type this:typeUsingTypeInt8WithRange {
+                range "17..19";
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,50 @@
+{
+    "module1:cont1": {
+        "leaf11": 42,
+        "leaf14": [
+            null
+        ]
+    },
+    "module1:list2": [
+        {
+            "leaf21": 4,
+            "cont22": {
+                "leaf23": "One",
+                "leaf24": "Two"
+            },
+            "leaf25": "Three",
+            "leaflist26": [
+                "Six"
+            ]
+        },
+        {
+            "leaf21": 5,
+            "cont22": {
+                "leaf23": "One"
+            }
+        },
+        {
+            "leaf21": 6
+        }
+    ],
+    "module1:cont5": {
+        "leaf51": [
+            null
+        ]
+    },
+    "module1:cont6": {
+        "anydata61": {
+            "aa": "aaaaaa",
+            "bb": "bbbbbb"
+        },
+        "anyxml62": {
+            "dd": "dddddd",
+            "ee": "eeeeee"
+        }
+    },
+    "module1:cont8": {
+        "leaf81": "should ignore whitespaces",
+        "leaf82": "should also ignore whitespaces",
+        "leaf83": "  should be 2 whitespaces either side  "
+    }
+}

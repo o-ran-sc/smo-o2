@@ -1,0 +1,13 @@
+{
+    "entity_map_NRSectorCarrier_1": {
+        "id": "NRSectorCarrier_1"
+    },
+    "entity_map_AntennaCapability_1": {
+        "id": "AntennaCapability_1"
+    },
+    "relation_map_NRSC_AC_1": {
+        "REL_ID_NRSECTORCARRIER_USES_ANTENNACAPABILITY": "relation_1",
+        "id": "NRSectorCarrier_1",
+        "REL_FK_used-antennaCapability": "AntennaCapability_1"
+    }
+}

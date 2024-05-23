@@ -1,0 +1,32 @@
+module module2 {
+
+    namespace "test:module2";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	import module1 {
+		prefix mod1;
+	}
+
+	import module3 {
+		prefix mod3;
+	}
+
+    revision "2020-09-30" {
+        description "initial revision";
+    }
+
+    identity identity21;
+    identity identity22 {
+    	base identity21;
+    }
+
+    identity identity23 {
+    	base mod1:identity11;
+    }
+
+    identity identity99;
+}

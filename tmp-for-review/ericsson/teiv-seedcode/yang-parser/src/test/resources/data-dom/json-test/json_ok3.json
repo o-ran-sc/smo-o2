@@ -1,0 +1,15 @@
+{
+    "module1:cont1": {
+        "@": {
+            "module3:anno1": "hello",
+            "module4:anno2": 12345
+        },
+        "leaf11": "hello",
+        "module2:leaf12": "",
+        "leaflist5": [
+            "one",
+            "two",
+            "three"
+        ]
+    }
+}

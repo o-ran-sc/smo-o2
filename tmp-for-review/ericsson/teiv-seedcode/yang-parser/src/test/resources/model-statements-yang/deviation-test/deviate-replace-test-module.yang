@@ -1,0 +1,89 @@
+module deviate-replace-test-module {
+
+    namespace "urn:ietf:params:xml:ns:yang:deviate-replace-test-module";
+    prefix dev;
+
+    import deviation-host-test-module {
+        prefix host;
+    }
+
+	import _3gpp-common-yang-extensions {
+		prefix yext3gpp;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-09" {
+        description "initial revision";
+    }
+
+// ---------------- These deviations are just fine ---------------------
+
+    deviation /host:cont2/host:leaf21 {
+        deviate replace {
+            config true;
+            mandatory false;
+            units "days";
+        }
+    }
+
+    deviation /host:list11/host:leaflist113 {
+        deviate replace {
+            default 1234;
+            default 7890;
+            yext3gpp:initial-value 70;
+        }
+    }
+
+	deviation /host:list21 {
+	    deviate replace {
+            min-elements 2;
+            max-elements 36;
+	    }
+	}
+
+    deviation /host:cont5/host:leaf51 {
+        deviate replace {
+            type string {
+                length 10..40;
+            }
+        }
+    }
+
+// ---------------- These deviations try to replace things that don't exist in the host model ---------------------
+
+    deviation /host:cont1/host:leaf11 {
+        deviate replace {
+            units "hours";
+        }
+    }
+
+// ---------------- Various other findings ---------------------
+
+    deviation /host:cont4 {
+        deviate replace;		// Missing substatements
+    }
+
+    deviation /host:list11/host:leaf112 {
+        deviate replace {
+            type string;			// Should throw a finding as data type has changed.
+        }
+    }
+
+    deviation /host:list22 {
+        deviate replace {
+            min-elements 6;		// shrinking boundary
+            max-elements 10;	// same
+        }
+    }
+
+    deviation /host:list11/host:leaf114 {
+        deviate replace {
+            default 23;		// target is a leaf so only a single default can occur.
+            default 95;
+        }
+    }
+
+}

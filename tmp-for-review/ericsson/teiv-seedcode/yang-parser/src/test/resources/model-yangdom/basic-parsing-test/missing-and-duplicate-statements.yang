@@ -1,0 +1,44 @@
+module missing-and-duplicate-statements {
+	yang-version 1.0;
+
+	namespace "test:missing-and-duplicate-statements";
+
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2019-09-27";
+
+	container cont1 {
+		presence "first presence";
+		presence "second presence";		// Wrong
+
+		leaf leaf1 {
+			type string;
+			type uint16;			// Wrong
+			mandatory yes;			// Wrong (doh!)
+		}
+
+		leaf leaf2 {
+			type identityref {
+				base this:weird_%%_characters;
+			}
+		}
+
+		leaf leaf3 {
+			type string;
+			mandatory;
+		}
+	}
+
+	container cont2_with_weird_%%_characters;
+
+	container cont3 {
+		container;			// Wrong
+		container "";		// Wrong
+	}
+
+	deviation /this:cont1;			// Wrong, missing 'deviate'
+}

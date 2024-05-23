@@ -1,0 +1,80 @@
+module o-ran-smo-teiv-common-yang-types {
+
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-common-yang-types";
+    prefix or-teiv-types;
+
+    import o-ran-smo-teiv-common-yang-extensions { prefix or-teiv-yext; }
+
+    import _3gpp-common-yang-types { prefix types3gpp; }
+
+  organization "ORAN";
+  contact "The Authors";
+    description
+    "Topology and Inventory common types model.
+
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains re-usable data types that topology and inventory models
+    will frequently use as part of types and relationships.";
+
+    revision "2024-05-14" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    grouping Top_Grp_Type {
+        description "Grouping containing the key attribute common to all types. All types
+                    MUST use this grouping.";
+
+        leaf id {
+            type string;
+            description "Unique identifier of topology entities. Represents the Entity Instance Identifier.";
+        }
+    }
+
+    container decorators {
+        description "This container serves as extension point for applications wishing to define their own decorators.
+                    This is done via augmentations. They can only be defined in name value pair.
+
+                    This is a consumer data and can be attached to Topology Entity or Topology Relation instance,
+                    outside of the declared Topology Entity or Topology Relationship's attributes. This cannot be
+                    instantiated, and it MUST NOT be augmented or deviated in any way, unless stated otherwise.";
+    }
+
+    leaf-list classifiers {
+        description "Consumer defined tags to topology entities and relationships.
+
+                    This is a consumer data and can be attached to Topology Entity or Topology Relation instance,
+                    outside of the declared Topology Entity or Topology Relationship's attributes. This cannot be
+                    instantiated, and it MUST NOT be augmented or deviated in any way, unless stated otherwise.";
+
+        type identityref { base classifier; }
+    }
+
+    leaf-list sourceIds {
+        description "An ordered list of identities that represent the set of native source identifiers for participating
+                    entities.
+
+                    This is a consumer data and can be attached to Topology Entity or Topology Relation instance,
+                    outside of the declared Topology Entity or Topology Relationship's attributes. This cannot be
+                    instantiated, and it MUST NOT be augmented or deviated in any way, unless stated otherwise.";
+
+        type string;
+        ordered-by user;
+    }
+
+    container metadata {
+        description "This container serves as extension point to define metadata. They can only be defined in name value
+                    pair.
+
+                    This is a consumer data and can be attached to Topology Entity or Topology Relation instance,
+                    outside of the declared Topology Entity or Topology Relationship's attributes. This cannot be
+                    instantiated, and it MUST NOT be augmented or deviated in any way, unless stated otherwise.";
+    }
+
+    identity classifier{
+        description  "The classifier is used as a base to provide all classifiers with identity. ";
+    }
+}

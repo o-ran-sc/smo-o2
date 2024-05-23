@@ -1,0 +1,90 @@
+module range-test-module-simple-faulty {
+
+    namespace "urn:rdns:o-ran:oammodel:range-test-module-simple-faulty";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Simple ranges that are faulty for a variety of reasons --------------------
+
+    container cont1 {
+
+        leaf leaf1 {
+            type int8 {
+                range max..min;
+            }
+        }
+
+        leaf leaf2 {
+            type int8 {
+                range 300..max;
+            }
+        }
+
+        leaf leaf3 {
+            type int8 {
+                range "-4000  ..   max";
+            }
+        }
+
+        leaf leaf4 {
+            type int8 {
+                range "min..max | min..max";
+            }
+        }
+
+        leaf leaf5 {
+            type int8 {
+                range "min  ..  100| 30..  max";
+            }
+        }
+
+        leaf leaf6 {
+            type int8 {
+                range -100..1000;
+            }
+        }
+
+        leaf leaf7 {
+            type int8 {
+                range "-50..-20 | -40..-30";
+            }
+        }
+
+        leaf leaf8 {
+            type int8 {
+                range "min..-20 | -30 | -40";
+            }
+        }
+
+        leaf leaf9 {
+            type int8 {
+                range min..-20|30|25;
+            }
+        }
+
+        leaf leaf10 {
+            type int8 {
+                range "min | 10 | 400";
+            }
+        }
+
+        leaf leaf11 {
+            type int8 {
+                range "blurb | 10..10 | 70";
+            }
+        }
+
+        leaf leaf12 {
+            type int8 {
+                range MIN..max;
+            }
+        }
+    }
+}

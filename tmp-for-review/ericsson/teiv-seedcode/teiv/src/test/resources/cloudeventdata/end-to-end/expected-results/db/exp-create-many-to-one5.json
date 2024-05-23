@@ -1,0 +1,14 @@
+{
+    "entity_map_AntennaCapability_2": {
+        "id": "AntennaCapability_2",
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873820",
+            "resourceIdentifier": "/o-ran-smo-ComTop:NodeCluster[@id=2]"
+        }
+    },
+    "relation_map_NRSC_AC_2": {
+        "REL_ID_NRSECTORCARRIER_USES_ANTENNACAPABILITY": "relation_2",
+        "id": "NRSectorCarrier_2",
+        "REL_FK_used-antennaCapability": "AntennaCapability_2"
+    }
+}

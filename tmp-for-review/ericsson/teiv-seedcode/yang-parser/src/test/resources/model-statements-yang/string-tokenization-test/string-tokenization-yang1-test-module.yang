@@ -1,0 +1,69 @@
+module string-tokenization-yang1-test-module {
+    namespace "urn:o-ran:yang:string-tokenization-yang1-test-module";
+    prefix "test";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision 2019-10-08 {
+        description "Initial revision.";
+    }
+
+    container cont1 {
+        description "valid YANG 1 double-quoted string";
+    }
+
+    container cont2 {
+        description "valid YANG 1 double-quoted string with special characters \n \t \" \\ \X \_";
+    }
+
+    container cont3 {
+        description "valid YANG 1
+                           double-quoted string";
+    }
+
+    container cont4 {
+        description "valid YANG 1
+
+                         double-quoted string";
+    }
+
+    container cont5 {
+        description "";
+    }
+
+    container cont6 {
+        description "invalid YANG 1 double-quoted string \
+                         because of trailing backslash";
+    }
+
+    container cont11 {
+        description 'valid YANG 1 single-quoted string';
+    }
+
+    container cont12 {
+        description 'valid YANG 1 single-quoted string " \n \t \\ \X';
+    }
+
+    container cont13 {
+        description 'valid YANG 1
+single-quoted string';
+    }
+
+    container cont14 {
+        description 'valid YANG 1
+                           single-quoted string';
+    }
+
+    container cont21 {
+        description valid_YANG_1_unquoted_string;
+    }
+
+    container cont22 {
+        description valid_YANG_1_unquoted_string_with_a_quote_at_the_end";
+    }
+
+
+
+}

@@ -1,0 +1,188 @@
+module module1 {
+
+	namespace "urn:test:module1";
+	prefix "this";
+
+	include submodule3;
+
+	import module2 {
+		prefix mod2;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2021-02-12" {
+		description "initial revision";
+	}
+
+	feature feature11;
+	feature feature12;
+	feature feature13;
+
+	feature feature14 {
+		if-feature "feature11 and feature12";
+	}
+
+	container cont1 {
+
+		leaf leaf11 {
+			if-feature feature11;
+			type boolean;
+		}
+
+		leaf leaf12 {
+			if-feature feature12;
+			type boolean;
+		}
+
+		leaf leaf13 {
+			if-feature "this:feature11 or feature12 and this:feature13";
+			type boolean;
+		}
+
+		leaf leaf14 {
+			if-feature feature13;
+			if-feature feature14;
+			type boolean;
+		}
+	}
+
+	feature feature16;
+	feature feature17;
+	feature feature18;
+	feature feature19;
+
+	container cont2 {
+
+		choice choice21 {
+			case case211 {
+				if-feature feature16;
+				leaf leaf211 {
+					type boolean;
+				}
+			}
+			case case212 {
+				if-feature feature17;
+				leaf leaf212 {
+					type boolean;
+				}
+			}
+			case case213 {
+				if-feature feature18;
+				leaf leaf213 {
+					type boolean;
+				}
+			}
+			case case214 {
+				if-feature feature19;
+				leaf leaf214 {
+					type boolean;
+				}
+			}
+			leaf leaf215 {
+				if-feature feature18;
+				if-feature this:feature19;
+				type boolean;
+			}
+		}
+	}
+
+	feature feature21;
+	feature feature22;
+	feature feature23;
+	feature feature24;
+
+	grouping grouping1 {
+		leaf leaf51 {
+			type boolean;
+		}
+		leaf leaf52 {
+			if-feature feature21;
+			type boolean;
+		}
+		leaf leaf53 {
+			type enumeration {
+				enum one;
+				enum two {
+					if-feature feature22;
+				}
+				enum three;
+			}
+		}
+	}
+
+	container cont3 {
+		uses grouping1 {
+			if-feature feature23;
+		}
+	}
+
+	feature feature31;
+
+	container cont4 {
+		uses mod2:grouping91 {
+			if-feature feature31;
+		}
+	}
+
+	feature feature58;
+	feature feature59;
+
+	container cont5 {
+
+		leaf leaf51 {
+			if-feature feature51;
+			type boolean;
+		}
+
+		leaf leaf52 {
+			if-feature feature58;
+			type boolean;
+		}
+
+		leaf leaf53 {
+			if-feature this:feature52;
+			type boolean;
+		}
+	}
+
+	container cont6 {
+
+		leaf leaf61 {
+			if-feature "has invalid syntax, will always be false";
+			type boolean;
+		}
+	}
+
+	feature feature71;
+	feature feature72;
+	feature feature73;
+	feature feature74;
+	feature feature75;
+	feature feature76;
+
+	container cont7 {
+
+		leaf leaf71 {
+			if-feature "feature71 and not feature72";
+			type boolean;
+		}
+
+		leaf leaf72 {
+			if-feature "feature71 and feature72 and (feature73 or feature74)";
+			type boolean;
+		}
+
+		leaf leaf73 {
+			if-feature "feature71 and ((feature72 or feature73) and (feature74 or feature75))";
+			type boolean;
+		}
+
+		leaf leaf74 {
+			if-feature "not feature71 and (feature74 or feature75) and not feature76";
+			type boolean;
+		}
+	}
+}

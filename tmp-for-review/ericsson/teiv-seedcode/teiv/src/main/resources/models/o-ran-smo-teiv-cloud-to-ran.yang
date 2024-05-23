@@ -1,0 +1,84 @@
+module o-ran-smo-teiv-cloud-to-ran {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-cloud-to-ran";
+    prefix or-teiv-cloudtoran;
+
+    import o-ran-smo-teiv-common-yang-types {prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+    import o-ran-smo-teiv-cloud {prefix or-teiv-cloud; }
+
+    import o-ran-smo-teiv-ran {prefix or-teiv-ran; }
+
+    organization "ORAN";
+    contact "The Authors";
+    description
+    "RAN Cloud to RAN Logical topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the RAN Cloud to RAN Logical topology relations";
+
+    revision "2024-05-02" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain CLOUD_TO_RAN;
+
+    or-teiv-yext:biDirectionalTopologyRelationship NFDEPLOYMENT_SERVES_GNBDUFUNCTION { // 0..n to 0..m
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-gnbduFunction {
+            description "gNodeBDU Function serviced by this NF Deployment.";
+            or-teiv-yext:aSide or-teiv-cloud:NFDeployment;
+            type instance-identifier;
+        }
+
+        leaf-list serving-nFDeployment {
+            description "NF Deployment that serves this gNodeBDU Function.";
+            or-teiv-yext:bSide or-teiv-ran:GNBDUFunction;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NFDEPLOYMENT_SERVES_GNBCUCPFUNCTION { // 0..n to 0..m
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-gnbcucpFunction {
+            description "gNodeB-CU-CP Function serviced by this NF Deployment.";
+            or-teiv-yext:aSide or-teiv-cloud:NFDeployment;
+            type instance-identifier;
+        }
+
+        leaf-list serving-nFDeployment {
+            description "NF Deployment that serves this gNodeBCUCP Function.";
+            or-teiv-yext:bSide or-teiv-ran:GNBCUCPFunction;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NFDEPLOYMENT_SERVES_GNBCUUPFUNCTION { // 0..n to 0..m
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-gnbcuupFunction {
+            description "gNodeB-CU-UP Function serviced by this NF Deployment.";
+            or-teiv-yext:aSide or-teiv-cloud:NFDeployment;
+            type instance-identifier;
+        }
+
+        leaf-list serving-nFDeployment {
+            description "NF Deployment that serves this gNodeBCUUP Function.";
+            or-teiv-yext:bSide or-teiv-ran:GNBCUUPFunction;
+            type instance-identifier;
+        }
+    }
+}

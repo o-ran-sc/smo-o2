@@ -1,0 +1,123 @@
+module bits-test-module {
+
+	namespace "urn:o-ran:yang:bits-module";
+	prefix "ebits";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision 2019-10-07 {
+		description "Initial revision";
+	}
+
+	typedef typedef1 {
+		type bits {
+			bit first;
+			bit second;
+			bit third;
+		}
+	}
+
+	typedef typedef2 {
+		type bits {
+			bit first { position 7 ; }
+			bit second { position 23 ; }
+			bit third { position 195 ; }
+		}
+	}
+
+	typedef typedef3 {
+		type bits {
+			bit first { position 98 ; }
+			bit second;
+			bit third;
+		}
+	}
+
+	typedef typedef4 {
+		type bits {
+			bit first;
+			bit second { position 10 ; }
+			bit third;
+		}
+	}
+
+	typedef typedef-duplicate-position1 {
+		type bits {
+			bit first;
+			bit second { position 10 ; }
+			bit third { position 10 ; }
+		}
+	}
+
+	typedef typedef-duplicate-position2 {
+		type bits {
+			bit first;
+			bit second { position 0 ; }
+			bit third;
+		}
+	}
+
+	typedef typedef-too-large1 {
+		type bits {
+			bit first;
+			bit second { position 4294967295 ; }
+			bit third;
+		}
+	}
+
+	typedef typedef-too-large2 {
+		type bits {
+			bit first;
+			bit second { position 9999999999999998 ; }
+			bit third;
+		}
+	}
+
+	typedef typedef-not-bits {
+		type uint32;
+	}
+
+// ------------------------------- leafs using the typedefs above --------------------------
+
+	leaf leaf1 {
+		type typedef1;
+	}
+
+	leaf leaf2 {
+		type typedef2 {
+			bit second { position 23 ; }
+		}
+	}
+
+	leaf leaf-wrong-position1 {
+		type typedef2 {
+			bit first { position 7 ; }
+			bit second { position 24 ; }
+		}
+	}
+
+	leaf leaf-wrong-position2 {
+		type typedef2 {
+			bit first;
+			bit second { position 24 ; }
+		}
+	}
+
+	leaf leaf-new-bit {
+		type typedef2 {
+			bit first { position 7 ; }
+			bit second { position 23 ; }
+			bit third { position 195 ; }
+			bit fourth { position 34 ; }
+		}
+	}
+
+	leaf leaf-not-bits {
+		type typedef-not-bits {
+			bit first;
+			bit second { position 24 ; }
+		}
+	}
+}

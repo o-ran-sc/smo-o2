@@ -1,0 +1,24 @@
+module module1 {
+
+    namespace "test:module1";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	import module2 { prefix mod2; }
+
+    revision "2020-01-01" {
+        description "initial revision";
+    }
+
+    container cont1 {
+
+    	leaf leaf2 {
+    		type string;
+    	}
+
+		uses mod2:grouping1;
+    }
+}

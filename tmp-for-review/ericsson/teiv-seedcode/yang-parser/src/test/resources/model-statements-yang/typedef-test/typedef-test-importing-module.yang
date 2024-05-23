@@ -1,0 +1,47 @@
+module typedef-test-importing-module {
+
+	namespace "test:typedef-test-importing-module";
+	prefix "this";
+
+	import typedef-test-module {
+		prefix module;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-11-11" {
+		description "initial revision";
+	}
+
+	leaf leaf1 {
+		type module:typedef13;
+	}
+
+	leaf leaf2 {
+		type module:typedef92;
+	}
+
+	leaf leaf3 {
+		type module:typedef93;
+	}
+
+	leaf leaf4 {
+		type this:typedef51;
+	}
+
+	typedef typedef51 {
+		type module:typedef93;
+	}
+
+	grouping grouping52 {
+		leaf leaf5 {
+			type module:typedef93;
+		}
+	}
+
+	container cont6 {
+		uses this:grouping52;
+	}
+}

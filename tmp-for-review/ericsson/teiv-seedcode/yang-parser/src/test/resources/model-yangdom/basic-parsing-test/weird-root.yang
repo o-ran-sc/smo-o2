@@ -1,0 +1,15 @@
+container weird-root {
+
+    namespace "document-end-missing-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27";
+
+	leaf leaf1 {
+		type string;
+	}
+}

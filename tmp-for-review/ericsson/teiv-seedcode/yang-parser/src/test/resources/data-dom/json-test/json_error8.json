@@ -1,0 +1,8 @@
+{
+    "module1:cont1": {
+        "leaf1": "the name of the annotation member below is not prefixed with the module name",
+        "@leaf1": {
+            "unprefixed-member": "should be prefixed with module name"
+        }
+    }
+}

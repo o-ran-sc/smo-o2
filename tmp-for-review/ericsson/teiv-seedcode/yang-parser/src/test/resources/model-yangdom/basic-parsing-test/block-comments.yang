@@ -1,0 +1,17 @@
+/*
+
+This is a long block comment
+
+*/module block-comments-module {
+	yang-version 1.0;	/* note that 1.0 is wrong, but some designer will use it at some stage... */
+    namespace "test-module";
+    prefix "this";
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+    revision "2019-09-27";
+}/*
+
+This is a long block comment
+
+*/

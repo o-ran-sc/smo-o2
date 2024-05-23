@@ -1,0 +1,49 @@
+{
+    "ietf-yang-library:modules-state": [
+        {
+            "module-set-id": "10445",
+            "module": [
+                {
+                    "name": "test-module1",
+                    "revision": "2020-01-01",
+                    "schema": "www.acme.com/test-module1.yang",
+                    "namespace": "com:foo:test-module1",
+                    "feature": [
+                        "feature1",
+                        "feature2",
+                        "feature3"
+                    ],
+                    "conformance-type": "implement",
+                    "submodule": [
+                        {
+                            "name": "test-module1-submodule",
+                            "revision": "2020-02-02",
+                            "schema": "www.acme.com/test-module1-submodule.yang"
+                        }
+                    ],
+                    "deviation": [
+                        {
+                            "name": "test-module1-ext",
+                            "revision": "2020-05-20"
+                        }
+                    ]
+                },
+                {
+                    "name": "test-module1-ext",
+                    "revision": "2020-05-20",
+                    "namespace": "com:foo:test-module1",
+                    "conformance-type": "implement"
+                },
+                {
+                    "name": "test-module2",
+                    "revision": "",
+                    "namespace": "com:foo:test-module2",
+                    "conformance-type": "import",
+                    "feature": [
+                        "feature6"
+                    ]
+                }
+            ]
+        }
+    ]
+}

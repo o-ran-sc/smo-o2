@@ -1,0 +1,70 @@
+module if-feature-test-module {
+
+    namespace "urn:ietf:params:xml:ns:yang:if-feature-test-module";
+    prefix "module1";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27" {
+        description "initial revision";
+    }
+
+    feature feature1 {
+        description "feature1 desc";
+        reference "feature1 ref";
+    }
+
+    feature feature2;
+    feature feature3;
+
+    container cont1 {
+        if-feature feature1;
+
+        leaf leaf1 {
+            if-feature feature2;
+            type uint32;
+        }
+
+        leaf leaf2 {
+            if-feature "feature1 or feature2";
+            type string;
+        }
+
+        leaf leaf3 {
+            if-feature "feature1 and(feature2 or				not feature3)";
+            type string;
+        }
+
+        leaf leaf4 {
+            if-feature "(feature1 or feature2)and feature3 or feature1";
+            type string;
+        }
+
+        leaf leaf5 {
+            if-feature "(feature1";
+            type string;
+        }
+
+        leaf leaf6 {
+            if-feature "feature1 or";
+            type string;
+        }
+
+        leaf leaf7 {
+            if-feature "(feature1 or feature2)) or feature3 (";
+            type string;
+        }
+
+        leaf leaf8 {
+            if-feature "()";
+            type string;
+        }
+
+        leaf leaf9 {
+            if-feature;
+            type string;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+module submodule-test-module {
+
+    namespace "urn:o-ran:yang:submodule-test-module";
+    prefix this;
+
+    include submodule-test-submodule {
+        revision-date "2020-06-01";
+    }
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-06-09" {
+        description "Initial revision";
+    }
+
+    container cont1 {
+        leaf leaf11 {
+            type string;
+        }
+
+        uses grouping1;		// using the grouping twice to avoid a P133_GROUPING_USED_ONCE_ONLY
+    }
+
+    uses grouping1;
+}

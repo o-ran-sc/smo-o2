@@ -1,0 +1,20 @@
+submodule submodule {
+
+	belongs-to including-module {
+		prefix other;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+    container cont2 {
+        leaf leaf2 {
+            type uint32;
+        }
+    }
+}

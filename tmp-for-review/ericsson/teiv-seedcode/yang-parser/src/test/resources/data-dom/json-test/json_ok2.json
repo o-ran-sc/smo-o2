@@ -1,0 +1,47 @@
+{
+    "module6:cont6": {
+        "@": {
+            "anno-module1:anno1": "hello",
+            "anno-module1:anno2": 12345
+        },
+        "leaf61": "hello",
+        "leaf62": "",
+        "@leaf61": {
+            "anno-module6:anno61": true,
+            "anno-module6:anno62": null
+        },
+        "@leaf62": {
+
+        },
+        "leaflist81": [
+            "one",
+            "two",
+            "three"
+        ],
+        "leaflist82": [
+            "",
+            null
+        ],
+        "@leaflist81": [
+            {
+                "anno-module8:anno81": false,
+                "anno-module8:anno82": -99987
+            },
+            null,
+            {
+                "anno-module8:anno81": true,
+                "anno-module8:anno82": 12345678.12345678
+            }
+        ]
+    },
+    "module7:list7": [
+        {
+            "@": {
+                "anno-module1:anno71": "hello",
+                "anno-module2:anno72": null
+            },
+            "leaf71": 1234,
+            "leaf72": null
+        }
+    ]
+}

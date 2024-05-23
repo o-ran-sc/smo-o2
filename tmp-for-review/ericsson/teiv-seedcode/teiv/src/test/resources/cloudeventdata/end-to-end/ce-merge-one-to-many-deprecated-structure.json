@@ -1,0 +1,95 @@
+{
+    "specversion": "1.0",
+    "id": "a30e63c9-d29e-46ff-b99a-b63ed83f0002",
+    "source": "dmi-plugin:nm-1",
+    "type": "ran-logical-topology.merge",
+    "time": "2023-10-25T13:30:12Z",
+    "datacontenttype": "application/json",
+    "dataschema": "https://ties:8080/schemas/v1/r1-topology",
+    "data": {
+        "entities": {
+            "o-ran-smo-teiv-ran:GNBDUFunction": [
+                {
+                    "id": "GNBDU_1",
+                    "attributes": {
+                        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction[@id=1]",
+                        "dUpLMNId": {
+                            "mcc": "110",
+                            "mnc": "210"
+                        },
+                        "gNBDUId": 12,
+                        "gNBId": 1234,
+                        "gNBIdLength": 4,
+                        "cmId": {
+                            "cmHandle": "395221E080CCF0FD1924103B15873814",
+                            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+                        }
+                    }
+                }
+            ],
+            "o-ran-smo-teiv-ran:NRCellDU": [
+                {
+                    "id": "NRCellDU_1",
+                    "attributes": {
+                        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,NRCellDU=1",
+                        "cellLocalId": 4589,
+                        "nCI": 1,
+                        "nRPCI": 12,
+                        "nRTAC": 310,
+                        "cmId": {
+                            "cmHandle": "395221E080CCF0FD1924103B15873814",
+                            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NRCellDU_1]/o-ran-smo-NRCellDU:NRCellDU[@id=1]"
+                        }
+                    }
+                },
+                {
+                    "id": "NRCellDU_2",
+                    "attributes": {
+                        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,NRCellDU=2",
+                        "cellLocalId": 45891,
+                        "nCI": 2,
+                        "nRPCI": 121,
+                        "nRTAC": 3101,
+                        "cmId": {
+                            "cmHandle": "395221E080CCF0FD1924103B15873814",
+                            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NRCellDU_2]/o-ran-smo-NRCellDU:NRCellDU[@id=2]"
+                        }
+                    }
+                },
+                {
+                    "id": "NRCellDU_3",
+                    "attributes": {
+                        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,NRCellDU=3",
+                        "cellLocalId": 469,
+                        "nCI": 3,
+                        "nRPCI": 15,
+                        "nRTAC": 301,
+                        "cmId": {
+                            "cmHandle": "395221E080CCF0FD1924103B15873814",
+                            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NRCellDU_3]/o-ran-smo-NRCellDU:NRCellDU[@id=3]"
+                        }
+                    }
+                }
+            ]
+        },
+        "relationships": {
+            "o-ran-smo-teiv-ran:GNBDUFUNCTION_PROVIDES_NRCELLDU": [
+                {
+                    "id": "relation_7",
+                    "aSide": "GNBDU_1",
+                    "bSide": "NRCellDU_1"
+                },
+                {
+                    "id": "relation_8",
+                    "aSide": "GNBDU_1",
+                    "bSide": "NRCellDU_2"
+                },
+                {
+                    "id": "relation_9",
+                    "aSide": "GNBDU_1",
+                    "bSide": "NRCellDU_3"
+                }
+            ]
+        }
+    }
+}

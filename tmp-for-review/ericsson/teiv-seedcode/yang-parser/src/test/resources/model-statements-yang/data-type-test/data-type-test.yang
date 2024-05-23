@@ -1,0 +1,260 @@
+module data-type-test-module {
+
+	namespace "test:data-type-test-module";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-11-11" {
+		description "initial revision";
+	}
+
+	container cont1 {
+
+		leaf leaf1 {
+			type int8 {
+				range min..max;
+			}
+		}
+		leaf leaf2 {
+			type int16 {
+				range 10..20;
+			}
+		}
+		leaf leaf3 {
+			type int32 {
+				range "-30 .. 20";
+			}
+		}
+		leaf leaf4 {
+			type int64 {
+				range 20..max;
+			}
+		}
+
+		leaf leaf5 {
+			type uint8 {
+				range 10;		// makes no sense, but allowed in YANG
+			}
+		}
+		leaf leaf6 {
+			type uint16 {
+				range "min..20 | 40";
+			}
+		}
+		leaf leaf7 {
+			type uint32 {
+				range "0..20 | 40..60";
+			}
+		}
+		leaf leaf8 {
+			type uint64 {
+				range "0 .. 20 | 30 | 40 .. 60";
+			}
+		}
+
+		leaf leaf9 {
+			type decimal64 {
+				fraction-digits 1;
+				range "0.0 .. 10.0 | 20.2 .. max";
+			}
+		}
+
+		leaf leaf21 {
+			type string {
+				length "10 .. 20";
+				pattern "ab*c" {
+					modifier invert-match;
+				}
+			}
+		}
+
+		leaf leaf22 {
+			type boolean;
+		}
+
+		leaf leaf23 {
+			type enumeration {
+				enum one {
+					value 10;
+					status deprecated;
+					if-feature feature1;
+				}
+				enum two;
+				enum three;
+			}
+		}
+
+		leaf leaf24 {
+			type bits {
+				bit one {
+					position 10;
+					status deprecated;
+					if-feature feature1;
+				}
+				bit two;
+				bit three;
+			}
+		}
+
+		leaf leaf25 {
+			type binary {
+				length "90 .. 1010";
+			}
+		}
+
+		leaf leaf26 {
+			type leafref {
+				path "/this:cont1/this:leaf1";
+				require-instance true;
+			}
+		}
+
+		leaf leaf27 {
+			type identityref {
+				base identity1;
+			}
+		}
+
+		leaf leaf28 {
+			type empty;
+		}
+
+		leaf leaf29 {
+			type union {
+				type int32;
+				type string;
+			}
+		}
+
+		leaf leaf30 {
+			type instance-identifier {
+				require-instance false;
+			}
+		}
+	}
+
+	container cont2 {
+
+		leaf leaf51 {
+			type decimal64 {
+				fraction-digits 0;		// Wrong
+			}
+		}
+
+		leaf leaf52 {
+			type decimal64 {
+				fraction-digits 19;		// Wrong
+			}
+		}
+
+		leaf leaf53 {
+			type decimal64 {
+				fraction-digits "Hello";	// Wrong
+			}
+		}
+
+		leaf leaf54 {
+			type decimal64 {
+				fraction-digits;			// Wrong
+			}
+		}
+
+		leaf leaf58 {
+			type bits {
+				bit zero {
+					position -1;			// Wrong
+				}
+				bit one {
+					position 9999999999999999;			// Wrong
+				}
+				bit two {
+					position "Hello";			// Wrong
+				}
+				bit three {
+					position;			// Wrong
+				}
+			}
+		}
+
+		leaf-list leaflist62 {
+			type string;
+			min-elements 0;		// OK
+		}
+
+		leaf-list leaflist63 {
+			type string;
+			min-elements -1;		// Wrong
+		}
+
+		leaf-list leaflist64 {
+			type string;
+			min-elements "Hello";		// Wrong
+		}
+
+		leaf-list leaflist65 {
+			type string;
+			min-elements;		// Wrong
+		}
+
+		leaf-list leaflist71 {
+			type string;
+			max-elements unbounded;		// OK
+		}
+
+		leaf-list leaflist72 {
+			type string;
+			max-elements 1;		// OK
+		}
+
+		leaf-list leaflist73 {
+			type string;
+			max-elements 0;		// Wrong
+		}
+
+		leaf-list leaflist74 {
+			type string;
+			max-elements -1;		// Wrong
+		}
+
+		leaf-list leaflist75 {
+			type string;
+			max-elements "Hello";		// Wrong
+		}
+
+		leaf-list leaflist76 {
+			type string;
+			max-elements;		// Wrong
+		}
+
+		leaf leaf81 {
+			type string {
+				pattern "ab*c" {
+					modifier invert-match;		// OK
+				}
+			}
+		}
+
+		leaf leaf82 {
+			type string {
+				pattern "ab*c" {
+					modifier blurb;		// Wrong
+				}
+			}
+		}
+
+		leaf leaf83 {
+			type string {
+				pattern "ab*c" {
+					modifier;		// Wrong
+				}
+			}
+		}
+	}
+
+	feature feature1;
+
+	identity identity1;
+}

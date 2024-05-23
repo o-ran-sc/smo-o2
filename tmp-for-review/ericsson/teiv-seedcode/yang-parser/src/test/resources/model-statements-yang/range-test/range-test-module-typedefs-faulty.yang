@@ -1,0 +1,78 @@
+module range-test-module-typedefs-faulty {
+
+    namespace "urn:rdns:o-ran:oammodel:range-test-module-typedefs-faulty";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Ranges and typedefs that are incorrect --------------------
+
+    typedef typeInt8noRange {
+        type int8;
+    }
+
+    typedef typeInt64noRange {
+        type int64;
+    }
+
+    typedef typeUint8noRange {
+        type uint8;
+    }
+
+    typedef typeUint64noRange {
+        type uint64;
+    }
+
+    typedef typeInt8WithRange {
+        type int8 {
+            range 20..10;
+        }
+    }
+
+    typedef typeUsingTypeInt8WithRange {
+        type this:typeInt8WithRange;
+    }
+
+    container cont1 {
+
+        leaf leaf1 {
+            type this:typeInt8noRange {
+                range max..min;
+            }
+        }
+
+        leaf leaf2 {
+            type this:typeInt8noRange {
+                range "90..20";
+            }
+        }
+
+        leaf leaf3 {
+            type this:typeUint64noRange {
+                range "10|10";
+            }
+        }
+
+        leaf leaf4 {
+            type this:typeInt8WithRange;
+        }
+
+        leaf leaf5 {
+            type this:typeUsingTypeInt8WithRange;
+        }
+
+        leaf leaf6 {
+            type this:typeUsingTypeInt8WithRange {
+                range "45..7";
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,170 @@
+module augment-test-module {
+
+    namespace "test:augment-test";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+	import not-supplied-module {
+		prefix nsm;
+	}
+
+	feature rpc1;
+
+	rpc rpc1 {
+		input {
+			container cont1 {
+				choice choice1 {
+					case case1 {
+						leaf case1-leaf1 {
+							type string;
+						}
+					}
+					case case2 {
+						leaf case2-leaf1 {
+							type int32;
+						}
+					}
+				}
+			}
+			container cont2 {
+				choice choice2 {
+					leaf leaf5 {
+						type string;
+					}
+					leaf leaf6 {
+						type int16;
+					}
+				}
+			}
+		}
+	}
+
+	container cont1 {
+	    action action1;
+	}
+
+	augment /this:rpc1/input {
+	    leaf inputLeaf1 {
+	        type string;
+	    }
+	}
+
+	augment /this:rpc1/output {
+	    leaf outputLeaf2 {
+	        type string;
+	    }
+	}
+
+	augment /this:cont1/this:action1/input {
+	    leaf inputLeaf3 {
+	        type string;
+	    }
+	}
+
+	augment /this:cont1/this:action1/output {
+	    leaf outputLeaf4 {
+	        type string;
+	    }
+	}
+
+	augment "/this:rpc1/this:input/this:cont1/this:choice1" {
+		leaf inserted-case-leaf {
+			type boolean;
+		}
+	}
+
+	// - - - - in different order - - - - - -
+
+	augment /this:cont1/cont11 {
+	    leaf leaf5 {
+	        type string;
+	    }
+	}
+
+	augment /this:cont1 {
+	    container cont11;
+	}
+
+	// - - - - some other different target nodes - - - - - -
+
+	container cont2 {
+		list list1 {
+			key leaf11;
+			leaf leaf11 {
+				type int32;
+			}
+			leaf leaf12 {
+				type string;
+			}
+		}
+
+		notification notification1;
+	}
+
+	// - - - - - status - - - - - -
+
+	container cont3 {
+		status current;
+
+	}
+
+	// - - - - - strange path syntax - - - - - -
+
+	augment "/this:cont1/" {		// Technically wrong, but we accept it.
+	    container cont18;
+	}
+
+	augment "/:cont1" {			// Poor syntax, but will work
+	    container cont19;
+	}
+
+	augment "/cont1" {			// Should be ok
+	    container cont20;
+	}
+
+	augment "//this:cont1" {	// Wrong
+	    container cont21;
+	}
+
+	augment "//this:cont1/" {	// Wrong
+	    container cont22;
+	}
+
+	augment "/" {				// Wrong
+	    container cont23;
+	}
+
+	augment {					// Wrong
+	    container cont24;
+	}
+
+	augment "" {				// Wrong
+	    container cont25;
+	}
+
+	// - - - - - - - - - issues with prefixes - - - - - -
+
+	augment "/nsm:some-cont" {				// Wrong Module not in import
+	    container cont28;
+	}
+
+	augment "/this:cont1/nsm:some-cont" {	// Wrong Module not in import
+	    container cont29;
+	}
+
+	augment "/this:cont1/unknown-prefix:some-cont" {		// Unknown prefix
+	    container cont30;
+	}
+
+	augment "/this:cont1/:some-cont" {		// Missing prefix
+	    container cont31;
+	}
+
+}

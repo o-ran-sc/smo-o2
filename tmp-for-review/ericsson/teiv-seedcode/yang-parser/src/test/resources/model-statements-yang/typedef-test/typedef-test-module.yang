@@ -1,0 +1,134 @@
+module typedef-test-module {
+
+	namespace "test:typedef-test-module";
+	prefix "this";
+
+	include typedef-test-submodule;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-11-11" {
+		description "initial revision";
+	}
+
+	// - - - - lots of nesting - - - - - - -
+
+	typedef typedef5 {
+		type this:typedef4;
+	}
+
+	typedef typedef4 {
+		type this:typedef3;
+	}
+
+	typedef typedef3 {
+		type this:typedef2;
+	}
+
+	typedef typedef2 {
+		type this:typedef1;
+	}
+
+	typedef typedef1 {
+		type int32;
+	}
+
+	container cont1 {
+
+		leaf leaf01 { type typedef1; }
+		leaf leaf02 { type typedef2; }
+		leaf leaf05 { type typedef5; }
+	}
+
+	// - - - - circular - - - - - - -
+
+	typedef typedef7 {
+		type this:typedef7;
+	}
+
+	typedef typedef8 {
+		type this:typedef9;
+	}
+
+	typedef typedef9 {
+		type this:typedef8;
+	}
+
+	// - - - - bad typedef name - - - - - - -
+
+	typedef uint32 {
+		type string;
+	}
+
+	typedef {
+		type string;
+	}
+
+	typedef "" {
+		type string;
+	}
+
+	typedef "my custom type" {
+		type string;
+	}
+
+	// - - - - not resolvable - - - - - - -
+
+	typedef typedef11 {
+		type this:not-resolvable-type;
+	}
+
+	typedef typedef12 {
+		type this:typedef11;
+	}
+
+	// - - - - - resolvable - - - - -
+
+	typedef typedef13 {
+		type uint32;
+	}
+
+	typedef typedef14 {
+		type typedef13;
+	}
+
+	typedef typedef15 {
+		type this:typedef13;
+	}
+
+	// - - - - - from submodule - - - - -
+
+	typedef typedef16 {
+		type this:typedef91;
+	}
+
+	typedef typedef17 {
+		type this:typedef93;
+	}
+
+	container cont2 {
+
+		leaf leaf21 { type typedef16; }
+		leaf leaf22 { type typedef17; }
+	}
+
+	// - - - - - bad types - - - - -
+
+	typedef typedef18 {
+		type;
+	}
+
+	typedef typedef19 {
+		type "";
+	}
+
+	typedef typedef20 {
+		type "  ";
+	}
+
+	typedef typedef21 {
+		type ":typedef93";
+	}
+}

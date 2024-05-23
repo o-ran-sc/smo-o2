@@ -1,0 +1,130 @@
+module o-ran-smo-teiv-common-yang-extensions {
+
+  yang-version 1.1;
+  namespace "urn:o-ran:smo-teiv-common-yang-extensions";
+  prefix or-teiv-ext;
+
+
+  organization "ORAN";
+  contact "The Authors";
+  description
+  "Topology and Inventory YANG extensions model
+
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+  This model contains extensions to the YANG language that topology and
+  inventory models will use to define and annotate types and relationships.";
+
+  revision "2023-12-12" {
+    description "First draft.";
+    or-teiv-ext:label 0.2.0;
+  }
+
+  extension biDirectionalTopologyRelationship {
+
+    description
+      "Defines a bi-directional relationship in the topology.
+
+       A bi-directional-association (BDA) is a relationship comprising of an
+       A-side and a B-side. The A-side is considered the originating side of
+       the relationship; the B-side is considered the terminating side of the
+       relationship. The order of A-side and B-side is of importance and MUST
+       NOT be changed once defined.
+
+       Both A-side and B-side are defined on a type, and are given a role. A
+       type may have multiple originating and/or terminating sides of a
+       relationship, all distinguished by role name.
+
+       The statement MUST only be a substatement of the 'module' statement.
+       Multiple 'bi-directional-topology-relationship' statements are allowed
+       per parent statement.
+
+       Substatements to the 'bi-directional-topology-relationship' define the
+       A-side and the B-side, respectively, and optionally properties of the
+       relationship. Data nodes of types 'leaf' and 'leaf-list' are used for
+       this purpose. One of the data nodes MUST be annotated with the 'a-side'
+       extension; another data node MUST be annotated with the 'b-side'
+       extension. Other data nodes define properties of the relationship.
+
+       The argument is the name of the relationship. The relationship name is
+       scoped to the namespace of the declaring module and MUST be unique
+       within the scope.";
+
+    argument relationshipName;
+  }
+
+  extension aSide {
+    description
+      "Defines the A-side of a relationship.
+
+       The statement MUST only be a substatement of a 'leaf' or 'leaf-list'
+       statement, which itself must be a substatement of the
+       'uni-directional-topology-relationship' statement.
+
+       The data type of the parent 'leaf' or 'leaf-list' MUST be
+       'instance-identifier'. Constraints MAY be used as part of the parent
+       'leaf' or 'leaf-list' to enforce cardinality.
+
+       The identifier of the parent 'leaf' or 'leaf-list' is used as name of
+       the role of the A-side of the relationship. The name of the role is
+       scoped to the type on which the A-side is defined and MUST be unique
+       within the scope.
+
+       While the parent 'leaf' or 'leaf-list' does not result in a property of
+       the relationship, it is RECOMMENDED to avoid using the name of an
+       existing type property as role name to avoid potential ambiguities
+       between properties of a type, and roles of a relationship on the type.
+
+       The argument is the name of the type on which the A-side resides. If the
+       type is declared in another module, the type must be prefixed, and a
+       corresponding 'import' statement be used to declare the prefix.";
+
+    argument aSideType;
+  }
+
+  extension bSide {
+    description "Defines the B-side of a relationship.
+
+       The statement MUST only be a substatement of a 'leaf' or 'leaf-list'
+       statement, which itself must be a substatement of the
+       'uni-directional-topology-relationship' statement.
+
+       The data type of the parent 'leaf' or 'leaf-list' MUST be
+       'instance-identifier'. Constraints MAY be used as part of the parent
+       'leaf' or 'leaf-list' to enforce cardinality.
+
+       The identifier of the parent 'leaf' or 'leaf-list' is used as name of
+       the role of the B-side of the relationship. The name of the role is
+       scoped to the type on which the B-side is defined and MUST be unique
+       within the scope.
+
+       While the parent 'leaf' or 'leaf-list' does not result in a property of
+       the relationship, it is RECOMMENDED to avoid using the name of an
+       existing type property as role name to avoid potential ambiguities
+       between properties of a type, and roles of a relationship on the type.
+
+       The argument is the name of the type on which the B-side resides. If the
+       type is declared in another module, the type must be prefixed, and a
+       corresponding 'import' statement be used to declare the prefix.";
+
+    argument bSideType;
+  }
+
+  extension domain {
+    description "Keyword used to carry domain information.";
+    argument domainName;
+  }
+
+  extension label {
+    description "The label can be used to give modules and submodules a semantic version, in addition to their revision.
+
+      The format of the label is â€˜x.y.zâ€™ â€“ expressed as pattern, it is [0-9]+\.[0-9]+\.[0-9]+
+
+      The statement MUST only be a substatement of the revision statement.  Zero or one revision label statements
+      per parent statement are allowed.
+
+      Revision labels MUST be unique amongst all revisions of a module or submodule.";
+    argument semversion;
+  }
+}

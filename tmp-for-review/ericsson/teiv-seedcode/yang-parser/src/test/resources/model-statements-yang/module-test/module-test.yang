@@ -1,0 +1,43 @@
+module module-test {
+
+	yang-version 1.1;
+	namespace "test:module-test";
+	prefix "this";
+
+	contact "test-user";
+
+	organization "ORAN";
+
+	description "some description
+	Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2022-06-01" {
+		description "initial revision";
+	}
+
+	extension my-extension1 {
+		description "some extension description";
+		status deprecated;
+
+		argument some-arg {
+			description "some argument description";
+			yin-element true;
+		}
+	}
+
+	extension my-extension2;
+
+	anydata anydata1;
+	anydata anydata2;
+
+	anyxml anyxml1;
+	anyxml anyxml2;
+
+	grouping grouping1;
+	grouping grouping2;
+
+	uses this:grouping1;
+	uses this:grouping2;
+
+}

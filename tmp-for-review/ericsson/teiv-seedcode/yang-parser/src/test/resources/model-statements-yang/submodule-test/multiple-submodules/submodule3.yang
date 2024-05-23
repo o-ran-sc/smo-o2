@@ -1,0 +1,30 @@
+submodule submodule3 {
+
+	belongs-to module {
+	    prefix main;			// using different prefix here to make things interesting
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-10";
+
+	container cont33;
+
+	container cont34 {
+		container cont37;
+	}
+
+	augment "/main:cont23" {	// sits in submodule2
+		leaf leaf31 {
+			type string;
+		}
+	}
+
+	typedef typedef31 {
+		type boolean;
+	}
+
+
+}

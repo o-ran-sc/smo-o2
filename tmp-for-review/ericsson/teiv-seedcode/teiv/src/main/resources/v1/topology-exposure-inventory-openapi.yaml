@@ -1,0 +1,1686 @@
+#
+# ============LICENSE_START=======================================================
+# Copyright (C) 2024 Ericsson
+# Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+# ================================================================================
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+# ============LICENSE_END=========================================================
+#
+
+openapi: 3.0.2
+info:
+  x-api-id: 52812f69-83ac-4dfa-b83a-1a1bdf2d49b8
+  x-audience: external-public
+  description: |
+    Topology and Inventory data is the information that represents entities in a telecommunications network and the relationships between them that provide insight into a particular aspect of the network of importance to specific use cases. Topology and Inventory data can be derived from inventory, configuration, or other data.
+
+    Topology and Inventory supports several topology domains. A domain is a grouping of network topology entities which handles topology data.
+
+    Entities are enabling the modelling and storage of complex network infrastructure and relationships.
+
+    Relationships are a uni-directional connection between two entities, one of which is the originating side (A-side) and the other is the terminating side (B-side). The order of the sides matters since it defines the relationship itself which must be unique
+
+    Topology and Inventory API provides the capabilities to fetch topology data. Using the filtering options, it is possible to define more specific query requests.
+
+    ## Querying simple entities
+    EntityType is used as the root of the queries (from here referred as RootObject).  Every other object, either *targetFilter* or *scopeFilter*, has to relate to the RootObject. The queries are constructed starting from the RootObject and all other objects are joined to it. If there is no connection between the RootObject and the other object(s), the query will not get constructed. The RootObject still can be retrieved and filtered using the */attributes*.
+
+    | USE CASE                                                                                                                                                                                                                                                                                                                                                                                                       |  ENTITY TYPE    |  TARGET FILTER                                                                         | SCOPE FILTER                                                                                                    | QUERY RESULT                                                                                                      |
+    |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|:----------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
+    | To return the ids for all instances of the entityType used in the query.                                                                                                                                                                                                                                                                                                                                       |&ensp;  GNBDUFunction  |                                                                                        |                                                                                                                 | All ids of every GNBDUFunction                                                                                    |
+    | To return all attributes of every instance of the entityType used in the query.                                                                                                                                                                                                                                                                                                                                |&ensp;  GNBDUFunction  |&ensp;  /attributes                                                                           |                                                                                                                 | All GNBDUFunctions with every attribute                                                                           |
+    | To return every instance of the entityType used in the query, but only the attribute that was defined in the *targetFilter* parameter. <br/> Note: The attribute must be a valid field of the object.                                                                                                                                                                                                          |&ensp;  GNBDUFunction  |&ensp;  /attributes(gNBId) <br/> &emsp;&ensp; **OR** <br/> /attributes/gNBId                      |                                                                                                             | All FDNs of every GNBDUFunction                                                                                   |
+    | To return every instance of the entityType used in the query, but only the attributes that were defined in the *targetFilter* parameter. <br/> Case 1: The attributes must be separated by a comma "," in case of using parenthesis "()". <br/> Case 2: The attributes must be separated by a semicolon ";" in case of using slash "/". <br/> Note: The attributes must be valid *targetFilter* of the object. |&ensp;  GNBDUFunction  |&ensp;  /attributes(gNBId, gNBIdLength)  <br/> &emsp;&ensp; **OR** <br/> /attributes/gNBId; /attributes/gNBIdLength |                                                                                           | All Ids and FDNs of every GNBDUFunction                                                                           |
+    | To return the ids for all instances of the entityType used in the query, that matches the given attribute in the *scopeFilter* parameter. <br/> Note: The attribute must be a valid field of the object.                                                                                                                                                                                                       |&ensp;  GNBDUFunction  |                                                                                       | /attributes[contains (@fdn, "/SubNetwork=Ireland/")]                                                             | Unique set of ids of GNBDUFunctions, where fdn contains "SubNetwork=Ireland"                                      |
+    | To return the ids for all instances of the entityType used in the query, that matches the given attributes in the *scopeFilter* parameter. <br/> Note: the entityType and the object in the *scopeFilter* parameter must match, and the attributes must be valid field or fields of the object.  The attributes must be separated by a comma ",".                                                              |&ensp;  GNBDUFunction  |                                                                                       | /attributes[@gNBIdLength=3 and @gNBId=111]                                                                | Unique set of ids of GNBDUFunctions, where the gNBIdLength equals 3 and the gNBId equals 111                      |
+    | To return the ids for all instances of the entityType used in the query, that satisfies every condition in one of the tags in the *scopeFilter* parameter. A tag is a complete unit of *scopeFilter* parameter surrounded by square brackets. <br/> Note: The attributes must be valid field or fields of the object.                                                                                          |&ensp;  GNBDUFunction  |                                                                                       | /attributes[@gNBIdLength=3 and @gNBId=111]  <br/> &emsp;&ensp; **OR** <br/> /attributes[@gNBIdLength=3 and @gNBId=112]             | Unique set of ids of GNBDUFunctions, where where the gNBIdLength equals 3 and the gNBId is either 111 or 112      |
+
+    ## Querying connected entities
+    It is possible to get information about directly connected objects as well. If entityType is present in the *targetFilter* parameter, the query provides information about that entityType itself.
+
+    | USE CASE                                                                                                                                                                                                                                                                                                                                                          | ENTITY TYPE   | TARGET FILTER                       | SCOPE FILTER                                              | QUERY RESULT                                                                                                                                      |
+    |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+    | To return the ids for all instances of the entityType in the *targetFilter* parameter, if they are directly related to the queried entityType.                                                                                                                                                                                                                    |&ensp; GNBDUFunction |&ensp; /NRCellDU                           |                                               | Unique set of ids of NRCellDUs that relates to GNBDUFunctions directly with any relationship type                                                 |
+    | To return the ids for all instances of the entityTypes in the *targetFilter* parameter, if they are directly related to the entityType.                                                                                                                                                                                                                           |&ensp; GNBDUFunction |&ensp; /NRCellDU ;&ensp; /NRSectorCarrier        |                                         | Unique set of ids of NRCellDUs and NRSectorCarriers that relates to GNBDUFunctions directly with any relationship type                            |
+    | To return the ids for all instances of the queried entityType that has one or more direct relationships with the entityType specified in the *scopeFilter* parameter.                                                                                                                                                                                             |&ensp; GNBDUFunction |                                     | /AntennaCapability                                  | Unique set of ids of GNBDUFunctions that are directly related to AntennaCapability with any relationship type                                     |
+    | To return the ids for all instances of the queried entityType that has one or more direct relationships with at least one of the entityTypes specified in the *scopeFilter* parameter.                                                                                                                                                                            |&ensp; GNBDUFunction |                                     | /AntennaCapability <br/> &emsp;&ensp; **OR** <br/> /NRCellDU | Unique set of ids of GNBDUFunctions that are directly related to AntennaCapability or NRCellDU with any relationship type                |
+
+  version: 0.11.0
+  title: Topology and Inventory API
+  license:
+    name: Copyright (C) 2024 Ericsson, Modifications Copyright (C) 2024 OpenInfra Foundation Europe. All rights reserved.
+    url: http://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: http://www.apache.org/licenses/LICENSE-2.0
+
+tags:
+  - name: Entities and relationships
+    description: "Provides the capability to retrieve topology and inventory entities and relationships."
+  - name: Schemas
+    description: "Schemas are defined in YANG modeling language. A group of Yang schemas makes the topology and inventory model, which represents topology and inventory entities, their attributes, and their relationships. For more information on YANG modelling language, see [IETF Documentation](https://datatracker.ietf.org/doc/html/rfc6020)."
+  - name: Geo-query
+    description: "Provides the capability to perform geographical queries on topology entities."
+  - name: Classifiers
+    description: "Provides the capability to update or remove user-defined keywords or tags on entities and relationships."
+  - name: Decorators
+    description: "Provides the capability to update or remove user-defined values on entities and relationships."
+  - name: Collections
+    description: "Provides the capability to group topology entities of any type, with an appropriate description and other criteria."
+
+servers:
+  - url: https://{host}/topology-inventory/v1alpha11
+    variables:
+      host:
+        default: localhost
+        description: Change this value to point to your custom host.
+
+paths:
+  /domains:
+    get:
+      description: Get all the available topology domains.
+      tags:
+        - Entities and relationships
+      summary: Get all the available topology domains.
+      operationId: "getAllDomains"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domains'
+              examples:
+                domains:
+                  $ref: '#/components/examples/DomainsResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/entity-types:
+    get:
+      description: Get all the available topology entity types in domain name.
+      tags:
+        - Entities and relationships
+      summary: Get all the available topology entity types in domain name.
+      operationId: "getTopologyEntityTypes"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTypes'
+              examples:
+                entityTypes:
+                  $ref: '#/components/examples/EntityTypesResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/entity-types/{entityTypeName}/entities:
+    get:
+      description: Get all topology entities of a specific entity type.
+      tags:
+        - Entities and relationships
+      summary: Get all topology entities of a specific entity type.
+      operationId: "getTopologyByEntityTypeName"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/entityTypeNameInPath'
+        - $ref: '#/components/parameters/targetFilterOptionalInQuery'
+        - $ref: '#/components/parameters/scopeFilterOptionalInQuery'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntitiesResponseMessage'
+              examples:
+                entities:
+                  $ref: '#/components/examples/EntitiesResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/entity-types/{entityTypeName}/entities/{entityId}:
+    get:
+      description: Get topology for entity type name with specified id. Specified id represents the entity instance.
+      tags:
+        - Entities and relationships
+      summary: Get topology for entity type name with specified id. Specified id represents the entity instance.
+      operationId: "getTopologyById"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/entityTypeNameInPath'
+        - $ref: '#/components/parameters/entityIdInPath'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/yang.data+json:
+              schema:
+                type: object
+                description: "Refer to yang model for schema definition"
+              examples:
+                entity:
+                  $ref: '#/components/examples/EntityResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/entity-types/{entityTypeName}/entities/{entityId}/relationships:
+    get:
+      description: Get all relationships for entity type name with specified id. Specified id represents the entity instance.
+      tags:
+        - Entities and relationships
+      summary: Get all relationships for entity type name with specified id. Specified id represents the entity instance.
+      operationId: "getAllRelationshipsForEntityId"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/entityTypeNameInPath'
+        - $ref: '#/components/parameters/entityIdInPath'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipsResponseMessage'
+              examples:
+                relationships:
+                  $ref: '#/components/examples/RelationshipsResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/relationship-types:
+    get:
+      description: Get all the available topology relationship types.
+      tags:
+        - Entities and relationships
+      summary: Get all the available topology relationship types.
+      operationId: "getTopologyRelationshipTypes"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipTypes'
+              examples:
+                relationshipTypes:
+                  $ref: '#/components/examples/RelationshipTypesResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/relationship-types/{relationshipTypeName}/relationships:
+    get:
+      description: Get topology relationships of a specific relationship type name.
+      tags:
+        - Entities and relationships
+      summary: Get topology relationships of a specific relationship type name.
+      operationId: "getRelationshipsByType"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/relationshipTypeNameInPath'
+        - $ref: '#/components/parameters/targetFilterOptionalInQuery'
+        - $ref: '#/components/parameters/scopeFilterOptionalInQuery'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipsResponseMessage'
+              examples:
+                relationships:
+                  $ref: '#/components/examples/RelationshipsResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/relationship-types/{relationshipTypeName}/relationships/{relationshipId}:
+    get:
+      description: Get relationship with specified id. Specified id represents the relationship instance.
+      tags:
+        - Entities and relationships
+      summary: Get relationship with specified id. Specified id represents the relationship instance.
+      operationId: "getRelationshipById"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/relationshipTypeNameInPath'
+        - $ref: '#/components/parameters/relationshipIdInPath'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/yang.data+json:
+              schema:
+                type: object
+                description: "Refer to yang model for schema definition"
+              examples:
+                relationship:
+                  $ref: '#/components/examples/RelationshipResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /domains/{domainName}/entities:
+    get:
+      description: Get topology entities by domain, using specified targetFilter as mandatory query parameter.
+      tags:
+        - Entities and relationships
+      summary: "Get entities by domain"
+      operationId: "getEntitiesByDomain"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainNameInPath'
+        - $ref: '#/components/parameters/targetFilterOptionalInQuery'
+        - $ref: '#/components/parameters/scopeFilterOptionalInQuery'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntitiesResponseMessage'
+              examples:
+                entities:
+                  $ref: '#/components/examples/EntitiesResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /schemas:
+    post:
+      description: Create a new schema.
+      tags:
+        - Schemas
+      summary: Create a new schema.
+      operationId: createSchema
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/contentTypeInHeader'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MultipartFile'
+      responses:
+        '201':
+          $ref: '#/components/responses/Created'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    get:
+      description: Get a list of all schemas.
+      tags:
+        - Schemas
+      summary: Get a list of all schemas.
+      operationId: getSchemas
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/domainOptionalInQuery'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SchemaList'
+              examples:
+                schemas:
+                  $ref: '#/components/examples/SchemasResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /schemas/{schemaName}/content:
+    get:
+      description: Get the model schema by name.
+      tags:
+        - Schemas
+      summary: Get the model schema.
+      operationId: getSchemaByName
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/schemaNameInPath'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                schema:
+                  $ref: '#/components/examples/SchemaResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /schemas/{schemaName}:
+    delete:
+      description: Delete a schema.
+      tags:
+        - Schemas
+      summary: Delete a schema.
+      operationId: deleteSchema
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/schemaNameInPath'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /geo-queries:
+    post:
+      description: Geo query topology entity or entities across topology domains.
+      tags:
+        - Geo-query
+      summary: Geo query topology entity or entities  across topology domains.
+      operationId: geoQueryTopologyAcrossDomains
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/contentTypeInHeader'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryMessage'
+            examples:
+              geoQuery:
+                $ref: '#/components/examples/QueryMessageExample'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                geoQueryResponse:
+                  $ref: '#/components/examples/QueryResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /classifiers:
+    put:
+      description: Update entities and/or relationships with classifier(s).
+      tags:
+        - Classifiers
+      summary: Update entities and/or relationships with classifier(s).
+      operationId: updateClassifier
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/contentTypeInHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Classifier'
+            examples:
+              classifier:
+                $ref: '#/components/examples/ClassifierExample'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /decorators:
+    put:
+      description: Update entities and/or relationships with decorator(s).
+      tags:
+        - Decorators
+      summary: Update entities and/or relationships with decorator(s).
+      operationId: updateDecorator
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/contentTypeInHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Decorator'
+            examples:
+              decorator:
+                $ref: '#/components/examples/DecoratorExample'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /collections:
+    post:
+      description: Create a collection.
+      tags:
+        - Collections
+      summary: Create a collection.
+      operationId: createCollection
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/contentTypeInHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Collection'
+            examples:
+              dynamicCollection:
+                $ref: '#/components/examples/DynamicCollectionExample'
+              staticCollection:
+                $ref: '#/components/examples/StaticCollectionExample'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionResponse'
+              examples:
+                collection:
+                  $ref: '#/components/examples/CollectionResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    get:
+      description: Get all collections.
+      tags:
+        - Collections
+      summary: Get all collections.
+      operationId: "getAllCollections"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/offsetParam'
+        - $ref: '#/components/parameters/limitParam'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collections'
+              examples:
+                collections:
+                  $ref: '#/components/examples/CollectionsResponseExample'
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /collections/{collectionId}:
+    get:
+      description: Get a collection with specified id.
+      tags:
+        - Collections
+      summary: Get a collection with specified id.
+      operationId: "getCollection"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/collectionIdInPath'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionResponse'
+              examples:
+                collection:
+                  $ref: '#/components/examples/CollectionResponseExample'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    put:
+      description: Update a collection.
+      tags:
+        - Collections
+      summary: Update a collection.
+      operationId: updateCollection
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/contentTypeInHeader'
+        - $ref: '#/components/parameters/collectionIdInPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Collection'
+            examples:
+              dynamicCollection:
+                $ref: '#/components/examples/DynamicCollectionExample'
+              staticCollection:
+                $ref: '#/components/examples/StaticCollectionExample'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+    delete:
+      description: Delete a collection with specified id.
+      tags:
+        - Collections
+      summary: Delete a collection with specified id.
+      operationId: "deleteCollection"
+      parameters:
+        - $ref: '#/components/parameters/acceptInHeader'
+        - $ref: '#/components/parameters/collectionIdInPath'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    Classifier:
+      type: object
+      title: Classifier
+      properties:
+        operation:
+          type: string
+          enum:
+          - merge
+          - delete
+        classifier:
+          type: array
+          items:
+            type: string
+        entityIds:
+          type: array
+          items:
+            type: string
+        relationshipIds:
+          type: array
+          items:
+            type: string
+    CollectionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        collectionName:
+          type: string
+        criteria:
+          oneOf:
+          -  $ref: '#/components/schemas/StaticSelection'
+          -  $ref: '#/components/schemas/DynamicSelection'
+    Collection:
+      type: object
+      properties:
+        collectionName:
+          type: string
+        criteria:
+          $ref: '#/components/schemas/TopologySelection'
+    Collections:
+      type: object
+      title: Collections
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollectionResponse'
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+    TopologySelection:
+      oneOf:
+      -  $ref: '#/components/schemas/StaticSelection'
+      -  $ref: '#/components/schemas/DynamicSelection'
+    StaticSelection:
+      type: object
+      properties:
+        resourceInstances:
+          type: array
+          minItems: 1
+          items:
+            type: string
+    DynamicSelection:
+      type: object
+      additionalProperties: false
+      properties:
+        resourceQuery:
+          type: object
+          properties:
+            url:
+              type: string
+            method:
+              type: string
+            queryParams:
+              type: object
+            requestBody:
+              type: object
+          required:
+            - url
+    Decorator:
+      type: object
+      title: Decorator
+      properties:
+        operation:
+          type: string
+          enum:
+          - merge
+          - delete
+        decorators:
+          type: object
+          additionalProperties:
+           type: string
+        entityIds:
+          type: array
+          items:
+            type: string
+        relationshipIds:
+          type: array
+          items:
+            type: string
+    Domains:
+      type: object
+      title: Domains
+      properties:
+        items:
+          type: array
+          items:
+            properties:
+              name:
+                type: string
+              entityTypes:
+                $ref: '#/components/schemas/Href'
+              relationshipTypes:
+                $ref: '#/components/schemas/Href'
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+    EntityTypes:
+      type: object
+      title: EntityTypes
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              entities:
+                $ref: '#/components/schemas/Href'
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+    EntitiesResponseMessage:
+      type: object
+      title: Entities
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            description: "Refer to yang model for schema definition of topology entities"
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+    RelationshipTypes:
+      type: object
+      title: RelationshipTypes
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              relationships:
+                $ref: '#/components/schemas/Href'
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+    RelationshipsResponseMessage:
+      type: object
+      title: Relationships
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            description: "Refer to yang model for schema definition of topology relationships"
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+    ErrorMessage:
+      type: object
+      title: Error
+      properties:
+        status:
+          type: string
+        message:
+          type: string
+        details:
+          type: string
+    Href:
+      type: object
+      title: Href
+      properties:
+        href:
+          type: string
+          format: uri-template
+    MultipartFile:
+      type: object
+      required:
+        - file
+      properties:
+        file:
+          type: string
+          description: multipartFile
+          format: binary
+    QueryMessage:
+      type: object
+      title: Query
+      properties:
+        query:
+          type: string
+    Schema:
+      type: object
+      title: Schema
+      properties:
+        name:
+          type: string
+        domain:
+          type: array
+          items:
+            type: string
+        revision:
+          type: string
+        content:
+          $ref: '#/components/schemas/Href'
+    SchemaList:
+      type: object
+      title: Schemas
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema'
+        self:
+          $ref: '#/components/schemas/Href'
+        first:
+          $ref: '#/components/schemas/Href'
+        prev:
+          $ref: '#/components/schemas/Href'
+        next:
+          $ref: '#/components/schemas/Href'
+        last:
+          $ref: '#/components/schemas/Href'
+        totalCount:
+          type: integer
+
+  responses:
+    NotFound:
+      description: Not Found
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: '404'
+            title: Resource Not Found
+            details: The requested resource is not found
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: '401'
+            title: Unauthorized request
+            details: This request is unauthorized
+    Forbidden:
+      description: Forbidden
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: '403'
+            title: Request Forbidden
+            details: This request is forbidden
+    BadRequest:
+      description: Bad Request
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: '400'
+            title: Bad Request
+            details: The provided request is not valid
+    Conflict:
+      description: Conflict
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorMessage'
+          example:
+            status: 409'
+            title: Conflicting request
+            details: The request cannot be processed as the resource is in use.
+    Created:
+      description: Created without response body
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/ErrorMessage"
+          example:
+            status: '500'
+            title: Internal Server Error
+            details: Internal Server Error occurred
+    NoContent:
+      description: No Content
+      content: {}
+
+  parameters:
+    acceptInHeader:
+      name: Accept
+      in: header
+      required: true
+      schema:
+        type: string
+        example: application/json
+        default: application/json
+    contentTypeInHeader:
+      name: Content-Type
+      in: header
+      required: true
+      schema:
+        type: string
+        example: application/json
+        default: application/json
+    offsetParam:
+      name: offset
+      in: query
+      description: Pagination offset.
+      required: false
+      schema:
+        type: integer
+        default: 0
+        minimum: 0
+    limitParam:
+      name: limit
+      in: query
+      description: Result limiter.
+      required: false
+      schema:
+        type: integer
+        default: 500
+        minimum: 1
+        maximum: 500
+    domainNameInPath:
+      name: domainName
+      in: path
+      description: domain name
+      required: true
+      schema:
+        type: string
+    schemaNameInPath:
+      name: schemaName
+      in: path
+      required: true
+      schema:
+        type: string
+        default: "o-ran-smo-teiv-ran"
+    collectionIdInPath:
+      name: collectionId
+      in: path
+      required: true
+      schema:
+        type: string
+    entityIdInPath:
+      name: entityId
+      in: path
+      required: true
+      schema:
+        type: string
+    relationshipIdInPath:
+      name: relationshipId
+      in: path
+      required: true
+      schema:
+        type: string
+    entityTypeNameInPath:
+      name: entityTypeName
+      in: path
+      required: true
+      schema:
+        type: string
+    relationshipTypeNameInPath:
+      name: relationshipTypeName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: NRCELLDU_USES_NRSECTORCARRIER
+    domainOptionalInQuery:
+      name: domain
+      in: query
+      required: false
+      schema:
+        type: string
+      examples:
+        domain:
+          value: ran
+    targetFilterOptionalInQuery:
+      name: targetFilter
+      description: Use *targetFilter* to specify the entity type and attributes to be returned in the REST response. The value for *targetFilter* can also be a list of entity types and attributes.
+      in: query
+      required: false
+      schema:
+        type: string
+      examples:
+        targetFilter:
+          value: /attributes(nCI,nRPCI)
+    scopeFilterOptionalInQuery:
+      name: scopeFilter
+      description: Use *scopeFilter* to specify the attributes to match on. The value for *scopeFilter* can also be a list of entity types and attributes. scopeFilter returns a boolean.
+      in: query
+      required: false
+      schema:
+        type: string
+      examples:
+        scopeFilter:
+          value: /attributes[@nRTAC=310"]
+
+  examples:
+    ClassifierExample:
+      value:
+        operation: merge
+        classifiers:
+        - module-x:Outdoor
+        - module-y:Rural
+        - module-z:Weekend
+        entityIds:
+        - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+        - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+        relationshipIds:
+        - "urn:sha512:TlJDZWxsRFU6U3ViTmV0d29yaz1FdXJvcGUsU3ViTmV0d29yaz1JcmV="
+    DecoratorExample:
+      value:
+        operation: merge
+        decorators:
+          module-x:location : Stockholm
+          module-y:vendor: Ericsson
+        entityIds:
+        - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+        - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+        relationshipIds:
+        - "urn:sha512:TlJDZWxsRFU6U3ViTmV0d29yaz1FdXJvcGUsU3ViTmV0d29yaz1JcmV="
+    EntityResponseExample:
+      value:
+        o-ran-smo-teiv-ran:GNBDUFunction:
+        - id: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1"
+          attributes:
+            gNBDUId: 11
+            dUpLMNId:
+              mcc: 110
+              mnc: 210
+            gNBId: 21
+            gNBIdLength: 2
+          decorators:
+            location: Stockholm
+          classifiers:
+          - Rural
+          sourceIds:
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1"
+          - "urn:cmHandle:395221E080CCF0FD1924103B15873814"
+          metadata:
+            trustLevel: RELIABLE
+    EntitiesResponseExample:
+      value:
+        items:
+        - o-ran-smo-teiv-ran:NRCellDU:
+          - id: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+            attributes:
+              cellLocalId: 4589
+              nCI: 1
+              nRPCI: 12
+              nRTAC: 310
+            decorators:
+              location: Stockholm
+            classifiers:
+            - Rural
+            sourceIds:
+            - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+            - "urn:cmHandle:395221E080CCF0FD1924103B15873814"
+            metadata:
+              trustLevel: RELIABLE
+        - o-ran-smo-teiv-ran:NRCellDU:
+          - id: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+            attributes:
+              cellLocalId: 4559
+              nRPCI: 32
+              nRTAC: 510
+            decorators:
+              location: Stockholm
+            classifiers:
+            - Rural
+            sourceIds:
+            - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+            - "urn:cmHandle:395221E080CCF0FD1924103B15873814"
+            metadata:
+              trustLevel: RELIABLE
+        self:
+          href: '/domains/RAN/entity-types/NRCellDU/entities?offset=0&limit=500&targetFilter=attributes(nCI,nRPCI)&scopeFilter=/attributes[@nRTAC=310]'
+        first:
+          href: '/domains/RAN/entity-types/NRCellDU/entities?offset=0&limit=500&targetFilter=attributes(nCI,nRPCI)&scopeFilter=/attributes[@nRTAC=310]'
+        prev:
+          href: '/domains/RAN/entity-types/NRCellDU/entities?offset=0&limit=500&targetFilter=attributes(nCI,nRPCI)&scopeFilter=/attributes[@nRTAC=310]'
+        next:
+          href: '/domains/RAN/entity-types/NRCellDU/entities?offset=500&limit=500&targetFilter=attributes(nCI,nRPCI)&scopeFilter=/attributes[@nRTAC=310]'
+        last:
+          href: '/domains/RAN/entity-types/NRCellDU/entities?offset=678&limit=500&targetFilter=attributes(nCI,nRPCI)&scopeFilter=/attributes[@nRTAC=310]'
+        totalCount: 12
+
+    RelationshipResponseExample:
+      value:
+        o-ran-smo-teiv-ran:NRCELLDU_USES_NRSECTORCARRIER:
+        - id: "urn:sha512:TlJDZWxsRFU6U3ViTmV0d29yaz1FdXJvcGUsU3ViTmV0d29yaz1JcmV="
+          aSide: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+          bSide: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRSectorCarrier=1"
+          decorators:
+            location: Stockholm
+          classifiers:
+          - Rural
+          sourceIds: []
+          metadata:
+            trustLevel: RELIABLE
+
+    RelationshipsResponseExample:
+      value:
+        items:
+        - o-ran-smo-teiv-ran:NRCELLDU_USES_NRSECTORCARRIER:
+          - id: "urn:sha512:TlJDZWxsRFU6U3ViTmV0d29yaz1FdXJvcGUsU3ViTmV0d29yaz1JcmVs="
+            aSide: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+            bSide: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRSectorCarrier=1"
+            decorators:
+              location: Stockholm
+            classifiers:
+            - Rural
+            sourceIds: []
+            metadata:
+              trustLevel: RELIABLE
+        - o-ran-smo-teiv-ran:NRCELLDU_USES_NRSECTORCARRIER:
+          - id: "urn:sha512:TlJDZWxsRFU6U3ViTmV0d29yaz1FdXJvcGUsU3ViTmV0d29yaz1JcmVsYW5kLE1lQ2="
+            aSide: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+            bSide: "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRSectorCarrier=2"
+            decorators:
+              location: Stockholm
+            classifiers:
+            - Rural
+            sourceIds: []
+            metadata:
+              trustLevel: RELIABLE
+        self:
+          href: '/domains/RAN/relationship-types/NRCELLDU_USES_NRSECTORCARRIER/relationships?offset=0&limit=500'
+        first:
+          href: '/domains/RAN/relationship-types/NRCELLDU_USES_NRSECTORCARRIER/relationships?offset=0&limit=500'
+        prev:
+          href: '/domains/RAN/relationship-types/NRCELLDU_USES_NRSECTORCARRIER/relationships?offset=0&limit=500'
+        next:
+          href: '/domains/RAN/relationship-types/NRCELLDU_USES_NRSECTORCARRIER/relationships?offset=500&limit=500'
+        last:
+          href: '/domains/RAN/relationship-types/NRCELLDU_USES_NRSECTORCARRIER/relationships?offset=678&limit=500'
+        totalCount: 23
+
+    EntityTypesResponseExample:
+      value:
+        items:
+        - name: GNBCUUPFunction
+          entities:
+            href: '/domains/RAN/entity-types/GNBCUUPFunction/entities'
+        - name: NRCellDU
+          entities:
+            href: '/domains/RAN/entity-types/NRCellDU/entities'
+        - name: GNBDUFunction
+          entities:
+            href: '/domains/RAN/entity-types/GNBDUFunction/entities'
+        self:
+          href: '/domains/RAN/entity-types?offset=0&limit=500'
+        first:
+          href: '/domains/RAN/entity-types?offset=0&limit=500'
+        prev:
+          href: '/domains/RAN/entity-types?offset=0&limit=500'
+        next:
+          href: '/domains/RAN/entity-types?offset=500&limit=500'
+        last:
+          href: '/domains/RAN/entity-types?offset=678&limit=500'
+        totalCount: 43
+
+    RelationshipTypesResponseExample:
+      value:
+        items:
+        - name: MANAGEDELEMENT_MANAGES_GNBDUFUNCTION
+          relationships:
+            href: '/domains/RAN/relationship-types/MANAGEDELEMENT_MANAGES_GNBDUFUNCTION/relationships'
+        - name: GNBDUFUNCTION_PROVIDES_NRCELLDU
+          relationships:
+            href: '/domains/RAN/relationship-types/GNBDUFUNCTION_PROVIDES_NRCELLDU/relationships'
+        - name: NRCELLDU_USES_NRSECTORCARRIER
+          relationships:
+            href: '/domains/RAN/relationship-types/NRCELLDU_USES_NRSECTORCARRIER/relationships'
+        self:
+          href: '/domains/RAN/relationship-types?offset=0&limit=500'
+        first:
+          href: '/domains/RAN/relationship-types?offset=0&limit=500'
+        prev:
+          href: '/domains/RAN/relationship-types?offset=0&limit=500'
+        next:
+          href: '/domains/RAN/relationship-types?offset=500&limit=500'
+        last:
+          href: '/domains/RAN/relationship-types?offset=678&limit=500'
+        totalCount: 21
+
+    DomainsResponseExample:
+      value:
+        items:
+        - name: RAN_CLOUD
+          entityTypes:
+            href: '/domains/CLOUD/entity-types'
+          relationshipTypes:
+            href: '/domains/CLOUD/relationship-types'
+        - name: RAN_OAM
+          entityTypes:
+            href: '/domains/OAM/entity-types'
+          relationshipTypes:
+            href: '/domains/OAM/relationship-types'
+        - name: RAN_LOGICAL
+          entityTypes:
+            href: '/domains/RAN/entity-types'
+          relationshipTypes:
+            href: '/domains/RAN/relationship-types'
+        self:
+          href: '/domains?offset=0&limit=500'
+        first:
+          href: '/domains?offset=0&limit=500'
+        prev:
+          href: '/domains?offset=0&limit=500'
+        next:
+          href: '/domains?offset=500&limit=500'
+        last:
+          href: '/domains?offset=678&limit=500'
+        totalCount: 343
+
+    QueryMessageExample:
+      value:
+        query: |-
+          WITH point({longitude: 12.78232, latitude: 56.7455}) AS p1, point({latitude: 56.7134, longitude: 12.79565}) AS p2 RETURN point.distance(p1, p2) AS distance
+    QueryResponseExample:
+      value:
+        query: |-
+          WITH point({longitude: 12.78232, latitude: 56.7455}) AS p1, point({latitude: 56.7134, longitude: 12.79565}) AS p2 RETURN point.distance(p1, p2) AS distance
+        response: "distance : 2873.5"
+
+    StaticCollectionExample:
+      value:
+        collectionName: "son-cell-filter-group-1"
+        criteria:
+          resourceInstances:
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=3"
+
+    DynamicCollectionExample:
+      value:
+        collectionName: "son-cell-filter-group-1"
+        criteria:
+          resourceQuery:
+            url: /domains/RAN/entity-types/NRCellDU/entities
+            method: GET
+            queryParams:
+              target:Filter: /attributes(cmId)
+              scopeFilter: /attributes[@nRTAC=310]
+            requestBody: ""
+
+    CollectionResponseExample:
+      value:
+        id: "urn:oran:collection:/JHKJ4H5JH45345TB="
+        collectionName: "son-cell-filter-group-1"
+        criteria:
+          resourceInstances:
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+          - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=3"
+
+    CollectionsResponseExample:
+      value:
+        items:
+          - id: "urn:topology:collection:/JHKJ4H5JH45345TB="
+            collectionName: "son-cell-group-1"
+            criteria:
+              resourceInstances:
+              - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=1"
+              - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=2"
+              - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=3"
+          - id: "urn:topology:collection:/DFJER77R6F7S9VD="
+            collectionName: "son-cell-group-2"
+            criteria:
+              resourceInstances:
+              - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=4"
+              - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=5"
+              - "urn:3gpp:dn:ManagedElement=1,GNBDUFunction=1,NRCellDU=6"
+
+        self:
+          href: '/collections?offset=0&limit=500'
+        first:
+          href: '/collections?offset=0&limit=500'
+        prev:
+          href: '/collections?offset=0&limit=500'
+        next:
+          href: '/collections?offset=500&limit=500'
+        last:
+          href: '/collections?offset=678&limit=500'
+        totalCount: 11
+
+    SchemasResponseExample:
+      value:
+        items:
+          - name: o-ran-smo-teiv-ran
+            domain:
+              - RAN_LOGICAL
+            revision: '2013-07-15'
+            content:
+              href: '/schemas/o-ran-smo-teiv-ran/content'
+          - name: o-ran-smo-teiv-cloud
+            domain:
+              - RAN_CLOUD
+            revision: '2021-05-19'
+            content:
+              href: '/schemas/o-ran-smo-teiv-cloud/content'
+          - name: o-ran-smo-teiv-oam
+            domain:
+              - RAN_OAM'
+            revision: '2021-05-19'
+            content:
+              href: '/schemas/o-ran-smo-teiv-oam/content'
+          - name: o-ran-smo-teiv-common-yang-types
+            domain:
+              []
+            revision: '2021-07-04'
+            content:
+              href: '/schemas/o-ran-smo-teiv-common-yang-types/content'
+          - name: o-ran-smo-teiv-common-yang-extensions
+            domain:
+              []
+            revision: '2021-07-04'
+            content:
+              href: '/schemas/o-ran-smo-teiv-common-yang-extensions/content'
+        self:
+          href: '/schemas?offset=0&limit=500'
+        first:
+          href: '/schemas?offset=0&limit=500'
+        prev:
+          href: '/schemas?offset=0&limit=500'
+        next:
+          href: '/schemas?offset=500&limit=500'
+        last:
+          href: '/schemas?offset=678&limit=500'
+        totalCount: 14
+
+    SchemaResponseExample:
+      value: "module stores {\
+  yang-version 1.1;\
+  namespace \"ietf-inet-types\";\
+  prefix module-references;\
+  revision \"2020-09-15\" {\
+    description\
+    \"Sample Model\";\
+    }  \
+  typedef Mcc {\
+    type string;\
+    }\
+  typedef Mnc {\
+    type string;\
+    }\
+  grouping PLMNId {\
+    leaf mcc {\
+      type Mcc;\
+        }\
+    leaf mnc {\
+      type Mnc;\
+        }\
+    }      \
+  container RAN_LOGICAL {\
+    leaf namespace {\
+      type string;\
+        }\
+    container GNBDUFunction {\
+      leaf eiid {\
+        type string;\
+            }  \
+      leaf gNBDUId {\
+        type uint16;\
+            }\
+      leaf gNBID {\
+        type uint16;\
+            }\
+      leaf gNBIdLength {\
+        type uint16;\
+            }\
+      container dUpLMNId{\
+        description \"ToDo\";\
+        uses PLMNId;\
+      }        \
+    }\
+    container GNBCUUPFunction {\
+      leaf eiid {\
+        type string;\
+      } \
+      leaf gNBID {\
+        type uint16;\
+            }\
+      leaf gNBIdLength {\
+        type uint16;\
+            }\
+        }  \
+    container GNBCUCPFunction {            \
+      leaf eiid {\
+        type string;\
+            } \
+      leaf gNBID {\
+        type uint16;\
+            }\
+      leaf gNBIdLength {\
+        type uint16;\
+            }\
+      leaf gNBCUName {\
+        type string;\
+            }\
+      container pLMNId{\
+        description \"ToDo\";\
+        uses PLMNId;\
+      }      \
+        }\
+    container NRCellCU {            \
+      leaf eiid {\
+        type string;\
+            } \
+      leaf cellLocalId {\
+        type uint16;\
+            }\
+      leaf nCI {\
+        type uint16;\
+            }\
+      leaf nRTAC {\
+        type uint16;\
+            }\
+      container plmnId{\
+        description \"ToDo\";\
+        uses PLMNId;\
+      }        \
+        }\
+    container NRCellDU {            \
+      leaf eiid {\
+        type string;\
+            } \
+      leaf cellLocalId {\
+        type uint16;\
+            }\
+      leaf nCI {\
+        type uint16;\
+            }\
+      leaf nRPCI {\
+        type uint16;\
+            }\
+      leaf nRTAC {\
+        type uint16;\
+            }\
+        }\
+    }\
+}"

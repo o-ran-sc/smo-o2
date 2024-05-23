@@ -1,0 +1,26 @@
+module module1 {
+
+    namespace "urn:module1";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-04";
+
+    import module2 {
+    	prefix other;
+    }
+
+	container cont1 {
+		uses other:grouping1;
+	}
+
+	container cont2 {
+		leaf leaf7 {
+			type other:typedef1;
+		}
+	}
+
+}

@@ -1,0 +1,63 @@
+module deviate-delete-test-module {
+
+	namespace "urn:ietf:params:xml:ns:yang:deviate-delete-test-module";
+	prefix dev;
+
+	import deviation-host-test-module {
+		prefix host;
+	}
+
+	import _3gpp-common-yang-extensions {
+		prefix yext3gpp;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-09" {
+        description "initial revision";
+    }
+
+// ---------------- These deviations are just fine ---------------------
+
+    deviation /host:cont2/host:leaf21 {
+        deviate delete {
+            units "minutes";
+        }
+    }
+
+    deviation /host:list11/host:leaflist113 {
+        deviate delete {
+            default 18;
+            yext3gpp:initial-value "50";
+        }
+    }
+
+// ---------------- These deviations try to delete things that don't exist in the host model or that are properties ---------------------
+
+    deviation /host:cont1/host:leaf11 {
+        deviate delete {
+            config false;
+        }
+    }
+
+    deviation /host:list11 {
+        deviate delete {
+            min-elements 0;
+            max-elements unbounded;
+        }
+    }
+
+// ---------------- Various other findings ---------------------
+
+    deviation /host:cont4 {
+        deviate delete;		// Missing substatements
+    }
+
+    deviation /host:list11/host:leaf112 {
+        deviate delete {
+            type int16;			// should throw a finding as 'type' is a mandatory child under 'leaf'.
+        }
+    }
+}

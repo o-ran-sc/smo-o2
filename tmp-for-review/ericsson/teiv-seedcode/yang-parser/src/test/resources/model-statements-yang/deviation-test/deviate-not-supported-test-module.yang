@@ -1,0 +1,52 @@
+module deviate-not-supported-test-module {
+
+    namespace "urn:ietf:params:xml:ns:yang:deviate-not-supported-test-module";
+    prefix dev;
+
+    import deviation-host-test-module {
+        prefix host;
+    }
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-09" {
+        description "initial revision";
+    }
+
+// ---------------- These deviations are just fine ---------------------
+
+    deviation /host:cont2/host:leaf21 {
+        deviate not-supported;
+    }
+
+	deviation /host:list21 {
+        deviate not-supported;
+	}
+
+	deviation /host:cont1 {
+        deviate not-supported {
+            yexte:updated-description "blurb";		// should be ok, extensions are allowed under deviate not-supported
+        }
+	}
+
+// ---------------- These deviations try to not-support things that don't exist in the host model ---------------------
+
+    deviation /host:unknownElement {
+        deviate not-supported;
+    }
+
+    deviation /host:cont3/host:unknownElement {
+        deviate not-supported;
+    }
+
+// ---------------- Various other findings ---------------------
+
+    deviation /host:cont4 {
+        deviate not-supported {
+            type int16;			// cannot have child statements
+        }
+    }
+
+}

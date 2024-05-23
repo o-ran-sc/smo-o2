@@ -1,0 +1,20 @@
+{
+    "CLOUD/entity-types/CloudNativeApplication/entities/CloudNativeApplication_3": {
+
+    },
+    "RAN/entity-types/GNBCUCPFunction/entities/GNBCUCP_1": {
+
+    },
+    "CLOUD_TO_RAN/relationship-types/GNBDUFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION/relationships/relation_1": {
+
+    },
+    "CLOUD_TO_RAN/relationship-types/GNBCUUPFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION/relationships/relation_5": {
+
+    },
+    "CLOUD_TO_RAN/relationship-types/GNBCUCPFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION/relationships/relation_3": {
+
+    },
+    "CLOUD_TO_RAN/relationship-types/GNBCUCPFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION/relationships/relation_6": {
+
+    }
+}

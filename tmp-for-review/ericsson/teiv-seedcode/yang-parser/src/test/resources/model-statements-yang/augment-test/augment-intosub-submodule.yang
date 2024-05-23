@@ -1,0 +1,17 @@
+submodule augment-intosub-submodule {
+
+	belongs-to augment-intosub-module {
+	    prefix module;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-10";
+
+	container cont2;
+
+
+
+}

@@ -1,0 +1,115 @@
+module o-ran-smo-teiv-equipment {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-equipment";
+    prefix or-teiv-equip;
+
+    import o-ran-smo-teiv-common-yang-types { prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions { prefix or-teiv-yext; }
+
+    import ietf-geo-location {
+        prefix geo;
+        reference "RFC 9179: A YANG Grouping for Geographic Locations";
+    }
+
+    organization "ORAN";
+    contact "The Authors";
+    description
+    "RAN Equipment topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the topology entities and relations in the
+    Equipment domain, which is modelled to understand the physical
+    location of equipment such as antennas associated with a cell/carrier
+    and their relevant properties e.g. tilt, max power etc.";
+
+    revision "2024-05-14" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain EQUIPMENT;
+
+    list AntennaModule {
+        description "An Antenna Module represents the
+                    physical aspect of an antenna.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf antennaModelNumber {
+                description "Vendor-specific antenna model
+                            identifier. This attribute is part of
+                            AISG v3 ADB Standard and has
+                            no operational impact.";
+                type string;
+            }
+
+            leaf mechanicalAntennaBearing {
+                description "Antenna bearing on antenna subunit
+                            where antenna unit is installed.";
+                type uint32;
+            }
+
+            leaf mechanicalAntennaTilt {
+                description "The fixed antenna tilt of the installation,
+                            defined as the inclination of the antenna
+                            element respect to the vertical plane.
+                            It is a signed value. Positive indicates
+                            downtilt, and negative indicates uptilt.";
+                type uint32;
+            }
+
+            leaf positionWithinSector {
+                description "Antenna unit position within sector.
+                            This attribute is part of AISG v3 ADB
+                            Standard and has no operational impact.";
+                type string;
+            }
+
+            leaf totalTilt {
+                description "Total antenna elevation including the
+                            installed tilt and the tilt applied by
+                            the Remote Electrical Tilt (RET).";
+                type uint32;
+            }
+
+            leaf electricalAntennaTilt {
+                description "Electrically-controlled tilt of main beam maximum
+                            with respect to direction orthogonal to antenna
+                            element axis (see 3GPP TS 25.466). Value is signed;
+                            tilt down is positive, tilt up is negative.";
+                type uint32;
+            }
+
+            leaf-list antennaBeamWidth {
+                description "The angular span of the main lobe of the antenna radiation
+                            pattern in the horizontal plane. Measured in degrees.";
+                type uint32;
+            }
+
+            uses geo:geo-location;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNAMODULE_USES_ANTENNAMODULE { // Same entity (0..1 to 0..1)
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list used-by-antennaModule {
+            description "Antenna Module realised by Antenna Module.";
+            or-teiv-yext:aSide AntennaModule;
+            type instance-identifier;
+       }
+
+        leaf-list used-antennaModule {
+            description "Antenna Module realises Antenna Module.";
+            or-teiv-yext:bSide AntennaModule;
+            type instance-identifier;
+       }
+    }
+}

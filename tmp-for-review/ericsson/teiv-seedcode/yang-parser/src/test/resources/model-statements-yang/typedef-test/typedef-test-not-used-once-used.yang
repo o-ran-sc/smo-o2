@@ -1,0 +1,38 @@
+module typedef-test-not-used-once-used {
+
+	namespace "test:typedef-test-not-used-once-used";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2023-02-28";
+
+	typedef typedef1 {			// not used
+		type int32;
+	}
+
+	typedef typedef2 {			// used once only
+		type int32;
+	}
+
+	typedef typedef3 {			// used multiple times
+		type int32;
+	}
+
+	container cont1 {
+
+		leaf leaf01 {
+			type typedef2;
+		}
+
+		leaf leaf02 {
+			type typedef3;
+		}
+
+		leaf leaf03 {
+			type typedef3;
+		}
+	}
+}

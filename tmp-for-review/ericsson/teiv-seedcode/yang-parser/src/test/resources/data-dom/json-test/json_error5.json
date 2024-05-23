@@ -1,0 +1,15 @@
+{
+    "module1:cont1": {
+        "leaf-list1": [
+            "size of the annotation array below is too big"
+        ],
+        "@leaf-list1": [
+            {
+
+            },
+            {
+
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "module1:cont1": {
+        "leaf1": "the annotation below is not encoded as JSON object",
+        "@leaf1": [
+            "this should really be",
+            "a JSON object!"
+        ]
+    }
+}

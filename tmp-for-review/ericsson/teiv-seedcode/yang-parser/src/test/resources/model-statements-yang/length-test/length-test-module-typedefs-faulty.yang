@@ -1,0 +1,66 @@
+module length-test-module-typedefs-faulty {
+
+    namespace "urn:rdns:o-ran:oammodel:length-test-module-typedefs-faulty";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Ranges and typedefs that are incorrect --------------------
+
+    typedef typeStringNoLength {
+        type string;
+    }
+
+    typedef typeStringWithLength {
+        type string {
+            length 20..10;
+        }
+    }
+
+    typedef typeUsingTypeStringWithLength {
+        type this:typeStringWithLength;
+    }
+
+    container cont1 {
+
+        leaf leaf1 {
+            type this:typeStringNoLength {
+                length max..min;
+            }
+        }
+
+        leaf leaf2 {
+            type this:typeStringNoLength {
+                length "90..20";
+            }
+        }
+
+        leaf leaf3 {
+            type this:typeStringNoLength {
+                length "10|10";
+            }
+        }
+
+        leaf leaf4 {
+            type this:typeStringWithLength;
+        }
+
+        leaf leaf5 {
+            type this:typeUsingTypeStringWithLength;
+        }
+
+        leaf leaf6 {
+            type this:typeUsingTypeStringWithLength {
+                length "45..7";
+            }
+        }
+
+    }
+
+}

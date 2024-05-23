@@ -1,0 +1,18 @@
+{
+    "entity_map_CNS_1": {
+        "id": "CloudNativeSystem_2"
+    },
+    "entity_map_ME_1": {
+        "id": "ManagedElement_2",
+        "REL_FK_deployed-as-cloudNativeSystem": "CloudNativeSystem_2",
+        "REL_ID_MANAGEDELEMENT_DEPLOYED_AS_CLOUDNATIVESYSTEM": "relation_11"
+    },
+    "entity_map_CNS_2": {
+        "id": "CloudNativeSystem_3"
+    },
+    "entity_map_ME_2": {
+        "id": "ManagedElement_3",
+        "REL_FK_deployed-as-cloudNativeSystem": "CloudNativeSystem_3",
+        "REL_ID_MANAGEDELEMENT_DEPLOYED_AS_CLOUDNATIVESYSTEM": "relation_12"
+    }
+}

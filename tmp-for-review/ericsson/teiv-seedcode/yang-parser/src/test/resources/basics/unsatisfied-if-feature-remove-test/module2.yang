@@ -1,0 +1,42 @@
+module module2 {
+
+    namespace "urn:test:module2";
+    prefix "this";
+
+	import module1 {
+		prefix mod1;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2021-02-12" {
+        description "initial revision";
+    }
+
+    feature feature11;
+    feature feature12;
+    feature feature13;
+
+    feature feature99;
+
+	grouping grouping91 {
+		leaf leaf91 {
+			type boolean;
+		}
+		leaf leaf92 {
+			if-feature feature11;		// should resolve to this module here, even if used elsehwere
+			type boolean;
+		}
+		leaf leaf93 {
+			if-feature this:feature11;
+			type boolean;
+		}
+		leaf leaf94 {
+			if-feature mod1:feature11;	// in module1
+			type boolean;
+		}
+	}
+
+}

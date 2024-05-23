@@ -1,0 +1,30 @@
+submodule submodule4 {
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	belongs-to module1 {
+		prefix mod1;
+	}
+
+	import module2 {
+		prefix mod2;
+	}
+
+	import module3 {
+		prefix mod3;
+	}
+
+    revision "2020-09-30" {
+        description "initial revision";
+    }
+
+    identity identity41;
+    identity identity42;
+
+    identity identity43 {
+    	base identity41;
+    	base mod1:identity42;
+    }
+}

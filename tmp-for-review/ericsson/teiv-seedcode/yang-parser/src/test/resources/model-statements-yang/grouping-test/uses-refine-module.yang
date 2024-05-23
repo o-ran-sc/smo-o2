@@ -1,0 +1,143 @@
+module uses-refine-module {
+
+	namespace "test:uses-refine-module";
+	prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2015-10-20" {
+		description "Initial revision";
+	}
+
+	feature feature1;
+	feature feature2;
+
+	grouping grouping1 {
+
+		leaf leaf1 {
+			type string;
+		}
+
+		leaf leaf2 {
+			type string;
+			default "Hello";
+			description "old description";
+			reference "old reference";
+			config true;
+			mandatory true;
+		}
+
+		leaf leaf3 {
+			type int32;
+		}
+
+		leaf leaf4 {
+			type int32;
+		}
+
+		leaf leaf5 {
+			type int32;
+			must ". > ../leaf3";
+		}
+
+		leaf-list leaflist14 {
+			type uint32;
+			if-feature feature1;
+		}
+
+		leaf-list leaflist15 {
+			type uint32;
+			default 10;
+			default 20;
+			default 30;
+			min-elements 2;
+			max-elements 6;
+		}
+
+		container cont74;
+
+		choice choice83 {
+			leaf leaf7 {
+				type string;
+			}
+			leaf leaf8 {
+				type string;
+			}
+		}
+	}
+
+// - - - - should be all ok - - - - - -
+
+	container cont1 {
+
+		uses grouping1 {
+
+			refine leaf1 {
+				description "new description";
+				reference "new reference";
+				config true;
+				default "world";
+				mandatory true;
+				if-feature feature2;
+			}
+
+			refine leaf2 {
+				config false;
+				default "world";
+				mandatory false;
+				if-feature feature1;
+			}
+
+			refine leaf5 {
+				must ". > ../leaf4";
+			}
+
+			refine leaflist14 {
+				default 50;
+				default 60;
+				min-elements 2;
+				max-elements 8;
+				if-feature feature2;
+			}
+
+			refine leaflist15 {
+				default 50;
+				default 60;
+				default 70;
+				min-elements 3;
+				max-elements 9;
+			}
+
+			refine cont74 {
+				presence "meaningful!";
+			}
+		}
+	}
+
+// - - - - - - error scenarios - - - - - -
+
+	container cont2 {
+
+		uses grouping1 {
+
+			refine leaf1 {
+				presence "meaningful!";
+			}
+
+			refine leaf4 {
+				default 22;
+				default 23;
+			}
+
+			refine cont74 {
+				min-elements 3;
+			}
+
+			refine choice83 {
+				must ". > 10";
+			}
+		}
+	}
+}

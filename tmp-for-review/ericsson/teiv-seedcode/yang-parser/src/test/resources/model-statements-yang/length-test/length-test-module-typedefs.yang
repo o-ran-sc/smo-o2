@@ -1,0 +1,70 @@
+module length-test-module-typedefs {
+
+    namespace "urn:rdns:o-ran:oammodel:length-test-module-typedefs";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Lengths and typedefs that are fine --------------------
+
+    typedef typeStringNoLength {
+        type string;
+    }
+
+    typedef typeStringWithLength {
+        type string {
+            length 10..20;
+        }
+    }
+
+    typedef typeUsingTypeStringWithLength {
+        type this:typeStringWithLength;
+    }
+
+    container cont1 {
+
+        leaf leaf1 {
+            type this:typeStringNoLength;
+        }
+
+        leaf leaf2 {
+            type this:typeStringNoLength {
+                length min..max;
+            }
+        }
+
+        leaf leaf3 {
+            type this:typeStringWithLength;
+        }
+
+        leaf leaf4 {
+            type this:typeStringNoLength {
+                length "10..20 | 30..60";
+            }
+        }
+
+        leaf leaf5 {
+            type this:typeStringWithLength {
+                length "10 | 12..12 | 17";
+            }
+        }
+
+        leaf leaf6 {
+            type this:typeUsingTypeStringWithLength;
+        }
+
+        leaf leaf7 {
+            type this:typeUsingTypeStringWithLength {
+                length "17..19";
+            }
+        }
+
+    }
+
+}

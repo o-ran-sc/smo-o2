@@ -1,0 +1,113 @@
+module uses-module {
+
+    namespace "urn:o-ran:yang:uses-module";
+    prefix this;
+
+    import grouping-module {
+        revision-date "2015-10-20";
+        prefix gm;
+    }
+
+    description "yang test module for uses / grouping
+    Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2015-10-20" {
+        description "Initial revision";
+    }
+
+    container cont1 {
+        leaf leaf11 {
+            type string;
+        }
+
+        uses gm:grouping1 {
+        	if-feature "feature1 or feature2";
+        }
+    }
+
+    container cont2 {
+        leaf leaf21 {
+            type string;
+        }
+
+        uses gm:grouping1 {
+            when "leaf21 = 'Hello'";
+        }
+    }
+
+    container cont3 {
+        leaf leaf31 {
+            type string;
+        }
+
+        uses gm:grouping1 {
+            augment contgroup1 {
+            	when "abc > 10";
+                leaf leaf32 {
+                    type string;
+                }
+            }
+        }
+    }
+
+	// - - - augmenting a choice
+
+    container cont4 {
+    	uses gm:grouping2 {
+			augment choice23 {
+				container cont44 {
+                    presence "Meaningful container";
+				}
+			}
+    	}
+    }
+
+    // - - - - refine handling (once without, once with)
+
+    container cont5 {
+    	uses gm:grouping3;
+    }
+
+	container cont6 {
+    	uses gm:grouping3 {
+    		refine "cont31/leaf35" {
+    			default "world";
+    			mandatory true;
+    		}
+    		refine "cont31/leaf36" {
+    			config false;
+    			mandatory false;
+    		}
+    		refine "cont31/leaflist37" {
+    			default 80;
+    			default 90;
+    			min-elements 1;
+    			max-elements 6;
+    		}
+    		refine "cont32" {
+    			presence "now a presence container";
+   				if-feature feature99;
+   				must "xyz > 99";
+    		}
+    	}
+    }
+
+    // - - - - refine handling (extensions)
+
+    container cont7 {
+    	uses gm:grouping4 {
+     		refine "cont41" {
+				gm:extension2 "hello world";
+				gm:extension3;
+    		}
+     		refine "cont42" {
+				gm:extension1;
+				gm:extension2 "abc";
+				gm:extension2 "def";
+				gm:extension3;
+    		}
+    	}
+    }
+
+}

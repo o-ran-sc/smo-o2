@@ -1,0 +1,104 @@
+{
+    "entities": [
+        {
+            "o-ran-smo-teiv-ran:NRCellDU": [
+                {
+                    "id": "entityId_1",
+                    "attributes": {
+                        "cellLocalId": 4589,
+                        "nRPCI": 12,
+                        "nRTAC": 310,
+                        "primitiveArray": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "singleList": [
+                            "12"
+                        ],
+                        "jsonObjectArray": [
+                            {
+                                "test1": "128",
+                                "test2": "49"
+                            },
+                            {
+                                "test1": "129",
+                                "test2": "50"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "entityId_3",
+                    "attributes": {
+                        "cellLocalId": 45891,
+                        "nRPCI": 121,
+                        "nRTAC": 3101,
+                        "primitiveArray": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "singleList": [
+                            "121"
+                        ],
+                        "jsonObjectArray": [
+                            {
+                                "test1": "1281",
+                                "test2": "491"
+                            },
+                            {
+                                "test1": "1291",
+                                "test2": "501"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "o-ran-smo-teiv-ran:NRSectorCarrier": [
+                {
+                    "id": "entityId_2",
+                    "attributes": {
+                        "arfcnDL": 4590,
+                        "testDouble": 32.5,
+                        "testBoolean": true,
+                        "cmId": {
+                            "option1": "test_option1",
+                            "option2": "test_option2"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "o-ran-smo-teiv-ran:NRCELLDU_USES_NRSECTORCARRIER": [
+                {
+                    "id": "relationshipId",
+                    "aSide": "entityId_1",
+                    "bSide": "entityId_2"
+                },
+                {
+                    "id": "relationshipId2",
+                    "aSide": "entityId_3",
+                    "bSide": "entityId_4"
+                }
+            ],
+            "o-ran-smo-teiv-ran:GNBDUFunctionRealisedByCloudNativeApplication": [
+                {
+                    "id": "relationshipId3",
+                    "aSide": "entityId_5",
+                    "bSide": "entityId_6"
+                },
+                {
+                    "id": "relationshipId4",
+                    "aSide": "entityId_5",
+                    "bSide": "entityId_7"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+submodule submodule3 {
+
+	belongs-to module1 {
+		prefix this;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2021-02-12" {
+        description "initial revision";
+    }
+
+	feature feature51;
+	feature feature52 {
+		if-feature "feature58 or feature59";	// defined in owning module.
+	}
+
+
+}

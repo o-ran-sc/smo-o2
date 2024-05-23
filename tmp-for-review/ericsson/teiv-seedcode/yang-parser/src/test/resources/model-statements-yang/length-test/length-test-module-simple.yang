@@ -1,0 +1,94 @@
+module length-test-module-simple {
+
+    namespace "urn:rdns:o-ran:oammodel:length-test-module-simple";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Simple lengths that are fine --------------------
+
+    container cont1 {
+
+        leaf leaf1 {
+            type string;
+        }
+
+        leaf leaf2 {
+            type string {
+                length min..max;
+            }
+        }
+
+        leaf leaf3 {
+            type string {
+                length "min  ..   max";
+            }
+        }
+
+        leaf leaf4 {
+            type string {
+                length "min..min | max..max";
+            }
+        }
+
+        leaf leaf5 {
+            type string {
+                length "min  ..  min| max..  max";
+            }
+        }
+
+        leaf leaf6 {
+            type string {
+                length 10..100;
+            }
+        }
+
+        leaf leaf7 {
+            type string {
+                length "10..20 | 30..60";
+            }
+        }
+
+        leaf leaf8 {
+            type string {
+                length "min..20 | 30..max";
+            }
+        }
+
+        leaf leaf9 {
+            type string {
+                length "min..20 | 30 | 80";
+            }
+        }
+
+        leaf leaf10 {
+            type string {
+                length min..20|30|80;
+            }
+        }
+
+        leaf leaf11 {
+            type string {
+                length "min | 10 | 40";
+            }
+        }
+
+        leaf leaf12 {
+            type string {
+                length "min | 10..10 | 70";
+            }
+        }
+
+        leaf leaf13 {
+            type string {
+                length min|2|3|max;
+            }
+        }
+    }
+}
