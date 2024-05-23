@@ -1,0 +1,90 @@
+module length-test-module-simple-faulty {
+
+    namespace "urn:rdns:o-ran:oammodel:length-test-module-simple-faulty";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Simple lengths that are faulty for a variety of reasons --------------------
+
+    container cont1 {
+
+        leaf leaf1 {
+            type string {
+                length max..min;
+            }
+        }
+
+        leaf leaf2 {
+            type string {
+                length max..300;
+            }
+        }
+
+        leaf leaf3 {
+            type string {
+                length "-4000  ..   max";
+            }
+        }
+
+        leaf leaf4 {
+            type string {
+                length "min..max | min..max";
+            }
+        }
+
+        leaf leaf5 {
+            type string {
+                length "min  ..  100| 30..  max";
+            }
+        }
+
+        leaf leaf6 {
+            type string {
+                length -100..1000;
+            }
+        }
+
+        leaf leaf7 {
+            type string {
+                length "-50..-20 | -40..-30";
+            }
+        }
+
+        leaf leaf8 {
+            type string {
+                length "min..-20 | -30 | -40";
+            }
+        }
+
+        leaf leaf9 {
+            type string {
+                length min..-20|30|25;
+            }
+        }
+
+        leaf leaf10 {
+            type string {
+                length "min | 10 | 40000000000000000000000000000000";
+            }
+        }
+
+        leaf leaf11 {
+            type string {
+                length "blurb | 10..10 | 70";
+            }
+        }
+
+        leaf leaf12 {
+            type string {
+                length MIN..max;
+            }
+        }
+    }
+}

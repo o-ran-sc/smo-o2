@@ -1,0 +1,11 @@
+module module-missing-prefix {
+
+    namespace "urn:module1";
+
+    description
+    "Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-04";
+
+}

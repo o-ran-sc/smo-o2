@@ -1,0 +1,53 @@
+module simple-module {
+
+	yang-version 1;
+
+    namespace "simple-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27";
+
+	rpc rpc1 {
+		input {
+			leaf leaf1 {
+				type string;
+			}
+			leaf leaf2 {
+				type string;
+			}
+		}
+	}
+
+	leaf leaf3 {
+		type string;
+	} ; ;				// semicolon after end of statement, pointless but we handle them.
+
+	leaf leaf4 {
+		when "../leaf3";
+		type string;
+	}
+
+	leaf leaf5 {
+		description "Hello " + "World";
+		type string;
+	}
+
+	leaf leaf6 {
+		description "Hello " +
+		"World";
+		type string;
+	}
+
+	leaf leaf7 {
+		description "Hello " + "World" + '!';
+		type string;
+	}
+
+	container cont9 {}		// A bit pointless, but we will allow it.
+
+	container cont10 {;}		// Same.
+}

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spotless:off -->
+<!--
+  ============LICENSE_START=======================================================
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+  ================================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  SPDX-License-Identifier: Apache-2.0
+  ============LICENSE_END=========================================================
+-->
+<!-- spotless:on -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath />
+    </parent>
+    <groupId>org.oran.smo</groupId>
+    <artifactId>topology-exposure-inventory</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <modules>
+        <module>yang-parser</module>
+        <module>pgsql-schema-generator</module>
+        <module>teiv</module>
+    </modules>
+
+    <properties>
+        <!-- Set compiler Java version, MUST match the Dockerfile JDK version -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 3PP Versions -->
+        <version.jackson-databind-nullable>0.2.6</version.jackson-databind-nullable>
+        <version.lombok>1.18.26</version.lombok>
+        <version.logback>6.6</version.logback>
+        <!-- Updated from 1.9.0 to comply with CVE-2022-36437 -->
+        <version.micrometer>1.10.6</version.micrometer>
+        <version.cloudevents-kafka>2.5.0</version.cloudevents-kafka>
+        <version.cloudevents-json-jackson>2.5.0</version.cloudevents-json-jackson>
+        <version.springdoc-openapi>2.1.0</version.springdoc-openapi>
+        <!-- Updated from version 1.33 to comply with CVE-2022-1471 -->
+        <version.postgresql>42.5.4</version.postgresql>
+        <jooq.version>3.18.6</jooq.version>
+        <version.saxpath>1.0-FCS</version.saxpath>
+        <!-- External Yang model source prefix URI -->
+        <source.3gpp.Rel18_SA103>https://forge.3gpp.org/rep/sa5/MnS/-/raw/Tag_Rel18_SA103/yang-models/</source.3gpp.Rel18_SA103>
+        <source.3gpp.Rel18_SA98>https://forge.3gpp.org/rep/sa5/MnS/-/raw/Tag_Rel18_SA98/yang-models/</source.3gpp.Rel18_SA98>
+        <source.3gpp.Rel17_SA97>https://forge.3gpp.org/rep/sa5/MnS/-/raw/Tag_Rel17_SA97/yang-models/</source.3gpp.Rel17_SA97>
+        <source.3gpp.Rel17_SA91>https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-17-SA-91/yang-models/</source.3gpp.Rel17_SA91>
+        <source.ietfcatalog>https://www.ietf.org/ietf-ftp/yang/catalogmod/</source.ietfcatalog>
+
+        <!-- Test Dependencies -->
+        <version.spring-cloud>2023.0.0</version.spring-cloud>
+        <version.mockitoinline>5.2.0</version.mockitoinline>
+        <version.testcontainers>1.18.0</version.testcontainers>
+        <!-- Plugin Dependencies -->
+        <version.openapi-generator-maven-plugin>6.5.0</version.openapi-generator-maven-plugin>
+        <version.spotless-plugin>2.30.0</version.spotless-plugin>
+        <version.contract-documentation-generator-mvn-plugin>1.0.1</version.contract-documentation-generator-mvn-plugin>
+        <version.asciidoctor-maven-plugin>2.2.1</version.asciidoctor-maven-plugin>
+        <version.spring-cloud-starter-contract-verifier>3.0.2</version.spring-cloud-starter-contract-verifier>
+        <version.yang-parser-jar>1.0.0-SNAPSHOT</version.yang-parser-jar>
+        <version.yang-validator-jar>1.0.0-SNAPSHOT</version.yang-validator-jar>
+        <version.reactor-test>3.2.3.RELEASE</version.reactor-test>
+        <!-- Updated from 3.0 to comply with CVE-2023-20861, CVE-2022-22971 & 17
+            more -->
+        <version.license-maven-plugin>4.2</version.license-maven-plugin>
+        <version.sonar-maven-plugin>3.9.1.2184</version.sonar-maven-plugin>
+        <version.antrun-maven-plugin>3.1.0</version.antrun-maven-plugin>
+        <version.antlr>4.13.0</version.antlr>
+        <!-- JaCoCo plugin for Java Code Coverage -->
+        <version.jacoco-maven.plugin>0.8.8</version.jacoco-maven.plugin>
+        <!-- Minimum ratio or percentage of instructions to be covered, used by
+            JaCoCo plugin. Industry standard is 0.8 or 80% which allows at least 80%
+            of the code to be covered by the test cases. -->
+        <jacoco-maven-plugin.coveredratio.minimum>0.8</jacoco-maven-plugin.coveredratio.minimum>
+    </properties>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${version.license-maven-plugin}</version>
+                    <configuration>
+                        <licenseSets>
+                            <licenseSet>
+                                <header>${project.parent.basedir}/license/copyright-2024.txt</header>
+                                <validHeaders>
+                                    <validHeader>${project.parent.basedir}/license/copyright-2024.txt</validHeader>
+                                </validHeaders>
+                                <excludes>
+                                    <exclude>**/*.html</exclude>
+                                    <exclude>**/*.tpl</exclude>
+                                    <exclude>**/*.tgz</exclude>
+                                    <exclude>**/VERSION*</exclude>
+                                    <exclude>license/copyright*</exclude>
+                                    <exclude>**/*.txt</exclude>
+                                    <exclude>**/*.config</exclude>
+                                    <exclude>**/*.yang</exclude>
+                                    <exclude>settings.xml</exclude>
+                                    <exclude>**/*.openapi-generator-ignore</exclude>
+                                    <exclude>**/src/main/resources/v1/.openapi-generator/*</exclude>
+                                    <exclude>generated/*</exclude>
+                                    <exclude>generated*/</exclude>
+                                    <exclude>dependencies/*</exclude>
+                                    <exclude>dependencies*/</exclude>
+                                </excludes>
+                            </licenseSet>
+                        </licenseSets>
+                        <headerDefinitions>
+                            <headerDefinition>${project.parent.basedir}/license/javaHeaderDefinition.xml</headerDefinition>
+                            <headerDefinition>${project.parent.basedir}/license/xmlHeaderDefinition.xml</headerDefinition>
+                        </headerDefinitions>
+                        <mapping>
+                            <java>JAVADOC_STYLE</java>
+                            <groovy>JAVADOC_STYLE</groovy>
+                            <g4>JAVADOC_STYLE</g4>
+                            <xml>XML_STYLE</xml>
+                        </mapping>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${version.sonar-maven-plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${version.spotless-plugin}</version>
+                <configuration>
+                    <formats>
+                        <format>
+                            <includes>
+                                <include>pom.xml</include>
+                            </includes>
+                            <eclipseWtp>
+                                <type>XML</type>
+                            </eclipseWtp>
+                            <toggleOffOn>
+                                <off>spotless:off</off>
+                                <on>spotless:on</on>
+                            </toggleOffOn>
+                            <indent>
+                                <spaces>true</spaces>
+                                <spacesPerTab>4</spacesPerTab>
+                            </indent>
+                            <trimTrailingWhitespace />
+                            <endWithNewline />
+                        </format>
+                        <format>
+                            <includes>
+                                <include>**/*.json</include>
+                            </includes>
+                            <excludes>
+                                <exclude>target/**/*.json</exclude>
+                                <exclude>build/**/*.json</exclude>
+                            </excludes>
+                            <eclipseWtp>
+                                <type>JSON</type>
+                            </eclipseWtp>
+                            <endWithNewline />
+                            <indent>
+                                <spaces>true</spaces>
+                                <spacesPerTab>4</spacesPerTab>
+                            </indent>
+                            <trimTrailingWhitespace />
+                        </format>
+                    </formats>
+                    <java>
+                        <eclipse>
+                            <file>${project.parent.basedir}/code_conventions.xml</file>
+                        </eclipse>
+                        <toggleOffOn>
+                            <off>spotless:off</off>
+                            <on>spotless:on</on>
+                        </toggleOffOn>
+                        <trimTrailingWhitespace />
+                        <removeUnusedImports />
+                        <endWithNewline />
+                        <licenseHeader>
+                            <file>${project.parent.basedir}/CopyrightSample.txt</file>
+                        </licenseHeader>
+                    </java>
+                    <groovy>
+                        <includes>
+                            <include>**/*.groovy</include>
+                        </includes>
+                        <greclipse>
+                            <file>${project.parent.basedir}/code_conventions.xml</file>
+                        </greclipse>
+                        <licenseHeader>
+                            <file>${project.parent.basedir}/CopyrightSample.txt</file>
+                        </licenseHeader>
+                        <endWithNewline />
+                    </groovy>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

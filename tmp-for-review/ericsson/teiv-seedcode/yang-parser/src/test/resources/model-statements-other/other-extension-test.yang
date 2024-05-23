@@ -1,0 +1,43 @@
+module other-extension-test {
+
+	namespace "test:other-extension-test";
+	prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-08-12" {
+		description "Initial revision";
+	}
+
+	import ietf-yang-metadata {
+		prefix md;
+	}
+
+	import _3gpp-common-yang-extensions {
+		prefix yext3gpp;
+	}
+
+	import ietf-netconf-acm {
+		prefix nacm;
+	}
+
+	md:annotation last-modified {
+		type uint64;
+	}
+
+	container cont1 {
+		nacm:default-deny-write;
+
+		leaf leaf1 {
+			yext3gpp:inVariant;
+			yext3gpp:initial-value "Hello";
+			yext3gpp:notNotifyable;
+
+			nacm:default-deny-all;
+
+			type int32;
+		}
+	}
+}

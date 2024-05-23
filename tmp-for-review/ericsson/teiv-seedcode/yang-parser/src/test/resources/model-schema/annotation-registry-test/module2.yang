@@ -1,0 +1,22 @@
+module module2 {
+
+    namespace "test:module2";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2021-03-23" {
+        description "initial revision";
+    }
+
+	import ietf-yang-metadata {
+		prefix "md";
+	}
+
+	md:annotation modified-user {
+		type string;
+	}
+
+}

@@ -1,0 +1,18 @@
+submodule submodule12 {
+
+    belongs-to module1 {
+        prefix mod1;
+    }
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "1999-01-01" {
+        description "initial revision";
+    }
+
+    feature feature3;
+
+    feature feature4;
+}

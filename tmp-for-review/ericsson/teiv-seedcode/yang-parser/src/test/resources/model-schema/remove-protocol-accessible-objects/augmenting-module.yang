@@ -1,0 +1,30 @@
+module augmenting-module {
+
+	namespace "test:augmenting-module";
+	prefix "this";
+	revision 2024-01-30;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	import base-module {
+		prefix base;
+	}
+
+	import other-module {
+		prefix other;
+	}
+
+	augment "/base:cont1" {
+		leaf leaf12 {
+			type int32;
+		}
+	}
+
+	augment "/other:cont5" {
+		leaf leaf52 {
+			type int32;
+		}
+	}
+}

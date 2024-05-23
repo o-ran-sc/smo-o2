@@ -1,0 +1,254 @@
+module module1 {
+
+	namespace "test:module1";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2021-02-14" {
+		description "initial revision";
+	}
+
+	// -------------- Simple stuff ----------------
+
+	container cont1 {
+		leaf leaf11 {
+			type uint32;
+		}
+		leaf leaf12 {
+			type uint32;
+		}
+		leaf leaf13 {
+			type string;
+		}
+		leaf leaf14 {
+			type empty;
+		}
+	}
+
+	// -------------- A few NPs and defaults ----------------
+
+	list list2 {
+		key leaf21;
+
+		leaf leaf21 {
+			type int16;
+		}
+
+		container cont22 {
+
+			leaf leaf23 {
+				type string;
+			}
+
+			leaf leaf24 {
+				type string;
+				default "World";
+			}
+		}
+
+		leaf leaf25 {
+			type string;
+			default "Nice Day";
+		}
+
+		leaf-list leaflist26 {
+			type string;
+			default "one";
+			default "two";
+			default "three";
+		}
+	}
+
+	// -------------- Some choice handling ----------------
+
+	container cont3 {
+
+		choice choice31 {
+			default case32;
+
+			case case32 {
+				leaf leaf33 {
+					type string;
+				}
+				leaf leaf34 {
+					type string;
+					default "where";
+				}
+				container cont35 {
+					leaf leaf36 {
+						type string;
+						default "here";
+					}
+				}
+			}
+
+			case case37 {
+				leaf leaf38 {
+					type string;
+					default "there";
+				}
+				container cont39 {
+					presence "";
+				}
+			}
+		}
+	}
+
+	// -------------- Some default values with different formats ----------------
+
+	container cont4 {
+
+		leaf leaf41 {
+			type uint32;
+			default "+0";
+		}
+
+		leaf leaf42 {
+			type uint32;
+			default "0x0010";		// hexadecimal = 16
+		}
+
+		leaf leaf43 {
+			type uint32;
+			default "010";			// octal = 8
+		}
+
+		leaf leaf44 {
+			type boolean;
+			default true;
+		}
+
+		leaf leaf45 {
+			type enumeration {
+				enum one { value 1; }
+				enum two { value 2; }
+				enum three { value 3; }
+			}
+			default two;
+		}
+
+		leaf leaf46 {
+			type decimal64 {
+				fraction-digits 3;
+			}
+			default 123.456;
+		}
+	}
+
+	// -------------- Unions ----------------
+
+	container cont5 {
+
+		leaf leaf51 {
+			type union {
+				type uint32;
+				type string;
+				type empty;
+			}
+			default "+0";
+		}
+
+		leaf leaf52 {
+			type union {
+				type uint16 {
+					range "0..100";
+				}
+				type string;
+			}
+			default "+0x100";		// hex 256, so not in range of the unint16
+		}
+
+		leaf leaf53 {
+			type union {
+				type enumeration {
+					enum one { value 1; }
+					enum two { value 2; }
+					enum three { value 3; }
+				}
+				type uint8;
+			}
+			default "+10";
+		}
+
+		leaf leaf54 {
+			type union {
+				type enumeration {
+					enum one { value 1; }
+					enum two { value 2; }
+					enum three { value 3; }
+				}
+				type uint8;
+			}
+			default "+1000";		// not possible for either data types, will use as-is.
+		}
+
+		leaf leaf55 {
+			type union {
+				type bits {
+					bit one { position 1; }
+					bit two { position 2; }
+					bit three { position 3; }
+				}
+				type string;
+			}
+			default "one	 two";
+		}
+
+		leaf leaf56 {
+			type union {
+				type bits {
+					bit one { position 1; }
+					bit two { position 2; }
+					bit three { position 3; }
+				}
+				type string;
+			}
+			default "one   two   seven";
+		}
+	}
+
+	// -------------- anydata / anyxml ----------------
+
+	container cont6 {
+
+		anydata anydata61;
+
+		anyxml anyxml62;
+	}
+
+	// -------------- for augmentation ----------------
+
+	container cont7;
+
+	// ------------------ CDATA -----------------------
+
+	container cont8 {
+
+		leaf leaf81 {
+			type string;
+		}
+
+		leaf leaf82 {
+			type string;
+		}
+
+		leaf leaf83 {
+			type string;
+		}
+
+		leaf leaf84 {
+			type string;
+		}
+
+		leaf leaf85 {
+			type string;
+		}
+
+		leaf leaf86 {
+			type string;
+		}
+	}
+}

@@ -1,0 +1,188 @@
+module o-ran-smo-teiv-cloud {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-cloud";
+    prefix or-teiv-cloud;
+
+    import o-ran-smo-teiv-common-yang-types {prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+    import ietf-geo-location {
+        prefix geo;
+        reference "RFC 9179: A YANG Grouping for Geographic Locations";
+    }
+
+    organization "ORAN";
+    contact "The Authors";
+    description
+    "RAN Cloud topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the topology entities and relations in the
+    RAN CLOUD domain, which comprises cloud infrastructure and
+    deployment aspects that can be used in the topology model.";
+
+    revision "2024-05-02" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain CLOUD;
+
+    list CloudifiedNF {
+        description "A RAN Network Function software that is deployed in the O-Cloud via one or more NF Deployments.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf name {
+                description "Name of Cloudified NF";
+                type string;
+            }
+        }
+    }
+
+    list NFDeployment {
+        description "A software deployment on O-Cloud resources that realizes, all or part of, a Cloudified NF.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf name {
+                description "Name of NF Deployment";
+                type string;
+            }
+        }
+    }
+
+    list CloudNamespace {
+        description "CloudNamespace provide a mechanism for isolating
+                    groups of resources within a single cluster.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf name {
+                description "Name of Cloud Namespace";
+                type string;
+            }
+        }
+    }
+
+    list NodeCluster {
+        description "A NodeCluster manages a collection of Nodes.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf name {
+                description "Name of Node Cluster";
+                type string;
+            }
+        }
+    }
+
+    list CloudSite {
+        description "Represents the infrastructure that
+                    hosts the NF Deployment.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf name {
+                description "Name of Cloud Site";
+                type string;
+            }
+
+            uses geo:geo-location;
+        }
+    }
+
+
+    or-teiv-yext:biDirectionalTopologyRelationship CLOUDIFIEDNF_COMPRISES_NFDEPLOYMENT { // 1 to 1..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list comprised-nFDeployment {
+            description "Cloudified NF comprises of these NF Deployment.";
+            or-teiv-yext:aSide CloudifiedNF;
+            type instance-identifier;
+            min-elements 1;
+        }
+
+        leaf comprised-by-cloudifiedNF {
+            description "NF Deployment part of Cloudified NF.";
+            or-teiv-yext:bSide NFDeployment;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NFDEPLOYMENT_DEPLOYED_ON_CLOUDNAMESPACE { // 1..n to 1..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list deployed-on-cloudNamespace {
+            description "NF Deployment deployed on Cloud Namespace.";
+            or-teiv-yext:aSide NFDeployment;
+            type instance-identifier;
+            min-elements 1;
+        }
+
+        leaf-list deployed-nFDeployment {
+            description "Cloud Namespace deploys NF Deployment.";
+            or-teiv-yext:bSide CloudNamespace;
+            type instance-identifier;
+            min-elements 1;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship CLOUDNAMESPACE_DEPLOYED_ON_NODECLUSTER { // 1..n to 1
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf deployed-on-nodeCluster {
+            description "Cloud Namespace deployed on Node Cluster.";
+            or-teiv-yext:aSide CloudNamespace;
+            type instance-identifier;
+            mandatory true;
+        }
+
+        leaf-list deployed-cloudNamespace {
+            description "Node Cluster deploys Cloud Namespace.";
+            or-teiv-yext:bSide NodeCluster;
+            type instance-identifier;
+            min-elements 1;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NODECLUSTER_LOCATED_AT_CLOUDSITE { // 1..n to 1..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list located-at-cloudSite {
+            description "Node Cluster located at Cloud Site.";
+            or-teiv-yext:aSide NodeCluster;
+            type instance-identifier;
+            min-elements 1;
+        }
+
+        leaf-list location-of-nodeCluster {
+            description "Cloud Site is location of Node Cluster.";
+            or-teiv-yext:bSide CloudSite;
+            type instance-identifier;
+            min-elements 1;
+        }
+    }
+}

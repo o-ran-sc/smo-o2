@@ -1,0 +1,67 @@
+module o-ran-smo-teiv-common-yang-types {
+
+  yang-version 1.1;
+  namespace "urn:o-ran:smo-teiv-common-yang-types";
+  prefix or-teiv-types;
+
+  import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-ext; }
+
+
+  organization "ORAN";
+  contact "The Authors";
+  description
+  "Topology and Inventory common types model
+
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+  This model contains re-usable data types that topology and inventory models
+  will frequently use as part of types and relationships.";
+
+  revision "2023-12-12" {
+    description "First draft.";
+    or-teiv-ext:label 0.2.0;
+  }
+
+  grouping Top_Grp_Type {
+
+    description
+      "Grouping containing the key attribute common to all types. All types
+       MUST use this grouping.";
+
+    leaf id {
+      type string;
+      description "Unique identifier of topology entities. Represents the Entity Instance Identifier. Using types MAY
+                        restrict the allowed values for keys.";
+    }
+  }
+
+  container ties-consumer-data {
+    description "This container defines the TIES consumer-data. Consumer-data may be attached to Topology Entity or
+    Topology Relation instance, outside of the declared Topology Entity or Topology Relationship's attributes.
+    This container cannot be instantiated, and it MUST NOT be augmented or deviated in any way, unless stated
+    otherwise.";
+
+    container decorators {
+      description "This container serves as extension point for applications wishing to define their own decorators.
+      This is done via augmentations.";
+    }
+
+    leaf-list classifiers {
+      description "Consumer defined tags to topology entities and relationships. The ability to apply classifier is
+      supported through TIES REST API";
+      type identityref { base classifier; }
+    }
+
+    leaf-list source-ids {
+      description "An ordered list of identities that represent the set of native source identifiers for participating
+      entities.";
+      type string;
+      ordered-by user;
+    }
+  }
+
+  identity classifier{
+    description  "The classifier is used as a base to provide all classifiers with identity";
+  }
+}

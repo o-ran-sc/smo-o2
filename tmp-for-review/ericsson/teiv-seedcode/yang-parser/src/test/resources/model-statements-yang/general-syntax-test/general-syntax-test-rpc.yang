@@ -1,0 +1,96 @@
+module general-syntax-test-rpc {
+
+    namespace "test:general-syntax-test-rpc";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-22" {
+        description "Initial revision";
+    }
+
+	feature feature1;
+
+    // -------------- RPCs -------------------
+
+	rpc rpc1;
+
+	rpc rpc2 {
+		input {
+			container cont1;
+		}
+	}
+
+	rpc rpc3 {
+		output {
+			container cont2;
+		}
+	}
+
+	rpc rpc4 {
+		status deprecated;
+		if-feature feature1;
+
+		typedef typedef1 {
+			type string;
+		}
+		grouping grouping1 {
+			leaf grouping-leaf {
+				type int32;
+			}
+		}
+		output {
+			leaf leaf1 {
+				type typedef1;
+			}
+			anyxml anyxml1;
+			anydata anydata1;
+			list list1 {
+				key leaf2;
+				leaf leaf2 {
+					type int32;
+				}
+			}
+			leaf-list leaflist3 {
+				type boolean;
+			}
+			choice choice1 {
+				container cont6;
+				container cont7;
+			}
+			must "../contX";
+			typedef typedef2 {
+				type int16;
+			}
+		}
+		input {
+			container cont4;
+			uses grouping1;
+			anyxml anyxml1;
+			anydata anydata1;
+			list list1 {
+				key leaf2;
+				leaf leaf2 {
+					type int32;
+				}
+			}
+			leaf-list leaflist3 {
+				type boolean;
+			}
+			choice choice1 {
+				container cont6;
+				container cont7;
+			}
+			must "../contX";
+			typedef typedef2 {
+				type int16;
+			}
+		}
+	}
+
+
+
+
+}

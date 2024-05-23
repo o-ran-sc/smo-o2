@@ -1,0 +1,140 @@
+module o-ran-smo-teiv-equipment-to-ran {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-equipment-to-ran";
+    prefix or-teiv-equiptoran;
+
+    import o-ran-smo-teiv-common-yang-types {prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+    import o-ran-smo-teiv-equipment {prefix or-teiv-equip; }
+
+    import o-ran-smo-teiv-ran {prefix or-teiv-ran; }
+
+
+    organization "ORAN";
+    contact "The Authors";
+    description 
+    "RAN Equipment to Logical topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the RAN Equipment to Logical topology
+    entities and relations.";
+
+    revision "2024-05-02" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain EQUIPMENT_TO_RAN;
+
+    or-teiv-yext:biDirectionalTopologyRelationship PHYSICALNF_SERVES_GNBDUFUNCTION { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-gnbduFunction {
+            description "gNodeB-DU Function serviced by this Physical NF.";
+            or-teiv-yext:aSide or-teiv-equip:PhysicalNF;
+            type instance-identifier;
+        }
+
+        leaf serving-physicalNF {
+            description "Physical NF serves this gNodeB-DU Function.";
+            or-teiv-yext:bSide or-teiv-ran:GNBDUFunction;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship PHYSICALNF_SERVES_GNBCUCPFUNCTION { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-gnbcucpFunction {
+            description "gNodeB-CUCP Function serviced by this Physical NF.";
+            or-teiv-yext:aSide or-teiv-equip:PhysicalNF;
+            type instance-identifier;
+        }
+
+        leaf serving-physicalNF {
+            description "Physical NF serves this gNodeB-CUCP Function.";
+            or-teiv-yext:bSide or-teiv-ran:GNBCUCPFunction;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship PHYSICALNF_SERVES_GNBCUUPFUNCTION { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-gnbcuupFunction {
+            description "gNodeB-CUUP Function serviced by this Physical NF.";
+            or-teiv-yext:aSide or-teiv-equip:PhysicalNF;
+            type instance-identifier;
+        }
+
+        leaf serving-physicalNF {
+            description "Physical NF serves this gNodeB-CUUP Function.";
+            or-teiv-yext:bSide or-teiv-ran:GNBCUUPFunction;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship PHYSICALNF_SERVES_ENODEBFUNCTION { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-enodebFunction {
+            description "eNodeB Function serviced by this Physical NF.";
+            or-teiv-yext:aSide or-teiv-equip:PhysicalNF;
+            type instance-identifier;
+        }
+
+        leaf serving-physicalNF {
+            description "Physical NF serves this eNodeB Function.";
+            or-teiv-yext:bSide or-teiv-ran:ENodeBFunction;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNAMODULE_SERVES_ANTENNACAPABILITY { // 0..n to 0..m
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-antennaCapability {
+            description "Antenna Capability serviced by this Antenna Module.";
+            or-teiv-yext:aSide or-teiv-equip:AntennaModule;
+            type instance-identifier;
+        }
+
+        leaf-list serving-antennaModule {
+            description "Antenna Module serves this Antenna Capability.";
+            or-teiv-yext:bSide or-teiv-ran:AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship SECTOR_GROUPS_ANTENNAMODULE { // 0..1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list grouped-antennaModule {
+            description "Sector groups Antenna Module.";
+            or-teiv-yext:aSide or-teiv-ran:Sector;
+            type instance-identifier;
+        }
+
+        leaf grouped-by-sector {
+            description "Antenna Module grouped by Sector.";
+            or-teiv-yext:bSide or-teiv-equip:AntennaModule;
+            type instance-identifier;
+        }
+    }
+}

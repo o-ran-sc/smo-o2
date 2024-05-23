@@ -1,0 +1,28 @@
+module augment-intosub-augmenting-module {
+
+    namespace "test:augment-intosub-augmenting-module";
+    prefix augmenting;
+
+    revision "2020-12-10";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	import augment-intosub-module {
+		prefix module;
+	}
+
+	augment "/module:cont1" {
+		leaf leaf11 {
+			type string;
+		}
+	}
+
+	augment "/module:cont2" {		// this sits in the submodule
+		leaf leaf12 {
+			type string;
+		}
+	}
+
+}

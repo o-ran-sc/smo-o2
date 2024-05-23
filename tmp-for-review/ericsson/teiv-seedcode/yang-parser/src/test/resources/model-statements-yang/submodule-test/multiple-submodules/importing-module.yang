@@ -1,0 +1,28 @@
+module importing-module {
+
+    namespace "test:importing-module";
+    prefix importing;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-10";
+
+	import module {
+		prefix main;
+	}
+
+	augment "/main:cont2" {			// sits in module
+		leaf leaf81 {
+			type string;
+		}
+	}
+
+	augment "/main:cont23" {		// this sits in the submodule2
+		leaf leaf82 {
+			type main:typedef25;	// this sits in the submodule2
+		}
+	}
+
+}

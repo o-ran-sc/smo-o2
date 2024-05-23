@@ -1,0 +1,35 @@
+module module1 {
+
+    namespace "test:module1";
+    prefix "this";
+
+    import module2 {
+        prefix "module2";
+    }
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+    container cont1 {
+        leaf leaf1 {
+            type uint32;
+        }
+    }
+
+    uses module2:grouping2;
+
+    module2:ext ext1;
+
+    container cont2 {
+        presence "important";
+        if-feature module2:feature1;
+    }
+
+
+
+}

@@ -1,0 +1,11 @@
+{
+    "RAN/entity-types/ENodeBFunction/entities/ENodeBFunction_1": {
+
+    },
+    "OAM_TO_RAN/relationship-types/MANAGEDELEMENT_MANAGES_ENODEBFUNCTION/relationships/relation_1": {
+
+    },
+    "OAM/entity-types/ManagedElement/entities/ManagedElement_1": {
+
+    }
+}

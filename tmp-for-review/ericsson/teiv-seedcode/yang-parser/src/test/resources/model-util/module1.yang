@@ -1,0 +1,56 @@
+module module1 {
+
+	yang-version "1.1";
+
+    namespace "test:module1";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-09-30" {
+        description "initial revision";
+    }
+
+    leaf leaf1 {
+    	type bits {
+    		bit one;
+    		bit two;
+    		bit three;
+    	}
+    }
+
+    leaf leaf2 {
+    	type bits {
+    		bit one {
+    			position 71;
+    		}
+    		bit two;
+    		bit three {
+    			position 402;
+    		}
+    	}
+    }
+
+	leaf leaf3 {
+		type enumeration {
+			enum one;
+			enum two;
+			enum three;
+		}
+	}
+
+	leaf leaf4 {
+		type enumeration {
+			enum one {
+				value 71;
+			}
+			enum two;
+			enum three {
+				value 402;
+			}
+		}
+	}
+
+}

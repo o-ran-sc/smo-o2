@@ -1,0 +1,13 @@
+{
+    "specversion": "1.0",
+    "id": "063b0da2-8396-11ee-b962-0242ac120002",
+    "source": "dmi-plugin:nm-3",
+    "type": "ran-logical-topology.source-entity-delete",
+    "time": "2023-10-25T13:30:01Z",
+    "datacontenttype": "application/json",
+    "dataschema": "https://ties:8080/schemas/v1/source-entity-delete",
+    "data": {
+        "type": "cmHandle",
+        "value": "395221E080CCF0FD1929103B15999999"
+    }
+}

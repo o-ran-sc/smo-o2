@@ -1,0 +1,15 @@
+submodule basic-submodule {
+	yang-version 1.0;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27";
+
+    belongs-to basic-module-including {
+    	prefix;
+    }
+
+    container cont2;
+}

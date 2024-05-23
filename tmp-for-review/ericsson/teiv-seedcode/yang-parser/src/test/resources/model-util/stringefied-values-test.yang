@@ -1,0 +1,119 @@
+module stringefied-values-test {
+
+    namespace "test:stringefied-values-test";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2021-04-06" {
+        description "initial revision";
+    }
+
+	// ------------------------- integers ------------------------------
+
+	leaf leaf11 {
+		type int8;
+	}
+
+	leaf leaf12 {
+		type int16 {
+			range 10..20;
+		}
+	}
+
+	leaf leaf13 {
+		type int16 {
+			range "0..20 | 40..60";
+		}
+	}
+
+	// ------------------------- decimal64 ------------------------------
+
+	leaf leaf21 {
+		type decimal64 {
+			fraction-digits 1;
+		}
+	}
+
+	leaf leaf22 {
+		type decimal64 {
+			fraction-digits 3;
+			range "0.0 .. 10.0 | 20.2 .. max";
+		}
+	}
+
+	leaf leaf23 {
+		type decimal64 {
+			fraction-digits 17;
+		}
+	}
+
+	// ------------------------- boolean ------------------------------
+
+	leaf leaf31 {
+		type boolean;
+	}
+
+	// ------------------------- enumeration ------------------------------
+
+	leaf leaf41 {
+		type enumeration {
+			enum RED;
+			enum YELLOW;
+			enum GREEN;
+		}
+	}
+
+	// ------------------------- bits ------------------------------
+
+	leaf leaf51 {
+		type bits {
+			bit ONE;
+			bit TWO;
+			bit THREE;
+		}
+	}
+
+	// ------------------------- string ------------------------------
+
+	leaf leaf61 {
+		type string;
+	}
+
+	leaf leaf62 {
+		type string {
+			length 5..10;
+		}
+	}
+
+	leaf leaf63 {
+		type string {
+			length "2..4 | 8..10";
+		}
+	}
+
+	leaf leaf64 {
+		type string {
+			pattern "ab*c";
+		}
+	}
+
+	// ------------------------- empty ------------------------------
+
+	leaf leaf71 {
+		type empty;
+	}
+
+
+	// ------------------------- union ------------------------------
+
+	leaf leaf81 {
+		type union {
+			type uint8;
+			type string;
+		}
+	}
+
+}

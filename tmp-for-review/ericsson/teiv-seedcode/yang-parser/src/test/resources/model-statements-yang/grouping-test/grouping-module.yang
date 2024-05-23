@@ -1,0 +1,104 @@
+module grouping-module {
+
+    namespace "urn:o-ran:yang:grouping-module";
+    prefix this;
+
+    description "yang test module for uses / grouping
+    Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2015-10-20" {
+        description "Initial revision";
+    }
+
+    container cont999 {
+        leaf leaf9991 {
+            type string;
+        }
+    }
+
+    grouping grouping1 {
+        container contgroup1 {
+            leaf leafgroup1 {
+                type string;
+            }
+        }
+    }
+
+	// - - - augmenting a choice
+
+	grouping grouping2 {
+        leaf leaf21 {
+            type string;
+        }
+        leaf leaf22 {
+            type boolean;
+        }
+        choice choice23 {
+            leaf leaf41 {
+                type binary;
+            }
+            leaf leaf42 {
+                type empty;
+            }
+            case case43 {
+            	leaf leaf43 {
+            		type uint8;
+            	}
+            }
+        }
+    }
+
+    // - - - - refine handling
+
+    grouping grouping3 {
+    	container cont31 {
+    		leaf leaf35 {
+    			type string;
+    			default "hello";
+    		}
+    		leaf leaf36 {
+    			type boolean;
+    			config true;
+    			mandatory true;
+    		}
+    		leaf-list leaflist37 {
+    			type int32;
+    			default 10;
+    			default 20;
+    			default 30;
+    			min-elements 2;
+    			max-elements 5;
+    		}
+    	}
+   		container cont32 {
+   			description "this is a non-presence container";
+   			if-feature feature1;
+   			must "abc > 10";
+    	}
+    }
+
+    // - - - - refine handling (extensions)
+
+    extension extension1;
+
+    extension extension2 {
+    	argument extension2argument;
+    }
+
+    extension extension3;
+
+	grouping grouping4 {
+		container cont41 {
+			this:extension1;
+			this:extension2 "hello";
+			this:extension2 "world";
+		}
+		container cont42 {
+			this:extension3;
+		}
+	}
+
+
+
+}

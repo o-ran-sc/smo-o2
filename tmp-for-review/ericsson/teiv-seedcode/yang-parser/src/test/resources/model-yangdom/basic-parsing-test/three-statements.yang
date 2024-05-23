@@ -1,0 +1,15 @@
+module three-statements {
+
+    namespace "three-statements-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-09-27";
+
+	leaf leaf7 leaf7 {
+		type string;
+	}
+}

@@ -1,0 +1,338 @@
+ce_specversion:::1.0,ce_id:::a30e63c9-d29e-46ff-b99a-b63ed83fd237,ce_source:::dmi-plugin:nm-1,ce_type:::ran-logical-topology.merge,content-type:::application/yang-data+json,ce_time:::2023-11-30T09:05:00Z,ce_dataschema:::https://ties:8080/schemas/v1/r1-topology,,,{
+    "entities": {
+        "o-ran-smo-teiv-oam:ManagedElement": [
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01",
+                "attributes": {
+                    "fdn": "ManagedElement=NR01",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-ran:GNBDUFunction": [
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1",
+                "attributes": {
+                    "gNBDUId": 1,
+                    "gNBId": 1,
+                    "gNBIdLength": 23,
+                    "dUpLMNId": {
+                        "mcc": 353,
+                        "mnc": 87
+                    },
+                    "fdn": "ManagedElement=NR01,GNBDUFunction=1",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-ran:NRSectorCarrier": [
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=1",
+                "attributes": {
+                    "arfcnDL": 4000,
+                    "arfcnUL": 40000,
+                    "frequencyDL": 4,
+                    "frequencyUL": 40,
+                    "fdn": "ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=1",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-GNBDU:NRSectorCarrier[@id=1]"
+                    }
+                }
+            },
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=2",
+                "attributes": {
+                    "arfcnDL": 5000,
+                    "arfcnUL": 50000,
+                    "frequencyDL": 5,
+                    "frequencyUL": 50,
+                    "fdn": "ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=2",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-GNBDU:NRSectorCarrier[@id=2]"
+                    }
+                }
+            },
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=3",
+                "attributes": {
+                    "arfcnDL": 6000,
+                    "arfcnUL": 60000,
+                    "frequencyDL": 6,
+                    "frequencyUL": 60,
+                    "fdn": "ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=3",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-GNBDU:NRSectorCarrier[@id=3]"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-ran:NRCellDU": [
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=1",
+                "attributes": {
+                    "cellLocalId": 1,
+                    "nRTAC": 40,
+                    "nRPCI": 400,
+                    "nCI": 24577,
+                    "fdn": "ManagedElement=NR01,GNBDUFunction=1,NRCellDU=1",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-GNBDU:NRCellDU[@id=1]"
+                    }
+                }
+            },
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=2",
+                "attributes": {
+                    "cellLocalId": 2,
+                    "nRTAC": 50,
+                    "nRPCI": 500,
+                    "nCI": 24578,
+                    "fdn": "ManagedElement=NR01,GNBDUFunction=1,NRCellDU=2",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-GNBDU:NRCellDU[@id=2]"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-ran:AntennaCapability": [
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=1",
+                "attributes": {
+                    "eUtranFqBands": "[1,2,3]",
+                    "geranFqBands": "[10,11,12]",
+                    "nRFqBands": "[100,101,102]",
+                    "fdn": "ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=1",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-ComTop:NodeSupport[@id=1]/o-ran-smo-RmeSectorEquipmentFunction:SectorEquipmentFunction[@id=1]"
+                    }
+                }
+            },
+            {
+                "id": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=2",
+                "attributes": {
+                    "eUtranFqBands": "[4,5,6]",
+                    "geranFqBands": "[13,14,15]",
+                    "nRFqBands": "[103,104,105]",
+                    "fdn": "ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=2",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01]/o-ran-smo-ComTop:NodeSupport[@id=1]/o-ran-smo-RmeSectorEquipmentFunction:SectorEquipmentFunction[@id=2]"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-equipment:AntennaModule": [
+            {
+                "id": "urn:o-ran:smo-teiv-equipment:1",
+                "attributes": {
+                    "antennaModelNumber": "1",
+                    "mechanicalAntennaBearing": 50,
+                    "mechanicalAntennaTilt": 10,
+                    "positionWithinSector": "Unknown",
+                    "totalTilt": 14,
+                    "electricalAntennaTilt": 2,
+                    "fdn": "Unknown",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "Unknown"
+                    }
+                }
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment:2",
+                "attributes": {
+                    "antennaModelNumber": "2",
+                    "mechanicalAntennaBearing": 45,
+                    "mechanicalAntennaTilt": 12,
+                    "positionWithinSector": "Unknown",
+                    "totalTilt": 15,
+                    "electricalAntennaTilt": 1,
+                    "fdn": "Unknown",
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "Unknown"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-equipment:Site": [
+            {
+                "id": "urn:o-ran:smo-teiv-equipment:1",
+                "attributes": {
+                    "name": "Site-1",
+					"geo-location": {
+					    "latitude": 41.73297,
+                        "longitude": -78.007696
+					},
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "Unknown"
+                    }
+                }
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment:2",
+                "attributes": {
+                    "name": "Site-2",
+					"geo-location": {
+					    "latitude": 46.73297,
+                        "longitude": -76.007696
+					},
+                    "cmId": {
+                        "cmHandle": "9D2C7AA8AECF0B5FDE21FDBD2B93EEAG",
+                        "resourceIdentifier": "Unknown"
+                    }
+                }
+            }
+        ],
+        "o-ran-smo-teiv-equipment-to-ran:Sector": [
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:1",
+                "attributes": {
+                    "sectorId": 1,
+                    "azimuth": 75.345,
+					"geo-location": {
+					    "latitude": 40.73297,
+                        "longitude": -74.007696
+					}
+                }
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:2",
+                "attributes": {
+                    "sectorId": 2,
+                    "azimuth": 90.8967,
+					"geo-location": {
+					    "latitude": 41.73297,
+                        "longitude": -73.007696
+					}
+                }
+            }
+        ]
+    },
+    "relationships": {
+        "o-ran-smo-teiv-oam-to-ran:MANAGEDELEMENT_MANAGES_GNBDUFUNCTION": [
+            {
+                "id": "urn:o-ran:smo-teiv-oam-to-logical:1",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1"
+            }
+        ],
+        "o-ran-smo-teiv-ran:GNBDUFUNCTION_PROVIDES_NRSECTORCARRIER": [
+            {
+                "id": "urn:o-ran:smo-teiv-ran:1",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:2",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=2"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:3",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=3"
+            }
+        ],
+        "o-ran-smo-teiv-ran:GNBDUFUNCTION_PROVIDES_NRCELLDU": [
+            {
+                "id": "urn:o-ran:smo-teiv-ran:1",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:2",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=2"
+            }
+        ],
+        "o-ran-smo-teiv-ran:NRCELLDU_USES_NRSECTORCARRIER": [
+            {
+                "id": "urn:o-ran:smo-teiv-ran:1",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:2",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=2",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=2"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:3",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=2",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=3"
+            }
+        ],
+        "o-ran-smo-teiv-ran:NRSECTORCARRIER_USES_ANTENNACAPABILITY": [
+            {
+                "id": "urn:o-ran:smo-teiv-ran:1",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:2",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=2",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=2"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-ran:3",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRSectorCarrier=3",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=2"
+            }
+        ],
+        "o-ran-smo-teiv-equipment-to-ran:ANTENNAMODULE_SERVES_ANTENNACAPABILITY": [
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:1",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=1",
+                "bSide": "urn:o-ran:smo-teiv-equipment:1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:2",
+                "aSide": "urn:3gpp:dn:ManagedElement=NR01,NodeSupport=1,SectorEquipmentFunction=2",
+                "bSide": "urn:o-ran:smo-teiv-equipment:2"
+            }
+        ],
+        "o-ran-smo-teiv-equipment-to-ran:ANTENNAMODULE_INSTALLED_AT_SITE": [
+            {
+                "id": "urn:o-ran:smo-teiv-equipment:1",
+                "aSide": "urn:o-ran:smo-teiv-equipment:1",
+                "bSide": "urn:o-ran:smo-teiv-equipment:1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment:2",
+                "aSide": "urn:o-ran:smo-teiv-equipment:2",
+                "bSide": "urn:o-ran:smo-teiv-equipment:2"
+            }
+        ],
+        "o-ran-smo-teiv-equipment-to-ran:SECTOR_GROUPS_NRCELLDU": [
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:1",
+                "aSide": "urn:o-ran:smo-teiv-equipment-to-ran:1",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=1"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:2",
+                "aSide": "urn:o-ran:smo-teiv-equipment-to-ran:2",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=2"
+            },
+            {
+                "id": "urn:o-ran:smo-teiv-equipment-to-ran:3",
+                "aSide": "urn:o-ran:smo-teiv-equipment-to-ran:2",
+                "bSide": "urn:3gpp:dn:ManagedElement=NR01,GNBDUFunction=1,NRCellDU=3"
+            }
+        ]
+    }
+}

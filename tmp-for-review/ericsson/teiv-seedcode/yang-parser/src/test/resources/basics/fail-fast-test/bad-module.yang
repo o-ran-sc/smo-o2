@@ -1,0 +1,21 @@
+module bad-module {
+
+	namespace "test:bad-module";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	 Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-10-15" {
+		description "initial revision";
+	}
+
+	include unknown-submodule {
+		revision-date 2020-10-02;
+	}
+
+	container cont1 {
+		uses "unknown-prefix:some-grouping";
+	}
+}

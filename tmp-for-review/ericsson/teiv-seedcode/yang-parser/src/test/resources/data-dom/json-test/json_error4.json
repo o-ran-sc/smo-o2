@@ -1,0 +1,11 @@
+{
+    "module1:cont1": {
+        "leaf-list1": [
+            "the annotation below",
+            "is not encoded as JSON array of JSON objects"
+        ],
+        "@leaf-list1": [
+            "this should have been an object"
+        ]
+    }
+}

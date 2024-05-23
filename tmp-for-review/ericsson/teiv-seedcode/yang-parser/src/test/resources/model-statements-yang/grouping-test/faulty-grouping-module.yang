@@ -1,0 +1,135 @@
+module faulty-grouping-module {
+
+	namespace "test:faulty-grouping-module";
+	prefix this;
+
+	description "yang test module for uses / grouping";
+
+	import not-supplied-module {
+		prefix nsm;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2015-10-20" {
+		description "Initial revision";
+	}
+
+	grouping simple-grouping {
+		container cont91;
+		leaf leaf92 {
+			type string;
+		}
+	}
+
+	// - - - - grouping cannot be found
+
+	container cont1 {
+		uses unknown-prefix:some-grouping;
+	}
+
+	container cont2 {
+		uses this:unknown-grouping;
+	}
+
+	container cont3 {
+		uses unknown-grouping;
+	}
+
+	// - - - - obsolete usage
+
+	container cont4 {
+		uses this:simple-grouping {
+			status obsolete;
+		}
+	}
+
+	// - - - - self-referencing
+
+	grouping grouping1 {
+		container contX;
+		uses this:grouping1;
+	}
+
+	// - - - - circular usage
+
+	grouping grouping2 {
+		container contX;
+		uses this:grouping3;
+	}
+
+	grouping grouping3 {
+		container contY;
+		uses this:grouping2;
+	}
+
+	// ------ augment path cannot be found or syntax error
+
+	container cont5 {
+		uses this:simple-grouping {
+			augment /unknown-absolute-path {
+				container contX;
+			}
+		}
+	}
+
+	container cont6 {
+		uses this:simple-grouping {
+			augment container-that-does-not-exist-in-simple-grouping {
+				container contX;
+			}
+		}
+	}
+
+	// - - - - - - Invalid paths - - - - -
+
+	uses;
+
+	uses "";
+
+	uses " ";
+
+	uses "nsm:non-existing-grouping";
+
+	grouping grouping5 {
+		leaf leaf11 {
+			type int32;
+		}
+	}
+
+	grouping grouping6 {
+		leaf leaf12 {
+			type int32;
+		}
+	}
+
+	container cont8 {
+		uses this:grouping5 {
+			refine;
+			refine "";
+			refine "/absolute-path";
+			refine "unknown-leaf";
+		}
+
+		uses this:grouping6 {
+			augment;
+			augment "";
+			augment "/absolute-path";
+			augment "unknown-leaf";
+		}
+	}
+
+	// - - - - - - Nested unresolvable uses - - - - -
+
+	grouping grouping7 {
+
+		uses unknown-grouping1;
+		uses unknown-grouping2;
+	}
+
+	container cont9 {
+		uses grouping7;
+	}
+}

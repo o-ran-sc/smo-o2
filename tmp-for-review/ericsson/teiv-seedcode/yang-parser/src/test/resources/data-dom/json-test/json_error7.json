@@ -1,0 +1,8 @@
+{
+    "module1:cont1": {
+        "module2:leaf1": "the name of the annotation must match the anme of the member, hence the annotation below is wrong",
+        "@leaf1": {
+
+        }
+    }
+}

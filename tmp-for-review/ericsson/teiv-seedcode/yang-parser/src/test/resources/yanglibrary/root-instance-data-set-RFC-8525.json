@@ -1,0 +1,95 @@
+{
+    "ietf-yang-library:yang-library": [
+        {
+            "content-id": "9876",
+            "module-set": [
+                {
+                    "name": "set1",
+                    "module": [
+                        {
+                            "name": "test-module1",
+                            "revision": "2020-01-01",
+                            "namespace": "com:foo:test-module1",
+                            "location": [
+                                "www.acme.com/test-module1.yang",
+                                "www.modules.acme.com/test-module1.yang"
+                            ],
+                            "submodule": [
+                                {
+                                    "name": "test-module1-submodule",
+                                    "revision": ""
+                                }
+                            ],
+                            "feature": [
+                                "feature1",
+                                "feature2",
+                                "feature3"
+                            ],
+                            "deviation": [
+                                "test-module1-ext"
+                            ]
+                        },
+                        {
+                            "name": "test-module1-ext",
+                            "revision": "2020-03-03",
+                            "namespace": "com:foo:test-module1"
+                        }
+                    ],
+                    "import-only-module": [
+                        {
+                            "name": "test-module2",
+                            "revision": "",
+                            "namespace": "com:foo:test-module2"
+                        }
+                    ]
+                },
+                {
+                    "name": "set2",
+                    "import-only-module": [
+                        {
+                            "name": "test-module6",
+                            "revision": "2019-06-06",
+                            "namespace": "com:foo:test-module6"
+                        }
+                    ]
+                },
+                {
+                    "name": "set3",
+                    "import-only-module": [
+                        {
+                            "name": "test-module7",
+                            "revision": "2019-07-07",
+                            "namespace": "com:foo:test-module7"
+                        }
+                    ]
+                }
+            ],
+            "schema": [
+                {
+                    "name": "schema1",
+                    "module-set": [
+                        "set1",
+                        "set2"
+                    ]
+                },
+                {
+                    "name": "schema2",
+                    "module-set": [
+                        "set2",
+                        "set3"
+                    ]
+                }
+            ],
+            "datastore": [
+                {
+                    "name": "ietf-datastores:running",
+                    "schema": "schema1"
+                },
+                {
+                    "name": "ietf-datastores:operational",
+                    "schema": "schema2"
+                }
+            ]
+        }
+    ]
+}

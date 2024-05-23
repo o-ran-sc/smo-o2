@@ -1,0 +1,174 @@
+module deviate-other-tests-module {
+
+    namespace "urn:ietf:params:xml:ns:yang:deviate-other-tests-module";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-09" {
+        description "initial revision";
+    }
+
+// ---------------- Deviate something augmented ---------------------
+
+    container cont01 {
+    }
+
+    augment /this:cont01 {
+        leaf leaf11 {
+            type string;
+        }
+        leaf-list leaflist12 {
+            type int16;
+        }
+    }
+
+    deviation /this:cont01/this:leaf11 {
+        deviate add {
+            mandatory true;
+            config false;
+        }
+    }
+
+    deviation /this:cont01/this:leaflist12 {
+        deviate add {
+            min-elements 20;
+            max-elements 25;
+        }
+    }
+
+// ---------------- Deviate-replace something that was deviate-added ---------------------
+
+    container cont02 {
+    }
+
+    deviation /this:cont02 {
+        deviate add {
+            config false;
+        }
+        deviate replace {
+            config true;
+        }
+    }
+
+// ---------------- Deviate-add something that was deviate-added ---------------------
+
+    container cont03 {
+    }
+
+    deviation /this:cont03 {
+        deviate add {
+            config false;
+        }
+        deviate add {
+            config true;
+        }
+    }
+
+// ---------------- Deviate-replace something that was deviate-replaced ---------------------
+
+    container cont04 {
+        config true;
+    }
+
+    deviation /this:cont04 {
+        deviate replace {
+            config false;
+        }
+        deviate replace {
+            config true;
+        }
+    }
+
+// ---------------- Deviate-delete something that was deviate-replaced ---------------------
+
+    container cont05 {
+        config true;
+    }
+
+    deviation /this:cont05 {
+        deviate replace {
+            config false;
+        }
+        deviate delete {
+            config false;
+        }
+    }
+
+// ---------------- Deviate-delete something that was deviate-added ---------------------
+
+    container cont06 {
+    }
+
+    deviation /this:cont06 {
+        deviate add {
+            config false;
+        }
+        deviate delete {
+            config false;
+        }
+    }
+
+// ---------------- Some error scenarios ---------------------
+
+    container cont07;
+
+    deviation /this:cont07 {
+    	deviate blurb;
+	}
+
+    container cont08;
+
+    deviation /this:cont08 {
+    	deviate;
+	}
+
+	deviation "//this:cont08" {		// Wrong path
+		deviate add {
+			config true;
+		}
+	}
+
+    container cont09;
+
+	deviation "/this:cont09/" {		// This actually works...
+		deviate add {
+			config false;
+		}
+	}
+
+	deviation "/" {					// Wrong path
+		deviate add {
+			config false;
+		}
+	}
+
+	deviation "" {					// Wrong path
+		deviate add {
+			config false;
+		}
+	}
+
+	deviation "  " {				// Wrong path
+		deviate add {
+			config false;
+		}
+	}
+
+	deviation  {					// Wrong path
+		deviate add {
+			config false;
+		}
+	}
+
+    container cont10;
+
+	deviation "  /this:cont10  " {		// OK (will be trimmed)
+		deviate add {
+			config false;
+		}
+	}
+
+}

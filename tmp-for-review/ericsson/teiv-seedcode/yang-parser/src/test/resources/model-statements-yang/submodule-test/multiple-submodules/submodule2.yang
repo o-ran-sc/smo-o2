@@ -1,0 +1,44 @@
+submodule submodule2 {
+
+	belongs-to module {
+	    prefix main-mod;			// using different prefix here to make things interesting
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-10";
+
+	container cont22 {
+		container cont61;
+	}
+
+	container cont23;
+
+	augment "/main-mod:cont11" {		// sits in submodule1
+		leaf leaf24 {
+			type boolean;
+		}
+	}
+
+	augment "/cont12" {		// sits in submodule1
+		leaf leaf25 {
+			type uint32;
+		}
+	}
+
+	deviation "/main-mod:cont12/main-mod:cont14" {		// sits in submodule1
+		deviate not-supported;
+	}
+
+	deviation "/main-mod:cont34/main-mod:cont37" {		// sits in submodule3
+		deviate not-supported;
+	}
+
+	typedef typedef25 {
+		type leafref {
+			path "/main-mod:leaf1";
+		}
+	}
+}

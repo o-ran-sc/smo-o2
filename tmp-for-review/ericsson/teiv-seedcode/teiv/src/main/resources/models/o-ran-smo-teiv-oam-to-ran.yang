@@ -1,0 +1,106 @@
+module o-ran-smo-teiv-oam-to-ran {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-oam-to-ran";
+    prefix or-teiv-oamtoran;
+
+    import o-ran-smo-teiv-common-yang-types {prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+    import o-ran-smo-teiv-oam {prefix or-teiv-oam; }
+
+    import o-ran-smo-teiv-ran {prefix or-teiv-ran; }
+
+    organization "ORAN";
+    contact "The Authors";
+    description
+    "RAN O&M to Logical topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+    
+    This model contains the RAN O&M to Logical topology relations";
+
+    revision "2024-05-02" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain OAM_TO_RAN;
+
+    or-teiv-yext:biDirectionalTopologyRelationship MANAGEDELEMENT_MANAGES_ENODEBFUNCTION {   // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list managed-enodebFunction {
+            description "Managed Element manages eNodeB Function.";
+            or-teiv-yext:aSide or-teiv-oam:ManagedElement;
+            type instance-identifier;
+        }
+
+        leaf managed-by-managedElement {
+            description "eNodeB Function managed by Managed Element.";
+            or-teiv-yext:bSide or-teiv-ran:ENodeBFunction;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship MANAGEDELEMENT_MANAGES_GNBDUFUNCTION {    // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list managed-gnbduFunction {
+            description "Managed Element manages gNodeB-DU Function.";
+            or-teiv-yext:aSide or-teiv-oam:ManagedElement;
+            type instance-identifier;
+        }
+
+        leaf managed-by-managedElement {
+            description "gNodeB-DU Function managed by Managed Element.";
+            or-teiv-yext:bSide or-teiv-ran:GNBDUFunction;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship MANAGEDELEMENT_MANAGES_GNBCUCPFUNCTION {    // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list managed-gnbcucpFunction {
+            description "Managed Element manages gNodeB-CU-CP Function.";
+            or-teiv-yext:aSide or-teiv-oam:ManagedElement;
+            type instance-identifier;
+        }
+
+        leaf managed-by-managedElement {
+            description "gNodeB-CU-CP Function managed by Managed Element.";
+            or-teiv-yext:bSide or-teiv-ran:GNBCUCPFunction;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship MANAGEDELEMENT_MANAGES_GNBCUUPFUNCTION {    // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list managed-gnbcuupFunction {
+            description "Managed Element manages gNodeB-CU-UP Function.";
+            or-teiv-yext:aSide or-teiv-oam:ManagedElement;
+            type instance-identifier;
+        }
+
+        leaf managed-by-managedElement {
+            description "gNodeB-CU-UP Function managed by Managed Element.";
+            or-teiv-yext:bSide or-teiv-ran:GNBCUUPFunction;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+}

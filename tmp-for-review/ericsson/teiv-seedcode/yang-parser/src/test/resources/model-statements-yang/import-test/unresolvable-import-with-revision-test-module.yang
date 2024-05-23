@@ -1,0 +1,19 @@
+module unresolvable-import-with-revision-test-module {
+
+    namespace "test:unresolvable-import-with-revision-test-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-10-02" {
+        description "initial revision";
+    }
+
+	import unresolvable-module {
+		prefix prefix1;
+		revision-date 2020-10-02;
+	}
+
+}

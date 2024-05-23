@@ -1,0 +1,26 @@
+submodule submodule-test-submodule {
+
+    belongs-to submodule-test-module {
+        prefix owner;
+    }
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-06-01" {
+        description "Initial revision";
+    }
+
+    container cont2 {
+        leaf leaf21 {
+            type string;
+        }
+    }
+
+    grouping grouping1 {
+        leaf leaf31 {
+            type string;
+        }
+    }
+}

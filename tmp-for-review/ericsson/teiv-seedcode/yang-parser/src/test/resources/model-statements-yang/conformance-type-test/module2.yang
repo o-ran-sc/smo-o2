@@ -1,0 +1,46 @@
+module module2 {
+
+    namespace "test:module2";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+    extension ext {
+        argument name;
+    }
+
+    grouping grouping2 {
+        container contgroup2 {
+            leaf leafgroup2 {
+                type string;
+            }
+        }
+    }
+
+    container cont2 {
+        leaf leaf2 {
+            type uint32;
+        }
+    }
+
+    uses this:grouping2;
+
+    rpc rpc1;
+
+    list list1 {
+        key leaf1;
+        leaf leaf1 {
+            type string;
+        }
+    }
+
+    feature feature1;
+
+    this:ext ext1;
+}

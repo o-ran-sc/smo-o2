@@ -1,0 +1,90 @@
+module o-ran-smo-teiv-common-yang-types {
+
+  yang-version 1.1;
+  namespace "urn:o-ran:smo-teiv-common-yang-types";
+  prefix or-teiv-types;
+
+  import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+  import _3gpp-common-yang-types { prefix types3gpp; }
+
+  organization "ORAN";
+  contact "The Authors";
+  description
+  "Topology and Inventory common types model
+
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+  This model contains re-usable data types that topology and inventory models
+  will frequently use as part of types and relationships.";
+
+  revision "2024-05-02" {
+    description "Initial revision.";
+    or-teiv-yext:label 0.3.0;
+  }
+
+  grouping Top_Grp_Type {
+
+    description "Grouping containing the key attribute common to all types. All types
+                MUST use this grouping.";
+
+    leaf id {
+      type string;
+      description "Unique identifier of topology entities. Represents the Entity Instance Identifier.";
+    }
+  }
+
+  grouping CM_ID {
+
+    description "Grouping containing the key attributes to make
+                use of Configuration Management (CM).";
+
+    leaf cmHandle {
+      type string;
+      description "Unique identifier for network entities in CM.";
+    }
+
+    leaf resourceIdentifier {
+      type string;
+      description "The xpath expression identifying the resource in the Node model yang tree.";
+    }
+  }
+
+  typedef _3GPP_FDN_Type {
+    type types3gpp:DistinguishedName;
+  }
+
+  container consumer-data {
+    description "This container defines the consumer-data. Consumer-data may be attached to Topology Entity or
+                Topology Relation instance, outside of the declared Topology Entity or Topology Relationship's attributes.
+                This container cannot be instantiated, and it MUST NOT be augmented or deviated in any way, unless stated
+                otherwise.";
+
+    container decorators {
+      description "This container serves as extension point for applications wishing to define their own decorators.
+                  This is done via augmentations. They can only be defined in name value pair.";
+    }
+
+    leaf-list classifiers {
+      description "Consumer defined tags to topology entities and relationships.";
+      type identityref { base classifier; }
+    }
+
+    leaf-list sourceIds {
+      description "An ordered list of identities that represent the set of native source identifiers for participating
+                  entities.";
+      type string;
+      ordered-by user;
+    }
+
+    container metadata {
+      description "This container serves as extension point to define metadata. They can only be defined in name value
+                  pair.";
+    }
+  }
+
+  identity classifier{
+    description  "The classifier is used as a base to provide all classifiers with identity. ";
+  }
+}

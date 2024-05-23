@@ -1,0 +1,452 @@
+module typedef-test-restrictions-module {
+
+	namespace "test:typedef-test-restrictions-module";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-11-11" {
+		description "initial revision";
+	}
+
+	typedef typedef1 {
+		type string {
+			length 10..20;
+			pattern "ab*c";
+		}
+		default "Hello";
+	}
+
+	typedef typedef2 {
+		type int32 {
+			range 30..40;
+		}
+		default 35;
+	}
+
+	typedef typedef3 {
+		type enumeration {
+			enum zero {
+				value 10;
+			}
+			enum one {
+				value 11;
+			}
+			enum two {
+				value 12;
+			}
+		}
+		default one;
+	}
+
+	typedef typedef4 {
+		type bits {
+			bit four {
+				position 16;
+			}
+			bit five {
+				position 17;
+			}
+			bit six {
+				position 18;
+			}
+		}
+	}
+
+// - - - - - - no changes - - - - - -
+
+	container cont1 {
+		leaf leaf1 {
+			type this:typedef1;
+		}
+		leaf leaf2 {
+			type this:typedef2;
+		}
+		leaf leaf3 {
+			type this:typedef3;
+		}
+		leaf leaf4 {
+			type this:typedef4;
+		}
+	}
+
+// - - - - - - some overrides - - - - - -
+
+	container cont2 {
+
+		leaf leaf7 {
+			type this:typedef1 {
+				length 12..15;
+				pattern "de*f";
+			}
+			default "World";
+		}
+
+		leaf leaf8 {
+			type this:typedef2 {
+				range 30..35;
+			}
+			default 32;
+		}
+
+		leaf leaf9 {
+			type this:typedef3 {
+				enum zero {
+					value 10;
+				}
+				enum one;
+			}
+			default zero;
+		}
+
+		leaf leaf10 {
+			type this:typedef4 {
+				bit five;
+				bit six {
+					position 18;
+				}
+			}
+			default six;
+		}
+	}
+
+// - - - - - - some multi-level overrides - - - - - -
+
+	typedef typedef13 {
+		type typedef1 {
+			length 5..8;
+			pattern "gh*i";
+			pattern "mn*o";
+		}
+	}
+
+	typedef typedef14 {
+		type typedef2 {
+			range 15..18;
+		}
+		default 20;
+	}
+
+	typedef typedef15 {
+		type this:typedef3 {
+			enum zero;
+			enum one;
+		}
+		default one;
+	}
+
+	container cont3 {
+
+		leaf leaf18 {
+			type this:typedef13 {
+				length 6..7;
+			}
+			default "Moon";
+		}
+
+		leaf leaf19 {
+			type this:typedef14 {
+				range 16..17;
+			}
+			default 13;
+		}
+
+		leaf leaf20 {
+			type this:typedef15 {
+				enum one;
+			}
+		}
+	}
+
+// - - - - - - some illegal statements for restriction - - - - - -
+
+	container cont4 {
+
+		leaf leaf28 {
+			type this:typedef1 {
+				range 12..15;		// Wrong, it's a string
+				enum one;			// Wrong, it's a string
+			}
+		}
+
+		leaf leaf29 {
+			type this:typedef2 {
+				length 12..15;		// Wrong, it's a numeric type
+				pattern "ab*c";		// Wrong, it's a numeric type
+				enum one;			// Wrong, it's a numeric type
+				bit two;			// Wrong, it's a numeric type
+			}
+		}
+
+		leaf leaf30 {
+			type this:typedef3 {
+				enum three {		// Wrong, does not exit in original
+					value 13;
+				}
+				enum two {
+					value 99;		// Wrong, assigning different value
+				}
+			}
+		}
+
+		leaf leaf31 {
+			type this:typedef4 {
+				bit seven {			// Wrong, does not exit in original
+					position 19;
+				}
+				bit six {
+					position 99;	// Wrong, assigning different position
+				}
+			}
+		}
+
+	}
+
+// - - - - - - some legal and illegal length restrictions - - - - - -
+
+	typedef typedef51 {
+		type string {
+			length 10..20;
+		}
+	}
+
+	typedef typedef52 {
+		type string {
+			length "10..20 | 50..60";
+		}
+	}
+
+	container cont5 {
+
+		leaf leaf51 {
+			type this:typedef51 {
+				length 0..15;		// Illegal, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf52 {
+			type this:typedef51 {
+				length 9..20;		// Illegal, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf53 {
+			type this:typedef51 {
+				length 0..6;		// Illegal, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf54 {
+			type this:typedef51 {
+				length 10..100;		// Illegal, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf55 {
+			type this:typedef51 {
+				length "10..12 | 18..30";		// Illegal, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf56 {
+			type this:typedef52 {
+				length 0..15;		// Illegal, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf57 {
+			type this:typedef52 {
+				length 55..65;		// Illegal, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf58 {
+			type this:typedef52 {
+				length 15..55;		// Illegal, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf59 {
+			type this:typedef52 {
+				length 5..55;		// Illegal, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf61 {
+			type this:typedef51 {
+				length 10..20;		// OK, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf62 {
+			type this:typedef51 {
+				length "10..10 | 20..20";		// OK, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf63 {
+			type this:typedef51 {
+				length 10..15;		// OK, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf64 {
+			type this:typedef51 {
+				length 15..20;		// OK, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf65 {
+			type this:typedef51 {
+				length "10..12 | 13..20";		// OK, Original restriction is [10-20]
+			}
+		}
+
+		leaf leaf66 {
+			type this:typedef52 {
+				length 10..20;		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf67 {
+			type this:typedef52 {
+				length 50..60;		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf68 {
+			type this:typedef52 {
+				length 10..15;		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf69 {
+			type this:typedef52 {
+				length 55..60;		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf70 {
+			type this:typedef52 {
+				length "10..20 | 50..50";		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf71 {
+			type this:typedef52 {
+				length "10..10";		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf72 {
+			type this:typedef52 {
+				length "11..13 | 15..20";		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+
+		leaf leaf73 {
+			type this:typedef52 {
+				length "11..13 | 15..17 | 50..52";		// OK, Original restriction is [10-20],[50-60]
+			}
+		}
+	}
+
+
+// - - - - - - some legal and illegal range restrictions - - - - - -
+
+	typedef typedef81 {
+		type int32 {
+			range -40..80;
+		}
+	}
+
+	typedef typedef82 {
+		type int32 {
+			range "-90..-40 | -10..20 | 40..70";
+		}
+	}
+
+	container cont8 {
+
+		leaf leaf81 {
+			type typedef81 {
+				range -50..-30;		// Illegal, original restriction is [-40..80]
+			}
+		}
+
+		leaf leaf82 {
+			type typedef81 {
+				range -40..90;		// Illegal, original restriction is [-40..80]
+			}
+		}
+
+		leaf leaf83 {
+			type typedef81 {
+				range -50..-45;		// Illegal, original restriction is [-40..80]
+			}
+		}
+
+		leaf leaf84 {
+			type typedef81 {
+				range 10..90;		// Illegal, original restriction is [-40..80]
+			}
+		}
+
+		leaf leaf85 {
+			type typedef81 {
+				range 80..90;		// Illegal, original restriction is [-40..80]
+			}
+		}
+
+		leaf leaf86 {
+			type typedef82 {
+				range -100..-80;		// Illegal, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf87 {
+			type typedef82 {
+				range -30..-20;		// Illegal, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf88 {
+			type typedef82 {
+				range 15..25;		// Illegal, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf89 {
+			type typedef82 {
+				range 30..40;		// Illegal, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf91 {
+			type typedef82 {
+				range -90..-40;		// OK, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf92 {
+			type typedef82 {
+				range "-90..-40 | -10..20";		// OK, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf93 {
+			type typedef82 {
+				range "0..10";		// OK, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+
+		leaf leaf94 {
+			type typedef82 {
+				range "3..4 | 50..60";		// OK, original restriction is [-90..-40] [-10..20] [40..70]
+			}
+		}
+	}
+
+}

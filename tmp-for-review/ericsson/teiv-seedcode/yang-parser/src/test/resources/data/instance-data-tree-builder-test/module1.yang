@@ -1,0 +1,40 @@
+module module1 {
+
+	namespace "test:module";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-07-21" {
+		description "initial revision";
+	}
+
+	container cont1 {
+
+		list list11 {
+			key "leaf111";
+
+			leaf leaf111 {
+				type string;
+			}
+			leaf leaf112 {
+				type string;
+			}
+			leaf-list leaflist113 {
+				type int32;
+			}
+		}
+
+		leaf leaf12 {
+			type uint32;
+		}
+
+		container cont13 {
+			leaf leaf131 {
+				type boolean;
+			}
+		}
+	}
+}

@@ -1,0 +1,137 @@
+{
+    "specversion": "1.0",
+    "id": "a30e63c9-d29e-46ff-b99a-b63ed83f0001",
+    "source": "dmi-plugin:nm-1",
+    "type": "ran-logical-topology.create",
+    "time": "2023-10-25T13:30:01Z",
+    "datacontenttype": "application/json",
+    "dataschema": "https://ties:8080/schemas/v1/r1-topology",
+    "data": {
+        "entities": [
+            {
+                "o-ran-smo-teiv-cloud:CloudNativeApplication": [
+                    {
+                        "id": "CloudNativeApplication_1",
+                        "attributes": {
+                            "name": "Test_CloudNativeApplication_1"
+                        }
+                    },
+                    {
+                        "id": "CloudNativeApplication_2",
+                        "attributes": {
+                            "name": "Test_CloudNativeApplication_2"
+                        }
+                    },
+                    {
+                        "id": "CloudNativeApplication_3",
+                        "attributes": {
+                            "name": "Test_CloudNativeApplication_3"
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBDUFunction": [
+                    {
+                        "id": "GNBDU_1",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=1",
+                            "dUpLMNId": {
+                                "mcc": "110",
+                                "mnc": "210"
+                            },
+                            "gNBDUId": 111,
+                            "gNBId": 123,
+                            "gNBIdLength": 3,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBCUUPFunction": [
+                    {
+                        "id": "GNBCUUP_1",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,GNBCUUPFunction=1",
+                            "gNBId": 123,
+                            "gNBIdLength": 3,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=GNBCUUPFunction]/o-ran-smo-GNBCUUP:GNBCUUPFunction[@id=1]"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBCUCPFunction": [
+                    {
+                        "id": "GNBCUCP_1",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,GNBCUCPFunction=1",
+                            "gNBCUName": "Test_gNBCU",
+                            "gNBId": 123,
+                            "gNBIdLength": 3,
+                            "pLMNId": {
+                                "mcc": "110",
+                                "mnc": "210"
+                            },
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=GNBCUCPFunction]/o-ran-smo-GNBCUCP:GNBCUCPFunction[@id=1]"
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "o-ran-smo-teiv-ran:GNBDUFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION": [
+                    {
+                        "id": "relation_1",
+                        "aSide": "GNBDU_1",
+                        "bSide": "CloudNativeApplication_1"
+                    },
+                    {
+                        "id": "relation_4",
+                        "aSide": "GNBDU_1",
+                        "bSide": "CloudNativeApplication_2"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBCUUPFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION": [
+                    {
+                        "id": "relation_2",
+                        "aSide": "GNBCUUP_1",
+                        "bSide": "CloudNativeApplication_2"
+                    },
+                    {
+                        "id": "relation_5",
+                        "aSide": "GNBCUUP_1",
+                        "bSide": "CloudNativeApplication_3"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBCUCPFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION": [
+                    {
+                        "id": "relation_3",
+                        "aSide": "GNBCUCP_1",
+                        "bSide": "CloudNativeApplication_3"
+                    },
+                    {
+                        "id": "relation_6",
+                        "aSide": "GNBCUCP_1",
+                        "bSide": "CloudNativeApplication_1"
+                    }
+                ]
+            }
+        ]
+    }
+}

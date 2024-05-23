@@ -1,0 +1,144 @@
+module typedef-test-nested-union-module {
+
+	namespace "test:typedef-test-nested-union-module";
+	prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2022-06-08" {
+		description "initial revision";
+	}
+
+	container cont1 {
+
+		leaf leaf11 {
+			type union {
+				type int16;
+				type string;
+			}
+		}
+
+		leaf leaf12 {
+			type union {
+				type int16;
+				type string;
+				type union {
+					type empty;
+					type binary;
+				}
+			}
+		}
+
+		leaf leaf13 {
+			type union {
+				type union {
+					type empty;
+					type binary;
+				}
+				type int16;
+				type string;
+			}
+		}
+
+		leaf leaf14 {
+			type union {
+				type int16;
+				type union {
+					type empty;
+					type binary;
+				}
+				type string;
+			}
+		}
+
+		leaf leaf15 {
+			type union {
+				type int16;
+				type union {
+					type empty;
+					type union {
+						type int32;
+						type boolean;
+					}
+					type binary;
+				}
+				type string;
+			}
+		}
+	}
+
+	typedef typedef1 {
+		type union {
+			type binary;
+			type empty;
+		}
+	}
+
+	typedef typedef2 {
+		type union {
+			type int32;
+		}
+	}
+
+	typedef typedef3 {
+		type union {
+			type boolean;
+			type this:typedef1;
+		}
+	}
+
+	container cont2 {
+
+		leaf leaf21 {
+			type this:typedef1;
+		}
+
+		leaf leaf22 {
+			type union {
+				type uint64;
+				type this:typedef1;
+			}
+		}
+
+		leaf leaf23 {
+			type union {
+				type this:typedef1;
+				type uint64;
+			}
+		}
+
+		leaf leaf24 {
+			type this:typedef2;
+		}
+
+		leaf leaf25 {
+			type union {
+				type uint64;
+				type this:typedef2;
+			}
+		}
+
+		leaf leaf26 {
+			type this:typedef3;
+		}
+
+		leaf leaf27 {
+			type union {
+				type this:typedef3;
+				type uint64;
+			}
+		}
+
+		leaf leaf28 {
+			type union {
+				type uint64;
+				type this:typedef3;
+				type this:typedef2;
+				type string;
+			}
+		}
+
+	}
+}

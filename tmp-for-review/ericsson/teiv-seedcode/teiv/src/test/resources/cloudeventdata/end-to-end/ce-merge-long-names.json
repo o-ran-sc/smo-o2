@@ -1,0 +1,364 @@
+{
+    "specversion": "1.0",
+    "id": "a30e63c9-d29e-46ff-b99a-b63ed83f0002",
+    "source": "dmi-plugin:nm-1",
+    "type": "ties.merge",
+    "time": "2023-10-25T13:30:12Z",
+    "datacontenttype": "application/json",
+    "dataschema": "https://ties:8080/schemas/v1/r1-topology-yang",
+    "data": {
+        "entities": [
+            {
+                "o-ran-smo-teiv-cloud:Namespaceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee": [
+                    {
+                        "id": "Namespace_1",
+                        "attributes": {
+                            "name": "Namespace_1"
+                        }
+                    },
+                    {
+                        "id": "Namespace_2",
+                        "attributes": {
+                            "name": "Namespace_2"
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-oam:ManagedElementtttttttttttttttttttttttttttttttttttttttttttttttttt": [
+                    {
+                        "id": "ManagedElement_1",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001",
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "ManagedElement_2",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00002,ManagedElement=NR01gNodeBRadio00002",
+                            "cmId": {
+                                "cmHandle": "F0FD1924103B15873814395221E080CC",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00002]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "ManagedElement_3",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00003,ManagedElement=NR01gNodeBRadio00003",
+                            "cmId": {
+                                "cmHandle": "B15873F0FD192410381439E080CC5221",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00003]"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-cloud:CloudNativeSystemmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm": [
+                    {
+                        "id": "CloudNativeSystem_1",
+                        "attributes": {
+                            "name": "Test_CloudNativeSystem_1"
+                        }
+                    },
+                    {
+                        "id": "CloudNativeSystem_2",
+                        "attributes": {
+                            "name": "Test_CloudNativeSystem_2"
+                        }
+                    },
+                    {
+                        "id": "CloudNativeSystem_3",
+                        "attributes": {
+                            "name": "Test_CloudNativeSystem_3"
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-cloud:CloudNativeApplicationnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn": [
+                    {
+                        "id": "CloudNativeApplication_1",
+                        "attributes": {
+                            "name": "Test_CloudNativeApplication_1"
+                        }
+                    },
+                    {
+                        "id": "CloudNativeApplication_2",
+                        "attributes": {
+                            "name": "Test_CloudNativeApplication_2"
+                        }
+                    },
+                    {
+                        "id": "CloudNativeApplication_3",
+                        "attributes": {
+                            "name": "Test_CloudNativeApplication_3"
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBDUFunctionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn": [
+                    {
+                        "id": "GNBDUFunction_1",
+                        "attributes": {
+                            "fdnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=1",
+                            "dUpLMNId": {
+                                "mcc": "110",
+                                "mnc": "210"
+                            },
+                            "gNBDUId": 12,
+                            "gNBId": 1234,
+                            "gNBIdLength": 4,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "GNBDUFunction_2",
+                        "attributes": {
+                            "fdnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=2",
+                            "dUpLMNId": {
+                                "mcc": "110",
+                                "mnc": "210"
+                            },
+                            "gNBDUId": 12,
+                            "gNBId": 1234,
+                            "gNBIdLength": 4,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=2]"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:NRCellDUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU": [
+                    {
+                        "id": "NRCellDU_1",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=1,NRCellDU=1",
+                            "cellLocalIdddddddddddddddddddddddddddddddddddddddddddddddddddddd": 4589,
+                            "nCI": 1,
+                            "nRPCI": 12,
+                            "nRTAC": 310,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-NRCellDU:NRCellDU[@id=1]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "NRCellDU_2",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=1,NRCellDU=2",
+                            "cellLocalIdddddddddddddddddddddddddddddddddddddddddddddddddddddd": 45891,
+                            "nCI": 2,
+                            "nRPCI": 121,
+                            "nRTAC": 3101,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-NRCellDU:NRCellDU[@id=2]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "NRCellDU_3",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=1,NRCellDU=3",
+                            "cellLocalIdddddddddddddddddddddddddddddddddddddddddddddddddddddd": 469,
+                            "nCI": 3,
+                            "nRPCI": 15,
+                            "nRTAC": 301,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]/o-ran-smo-NRCellDU:NRCellDU[@id=3]"
+                            }
+                        }
+                    },
+                    {
+                        "id": "NRCellDU_4",
+                        "attributes": {
+                            "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=2,NRCellDU=4",
+                            "cellLocalIdddddddddddddddddddddddddddddddddddddddddddddddddddddd": 469,
+                            "nCI": 4,
+                            "nRPCI": 15,
+                            "nRTAC": 301,
+                            "cmId": {
+                                "cmHandle": "395221E080CCF0FD1924103B15873814",
+                                "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=2]/o-ran-smo-NRCellDU:NRCellDU[@id=4]"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-equipment:AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee": [
+                    {
+                        "id": "AntennaModule_1",
+                        "attributes": {
+                            "fdn": "SubNetwork=SolarSystem/SubNetwork=Earth/SubNetwork=Europe/SubNetwork=Hungary/AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee=11"
+                        }
+                    },
+                    {
+                        "id": "AntennaModule_2",
+                        "attributes": {
+                            "fdn": "SubNetwork=SolarSystem/SubNetwork=Earth/SubNetwork=Europe/SubNetwork=Hungary/AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee=12"
+                        }
+                    },
+                    {
+                        "id": "AntennaModule_3",
+                        "attributes": {
+                            "fdn": "SubNetwork=SolarSystem/SubNetwork=Earth/SubNetwork=Europe/SubNetwork=Hungary/AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee=21"
+                        }
+                    },
+                    {
+                        "id": "AntennaModule_4",
+                        "attributes": {
+                            "fdn": "SubNetwork=SolarSystem/SubNetwork=Earth/SubNetwork=Europe/SubNetwork=Hungary/AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee=22"
+                        }
+                    },
+                    {
+                        "id": "AntennaModule_5",
+                        "attributes": {
+                            "fdn": "SubNetwork=SolarSystem/SubNetwork=Earth/SubNetwork=Europe/SubNetwork=Hungary/AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee=31"
+                        }
+                    },
+                    {
+                        "id": "AntennaModule_6",
+                        "attributes": {
+                            "fdn": "SubNetwork=SolarSystem/SubNetwork=Earth/SubNetwork=Europe/SubNetwork=Hungary/AntennaModuleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee=32"
+                        }
+                    }
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "o-ran-smo-teiv-cloud:CLOUDNATIVEAPPLICATIONNNNNNNNNNN_DEPLOYED_ON_NAMESPACEEEEEEEEEEE": [
+                    {
+                        "id": "CLOUDNATIVEAPPLICATION_DEPLOYED_ON_NAMESPACE_relation_1",
+                        "aSide": "CloudNativeApplication_1",
+                        "bSide": "Namespace_1"
+                    },
+                    {
+                        "id": "CLOUDNATIVEAPPLICATION_DEPLOYED_ON_NAMESPACE_relation_2",
+                        "aSide": "CloudNativeApplication_2",
+                        "bSide": "Namespace_1"
+                    },
+                    {
+                        "id": "CLOUDNATIVEAPPLICATION_DEPLOYED_ON_NAMESPACE_relation_3",
+                        "aSide": "CloudNativeApplication_3",
+                        "bSide": "Namespace_2"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-oam-to-cloud:MANAGEDELEMENTTTTTTTTTTT_DEPLOYED_AS_CLOUDNATIVESYSTEMMMMMMMMMMM": [
+                    {
+                        "id": "MANAGEDELEMENT_DEPLOYED_AS_CLOUDNATIVESYSTEM_relation_1",
+                        "aSide": "ManagedElement_1",
+                        "bSide": "CloudNativeSystem_1"
+                    },
+                    {
+                        "id": "MANAGEDELEMENT_DEPLOYED_AS_CLOUDNATIVESYSTEM_relation_2",
+                        "aSide": "ManagedElement_2",
+                        "bSide": "CloudNativeSystem_2"
+                    },
+                    {
+                        "id": "MANAGEDELEMENT_DEPLOYED_AS_CLOUDNATIVESYSTEM_relation_3",
+                        "aSide": "ManagedElement_3",
+                        "bSide": "CloudNativeSystem_3"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-oam-to-cloud:MANAGEDELEMENTTTTTTTTT_REALISED_BY_CLOUDNATIVEAPPLICATIONNNNNNNN": [
+                    {
+                        "id": "MANAGEDELEMENT_REALISED_BY_CLOUDNATIVEAPPLICATION_relation_1",
+                        "aSide": "ManagedElement_1",
+                        "bSide": "CloudNativeApplication_1"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran-to-cloud:GNBDUFUNCTIONNNNNNNNN_REALISED_BY_CLOUDNATIVEAPPLICATIONNNNNNNNN": [
+                    {
+                        "id": "GNBDUFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION_relation_1",
+                        "aSide": "GNBDUFunction_1",
+                        "bSide": "CloudNativeApplication_1"
+                    },
+                    {
+                        "id": "GNBDUFUNCTION_REALISED_BY_CLOUDNATIVEAPPLICATION_relation_2",
+                        "aSide": "GNBDUFunction_1",
+                        "bSide": "CloudNativeApplication_2"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-oam-to-ran:MANAGEDELEMENTTTTTTTTTTTTTTT_MANAGES_GNBDUFUNCTIONNNNNNNNNNNNNNN": [
+                    {
+                        "id": "MANAGEDELEMENT_MANAGES_GNBDUFUNCTION_relation_1",
+                        "aSide": "ManagedElement_1",
+                        "bSide": "GNBDUFunction_1"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-ran:GNBDUFUNCTIONNNNNNNNNNNNNNUUU_PROVIDES_NRCELLDUUUUUUUUUUUUUUUUUU": [
+                    {
+                        "id": "GNBDUFUNCTION_PROVIDES_NRCELLDU_relation_1",
+                        "aSide": "GNBDUFunction_1",
+                        "bSide": "NRCellDU_1"
+                    },
+                    {
+                        "id": "GNBDUFUNCTION_PROVIDES_NRCELLDU_relation_2",
+                        "aSide": "GNBDUFunction_1",
+                        "bSide": "NRCellDU_2"
+                    },
+                    {
+                        "id": "GNBDUFUNCTION_PROVIDES_NRCELLDU_relation_3",
+                        "aSide": "GNBDUFunction_1",
+                        "bSide": "NRCellDU_3"
+                    },
+                    {
+                        "id": "GNBDUFUNCTION_PROVIDES_NRCELLDU_relation_4",
+                        "aSide": "GNBDUFunction_2",
+                        "bSide": "NRCellDU_4"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-equipment:ANTENNAMODULEEEEEEEEEEEE_REALISED_BY_ANTENNAMODULEEEEEEEEEEEEEEE": [
+                    {
+                        "id": "ANTENNAMODULE_REALISED_BY_ANTENNAMODULE_relation_1",
+                        "aSide": "AntennaModule_1",
+                        "bSide": "AntennaModule_2"
+                    },
+                    {
+                        "id": "ANTENNAMODULE_REALISED_BY_ANTENNAMODULE_relation_2",
+                        "aSide": "AntennaModule_3",
+                        "bSide": "AntennaModule_4"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-equipment:ANTENNAMODULEEEEEEEEEEEE_DEPLOYED_ON_ANTENNAMODULEEEEEEEEEEEEEEE": [
+                    {
+                        "id": "ANTENNAMODULE_DEPLOYED_ON_ANTENNAMODULE_relation_1",
+                        "aSide": "AntennaModule_5",
+                        "bSide": "AntennaModule_6"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+submodule typedef-test-submodule {
+
+	belongs-to typedef-test-module {
+		prefix module;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2020-11-11" {
+		description "initial revision";
+	}
+
+	typedef typedef91 {
+		type typedef92;
+	}
+
+	typedef typedef92 {
+		type boolean;
+	}
+
+	typedef typedef93 {
+		type module:typedef13;
+	}
+}

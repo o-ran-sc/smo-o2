@@ -1,0 +1,20 @@
+module include-test-module {
+
+	yang-version "1.1";
+
+    namespace "test:include-test-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-10-02" {
+        description "initial revision";
+    }
+
+	include test-submodule {
+		// no revision
+	}
+
+}

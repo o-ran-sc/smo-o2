@@ -1,0 +1,8 @@
+{
+    "module1:cont1": {
+        "leaf1": "there is no leaf2, hence the annotation below is wrong",
+        "@leaf2": {
+
+        }
+    }
+}

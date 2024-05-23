@@ -1,0 +1,11 @@
+{
+    "CLOUD/entity-types/NodeCluster/entities/NodeCluster_1": {
+
+    },
+    "CLOUD/entity-types/CloudSite/entities/CloudSite_1": {
+
+    },
+    "CLOUD/relationship-types/NODECLUSTER_LOCATED_AT_CLOUDSITE/relationships/relation_1": {
+
+    }
+}

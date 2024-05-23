@@ -1,0 +1,17 @@
+module module2 {
+
+    namespace "test:module2";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-02-02" {
+        description "initial revision";
+    }
+
+	feature feature1;
+
+	feature feature2;
+}

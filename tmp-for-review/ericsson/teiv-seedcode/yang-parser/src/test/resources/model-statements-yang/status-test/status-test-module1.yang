@@ -1,0 +1,109 @@
+module status-test-module1 {
+
+    namespace "test:module1";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2021-02-17" {
+        description "initial revision";
+    }
+
+  	// -------------------- simple stuff --------------------
+
+    container cont1 {
+
+    	status current;
+
+        leaf leaf11 {
+        	status current;
+            type uint32;
+        }
+
+        leaf leaf12 {
+        	status deprecated;
+            type uint32;
+        }
+
+        leaf leaf13 {
+        	status obsolete;
+            type uint32;
+        }
+    }
+
+    container cont2 {
+
+    	status deprecated;
+
+        leaf leaf21 {
+        	status current;
+            type uint32;
+        }
+
+        leaf leaf22 {
+        	status deprecated;
+            type uint32;
+        }
+
+        leaf leaf23 {
+        	status obsolete;
+            type uint32;
+        }
+    }
+
+    container cont3 {
+
+    	status obsolete;
+
+        leaf leaf31 {
+        	status current;
+            type uint32;
+        }
+
+        leaf leaf32 {
+        	status deprecated;
+            type uint32;
+        }
+
+        leaf leaf33 {
+        	status obsolete;
+            type uint32;
+        }
+    }
+
+  	// -------------------- simple, using groupings --------------------
+
+	grouping grouping1 {
+        leaf leaf97 {
+        	status current;
+            type uint32;
+        }
+
+        leaf leaf98 {
+        	status deprecated;
+            type uint32;
+        }
+
+        leaf leaf99 {
+        	status obsolete;
+            type uint32;
+        }
+	}
+
+	container cont4 {
+		status current;
+		uses grouping1;
+	}
+
+	container cont5 {
+		status deprecated;
+		uses grouping1;
+	}
+
+	container cont6 {
+		status obsolete;
+		uses grouping1;
+	}
+}

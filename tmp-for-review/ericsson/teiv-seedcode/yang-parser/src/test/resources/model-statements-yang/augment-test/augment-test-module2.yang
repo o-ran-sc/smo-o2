@@ -1,0 +1,69 @@
+module augment-test-module2 {
+
+    namespace "test:augment-test2";
+    prefix this;
+
+	import augment-test-module {
+		prefix other;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-07-21" {
+        description "initial revision";
+    }
+
+	augment "/other:rpc1/other:input/other:cont1/other:choice1" {
+		leaf inserted-case-leaf-from-second-module {
+			type boolean;
+		}
+	}
+
+	// - - - - some other different target nodes - - - - - -
+
+	augment /other:cont2/list1 {
+		leaf leaf15 {
+			type boolean;
+		}
+	}
+
+	augment /other:cont2/other:notification1 {
+		leaf leaf18 {
+			type string;
+		}
+	}
+
+	// - - - - - status - - - - - -
+
+	augment /other:cont3 {
+		status deprecated;
+
+		container cont11;
+
+		container cont12 {
+			status deprecated;
+		}
+
+		container cont13 {
+			status obsolete;
+		}
+	}
+
+	augment /other:cont3 {
+		status current;
+
+		container cont15;
+
+		container cont16 {
+			status deprecated;
+		}
+
+		container cont17 {
+			status obsolete;
+		}
+	}
+
+
+}

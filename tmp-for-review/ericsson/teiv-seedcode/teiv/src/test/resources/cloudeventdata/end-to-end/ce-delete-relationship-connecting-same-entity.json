@@ -1,0 +1,39 @@
+{
+    "specversion": "1.0",
+    "id": "a30e63c9-d29e-46ff-b99a-b63ed83f0103",
+    "source": "dmi-plugin:nm-1",
+    "type": "ran-equipment-topology.delete",
+    "time": "2023-10-25T13:30:01Z",
+    "datacontenttype": "application/json",
+    "dataschema": "https://ties:8080/schemas/v1/r1-topology",
+    "data": {
+        "entities": [
+            {
+                "o-ran-smo-teiv-equipment:AntennaModule": [
+                    {
+                        "id": "AntennaModule_1"
+                    },
+                    {
+                        "id": "AntennaModule_2"
+                    }
+                ]
+            }
+        ],
+        "relationships": [
+            {
+                "o-ran-smo-teiv-equipment:ANTENNAMODULEEEEEEEEEEEE_REALISED_BY_ANTENNAMODULEEEEEEEEEEEEEEE": [
+                    {
+                        "id": "one_to_many_relation_1"
+                    }
+                ]
+            },
+            {
+                "o-ran-smo-teiv-equipment:ANTENNAMODULEEEEEEEEEEEE_DEPLOYED_ON_ANTENNAMODULEEEEEEEEEEEEEEE": [
+                    {
+                        "id": "one_to_one_relation_1"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "module1:cont1": {
+        "leaf11": [
+            null
+        ]
+    },
+    "module1:list2": [
+        {
+            "leaf21": 10,
+            "leaflist26": [
+                [
+                    null
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "ietf-yang-library:modules-state": [
+        {
+            "module-set-id": 1234567,
+            "module": [
+                {
+                    "name": "test-module1",
+                    "revision": "2020-01-01",
+                    "schema": "www.acme.com/test-module1.yang",
+                    "namespace": "com:foo:test-module1",
+                    "feature": [
+                        "feature1",
+                        "feature2",
+                        "feature3"
+                    ],
+                    "conformance-type": "implement"
+                }
+            ]
+        }
+    ]
+}

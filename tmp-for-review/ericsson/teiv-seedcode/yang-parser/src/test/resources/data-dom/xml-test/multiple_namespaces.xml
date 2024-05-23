@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============LICENSE_START=======================================================
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+  ================================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  SPDX-License-Identifier: Apache-2.0
+  ============LICENSE_END=========================================================
+ -->
+<instance-data-set xmlns="urn:ietf:params:xml:ns:yang:ietf-yang-instance-data">
+  <name>test instance data</name>
+  <content-data>
+    <cont1 xmlns="namespace0" xmlns:ns1="namespace1" xmlns:ns2="namespace2">
+      <leaf1>42</leaf1>
+      <ns1:leaf2>43</ns1:leaf2>
+      <ns2:leaf3>44</ns2:leaf3>
+      <cont2 xmlns="namespace4" xmlns:ns4="namespace4" xmlns:ns2="namespace9">	<!-- note: ns2 re-defined -->
+        <leaf4>40</leaf4>
+        <ns1:leaf5>50</ns1:leaf5>
+        <ns2:leaf6>60</ns2:leaf6>
+        <leaf7 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+        <ns4:leaf8 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="false"></ns4:leaf8>
+        <leaf9 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="string">90</leaf9>
+      </cont2>
+
+      <ns2:cont3>
+        <leaf10 xmlns:comfoo="www.foo.com" comfoo:myanno="anno-value1" comfoo:myanno2="anno-value2" comfoo:unknownanno="unknown">10</leaf10>
+        <nsxx:leaf11>??</nsxx:leaf11>
+        <leaf12 nsxx:myanno="anno-value">12</leaf12>
+        <ns1:leaf13>   13   </ns1:leaf13>
+        <ns1:leaf14>
+                     1
+               4
+                        		</ns1:leaf14>
+        <ns1:leaf15>First line
+            Second line
+                Third line
+                                </ns1:leaf15>
+
+
+
+        <leaf21><![CDATA[11
+ 22		]]></leaf21>
+
+      </ns2:cont3>
+    </cont1>
+  </content-data>
+</instance-data-set>
+
+

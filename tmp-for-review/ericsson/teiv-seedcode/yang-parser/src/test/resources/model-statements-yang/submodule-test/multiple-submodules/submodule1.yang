@@ -1,0 +1,36 @@
+submodule submodule1 {
+
+	belongs-to module {
+	    prefix mod;
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-12-10";
+
+	container cont11;
+
+	container cont12 {
+		container cont14;		// will be deviated out
+	}
+
+	augment "/mod:cont1" {		// sits in module
+		leaf leaf11 {
+			type string;
+		}
+	}
+
+	augment "/cont2" {		// sits in module
+		leaf leaf12 {
+			type uint32;
+		}
+	}
+
+	deviation "/mod:cont1/mod:cont51" {		// sits in module
+		deviate not-supported;
+	}
+
+
+}

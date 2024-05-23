@@ -1,0 +1,96 @@
+module range-test-module-simple {
+
+    namespace "urn:rdns:o-ran:oammodel:range-test-module-simple";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2019-10-16" {
+        description "initial revision";
+    }
+
+// -------------------------- Simple ranges that are fine --------------------
+
+    container cont1 {
+
+        leaf leaf1 {
+            type int8;
+        }
+
+        leaf leaf2 {
+            type int8 {
+                range min..max {
+                	error-message "wrong!";
+                }
+            }
+        }
+
+        leaf leaf3 {
+            type int8 {
+                range "min  ..   max";
+            }
+        }
+
+        leaf leaf4 {
+            type int8 {
+                range "min..min | max..max";
+            }
+        }
+
+        leaf leaf5 {
+            type int8 {
+                range "min  ..  min| max..  max";
+            }
+        }
+
+        leaf leaf6 {
+            type int8 {
+                range -100..100;
+            }
+        }
+
+        leaf leaf7 {
+            type int8 {
+                range "-50..-20 | 30..60";
+            }
+        }
+
+        leaf leaf8 {
+            type int8 {
+                range "min..-20 | 30..max";
+            }
+        }
+
+        leaf leaf9 {
+            type int8 {
+                range "min..-20 | 30 | 80";
+            }
+        }
+
+        leaf leaf10 {
+            type int8 {
+                range min..-20|30|80;
+            }
+        }
+
+        leaf leaf11 {
+            type int8 {
+                range "min | 10 | 40";
+            }
+        }
+
+        leaf leaf12 {
+            type int8 {
+                range "min | 10..10 | 70";
+            }
+        }
+
+        leaf leaf13 {
+            type int8 {
+                range min|2|3|max;
+            }
+        }
+    }
+}

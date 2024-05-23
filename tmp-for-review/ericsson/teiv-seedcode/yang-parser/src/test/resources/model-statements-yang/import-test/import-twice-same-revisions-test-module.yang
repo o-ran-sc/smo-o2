@@ -1,0 +1,24 @@
+module import-twice-same-revisions-test-module {
+
+    namespace "test:import-twice-same-revisions-test-module";
+    prefix "this";
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-10-02" {
+        description "initial revision";
+    }
+
+	import ietf-yang-metadata {
+		prefix prefix1;
+		revision-date 2016-08-05;
+	}
+
+	import ietf-yang-metadata {
+		prefix prefix2;
+		revision-date 2016-08-05;
+	}
+
+}

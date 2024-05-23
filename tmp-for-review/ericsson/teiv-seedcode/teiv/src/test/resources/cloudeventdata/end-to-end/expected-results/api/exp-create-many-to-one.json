@@ -1,0 +1,5 @@
+{
+    "CLOUD/entity-types/NodeCluster/entities/NodeCluster_1": "{\"o-ran-smo-teiv-cloud:NodeCluster\":[{\"id\":\"NodeCluster_1\",\"sourceIds\":[],\"attributes\":{\"name\":null}}]}",
+    "CLOUD/entity-types/CloudSite/entities/CloudSite_1": "{\"o-ran-smo-teiv-cloud:CloudSite\":[{\"id\":\"CloudSite_1\",\"sourceIds\":[],\"attributes\":{\"geo-location\":null,\"name\":null}}]}",
+    "CLOUD/relationship-types/NODECLUSTER_LOCATED_AT_CLOUDSITE/relationships/relation_1": "{\"o-ran-smo-teiv-cloud:NODECLUSTER_LOCATED_AT_CLOUDSITE\":[{\"bSide\":\"CloudSite_1\",\"aSide\":\"NodeCluster_1\",\"id\":\"relation_1\",\"sourceIds\":[]}]}"
+}

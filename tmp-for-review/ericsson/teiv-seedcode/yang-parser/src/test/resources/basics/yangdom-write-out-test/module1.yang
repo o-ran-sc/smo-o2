@@ -1,0 +1,143 @@
+module module1 {
+
+	yang-version "1.1";
+
+    namespace "test:module1";
+    prefix this;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+    revision "2020-09-30" {
+        description "initial revision";
+    }
+
+    container cont1 {
+
+    	action action11 {
+    		input {
+    			container cont112 {
+    				leaf leaf1121 {
+    					type string;
+    				}
+    			}
+    		}
+    	}
+
+    	leaf leaf12 {
+    		type uint16;
+    	}
+    }
+
+    container cont2 {
+
+    	leaf leaf21 {
+    		type string;
+    		description "simple string with space character";
+    	}
+
+    	leaf leaf22 {
+    		type string;
+    		description "simple string	with tab character";
+    	}
+
+    	leaf leaf23 {
+    		type string;
+    		description "simple string with \" escaped quote character";
+    	}
+
+    	leaf leaf24 {
+    		type string;
+    		description "simple string with \' escaped single-quote character";		// yang 1.1 module, so the backslash should cause a finding
+    	}
+
+    	leaf leaf25 {
+    		type string;
+    		description 'exact characters	tab and quote "';
+    	}
+
+    	leaf leaf26 {
+    		type string;
+    		description 'exact characters stretching over
+   multiple lines - note three spaces at start of line';
+    	}
+
+    	leaf leaf27 {
+    		type string;
+    		description "+";		// Strange...
+    	}
+
+   		leaf leaf28 {
+    		type string;
+    		description ";";		// Also strange...
+    	}
+
+   		leaf leaf29 {
+    		type string;
+    		description ';;';		// Also strange...
+    	}
+
+   		leaf leaf30 {
+    		type string;
+    		description Hello+World!;
+    	}
+
+   		leaf leaf31 {
+    		type string;
+    		description
+    			"on next line";
+    	}
+
+   		leaf leaf32 {
+    		type string;
+    		description "some on this line
+				some on the next line";
+    	}
+
+   		leaf leaf33 {
+    		type string;
+    		description
+    			"First paragraph.
+
+    			Second paragraph.";
+    	}
+
+   		leaf leaf34 {
+    		type string;
+    		description "this_is_//_not_a_comment";
+    	}
+
+   		leaf leaf35 {
+    		type string;
+    		description "this_is_/*_not_a_comment";
+    	}
+
+   		leaf leaf36 {
+    		type string;
+    		description "this_is_*/_not_a_comment";
+    	}
+
+  		leaf leaf37 {
+    		type string;
+    		description "";
+    	}
+
+   		leaf leaf38 {
+    		type string;
+    		description "{";
+    	}
+
+   		leaf leaf39 {
+    		type string;
+    		description "}";
+    	}
+
+  		leaf leaf40 {
+    		type string;
+    		description "\"";
+    	}
+
+    }
+
+}

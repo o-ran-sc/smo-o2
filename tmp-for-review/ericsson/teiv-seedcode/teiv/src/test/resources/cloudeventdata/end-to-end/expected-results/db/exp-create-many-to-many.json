@@ -1,0 +1,84 @@
+{
+    "entity_map_CNA_1": {
+        "id": "CloudNativeApplication_1",
+        "name": "Test_CloudNativeApplication_1"
+    },
+    "entity_map_CNA_2": {
+        "id": "CloudNativeApplication_2",
+        "name": "Test_CloudNativeApplication_2"
+    },
+    "entity_map_CNA_3": {
+        "id": "CloudNativeApplication_3",
+        "name": "Test_CloudNativeApplication_3"
+    },
+    "entity_map_GNBDU_1": {
+        "id": "GNBDU_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,MeContext=NR01gNodeBRadio00001,ManagedElement=NR01gNodeBRadio00001,GNBDUFunction=1",
+        "dUpLMNId": {
+            "mcc": "110",
+            "mnc": "210"
+        },
+        "gNBDUId": 111,
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=NR01gNodeBRadio00001]/o-ran-smo-GNBDU:GNBDUFunction[@id=1]"
+        }
+    },
+    "entity_map_GNBCUUP_1": {
+        "id": "GNBCUUP_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,GNBCUUPFunction=1",
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=GNBCUUPFunction]/o-ran-smo-GNBCUUP:GNBCUUPFunction[@id=1]"
+        }
+    },
+    "entity_map_GNBCUCP_1": {
+        "id": "GNBCUCP_1",
+        "fdn": "SubNetwork=Europe,SubNetwork=Ireland,GNBCUCPFunction=1",
+        "gNBCUName": "Test_gNBCU",
+        "gNBId": 123,
+        "gNBIdLength": 3,
+        "pLMNId": {
+            "mcc": "110",
+            "mnc": "210"
+        },
+        "cmId": {
+            "cmHandle": "395221E080CCF0FD1924103B15873814",
+            "resourceIdentifier": "/o-ran-smo-ComTop:ManagedElement[@id=GNBCUCPFunction]/o-ran-smo-GNBCUCP:GNBCUCPFunction[@id=1]"
+        }
+    },
+    "relation_map_GNBDU_CNA_1": {
+        "id": "relation_1",
+        "aSide_GNBDUFunction": "GNBDU_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_1"
+    },
+    "relation_map_GNBCUUP_CNA_2": {
+        "id": "relation_2",
+        "aSide_GNBCUUPFunction": "GNBCUUP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_2"
+    },
+    "relation_map_GNBCUCP_CNA_3": {
+        "id": "relation_3",
+        "aSide_GNBCUCPFunction": "GNBCUCP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_3"
+    },
+    "relation_map_GNBDU_CNA_4": {
+        "id": "relation_4",
+        "aSide_GNBDUFunction": "GNBDU_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_2"
+    },
+    "relation_map_GNBCUUP_CNA_5": {
+        "id": "relation_5",
+        "aSide_GNBCUUPFunction": "GNBCUUP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_3"
+    },
+    "relation_map_GNBCUCP_CNA_6": {
+        "id": "relation_6",
+        "aSide_GNBCUCPFunction": "GNBCUCP_1",
+        "bSide_CloudNativeApplication": "CloudNativeApplication_1"
+    }
+}

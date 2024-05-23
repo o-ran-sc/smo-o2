@@ -1,0 +1,386 @@
+module o-ran-smo-teiv-ran {
+    yang-version 1.1;
+    namespace "urn:o-ran:smo-teiv-ran";
+    prefix or-teiv-ran;
+
+    import o-ran-smo-teiv-common-yang-types {prefix or-teiv-types; }
+
+    import o-ran-smo-teiv-common-yang-extensions {prefix or-teiv-yext; }
+
+    import _3gpp-common-yang-types { prefix types3gpp; }
+
+    organization "ORAN";
+    contact "ORAN first line support via email";
+    description
+    "RAN Logical topology model.
+
+    Copyright (C) 2024 Ericsson
+    Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+
+    This model contains the topology entities and relations in the
+    RAN domain, which represents the functional capability
+    of the deployed RAN that are relevant to rApps use cases.";
+
+    revision "2024-05-14" {
+        description "Initial revision.";
+        or-teiv-yext:label 0.3.0;
+    }
+
+    or-teiv-yext:domain RAN;
+
+    list GNBDUFunction {
+        description "gNodeB Distributed Unit (gNB-DU).
+
+                    A gNB may consist of a gNB-Centralized Unit
+                    (gNB-CU) and a gNB-DU. The CU processes non-real
+                    time protocols and services, and the DU processes
+                    PHY level protocol and real time services. The
+                    gNB-CU and the gNB-DU units are connected via
+                    F1 logical interface.
+
+                    The following is true for a gNB-DU:
+                    Is connected to the gNB-CU-CP through the F1-C
+                    interface.Is connected to the gNB-CU-UP through
+                    the F1-U interface. One gNB-DU is connected to only
+                    one gNB-CU-CP. One gNB-DU can be connected to
+                    multiple gNB-CU-UPs under the control of the same
+                    gNB-CU-CP.
+                    Note: A gNB may consist of a gNB-CU-CP, multiple
+                    gNB-CU-UPs and multiple gNB-DUs. gNB-DU is a concrete
+                    class that extends the NG-RAN node object. In Topology, you
+                    can create, read, update, and delete the gNB-DU object.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            container dUpLMNId {
+                description "PLMN identifier used as part of PM Events data";
+                uses types3gpp:PLMNId;
+            }
+
+            leaf gNBDUId {
+                description "Unique identifier for the DU within a gNodeB";
+                type uint32;
+            }
+
+            leaf gNBId {
+                description "Identity of gNodeB within a PLMN";
+                type uint32;
+            }
+
+            leaf gNBIdLength {
+                description "Length of gNBId bit string representation";
+                type uint32;
+            }
+        }
+    }
+
+    list ENodeBFunction {
+        description "An Evolved Node B (eNodeB) is the only mandatory
+                    node in the radio access network (RAN) of Long-Term
+                    Evolution (LTE). The eNodeB is a complex base
+                    station that handles radio communications
+                    in the cell and carries out radio resource
+                    management and handover decisions. Unlike 2/3G
+                    wireless RAN, there is no centralized radio network
+                    controller in LTE. It is the hardware that is connected
+                    to the mobile phone network that communicates
+                    directly with mobile handsets (User Equipment), like a base
+                    transceiver station (BTS) in GSM networks. This simplifies
+                    the architecture and allows lower response times.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf eNBId {
+                description "The ENodeB ID that forms part of
+                            the Cell Global Identity, and is
+                            also used to identify the node over
+                            the S1 interface";
+                type uint32;
+                default 11;
+            }
+
+            container eNodeBPlmnId {
+                description "The ENodeB Public Land Mobile Network
+                            (PLMN) ID that forms part of the ENodeB
+                            Global ID used to identify the node over
+                            the S1 interface. Note: The value (MCC=001, MNC=01)
+                            indicates that the PLMN is not initiated.
+                            The value can not be used as a valid PLMN Identity.";
+
+                leaf mcc {
+                    description "The MCC part of a PLMN identity
+                                used in the radio network.";
+                    type int32 {
+                        range 0..999;
+                    }
+                }
+                leaf mnc {
+                    description "The MNC part of a PLMN identity
+                                used in the radio network.";
+                    type int32 {
+                        range 0..999;
+                    }
+                }
+                leaf mncLength {
+                    description "The length of the MNC part of a
+                                PLMN identity used in the radio network.";
+                    type int32 {
+                        range 2..3;
+                    }
+                }
+            }
+        }
+    }
+
+    list AntennaCapability {
+        description "This MO serves as a mapping between the cell
+                    and the RBS equipment used to provide coverage
+                    in a certain geographical area. The MO also
+                    controls the maximum output power of the sector.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf-list eUtranFqBands {
+                description "List of LTE frequency bands
+                            that associated hardware supports";
+                type string;
+            }
+
+            leaf-list geranFqBands {
+                description "List of GERAN frequency bands
+                            that associated hardware supports";
+                type string;
+            }
+
+            leaf-list nRFqBands {
+                description "List of NR frequency bands
+                            associated hardware supports";
+                type string;
+            }
+        }
+    }
+
+    list LTESectorCarrier {
+        description "The LTE Sector Carrier object provides the
+                    attributes for defining the logical characteristics
+                    of a carrier (cell) in a sector. A sector is a coverage
+                    area associated with a base station having
+                    its own antennas, radio ports, and control channels.
+                    The concept of sectors was developed to improve co-channel
+                    interference in cellular systems, and most wireless systems
+                    use three sector cells.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf sectorCarrierType {
+                description "Indicates whether or not the sector carrier
+                            modelled by MO SectorCarrier is a digital sector.";
+                type enumeration {
+                    enum normal_sector {
+                        value 0;
+                        description "Not a digital sector";
+                    }
+                    enum left_digital_sector {
+                        value 1;
+                        description "Left digital sector for 2DS";
+                    }
+                    enum right_digital_sector {
+                        value 2;
+                        description "Right digital sector for 2DS";
+                    }
+                    enum left_digital_sector_3ds {
+                        value 3;
+                        description "Left digital sector for 3DS";
+                    }
+                    enum right_digital_sector_3ds {
+                        value 4;
+                        description "Right digital sector for 3DS";
+                    }
+                    enum middle_digital_sector {
+                        value 5;
+                        description "Middle digital sector for 3DS";
+                    }
+                }
+            }
+        }
+    }
+
+    list NRSectorCarrier {
+        description "The NR Sector Carrier object provides
+                    the attributes for defining the logical
+                    characteristics of a carrier (cell) in a
+                    sector. A sector is a coverage area associated
+                    with a base station having its own antennas,
+                    radio ports, and control channels. The concept
+                    of sectors was developed to improve co-channel
+                    interference in cellular systems, and most wireless
+                    systems use three sector cells.";
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        container attributes {
+            leaf arfcnDL {
+                description "NR Absolute Radio Frequency Channel
+                            Number (NR-ARFCN) for downlink";
+                type uint32;
+            }
+
+            leaf arfcnUL {
+                description "NR Absolute Radio frequency Channel Number
+                            (NR-ARFCN) for uplink.";
+                type uint32;
+            }
+
+            leaf frequencyDL {
+                description "RF Reference Frequency of downlink channel";
+                type uint32;
+            }
+
+            leaf frequencyUL {
+                description "RF Reference Frequency of uplink channel";
+                type uint32;
+            }
+
+            leaf bSChannelBwDL {
+                description "BS Channel bandwidth in MHz for downlink.";
+                type uint32;
+            }
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship LTESECTORCARRIER_USES_ANTENNACAPABILITY { // 0..1 to 0..1
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf used-antennaCapability {
+            description "LTE Sector Carrier uses Antenna Capability.";
+            or-teiv-yext:aSide LTESectorCarrier;
+            type instance-identifier;
+        }
+
+        leaf used-by-lteSectorCarrier {
+            description "Antenna Cpability used by LTE Sector Carrier.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ENODEBFUNCTION_PROVIDES_LTESECTORCARRIER { // 1 to 0..n
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list provided-lteSectorCarrier {
+            description "eNodeB Function provides LTE Sector Carrier.";
+            or-teiv-yext:aSide ENodeBFunction;
+            type instance-identifier;
+        }
+
+        leaf provided-by-enodebFunction {
+            description "LTE Sector Carrier provided by eNodeB Function.";
+            or-teiv-yext:bSide LTESectorCarrier;
+            type instance-identifier;
+            mandatory true;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship NRSECTORCARRIER_USES_ANTENNACAPABILITY { // 0..n to 0..1
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf used-antennaCapability {
+            description "NR Sector Carrier uses Antenna Capability.";
+            or-teiv-yext:aSide NRSectorCarrier;
+            type instance-identifier;
+        }
+
+        leaf-list used-by-nrSectorCarrier {
+            description "Antenna Capability used by NR Sector Carrier.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNACAPABILITY_USES_ANTENNACAPABILITY { // Same entity (0..1 to 0..1)
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf used-antennaCapability {
+            description "Antenna Capability realised by Antenna Capability.";
+            or-teiv-yext:aSide AntennaCapability;
+            type instance-identifier;
+        }
+
+        leaf used-by-antennaCapability {
+            description "Antenna Capability realises Antenna Capability.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNACAPABILITY_PROVIDES_ANTENNACAPABILITY { // Same entity (0..1 to 0..n)
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf provided-antennaCapability {
+            description "Antenna Capability realised by Antenna Capability.";
+            or-teiv-yext:aSide AntennaCapability;
+            type instance-identifier;
+        }
+
+        leaf-list provided-by-antennaCapability {
+            description "Antenna Capability realises Antenna Capability.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNACAPABILITY_SERVES_ANTENNACAPABILITY { // Same entity (0..n to 0..1)
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list serviced-antennaCapability {
+            description "Antenna Capability realised by Antenna Capability.";
+            or-teiv-yext:aSide AntennaCapability;
+            type instance-identifier;
+        }
+
+        leaf serviced-by-antennaCapability {
+            description "Antenna Capability realises Antenna Capability.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+        }
+    }
+
+    or-teiv-yext:biDirectionalTopologyRelationship ANTENNACAPABILITY_REALISED_BY_ANTENNACAPABILITY { // Same entity (0..n to 0..m)
+
+        uses or-teiv-types:Top_Grp_Type;
+        key id;
+
+        leaf-list realised-by-antennaCapability {
+            description "Antenna Capability realised by Antenna Capability.";
+            or-teiv-yext:aSide AntennaCapability;
+            type instance-identifier;
+        }
+
+        leaf-list realised-antennaCapability {
+            description "Antenna Capability realises Antenna Capability.";
+            or-teiv-yext:bSide AntennaCapability;
+            type instance-identifier;
+       }
+    }
+}

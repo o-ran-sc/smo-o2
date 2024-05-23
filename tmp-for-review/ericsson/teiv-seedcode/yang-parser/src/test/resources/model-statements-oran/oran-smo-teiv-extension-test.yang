@@ -1,0 +1,118 @@
+module oran-smo-teiv-extension-test {
+
+	namespace "test:teiv-topology-inventory-extension-test";
+
+	prefix this {
+		yexte:original-prefix "other";
+	}
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	revision "2023-08-14" {
+		description "Initial revision";
+		or-teiv-ext:label 2.3.4;
+	}
+
+	revision "2023-07-12" {
+		or-teiv-ext:label '06.34.12345';
+	}
+
+	import o-ran-smo-teiv-common-yang-extensions {
+		prefix or-teiv-ext;
+	}
+
+	import o-ran-smo-teiv-common-yang-types {
+		prefix or-teiv-types;
+	}
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-1 {			// just fine
+		leaf leaf-a-side {
+			or-teiv-ext:aSide role-a-side;
+			type instance-identifier;
+		}
+		leaf-list leaf-b-side {
+			or-teiv-ext:bSide role-b-side;
+			type instance-identifier;
+		}
+
+		uses or-teiv-types:Top_Grp_Type;
+		key id;
+
+		leaf      leaf-prop { type string; }
+		leaf-list leaf-list-prop { type string; }
+	}
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-2;				// NOK - empty
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-3 {			// NOK - missing B-side
+		leaf leaf-a-side {
+			or-teiv-ext:aSide role-a-side;
+			type instance-identifier;
+		}
+	}
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-4 {			// NOK - missing A-side
+		leaf-list leaf-b-side {
+			or-teiv-ext:bSide role-b-side;
+			type instance-identifier;
+		}
+	}
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-5 {			// NOK - a-side twice
+		leaf leaf-a-side {
+			or-teiv-ext:aSide role-a-side;
+			type instance-identifier;
+		}
+		leaf-list leaf-b-side {
+			or-teiv-ext:bSide role-b-side;
+			type instance-identifier;
+		}
+		leaf leaf-a-side2 {
+			or-teiv-ext:aSide role-a-side;
+			type instance-identifier;
+		}
+	}
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-6 {			// NOK - b-side twice
+		leaf leaf-a-side {
+			or-teiv-ext:aSide role-a-side;
+			type instance-identifier;
+		}
+		leaf-list leaf-b-side {
+			or-teiv-ext:bSide role-b-side;
+			type instance-identifier;
+		}
+		leaf leaf-b-side2 {
+			or-teiv-ext:bSide role-b-side;
+			type instance-identifier;
+		}
+	}
+
+	container cont1 {
+		or-teiv-ext:biDirectionalTopologyRelationship relationship-7 {			// NOK - not at module-level.
+			leaf leaf-a-side {
+				or-teiv-ext:aSide role-a-side;
+				type instance-identifier;
+			}
+			leaf-list leaf-b-side {
+				or-teiv-ext:bSide role-b-side;
+				type instance-identifier;
+			}
+		}
+	}
+
+	or-teiv-ext:biDirectionalTopologyRelationship relationship-8 {			// NOK - can't be child of container or list.
+		container cont2 {
+			or-teiv-ext:aSide role-a-side;
+			type instance-identifier;
+		}
+		list list2 {
+			or-teiv-ext:bSide role-b-side;
+			type instance-identifier;
+			key id;
+			leaf id { type string; }
+		}
+	}
+}

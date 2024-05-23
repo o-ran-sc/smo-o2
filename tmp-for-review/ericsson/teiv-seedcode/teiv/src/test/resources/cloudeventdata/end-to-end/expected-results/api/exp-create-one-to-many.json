@@ -1,0 +1,5 @@
+{
+    "RAN/entity-types/ENodeBFunction/entities/ENodeBFunction_1": "{\"o-ran-smo-teiv-ran:ENodeBFunction\":[{\"id\":\"ENodeBFunction_1\",\"sourceIds\":[],\"attributes\":{\"eNodeBPlmnId\":null,\"fdn\":null,\"eNBId\":null,\"cmId\":null},\"id\":\"ENodeBFunction_1\"}]}",
+    "OAM_TO_RAN/relationship-types/MANAGEDELEMENT_MANAGES_ENODEBFUNCTION/relationships/relation_1": "{\"o-ran-smo-teiv-oam-to-ran:MANAGEDELEMENT_MANAGES_ENODEBFUNCTION\":[{\"bSide\":\"ENodeBFunction_1\",\"aSide\":\"ManagedElement_1\",\"id\":\"relation_1\",\"sourceIds\":[\"fdn_1\",\"cmHandleId_1\"]}]}",
+    "OAM/entity-types/ManagedElement/entities/ManagedElement_1": "{\"o-ran-smo-teiv-oam:ManagedElement\":[{\"id\":\"ManagedElement_1\",\"sourceIds\":[],\"attributes\":{\"fdn\":null,\"cmId\":null}}]}"
+}

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spotless:off -->
+<!--
+  ============LICENSE_START=======================================================
+  Copyright (C) 2024 Ericsson
+  Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+  ================================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  SPDX-License-Identifier: Apache-2.0
+  ============LICENSE_END=========================================================
+ -->
+<!-- spotless:on -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.oran.smo</groupId>
+        <artifactId>topology-exposure-inventory</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.oran.smo.yangtools.parser</groupId>
+    <artifactId>yang-parser-jar</artifactId>
+    <name>Yang Parser</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <sonar.tests>src/test/java</sonar.tests>
+        <sonar.sources>pom.xml,src/main/java</sonar.sources>
+        <sonar.exclusions>**/*.java</sonar.exclusions>
+        <!-- External Yang model destination location -->
+        <src.modules>${project.basedir}/src/main/resources/modules/</src.modules>
+        <src.test.orig.modules>${project.basedir}/src/test/resources/_orig-modules/</src.test.orig.modules>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <useFile>false</useFile>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>${version.license-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${version.spotless-plugin}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>${version.antrun-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>download-src-external-yang-models</id>
+                        <phase>initialize</phase>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${src.modules}" />
+                                <resources id="src-ietf-yang-downloads">
+                                    <url
+                                        url="${source.ietfcatalog}ietf-yang-library@2019-01-04.yang" />
+                                    <url
+                                        url="${source.ietfcatalog}ietf-datastores@2018-02-14.yang" />
+                                    <url
+                                        url="${source.ietfcatalog}ietf-inet-types@2019-11-04.yang" />
+                                    <url
+                                        url="${source.ietfcatalog}ietf-yang-types@2019-11-04.yang" />
+                                </resources>
+                                <get dest="${src.modules}" skipexisting="true">
+                                    <resources refid="src-ietf-yang-downloads" />
+                                    <mapper type="regexp" from="^.*/([^/@]+)@([^/]+)$"
+                                        to="\1-\2" />
+                                </get>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>download-test-external-yang-models</id>
+                        <phase>generate-test-sources</phase>
+                        <configuration>
+                            <target>
+                                <get
+                                    src="${source.3gpp.Rel18_SA98}_3gpp-common-yang-extensions.yang"
+                                    dest="${src.test.orig.modules}_3gpp-common-yang-extensions-2022-10-20.yang"
+                                    skipexisting="true" />
+                                <get
+                                    src="${source.3gpp.Rel17_SA91}_3gpp-common-yang-extensions.yang"
+                                    dest="${src.test.orig.modules}_3gpp-common-yang-extensions-2019-06-23.yang"
+                                    skipexisting="true" />
+
+                                <resources id="orig-ietf-yang-downloads">
+                                    <!-- spotless:off -->
+                                    <url url="${source.ietfcatalog}iana-crypt-hash@2014-08-06.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-crypto-types@2019-11-20.yang" />
+                                    <url url="${source.ietfcatalog}ietf-datastores@2018-02-14.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-inet-types@2019-11-04.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-interfaces@2018-02-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-ip@2018-02-22.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-keystore@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf-acm@2018-02-14.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf-client@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf-monitoring@2010-10-04.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf-notifications@2012-02-06.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf-server@2018-09-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf-with-defaults@2011-06-01.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-netconf@2011-06-01.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-network-instance@2019-01-21.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-origin@2018-02-14.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-restconf-monitoring@2017-01-26.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-restconf@2017-01-26.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-ssh-client@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-ssh-common@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-ssh-server@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-subscribed-notifications@2019-05-06.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-system@2014-08-06.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-tcp-client@2019-10-18.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-tcp-common@2019-10-18.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-tcp-server@2019-10-18.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-tls-client@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-tls-common@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-tls-server@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-trust-anchors@2019-04-29.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-truststore@2019-11-20.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-x509-cert-to-name@2014-12-10.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-library@2019-01-04.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-metadata@2016-08-05.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-patch@2017-02-22.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-push@2019-05-21.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-schema-mount@2019-01-14.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-types@2010-09-24.yang"/>
+                                    <url url="${source.ietfcatalog}ietf-yang-types@2019-11-04.yang"/>
+                                    <!-- spotless:on -->
+                                </resources>
+                                <get dest="${src.test.orig.modules}" skipexisting="true">
+                                    <resources refid="orig-ietf-yang-downloads" />
+                                    <mapper type="regexp" from="^.*/([^/@]+)@([^/]+)$"
+                                        to="\1-\2" />
+                                </get>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.4</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-unit-tests</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/coverage-reports/jacoco</outputDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

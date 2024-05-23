@@ -1,0 +1,123 @@
+#
+# ============LICENSE_START=======================================================
+# Copyright (C) 2024 Ericsson
+# Modifications Copyright (C) 2024 OpenInfra Foundation Europe
+# ================================================================================
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+# ============LICENSE_END=========================================================
+#
+services:
+
+  dbpostgresql:
+    container_name: dbpostgresql
+    image: postgis/postgis:13-3.4-alpine
+    ports:
+      - ${DB_PORT:-5432}:5432
+    volumes:
+      - ./sql_scripts:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: topology_exposure_db
+      POSTGRES_USER: ${DB_USERNAME:-topology_exposure_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-dbpassword}
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          cpus: '1'
+          memory: 1G
+        limits:
+          cpus: '6'
+          memory: 3G
+
+  topology-exposure-inventory:
+    container_name: topology-exposure-inventory
+    image: topology-exposure-inventory:latest
+    ports:
+      - 31074:8080
+    depends_on:
+      - dbpostgresql
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'
+          memory: 2G
+        limits:
+          cpus: '3'
+          memory: 3G
+
+  topology-ingestion-inventory:
+    container_name: topology-ingestion-inventory
+    image: topology-exposure-inventory:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=ingestion
+    depends_on:
+      - dbpostgresql
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'
+          memory: 2G
+        limits:
+          cpus: '3'
+          memory: 3G
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:6.2.1
+    container_name: zookeeper
+    ports:
+      - '2181:2181'
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: kafka
+    ports:
+      - '9093:9093'
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9092,OUTSIDE://localhost:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  kafka2:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: kafka2
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka2:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 2
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  kafka3:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: kafka3
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka3:9096
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 3
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

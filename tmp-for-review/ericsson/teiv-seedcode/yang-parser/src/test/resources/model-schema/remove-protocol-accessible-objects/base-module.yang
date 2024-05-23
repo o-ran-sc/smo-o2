@@ -1,0 +1,24 @@
+module base-module {
+
+	namespace "test:base-module";
+	prefix "this";
+	revision 2024-01-30;
+
+	description
+	"Copyright (C) 2024 Ericsson
+	Modifications Copyright (C) 2024 OpenInfra Foundation Europe";
+
+	container cont1 {
+
+		leaf leaf11 {
+			type string;
+		}
+	}
+
+	container cont2 {
+
+		leaf leaf21 {
+			type string;
+		}
+	}
+}
