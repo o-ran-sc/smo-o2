@@ -1,2 +1,47 @@
 .tox
 docs/_build/*
+
+# Ignore Python bytecode and cache directories
+__pycache__/
+*.py[cod]
+
+# Ignore specific __pycache__ directories
+nfo/k8s/apis/migrations/__pycache__/
+nfo/k8s/apis/__pycache__/
+nfo/k8s/helm/__pycache__/
+nfo/k8s/helmprocessor/__pycache__/
+nfo/k8s/nfo_microservice/__pycache__/
+
+# Ignore general cache files and directories
+.cache/
+*.cache
+
+# Ignore specific files
+file_to_ignore.txt
+another_file.log
+
+#Ignore specific directories
+#logs/
+#temp/
+
+# Ignore any file named 'cachefile' in any directory
+cachefile
+
+# Virtual environment directories
+#env/
+#venv/
+
+# Distribution / packaging directories and files
+#dist/
+#build/
+#*.egg-info/
+
+# Log files
+#*.log
+
+# Environment variable files
+#.env
+
+# Jupyter Notebook checkpoints
+#.ipynb_checkpoints
+
