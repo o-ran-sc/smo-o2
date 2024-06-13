@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aadb8101_e67aa8bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-13T04:59:42Z",
+      "side": 1,
+      "message": "Please do not remove NTT copyright in tacker folder and add Capgemini copyright wherever appropriate in nfo folder.",
+      "revId": "240de3be1e668e1c8c38fa99663cdc3cd19e359a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
