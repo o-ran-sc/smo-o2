@@ -137,10 +137,65 @@ This section describes the installation of the Tacker installation on the refere
      https://docs.openstack.org/tacker/latest/install/manual_installation.html
 
 
+Software Configuration
+----------------------
+
+* Enabling Fault Management
+
+  This section describes how to enable Fault Management in Tacker.
+
+  #. Fault management is disabled by default in Tacker. To enable it, update
+     the fault_management configuration parameters in the tacker.conf file,
+     setting this value to “true”.
+
+     .. code-block:: console
+
+         $ vi /etc/tacker/tacker.conf
+         ...
+         [prometheus_plugin]
+         # Enable prometheus plugin fault management (boolean value)
+         fault_management = true
+         ...
+
+  #. After modifying the configuration file, restart the Tacker services for
+     the changes to take effect.
+
+     .. code-block:: console
+
+         $ sudo systemctl restart devstack@tacker-conductor.service
+         $ sudo systemctl restart devstack@tacker.service
+
+  #. Confirm that the Tacker service is running properly.
+
+     .. code-block:: console
+
+         $ sudo systemctl status devstack@tacker-conductor.service
+         ● devstack@tacker-conductor.service - OpenStack tacker conductor service
+              Loaded: loaded (/etc/systemd/system/devstack@tacker-conductor.service; enabled; vendor preset: enabled)
+              Active: active (running) since Fri 2024-06-14 06:56:50 UTC; 16s ago
+            Main PID: 1447858 (tacker-conducto)
+               Tasks: 1 (limit: 77041)
+              Memory: 153.7M
+                 CPU: 2.222s
+              CGroup: /system.slice/system-devstack.slice/devstack@tacker-conductor.service
+                      └─1447858 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/tacker-conductor --config-file /etc/tacker/tacker.co>
+
+            Jun 14 06:56:50 instance-vnfm-ubuntu22-5th-20231207 systemd[1]: Started OpenStack tacker conductor service.
+            Jun 14 06:56:51 instance-vnfm-ubuntu22-5th-20231207 tacker-conductor[1447858]: /opt/stack/data/venv/lib/python3.10/site-packages/oslo_db>
+            Jun 14 06:56:51 instance-vnfm-ubuntu22-5th-20231207 tacker-conductor[1447858]:   warnings.warn(
+
+         $ sudo systemctl status devstack@tacker.service
+         ● devstack@tacker.service - OpenStack tacker service
+              Loaded: loaded (/etc/systemd/system/devstack@tacker.service; enabled; vendor preset: enabled)
+              Active: active (running) since Fri 2024-06-14 06:58:36 UTC; 4s ago
+            Main PID: 1448235 (tacker-server)
+               Tasks: 1 (limit: 77041)
+              Memory: 144.5M
+                 CPU: 2.090s
+              CGroup: /system.slice/system-devstack.slice/devstack@tacker.service
+                      └─1448235 /opt/stack/data/venv/bin/python3.10 /opt/stack/data/venv/bin/tacker-server --config-file /etc/tacker/tacker.conf
+
+
 References
 ----------
 .. <PROVIDE NEEDED/USEFUL REFERENCES>
-
-
-
-
