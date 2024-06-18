@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfcec3b5_221b44ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2024-06-18T07:21:12Z",
+      "side": 1,
+      "message": "Ueha-san, if you can review, could you review this and merge it?",
+      "revId": "6766def2be146b119706cf63fc1f8ce246058e57",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
