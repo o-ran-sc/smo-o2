@@ -537,8 +537,8 @@ Terminate a VNF by specifying the VNF Instance ID.
             -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" -H "Version: 2.0.0" \
             -d '{"terminationType": "FORCEFUL"}'
 
-.. _ETSI NFV-SOL CNF Deployment using Helm (v2 VNF LCM API): https://docs.openstack.org/tacker/latest/user/etsi_cnf_helm_v2.html
+.. _ETSI NFV-SOL CNF Deployment using Helm (v2 VNF LCM API): https://docs.openstack.org/tacker/latest/user/v2/cnf/deployment_using_helm/index.html
 .. _Use Case Guide: https://docs.openstack.org/tacker/latest/user/etsi_use_case_guide.html
 .. _API Reference: https://docs.openstack.org/api-ref/nfv-orchestration
 .. _INF O2 Service Userguide: https://docs.o-ran-sc.org/projects/o-ran-sc-pti-o2/en/latest/user-guide.html
-.. _Prepare VNF Package: https://docs.openstack.org/tacker/latest/user/etsi_cnf_helm_v2.html#prepare-vnf-package
+.. _Prepare VNF Package: https://docs.openstack.org/tacker/latest/user/v2/cnf/deployment_using_helm/index.html#prepare-vnf-package
