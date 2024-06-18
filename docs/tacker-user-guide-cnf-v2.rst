@@ -6,7 +6,6 @@ How to deploy CNF Deployment (V2 API)
 =====================================
 
 This user guide shows how to deploy CNF (Container Network Function) using Helm via Tacker.
-See the `ETSI NFV-SOL CNF Deployment using Helm (v2 VNF LCM API)`_ for the original procedure.
 This procedure can be used after OpenStack Tacker Zed release (version 8.0.0).
 
 .. note::
@@ -166,8 +165,6 @@ Create and upload the VNF Package that you want to deploy by following procedure
       Definitions  Files  input_param.json  TOSCA-Metadata
 
       $ zip sample_cnf_package_v2.zip -r Definitions/ Files/ TOSCA-Metadata/
-
-   About details to prepare VNF Package, please refer to `Prepare VNF Package`_.
 
 2. Create and Upload VNF Package.
 
@@ -537,8 +534,6 @@ Terminate a VNF by specifying the VNF Instance ID.
             -H "Content-type: application/json" -H "X-Auth-Token:$TOKEN" -H "Version: 2.0.0" \
             -d '{"terminationType": "FORCEFUL"}'
 
-.. _ETSI NFV-SOL CNF Deployment using Helm (v2 VNF LCM API): https://docs.openstack.org/tacker/latest/user/etsi_cnf_helm_v2.html
 .. _Use Case Guide: https://docs.openstack.org/tacker/latest/user/etsi_use_case_guide.html
 .. _API Reference: https://docs.openstack.org/api-ref/nfv-orchestration
 .. _INF O2 Service Userguide: https://docs.o-ran-sc.org/projects/o-ran-sc-pti-o2/en/latest/user-guide.html
-.. _Prepare VNF Package: https://docs.openstack.org/tacker/latest/user/etsi_cnf_helm_v2.html#prepare-vnf-package
