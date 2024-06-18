@@ -1,2 +1,55 @@
 .tox
 docs/_build/*
+# Ignore Python bytecode and cache directories
+__pycache__/
+*.py[cod]
+
+# Ignore specific __pycache__ directories
+nfo/k8s/nfo_microservice/__pycache__/*
+nfo/k8s/packagevariant_processor/__pycache__/
+nfo/k8s/nfo_microservice/__pycache__/__init__.cpython-310.pyc
+nfo/k8s/nfo_microservice/__pycache__/__init__.cpython-312.pyc
+nfo/k8s/nfo_microservice/__pycache__/__init__.cpython-38.pyc
+nfo/k8s/nfo_microservice/__pycache__/settings.cpython-310.pyc
+nfo/k8s/nfo_microservice/__pycache__/settings.cpython-312.pyc
+nfo/k8s/nfo_microservice/__pycache__/settings.cpython-38.pyc
+nfo/k8s/nfo_microservice/__pycache__/urls.cpython-310.pyc
+nfo/k8s/nfo_microservice/__pycache__/urls.cpython-312.pyc
+nfo/k8s/nfo_microservice/__pycache__/urls.cpython-38.pyc
+nfo/k8s/nfo_microservice/__pycache__/views.cpython-312.pyc
+nfo/k8s/nfo_microservice/__pycache__/wsgi.cpython-310.pyc
+nfo/k8s/nfo_microservice/__pycache__/wsgi.cpython-312.pyc
+nfo/k8s/nfo_microservice/__pycache__/wsgi.cpython-38.pyc
+
+# Ignore general cache files and directories
+.cache/
+*.cache
+
+# Ignore specific files
+file_to_ignore.txt
+another_file.log
+
+# Ignore specific directories
+logs/
+temp/
+
+# Ignore any file named 'cachefile' in any directory
+cachefile
+
+# Virtual environment directories
+env/
+venv/
+
+# Distribution / packaging directories and files
+dist/
+build/
+*.egg-info/
+
+# Log files
+*.log
+
+# Environment variable files
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
