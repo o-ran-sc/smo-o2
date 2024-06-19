@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f51e654c_352c071b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2024-06-19T06:41:05Z",
+      "side": 1,
+      "message": "Ueha-san, we faced a build error in the patchset 3 because there are dead links\nin docs/tacker-user-guide-cnf-v2.rst, which you have created in https://gerrit.o-ran-sc.org/r/c/smo/o2/+/10864.\nThese dead links seem caused by the Tacker\u0027s change in\nhttps://review.opendev.org/c/openstack/tacker/+/900748.\nCurrently we are tentatively avoiding the error in our patch by simply deleting dead links from tacker-user-guide-cnf-v2.rst.\nCan you please check the error and let us know your action to fix it?",
+      "revId": "4f3c969438521b291563357318a6bd3868ab3599",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
