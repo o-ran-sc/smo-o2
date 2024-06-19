@@ -1,0 +1,17 @@
+apiVersion: config.porch.kpt.dev/v1alpha1
+kind: PackageVariant
+metadata:
+  name: edge-oai-cuup-test
+spec:
+  upstream:
+    #repo: catalog-workloads-oai
+    repo: catalog-workloads-oai-ran 
+    package: pkg-example-cuup-bp
+    revision: v2.0.0
+  downstream:
+    repo: edge
+    package: oai-ran-cuup
+  annotations:
+    approval.nephio.org/policy: initial
+  injectors:
+  - name: edge

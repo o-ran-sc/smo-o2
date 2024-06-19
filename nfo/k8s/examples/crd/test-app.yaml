@@ -1,0 +1,10 @@
+apiVersion: example.com/v1
+kind: MyApp
+metadata:
+  name: test-app
+  namespace: default
+spec:
+  replicas: 3
+  environment: dev
+  version: release-1.0.0
+  language: golang
