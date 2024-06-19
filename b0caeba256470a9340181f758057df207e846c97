@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15873cd1_83fa60e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-19T11:28:56Z",
+      "side": 1,
+      "message": "Hello. I see now that OAI RAN NFs can be deployed via KPT package and a lot of work still needs to be done to address other user stories.. So once again thank you and as you seem to still work in this patchset can you set this to Work in Progress?",
+      "revId": "b0caeba256470a9340181f758057df207e846c97",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}

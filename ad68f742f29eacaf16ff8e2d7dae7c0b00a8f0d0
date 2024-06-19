@@ -41,6 +41,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fee03485_00948a09",
+        "filename": "nfo/k8s/README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-19T11:28:56Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "20785c00_9474e852",
+      "range": {
+        "startLine": 16,
+        "startChar": 7,
+        "endLine": 16,
+        "endChar": 10
+      },
+      "revId": "ad68f742f29eacaf16ff8e2d7dae7c0b00a8f0d0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "efe15e2b_0584d237",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-12T08:04:02Z",
       "side": 1,
       "message": "pyhelm3 or pyhelm?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 19
+      },
+      "revId": "ad68f742f29eacaf16ff8e2d7dae7c0b00a8f0d0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd926588_be7e9dc7",
+        "filename": "nfo/k8s/README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-19T11:28:56Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "efe15e2b_0584d237",
       "range": {
         "startLine": 23,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea3aa7da_d78e7753",
+        "filename": "nfo/k8s/README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-19T11:28:56Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "363fb758_81a31bb5",
+      "range": {
+        "startLine": 29,
+        "startChar": 45,
+        "endLine": 29,
+        "endChar": 50
+      },
+      "revId": "ad68f742f29eacaf16ff8e2d7dae7c0b00a8f0d0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93f94250_c374235c",
@@ -100,6 +172,30 @@
       "writtenOn": "2024-06-12T08:04:02Z",
       "side": 1,
       "message": "makemigrations?",
+      "range": {
+        "startLine": 36,
+        "startChar": 18,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "ad68f742f29eacaf16ff8e2d7dae7c0b00a8f0d0",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "649dd22f_b147e5f6",
+        "filename": "nfo/k8s/README.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-19T11:28:56Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "93f94250_c374235c",
       "range": {
         "startLine": 36,
         "startChar": 18,
