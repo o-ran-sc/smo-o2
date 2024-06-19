@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "a7ff689c-6dee-4c52-b1d4-66e6b182b7c0",
+		"name": "osc_nfo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2216531"
+	},
+	"item": [
+		{
+			"name": "helm",
+			"item": [
+				{
+					"name": "Create Chart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"charts\": [\r\n        {\r\n            \"name\": \"cert-manager\",\r\n            \"version\": \"v1.8.x\",\r\n            \"repo\": \"https://charts.jetstack.io\"\r\n            \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI DU",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"charts\": [\r\n            {\r\n                \"name\": \"oai-du\",\r\n                \"version\": \"2.1.0\",\r\n                \"repo\": \"https://gitlab.eurecom.fr/api/v4/projects/6252/packages/helm/main\"\r\n\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/du/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"du",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI CU-CP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"charts\": [\r\n            {\r\n                \"name\": \"oai-cu-cp\",\r\n                \"version\": \"2.1.0\",\r\n                \"repo\": \"https://gitlab.eurecom.fr/api/v4/projects/6252/packages/helm/main\"\r\n\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/cucp/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"cucp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI CU-UP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"charts\": [\r\n            {\r\n                \"name\": \"oai-cu-up\",\r\n                \"version\": \"2.1.0\",\r\n                \"repo\": \"https://gitlab.eurecom.fr/api/v4/projects/6252/packages/helm/main\"\r\n\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/cuup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"cuup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Chart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cert-manager\",\r\n    \"namespace\": \"default\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete OAI DU",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oai-du\",\r\n    \"namespace\": \"default\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/du/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"du",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete OAI CU-CP",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oai-cu-cp\",\r\n    \"namespace\": \"default\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/cucp/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"cucp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete OAI CU-UP",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"oai-cu-up\",\r\n    \"namespace\": \"default\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/cuup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"cuup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Charts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/helm/du/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"helm",
+								"du",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "operator",
+			"item": [
+				{
+					"name": "OAI DU packagevariant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pv\": \"oai-du\",\r\n    \"pv-location\": \"https://raw.githubusercontent.com/nephio-project/catalog/main/workloads/oai/package-variants/oai-du.yaml\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/du/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"du",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI DU packagevariant",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": \"config.porch.kpt.dev\",\r\n    \"version\": \"v1alpha1\",\r\n    \"plural\": \"PackageVariant\",\r\n    \"name\": \"edge-oai-du\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/du/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"du",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete OAI DU packagevariant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": \"config.porch.kpt.dev\",\r\n    \"version\": \"v1alpha1\",\r\n    \"namespace\": \"default\",\r\n    \"plural\": \"packagevariants\",\r\n    \"name\": \"edge-oai-du\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/du/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"du",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI CU-CP packagevariant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pv\": \"oai-cucp\",\r\n    \"pv-location\": \"https://raw.githubusercontent.com/nephio-project/catalog/main/workloads/oai/package-variants/oai-cucp.yaml\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/cucp/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"cucp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI CU-CP packagevariant",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": \"config.porch.kpt.dev\",\r\n    \"version\": \"v1alpha1\",\r\n    \"plural\": \"PackageVariant\",\r\n    \"name\": \"regional-oai-cucp-test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/cucp",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"cucp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete OAI CU-CP packagevariant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": \"config.porch.kpt.dev\",\r\n    \"version\": \"v1alpha1\",\r\n    \"namespace\": \"default\",\r\n    \"plural\": \"packagevariants\",\r\n    \"name\": \"regional-oai-cucp-test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/cucp",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"cucp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI CU-UP packagevariant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pv\": \"oai-cuup\",\r\n    \"pv-location\": \"https://raw.githubusercontent.com/nephio-project/catalog/main/workloads/oai/package-variants/oai-cuup.yaml\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/cuup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"cuup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OAI CU-UP packagevariant",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": \"config.porch.kpt.dev\",\r\n    \"version\": \"v1alpha1\",\r\n    \"plural\": \"PackageVariant\",\r\n    \"name\": \"edge-oai-cuup-test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/cuup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"cuup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete OAI CU-UP packagevariant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-CSRFToken",
+								"value": "1234",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group\": \"config.porch.kpt.dev\",\r\n    \"version\": \"v1alpha1\",\r\n    \"namespace\": \"default\",\r\n    \"plural\": \"packagevariants\",\r\n    \"name\": \"edge-oai-cuup-test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/nfo/api/v1/operator/cuup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nfo",
+								"api",
+								"v1",
+								"operator",
+								"cuup",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
