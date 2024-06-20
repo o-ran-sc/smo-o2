@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5411be5a_7032c2fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001071
+      },
+      "writtenOn": "2024-06-20T06:38:18Z",
+      "side": 1,
+      "message": "Hi Takahashi-san, may I kindly ask you to merge this? Many thanks in advance.",
+      "revId": "aff826bbead5e59f44c38d9d0ef58e9d7a627fbb",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
