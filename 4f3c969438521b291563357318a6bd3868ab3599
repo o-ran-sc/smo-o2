@@ -33,6 +33,24 @@
       "message": "The new URLs for each link are:\n[L540]\n .. _ETSI NFV-SOL CNF Deployment using Helm (v2 VNF LCM API):\nhttps://docs.openstack.org/tacker/latest/user/v2/cnf/deployment_using_helm/index.html\n\n[L544]\n.. _Prepare VNF Package:\nhttps://docs.openstack.org/tacker/latest/user/v2/cnf/deployment_using_helm/index.html#prepare-vnf-package\n\nCould you please fix it in this patch?",
       "revId": "4f3c969438521b291563357318a6bd3868ab3599",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b2ee7be_6996c024",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002019
+      },
+      "writtenOn": "2024-06-20T07:13:18Z",
+      "side": 1,
+      "message": "Thank you for the information. By replacing with new URLs, now the test is passed.",
+      "parentUuid": "d3313608_5c959712",
+      "revId": "4f3c969438521b291563357318a6bd3868ab3599",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
