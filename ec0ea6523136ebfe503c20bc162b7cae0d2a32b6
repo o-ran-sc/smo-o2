@@ -1,0 +1,238 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d62f817a_99b86c73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "This review comment contains 11 detailed comments.",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80846510_75a8bcb4",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "\"how to create subscription\" would be better than \"how subscription created\".",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0da7fafd_0e0d7880",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "\"software\" cannot be plural.",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46360bae_97cc7049",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "\"deploy\" should be in the past tense.",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1bbd148_2b2c1de9",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "\"instantiate\" should be in the past tense.",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a9614d3_26ad30ac",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "Is it possible to replace it with a term defined in the O-RAN specification?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 78
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "859c48ca_d92d7c69",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "The \" | \" at the end of the line is unnecessary.",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e2cc93e_4321cd88",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "\"following\" is misspelled.",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e929682_f1811752",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "The closing brackets `}`,`]` are not indented properly.",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 23
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7af1c2d8_fd9572b6",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "The indentation under \"filter\" is not proper.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 14
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d928bac_d1fb54b5",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "The indentation under \"paramsBasic\" is not proper.",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 36
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68f12017_85ff3e98",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-21T07:59:03Z",
+      "side": 1,
+      "message": "The indentation of the \"rules\" and its subline (\"for\" and \"labels\") is not proper.\n”rules\" should be defined under \"groups\".\n\"annotations\", \"expr\", \"for\" and \"labels\" should be defined under \"rules\".\n\"receiver_type\", \"function_type\", \"vnf_instance_id\", \"pod\", \"perceived_severity\" and \"event_type\" should be defined under \"labels\".",
+      "range": {
+        "startLine": 189,
+        "startChar": 1,
+        "endLine": 204,
+        "endChar": 44
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
