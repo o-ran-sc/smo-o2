@@ -53,6 +53,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "34b4bf5a_041d9453",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "38db6724_5041e52b",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0da7fafd_0e0d7880",
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "0da7fafd_0e0d7880",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f8f264a_4e7d0e35",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "e66da3db_acdb014a",
       "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -123,6 +159,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd58905b_b7f5a89d",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "b1558c82_3e1e6b86",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1bbd148_2b2c1de9",
@@ -154,6 +208,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "f1bbd148_2b2c1de9",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ec196c0_602d65a2",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "e7437d79_80763d9c",
       "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -207,6 +279,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "47197c3b_8ec1cb41",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I can\u0027t access the URL you provided.\nCould you please provide a valid URL again?",
+      "parentUuid": "2879e371_6914f10f",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 78
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "859c48ca_d92d7c69",
         "filename": "docs/how-to-use-fm-guide.rst",
         "patchSetId": 7
@@ -236,6 +332,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "859c48ca_d92d7c69",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd3410a3_3aa8879e",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "176900bc_66047a35",
       "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -271,6 +385,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "0e2cc93e_4321cd88",
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98b61c03_d28c8eec",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "9da6a9d8_24ab7250",
       "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
@@ -312,6 +444,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "9e929682_f1811752",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 23
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "304fc5b8_54bf4f39",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "003854c3_3f2bf438",
       "range": {
         "startLine": 96,
         "startChar": 0,
@@ -369,6 +525,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6617876_bcc40d75",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "1833ff7b_22d1e5f8",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 14
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d928bac_d1fb54b5",
@@ -416,6 +596,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9b734c0_b3582966",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "9586365d_c63e88e6",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 36
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68f12017_85ff3e98",
@@ -453,6 +657,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "68f12017_85ff3e98",
+      "range": {
+        "startLine": 189,
+        "startChar": 1,
+        "endLine": 204,
+        "endChar": 44
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8df5c6d0_9e108900",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T02:54:03Z",
+      "side": 1,
+      "message": "I\u0027ve confirmed.",
+      "parentUuid": "e20ba17c_0cd3400c",
       "range": {
         "startLine": 189,
         "startChar": 1,
