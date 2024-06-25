@@ -1,0 +1,9 @@
+Code-Review+1: Kaori Mitani <mitani.kaori@fujitsu.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+2: Toshiaki Takahashi <ts-takahashi@nec.com>
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Submitted-by: Seshu Kumar Mudiganti <seshukumar.mudiganti@windriver.com>
+Submitted-at: Tue, 25 Jun 2024 07:56:49 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/smo/o2/+/12987
+Project: smo/o2
+Branch: refs/heads/master
