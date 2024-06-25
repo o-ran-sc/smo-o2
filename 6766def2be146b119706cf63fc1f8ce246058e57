@@ -33,6 +33,23 @@
       "message": "Seshu, I think this looks good.\nWill you review the patches from Tacker, or is it OK to merge this by myself?",
       "revId": "6766def2be146b119706cf63fc1f8ce246058e57",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b847ba62_eb07a02f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2024-06-25T08:10:44Z",
+      "side": 1,
+      "message": "Hi Seshu, this is a gentle reminder.",
+      "revId": "6766def2be146b119706cf63fc1f8ce246058e57",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
