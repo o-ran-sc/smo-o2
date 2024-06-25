@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d342389f_8a833667",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2024-06-25T06:59:28Z",
+      "side": 1,
+      "message": "Could you review this patch and merge it? Or, can I merge this with only my +2?",
+      "revId": "857edc6b84e3f14f6a3157c06faa581d94d2b821",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
