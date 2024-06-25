@@ -303,6 +303,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dbd44131_ee031632",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2024-06-25T05:51:15Z",
+      "side": 1,
+      "message": "Please try -\nhttps://wiki.o-ran-sc.org/download/attachments/35881444/SMO%20Functions%20v4.docx?api\u003dv2",
+      "parentUuid": "47197c3b_8ec1cb41",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 78
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "859c48ca_d92d7c69",
         "filename": "docs/how-to-use-fm-guide.rst",
         "patchSetId": 7
