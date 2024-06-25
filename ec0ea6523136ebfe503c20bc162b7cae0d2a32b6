@@ -325,6 +325,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00c0f48b_a538e8be",
+        "filename": "docs/how-to-use-fm-guide.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1002526
+      },
+      "writtenOn": "2024-06-25T06:49:26Z",
+      "side": 1,
+      "message": "Thank you. I\u0027ve confirmed.",
+      "parentUuid": "dbd44131_ee031632",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 78
+      },
+      "revId": "ec0ea6523136ebfe503c20bc162b7cae0d2a32b6",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "859c48ca_d92d7c69",
