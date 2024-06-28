@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "809bb7dd_7d9bf3fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2024-06-28T09:27:07Z",
+      "side": 1,
+      "message": "Could you review the release note? and please also add other activities of K8s profile development.",
+      "revId": "75abf3e41e6f18e2375d9906fe7f22ba068d262d",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
