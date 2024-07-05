@@ -41,12 +41,23 @@ Summary
 -------
 
 J-release:
+ 
+- Improve O2 DMS ETSi profile.
 
-The J release was targeted towards implementation of the O2 interface.
-A feature for O2 DMS Fault Management has been provided
-and its detailed documentation has been provided,
-and Automated API Conformance testing has been improved
-for healing operations.
+  #. Fault management - First take
+
+  A feature for O2 DMS Fault Management has been provided
+  and its detailed documentation has been provided,
+  and Automated API Conformance testing has been improved
+  for healing operations.
+
+- Develop O2 interfaces and integrate with OSC INF (would expand to multiple releases):
+
+  #. FOCOM interfaces to the INF (O-Cloud) Interfaces.
+  #. NFO K8s profile to Deploy a CNF on top of the cluster created through OSC-INF
+
+- Develop a Topology & Inventory (TEIV) registry & exposure capability
+
 
 I-release:
 
@@ -108,7 +119,7 @@ Feature Additions
 +--------------------------------------+------------------------------------------------+
 | SMO-137                              | O2dms FM/PM                                    |
 +--------------------------------------+------------------------------------------------+
-|                                      |                                                |
+| SMO-146                              | Topology & Inventory Exposure SMOS             |
 +--------------------------------------+------------------------------------------------+
 
 Bug Corrections
