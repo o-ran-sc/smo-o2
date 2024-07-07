@@ -1,0 +1,8 @@
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Code-Review+2: Seshu Kumar Mudiganti <seshukumar.mudiganti@windriver.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Submitted-by: Seshu Kumar Mudiganti <seshukumar.mudiganti@windriver.com>
+Submitted-at: Sun, 07 Jul 2024 04:25:11 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/smo/o2/+/13159
+Project: smo/o2
+Branch: refs/heads/master
