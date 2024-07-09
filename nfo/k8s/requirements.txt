@@ -1,0 +1,7 @@
+requests
+django
+djangorestframework
+pyhelm
+kubernetes
+pyhelm3
+six

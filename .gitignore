@@ -1,2 +1,3 @@
 .tox
 docs/_build/*
+nfo/k8s/db.sqlite3

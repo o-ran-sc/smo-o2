@@ -8,6 +8,7 @@ import yaml
 from kubernetes.dynamic import DynamicClient
 import json
 from rest_framework.renderers import JSONRenderer
+from configparser import ConfigParser
 
 # Create your views here.
 
@@ -59,7 +60,7 @@ def executePost(request):
     get_remote_file(pv, pv_location)
     # Load kube config
     #config.load_kube_config()
-    config.load_kube_config(config_file='/home/ubuntu/.kube/config')
+    config.load_kube_config(config_file=fetchKubeLocalPath())
 
     # Create a dynamic client
     dyn_client = DynamicClient(client.ApiClient())
@@ -87,7 +88,7 @@ def executeDelete(request):
 
     # Load kube config
     #config.load_kube_config()
-    config.load_kube_config(config_file='/home/ubuntu/.kube/config')
+    config.load_kube_config(config_file=fetchKubeLocalPath())
 
     # Create a CustomObjectsAPI instance
     custom_api = client.CustomObjectsApi()
@@ -110,7 +111,7 @@ def executeGet(request):
     name = payload['name']
 
     print ("--- Retriving Kubernetes custom resource ---")
-    config.load_kube_config(config_file='/home/ubuntu/.kube/config')
+    config.load_kube_config(config_file=fetchKubeLocalPath())
 
     dyn_client = DynamicClient(client.ApiClient())
 
@@ -144,3 +145,12 @@ def get_remote_file(pv, pv_location):
             file.write(response.content)
     else:
         print('Failed to download the file.')
+
+
+def fetchKubeLocalPath():
+    config = ConfigParser()
+    with open("config.ini", "r") as file_object:
+        config.read_file(file_object)
+        kube_config_path = config.get("localpath", "kubeconfig_file_path")
+        
+    return kube_config_path
