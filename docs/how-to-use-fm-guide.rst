@@ -271,11 +271,8 @@ References
 .. [1]  ETSI NFV-SOL CNF Auto Healing with Prometheus via FM Interfaces [1]_.
         https://docs.openstack.org/tacker/zed/user/etsi_cnf_auto_healing_fm.html
 
-.. [2]  ORAN-SC Wiki [2]_.
-        https://wiki.o-ran-sc.org/download/attachments/35881444/SMO%20Functions%20v4.docx?api=v2
-
-.. [3]  Tacker API Document for Receiving Notification [3]_.
+.. [2]  Tacker API Document for Receiving Notification [2]_.
         https://docs.openstack.org/api-ref/nfv-orchestration/v2/vnflcm.html#create-a-new-subscription-v2
 
-.. [4]  Tacker API Document for Heal Request [4]_.
+.. [3]  Tacker API Document for Heal Request [3]_.
         https://docs.openstack.org/api-ref/nfv-orchestration/v2/vnflcm.html#heal-a-vnf-instance-v2
