@@ -272,7 +272,7 @@ References
         https://docs.openstack.org/tacker/zed/user/etsi_cnf_auto_healing_fm.html
 
 .. [2]  ORAN-SC Wiki [2]_.
-        https://wiki.o-ran-sc.org/download/attachments/35881444/SMO%20Functions%20v4.docx?api=v2
+        https://lf-o-ran-sc.atlassian.net/wiki/download/attachments/13570027/SMO%20Functions%20v4.docx?api=v2
 
 .. [3]  Tacker API Document for Receiving Notification [3]_.
         https://docs.openstack.org/api-ref/nfv-orchestration/v2/vnflcm.html#create-a-new-subscription-v2
