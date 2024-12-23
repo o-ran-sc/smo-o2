@@ -35,6 +35,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af60a724_950adee8",
+        "filename": "docs/how-to-use-pm-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2024-12-23T13:04:19Z",
+      "side": 1,
+      "message": "Understood. Removed Now.",
+      "parentUuid": "a3e5a6c9_122eea9c",
+      "revId": "d31d3f13bb676eafa98932b9c7d08b6adf903c33",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6710b3df_6ea5c0a9",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-12-23T01:54:05Z",
       "side": 1,
       "message": "It may be unnecessary spaces.",
+      "range": {
+        "startLine": 186,
+        "startChar": 70,
+        "endLine": 186,
+        "endChar": 76
+      },
+      "revId": "d31d3f13bb676eafa98932b9c7d08b6adf903c33",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7eeeca5_4b1872b3",
+        "filename": "docs/how-to-use-pm-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2024-12-23T13:04:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6710b3df_6ea5c0a9",
       "range": {
         "startLine": 186,
         "startChar": 70,
