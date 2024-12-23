@@ -35,10 +35,25 @@ Version history
 | 2024-06-28         | 5.0                | Toshiaki Takahashi | J-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2024-12-27         | 6.0                | Toshiaki Takahashi | K-Release          |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+K-release:
+Showcased the demos for the Montreal F2F
+
+- Topology Exposure & Inventory (TEIV)
+
+- SMO O2 (FOCOM and NFO (K8s))
+
+- Nephio integration with the OSC-SMO
+
+- Tacker for DMS ETSi profile
+  # FM and PM data
 
 J-release:
  
@@ -96,7 +111,7 @@ Release Data
 | **Release designation**              |                                          |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
-| **Release date**                     | 2024-06-28                               |
+| **Release date**                     | 2024-12-27                               |
 |                                      |                                          |
 +--------------------------------------+------------------------------------------+
 | **Purpose of the delivery**          | 	 		     	          |
@@ -115,16 +130,11 @@ Feature Additions
 | **JIRA REFERENCE**                   | **SLOGAN**                                     |
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
-| SMO-119                              | Automated API Conformance testing              |
-+--------------------------------------+------------------------------------------------+
 | SMO-137                              | O2dms FM/PM                                    |
-+--------------------------------------+------------------------------------------------+
-| SMO-144                              | This epic is targeting the functionality       |
-|                                      | of the O2 interfaces as part of the OSC SMO    |
 +--------------------------------------+------------------------------------------------+
 | SMO-145                              | OSC - Nephio - OAI Integration                 |
 +--------------------------------------+------------------------------------------------+
-| SMO-146                              | Topology & Inventory Exposure SMOS             |
+| SMO-152                              | Topology & Inventory Exposure SMOS             |
 +--------------------------------------+------------------------------------------------+
 
 Bug Corrections
