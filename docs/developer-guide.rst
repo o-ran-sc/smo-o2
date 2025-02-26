@@ -92,7 +92,7 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ cp /tmp/o2/tacker/tacker/tests/xtesting/testcases.yaml ./xtesting-py3/lib/python3.8/site-packages/xtesting/ci/
+         $ cp /tmp/o2/tacker/tacker/tests/xtesting/testcases.yaml ./xtesting-py3/lib/python3.10/site-packages/xtesting/ci/
 
       .. note::
 
@@ -118,6 +118,7 @@ The following steps are the procedure of API conformance test according to the s
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/healVnfRequest.json ./jsons/healVnfcRequest.json
          $ mkdir schemas
          $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/schemas/vnfInstance.schema.json ./schemas
+         $ cp ./api-tests/SOL003/VNFLifecycleManagement-API/jsons/lccnSubscriptionRequest.json ./jsons/
 
 * Preconditioning for test execution
 
@@ -141,6 +142,8 @@ The following steps are the procedure of API conformance test according to the s
 
          $ sudo apt-get install dos2unix
          $ sudo apt install jq
+         $ sudo apt-get install gunicorn
+         $ pip install flask
 
    4. Execute script 'packageTest.sh' for package creation and uploading.
 
@@ -238,11 +241,49 @@ The following steps are the procedure of API conformance test according to the s
              ]
            }
 
-   7. Start kubectl proxy.
+   7. Change 'vnfdId' in the file 'lccnSubscriptionRequest.json' as below.'
+
+      .. code:: bash
+
+         {
+           "filter": {
+             "vnfInstanceSubscriptionFilter": {
+               "vnfdIds": [
+                 "2e27397f-87e1-46ff-aff8-02ffeb40f628"  # Update value here
+               ]
+             }
+           },
+           "callbackUri": "${callback_uri}:${callback_port}/${callback_endpoint}"
+         }
+
+   8. Start kubectl proxy.
 
       .. code:: bash
 
          $ kubectl proxy --port=8080 &
+
+   9. Create Notification Server Using Callback Uri.
+
+      .. code:: bash
+
+         $ mkdir ~/notification_server 
+         $ cd ~/notification_server
+         $ cp /tmp/o2/tacker/tacker/tests/xtesting/callback_server2_pep8.py .
+         $ cp /tmp/o2/tacker/tacker/tests/xtesting/gunicorn.conf.py .
+
+      .. note::
+
+         Replace the Path and IP's in the callback_server2_pep8.py and gunicorn.conf.py files.
+
+   10. Create callback service.
+
+       .. code:: bash
+
+          $ sudo cp /tmp/o2/tacker/tacker/tests/xtesting/callback.service /etc/systemd/system/
+          $ systemctl daemon-reload && systemctl enable callback.service
+          $ systemctl start callback.service
+          $ systemctl status callback.service
+
 
 * Testing steps
 
@@ -254,7 +295,15 @@ The following steps are the procedure of API conformance test according to the s
          $ . xtesting-py3/bin/activate
          $ sudo xtesting-py3/bin/run_tests -t cnf-lcm-validation
 
-   2. Verify getting all pods and getting specific pod.
+   2. Verify Subscription.
+
+      .. code:: bash
+
+         $ cd ~/tacker/tacker/tests/xtesting/
+         $ . xtesting-py3/bin/activate
+         $ sudo xtesting-py3/bin/run_tests -t cnf-subscription-validation
+
+   3. Verify getting all pods and getting specific pod.
 
       .. code:: bash
 
@@ -330,5 +379,24 @@ The following steps are the procedure of API conformance test according to the s
          In current test, the package name and namespace mentioned in deployment file for "Get Specific Pod" test are "vdu2" and "default".
          If any update in the package with respect to name and namespace, then the name and namespace variables in the file
          '~/tacker/tacker/tests/xtesting/api-tests/SOL003/CNFDeployment/environment/variables.txt' need to be updated accordingly.
+
+* Troubleshoot
+
+   error: Not authorized.
+
+   Replace X-Subject-Token value with ${AUTHORIZATION_TOKEN} variable in following keywords in api-tests/SOL003/VNFLifecycleManagement-API/VnfLcmMntOperationKeywords.robot file -
+    1. POST Create a new vnfInstance
+    2. POST instantiate individual vnfInstance
+    3. POST Heal VNF
+
+   Create token using below command-
+
+   .. code:: bash
+
+      $ curl -X POST -H 'Content-Type:application/json' --data '{"auth": {"scope":
+            {"project": {"domain": {"id": "default"}, "name": "nfv"}}, "identity":
+            {"password": {"user": {"domain": {"id": "default"}, "password":
+            "devstack", "name": "nfv_user"}}, "methods": ["password"]}}}' \
+            -i http://localhost/identity/v3/auth/tokens
 
 .. _ETSI NFV-TST 010: https://www.etsi.org/deliver/etsi_gs/NFV-TST/001_099/010/02.06.01_60/gs_NFV-TST010v020601p.pdf
