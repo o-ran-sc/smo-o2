@@ -1,0 +1,10 @@
+[Unit]
+Description=Callback URI Service
+
+[Service]
+WorkingDirectory=/opt/stack/notification_server/
+ExecStart=/usr/bin/gunicorn --config ./gunicorn.conf.py callback_server2_pep8:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
