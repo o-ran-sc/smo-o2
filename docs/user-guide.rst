@@ -50,6 +50,7 @@ V2 API
    tacker-user-guide-cnf-v2.rst
    how-to-use-fm-guide.rst
    how-to-use-pm-guide.rst
+   tacker-user-guide-odu-v2.rst
 
 O2dms FM/PM
 """""""""""
