@@ -62,3 +62,11 @@ using O2dms NFV Profile/SOL002
    https://docs.openstack.org/tacker/latest/user/etsi_cnf_auto_healing_fm.html
 
 .. _Tacker User Guide: https://docs.openstack.org/tacker/latest/user/index.html
+
+Practical Application Deployment
+""""""""""""""""""""""""""""""""
+
+.. toctree::
+   :maxdepth: 1
+
+   tacker-user-guide-odu-v2.rst
