@@ -33,6 +33,24 @@
       "message": "I don\u0027t think this document is just about how to use the API, so I suggest to create a separate section, such as \"Practical Application Deployment,\" and include it there. In the future, we could expand the section to cover other app like CU, near RT-RIC, and so on.",
       "revId": "8675c18beab0810fb5ec519386fc9e972b4a87ed",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5560f2fa_dc7b30db",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1002096
+      },
+      "writtenOn": "2025-07-02T15:47:18Z",
+      "side": 1,
+      "message": "Agreed. Implemented the same.",
+      "parentUuid": "36e48e4a_8aa39266",
+      "revId": "8675c18beab0810fb5ec519386fc9e972b4a87ed",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
