@@ -38,10 +38,29 @@ Version history
 | 2024-12-27         | 6.0                | Toshiaki Takahashi | K-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2025-07-03         | 7.0                | Toshiaki Takahashi | L-Release          |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+L-release:
+
+- Improve O2 DMS ETSi profile.
+
+  + ODU Deployment Support via Tacker
+
+  Provided user documentation and necessary package files for deploying the O-DU High
+  application with Tacker.
+  This release enhances integration for real-world deployment scenarios.
+
+  + Automated Conformance Testing Improvements
+
+  Improved automated verification of subscription features by extending 
+  the conformance tests to cover Subscription functionality,
+  according to the ETSI NFV-TST 010 specification, using Xtesting.
 
 K-release:
 Showcased the demos for the Montreal F2F
@@ -105,15 +124,12 @@ Release Data
 
 +--------------------------------------+------------------------------------------+
 | **Project**                          | SMO O2        		                  |
-|                                      |                                          |
 +--------------------------------------+------------------------------------------+
 | **Repo/commit-ID**                   | Repo: smo/o2                             |
 +--------------------------------------+------------------------------------------+
-| **Release designation**              |                                          |
-|                                      |                                          |
+| **Release designation**              | L-Release                                |
 +--------------------------------------+------------------------------------------+
-| **Release date**                     | 2024-12-27                               |
-|                                      |                                          |
+| **Release date**                     | 2025-07-03                               |
 +--------------------------------------+------------------------------------------+
 | **Purpose of the delivery**          | 	 		     	          |
 |                                      |                                          |
@@ -131,11 +147,10 @@ Feature Additions
 | **JIRA REFERENCE**                   | **SLOGAN**                                     |
 |                                      |                                                |
 +--------------------------------------+------------------------------------------------+
-| SMO-137                              | O2dms FM/PM                                    |
+| SMO-180                              | vDU integration to support                     |
+|                                      | Accelerator Framework                          |
 +--------------------------------------+------------------------------------------------+
-| SMO-145                              | OSC - Nephio - OAI Integration                 |
-+--------------------------------------+------------------------------------------------+
-| SMO-152                              | Topology & Inventory Exposure SMOS             |
+| SMO-184                              | Testing - Tacker project                       |
 +--------------------------------------+------------------------------------------------+
 
 Bug Corrections
