@@ -1,0 +1,10 @@
+Verified+1: ORAN Required GHA <releng+oran.required.gha@linuxfoundation.org>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+2: Toshiaki Takahashi <ts-takahashi@nec.com>
+Verified+1: Toshiaki Takahashi <ts-takahashi@nec.com>
+Submitted-by: Toshiaki Takahashi <ts-takahashi@nec.com>
+Submitted-at: Thu, 03 Jul 2025 00:46:15 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/smo/o2/+/14542
+Comments-Total: 7
+Project: smo/o2
+Branch: refs/heads/master
