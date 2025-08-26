@@ -39,7 +39,8 @@ create-venv:
 
 activate-venv:
 	# Activate virtual environment
-	/bin/bash -c "source $(VENV)/bin/activate" # Use `$(VENV)\Scripts\activate` on Windows
+	#/bin/bash $(VENV)/bin/activate # Use `$(VENV)\Scripts\activate` on Windows
+    /bin/bash $(VENV)/bin/activate
 
 install-packages:
 	# Install required Python packages listed in requirements.txt
@@ -61,7 +62,9 @@ migrate:
 
 runserver:
 	# Run Django development server
-	$(DJANGO_MANAGE) runserver 0.0.0.0:8000
+	#/bin/bash -c "source $(VENV)/bin/activate" # Use `$(VENV)\Scripts\activate` on Windows
+	#/bin/bash $(VENV)/bin/activate # Use `$(VENV)\Scripts\activate` on Windowskkkkkkkkkkkkkk:
+	$(DJANGO_MANAGE) runserver 0.0.0.0:8080
 
 clean:
 	# Clean up temporary files and virtual environment
