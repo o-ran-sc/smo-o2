@@ -5,3 +5,6 @@ pyhelm
 kubernetes
 pyhelm3
 six
+cryptography
+django-filter
+django-extension
