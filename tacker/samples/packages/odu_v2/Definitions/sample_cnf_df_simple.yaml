@@ -68,20 +68,11 @@ topology_template:
           type: tosca.artifacts.Implementation.Python
           file: ../Scripts/sample_script.py
 
-    VDU1:
+    ODU1:
       type: tosca.nodes.nfv.Vdu.Compute
       properties:
-        name: vdu1
-        description: VDU1 compute node
-        vdu_profile:
-          min_number_of_instances: 1
-          max_number_of_instances: 3
-
-    ODU:
-      type: tosca.nodes.nfv.Vdu.Compute
-      properties:
-        name: odu
-        description: ODU compute node
+        name: odu1
+        description: ODU1 compute node
         vdu_profile:
           min_number_of_instances: 1
           max_number_of_instances: 3
@@ -91,50 +82,28 @@ topology_template:
         type: tosca.policies.nfv.ScalingAspects
         properties:
           aspects:
-            vdu1_aspect:
-              name: vdu1_aspect
-              description: vdu1 scaling aspect
-              max_scale_level: 2
-              step_deltas:
-                - delta_1
-            odu_aspect:
-              name: odu_aspect
-              description: odu scaling aspect
+            odu1_aspect:
+              name: odu1_aspect
+              description: odu1 scaling aspect
               max_scale_level: 2
               step_deltas:
                 - delta_1
 
-    - VDU1_initial_delta:
+    - odu1_initial_delta:
         type: tosca.policies.nfv.VduInitialDelta
         properties:
           initial_delta:
             number_of_instances: 1
-        targets: [ VDU1 ]
+        targets: [ ODU1 ]
 
-    - VDU1_scaling_aspect_deltas:
+    - ODU1_scaling_aspect_deltas:
         type: tosca.policies.nfv.VduScalingAspectDeltas
         properties:
-          aspect: vdu1_aspect
+          aspect: odu1_aspect
           deltas:
             delta_1:
               number_of_instances: 1
-        targets: [ VDU1 ]
-
-    - ODU_initial_delta:
-        type: tosca.policies.nfv.VduInitialDelta
-        properties:
-          initial_delta:
-            number_of_instances: 1
-        targets: [ ODU ]
-
-    - ODU_scaling_aspect_deltas:
-        type: tosca.policies.nfv.VduScalingAspectDeltas
-        properties:
-          aspect: odu_aspect
-          deltas:
-            delta_1:
-              number_of_instances: 1
-        targets: [ ODU ]
+        targets: [ ODU1 ]
 
     - instantiation_levels:
         type: tosca.policies.nfv.InstantiationLevels
@@ -143,20 +112,16 @@ topology_template:
             instantiation_level_1:
               description: Smallest size
               scale_info:
-                vdu1_aspect:
-                  scale_level: 0
-                odu_aspect:
+                odu1_aspect:
                   scale_level: 0
             instantiation_level_2:
               description: Largest size
               scale_info:
-                vdu1_aspect:
-                  scale_level: 2
-                odu_aspect:
+                odu1_aspect:
                   scale_level: 2
           default_level: instantiation_level_1
 
-    - VDU1_instantiation_levels:
+    - ODU1_instantiation_levels:
         type: tosca.policies.nfv.VduInstantiationLevels
         properties:
           levels:
@@ -164,14 +129,4 @@ topology_template:
               number_of_instances: 1
             instantiation_level_2:
               number_of_instances: 3
-        targets: [ VDU1 ]
-
-    - ODU_instantiation_levels:
-        type: tosca.policies.nfv.VduInstantiationLevels
-        properties:
-          levels:
-            instantiation_level_1:
-              number_of_instances: 1
-            instantiation_level_2:
-              number_of_instances: 3
-        targets: [ ODU ]
+        targets: [ ODU1 ]

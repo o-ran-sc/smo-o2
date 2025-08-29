@@ -227,17 +227,14 @@ Create and Instantiate VNF
            }
         },
         "additionalParams": {
-          "helm_chart_path": "Files/kubernetes/test-chart-0.1.0.tgz",
+          "helm_chart_path": "Files/kubernetes/du.tgz",
           "helm_parameters": {
             "service.port": 8081,
             "service.type": "NodePort"
           },
           "helm_value_names": {
-            "VDU1": {
-              "replica": "replicaCountVdu1"
-             },
-             "odu": {
-               "replica": "replicaCountodu"
+            "odu1": {
+              "replica": "replicaCount"
              }
           },
           "namespace": "default"
@@ -270,8 +267,8 @@ Check ODU status
 
       $ kubectl get pods
 
-      NAME                                                     READY   STATUS    RESTARTS   AGE
-      vnff770aa831a9c4c8e9bcefc9d1e652c25-du-d5887d5dc-gh6xg   1/1     Running   0          7d4h
+      NAME                                                       READY   STATUS    RESTARTS   AGE
+      odu1-vnff770aa831a9c4c8e9bcefc9d1e652c25-d5887d5dc-gh6xg   1/1     Running   0          7d4h
 
 3. VNF Status
 

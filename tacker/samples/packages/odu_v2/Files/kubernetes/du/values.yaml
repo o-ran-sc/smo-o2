@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: ashu2022/new-du-container
-    # pullPolicy: IfNotPresent
+  pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: v1
 
@@ -43,6 +43,7 @@ securityContext:
 
 service:
   type: ClusterIP
+  port: 80
   f1port: 38472
   f1protocol: SCTP
   f1targetPort: 38472

@@ -7,17 +7,14 @@
     }
   },
   "additionalParams": {
-    "helm_chart_path": "Files/kubernetes/test-chart-0.1.0.tgz",
+    "helm_chart_path": "Files/kubernetes/du.tgz",
     "helm_parameters": {
       "service.port": 8081,
       "service.type": "NodePort"
     },
     "helm_value_names": {
-      "VDU1": {
-        "replica": "replicaCountVdu1"
-      },
-      "odu": {
-        "replica": "replicaCountodu"
+      "odu1": {
+        "replica": "replicaCount"
       }
     },
     "namespace": "default"

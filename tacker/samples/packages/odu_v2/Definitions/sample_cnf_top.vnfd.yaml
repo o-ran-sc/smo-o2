@@ -19,7 +19,7 @@ topology_template:
       type: company.provider.VNF
       properties:
         flavour_id: { get_input: selected_flavour }
-        descriptor_id: 6fd8696a-2c3a-48e9-8f59-3cbb250844c3
+        descriptor_id: 56f4eb23-4075-4a2f-a3e1-329c93d656c0
         provider: Company
         product_name: Sample VNF
         software_version: '1.0'

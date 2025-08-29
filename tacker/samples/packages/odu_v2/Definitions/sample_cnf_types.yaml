@@ -12,8 +12,8 @@ node_types:
     properties:
       descriptor_id:
         type: string
-        constraints: [ valid_values: [ 6fd8696a-2c3a-48e9-8f59-3cbb250844c3 ] ]
-        default: 6fd8696a-2c3a-48e9-8f59-3cbb250844c3
+        constraints: [ valid_values: [ 56f4eb23-4075-4a2f-a3e1-329c93d656c0 ] ]
+        default: 56f4eb23-4075-4a2f-a3e1-329c93d656c0
       descriptor_version:
         type: string
         constraints: [ valid_values: [ '1.0' ] ]
@@ -46,8 +46,10 @@ node_types:
     requirements:
       - virtual_link_external:
           capability: tosca.capabilities.nfv.VirtualLinkable
+          occurrences: [0, UNBOUNDED]
       - virtual_link_internal:
           capability: tosca.capabilities.nfv.VirtualLinkable
+          occurrences: [0, UNBOUNDED]
     interfaces:
       Vnflcm:
         type: tosca.interfaces.nfv.Vnflcm
