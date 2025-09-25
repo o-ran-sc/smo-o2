@@ -70,3 +70,11 @@ Practical Application Deployment
    :maxdepth: 1
 
    tacker-user-guide-odu-v2.rst
+
+Subscription Automation
+"""""""""""""""""""""""
+
+.. toctree::
+   :maxdepth: 1
+
+   how_to_manage_subscriptions.rst
