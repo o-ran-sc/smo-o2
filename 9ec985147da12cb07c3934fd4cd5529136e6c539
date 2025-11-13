@@ -16,6 +16,24 @@
       "message": "Hello, I\u0027m sorry I missed your post and left it without a response for so long.\nIf you ever feel that your post has been waiting too long, you can add me as a reviewer, and then I can either take a look myself or ask someone else to review it.\n\nFirst, I noticed one minor thing. It seems that the entire commit message is being treated as a single line. I would appreciate it if you could review the use of newline characters or formatting.\n\nI\u0027ll check the content soon.",
       "revId": "9ec985147da12cb07c3934fd4cd5529136e6c539",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da638617_9ad463b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-11-13T07:19:31Z",
+      "side": 1,
+      "message": "Hi Toshiaki, I already update the",
+      "parentUuid": "e76c224e_20170367",
+      "revId": "9ec985147da12cb07c3934fd4cd5529136e6c539",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
