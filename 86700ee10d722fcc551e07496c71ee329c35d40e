@@ -41,6 +41,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a58771bd_df645a45",
+        "filename": "nfo/k8s/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "081510c0_d5e461a9",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 1
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6eb42de4_76cd307a",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-12-03T11:27:44Z",
       "side": 1,
       "message": "nit: extra space",
+      "range": {
+        "startLine": 63,
+        "startChar": 10,
+        "endLine": 63,
+        "endChar": 11
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e534559_58642511",
+        "filename": "nfo/k8s/Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eb42de4_76cd307a",
       "range": {
         "startLine": 63,
         "startChar": 10,
@@ -87,6 +135,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc49de1e_11c8159a",
+        "filename": "nfo/k8s/nfo_microservice/urls.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4228f0c3_512618ad",
+      "range": {
+        "startLine": 23,
+        "startChar": 57,
+        "endLine": 23,
+        "endChar": 58
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27b88222_6896777f",
@@ -100,6 +172,30 @@
       "writtenOn": "2025-12-03T11:27:44Z",
       "side": 1,
       "message": "nit: extra space",
+      "range": {
+        "startLine": 36,
+        "startChar": 96,
+        "endLine": 36,
+        "endChar": 98
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "545586f1_a968456f",
+        "filename": "nfo/k8s/nfo_microservice/urls.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27b88222_6896777f",
       "range": {
         "startLine": 36,
         "startChar": 96,
@@ -133,6 +229,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93386607_fbc8bcc6",
+        "filename": "nfo/k8s/relation.dot",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "5efd9d3e_d5c78347",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 2
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aacbeadd_71bf6cac",
@@ -146,6 +266,30 @@
       "writtenOn": "2025-12-03T11:27:44Z",
       "side": 1,
       "message": "nit: extra space\n\nPlease remove the extra spaces throughout this file.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 2
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14758de8_f9222956",
+        "filename": "nfo/k8s/relation.dot",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "aacbeadd_71bf6cac",
       "range": {
         "startLine": 32,
         "startChar": 0,
@@ -179,6 +323,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86d78a04_a29301ee",
+        "filename": "nfo/k8s/sol003/models.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f344e182_1eab4444",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 4
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73938072_288d66b5",
@@ -192,6 +360,30 @@
       "writtenOn": "2025-12-03T11:27:44Z",
       "side": 1,
       "message": "nit: extra space\n\nPlease remove the extra spaces throughout this file.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b32f9dd_6419bff2",
+        "filename": "nfo/k8s/sol003/serializers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73938072_288d66b5",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -225,6 +417,30 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d526d02_3ebbd390",
+        "filename": "nfo/k8s/sol003/services/kubernetes_service.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43bb796b_a1679bf9",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 4
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2be0d7dd_7b4801dd",
@@ -242,6 +458,24 @@
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ddde9ce_b686b7ea",
+        "filename": "nfo/k8s/sol003/tools/tools.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2be0d7dd_7b4801dd",
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4db48e46_c6d73b71",
@@ -255,6 +489,30 @@
       "writtenOn": "2025-12-03T11:27:44Z",
       "side": 1,
       "message": "nit: extra space\n\nPlease remove the extra spaces throughout this file.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 8
+      },
+      "revId": "86700ee10d722fcc551e07496c71ee329c35d40e",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3c66b76_c0b17f9d",
+        "filename": "nfo/k8s/sol003/views_operation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1002719
+      },
+      "writtenOn": "2025-12-09T05:23:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4db48e46_c6d73b71",
       "range": {
         "startLine": 41,
         "startChar": 0,
