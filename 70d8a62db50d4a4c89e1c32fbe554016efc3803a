@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17840364_771bccaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2025-12-18T15:27:41Z",
+      "side": 1,
+      "message": "Hi Seshu, I believe there\u0027s no problem with the content of this patch, but were you aware of this activity? Is there any problem with merging it into the current release? I\u0027d like to confirm your opinion just to be sure.",
+      "revId": "70d8a62db50d4a4c89e1c32fbe554016efc3803a",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}
