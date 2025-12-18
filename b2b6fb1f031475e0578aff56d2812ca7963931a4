@@ -16,6 +16,23 @@
       "message": "LGTM, thanks.",
       "revId": "b2b6fb1f031475e0578aff56d2812ca7963931a4",
       "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5efa7ea_d546c225",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001727
+      },
+      "writtenOn": "2025-12-18T15:23:21Z",
+      "side": 1,
+      "message": "Hi Seshu, can I merge it with only my review? or will you also review the patches for smo/o2?",
+      "revId": "b2b6fb1f031475e0578aff56d2812ca7963931a4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
     }
   ]
 }
