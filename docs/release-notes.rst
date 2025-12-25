@@ -41,10 +41,30 @@ Version history
 | 2025-07-03         | 7.0                | Toshiaki Takahashi | L-Release          |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2025-12-26         | 8.0                | Toshiaki Takahashi | M-Release          |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
 
 
 Summary
 -------
+
+M-release:
+
+- Enhancements for SMO-Driven Automation: O2 DMS ETSI Profile Improvements
+
+  + ODU Deployment Enhancements for Practical Application Management
+
+    The deployment process for ODU, an application for managing practical scenarios,
+    has been improved. Configuration files and file structures have been refined
+    to facilitate easier integration into automated workflows based on SMO.
+
+  + Automated Subscription Management
+
+    Automation for Subscription and Notification, essential for Fault Management
+    and Performance Management, has been developed.
+    By incorporating Subscription automation, these features are now designed for
+    seamless integration with SMO-driven automation processes.
 
 L-release:
 
@@ -127,9 +147,9 @@ Release Data
 +--------------------------------------+------------------------------------------+
 | **Repo/commit-ID**                   | Repo: smo/o2                             |
 +--------------------------------------+------------------------------------------+
-| **Release designation**              | L-Release                                |
+| **Release designation**              | M-Release                                |
 +--------------------------------------+------------------------------------------+
-| **Release date**                     | 2025-07-03                               |
+| **Release date**                     | 2025-12-26                               |
 +--------------------------------------+------------------------------------------+
 | **Purpose of the delivery**          | 	 		     	          |
 |                                      |                                          |
@@ -150,7 +170,9 @@ Feature Additions
 | SMO-180                              | vDU integration to support                     |
 |                                      | Accelerator Framework                          |
 +--------------------------------------+------------------------------------------------+
-| SMO-184                              | Testing - Tacker project                       |
+| SMO-181                              | Auto-healing in SMO for automation framework   |
++--------------------------------------+------------------------------------------------+
+| SMO-183                              | Documentation - Tacker project                 |
 +--------------------------------------+------------------------------------------------+
 
 Bug Corrections
