@@ -1,0 +1,80 @@
+@startuml
+title Intelligent Auto Healing End-to-End Sequence Diagram
+Autonumber
+skinparam sequenceArrowThickness 1
+skinparam ParticipantPadding 5
+skinparam BoxPadding 10
+
+Box "SMO" #gold
+   Participant "Non-RT RIC\n(rApps/Policies)" as nonRT
+   Participant "NFO\n(NF Orchestrator)" as apiconsumer
+end box
+
+Box "O-Cloud" #lightseagreen
+   Participant apiserver as "DMS\n(ETSI Profile Component)"
+   Participant ms as "Monitoring System"
+   Participant ns as "NF Deployment resource(s)"
+End box
+
+note over  nonRT, apiconsumer
+Devtron ??
+end note 
+
+note over apiserver
+Tacker 
+end note 
+
+note over apiserver, ns
+StarlingX
+end note
+
+Note over nonRT, ns
+  Precondition:
+   - "Individual VNF instance" resource representing the NF Deployment is in INSTANTIATED state
+   - Auto-healing is enabled on the "Individual VNF instance resource"
+   - NF deployment is monitored in O-Cloud
+   - Healing policies in non-RT RIC rApps
+End Note
+
+== Monitoring Data collection & Alarm Generation ==
+Note over ns
+   Failure occurs in the
+   one or more of its
+   virtualised resources
+   or containerized workloads
+   associate to the
+   NF Deployment
+End note
+ns ->> ms: Monitoring System collects\nFault/Performanace data
+ms ->> apiserver: DMS recieves fault/Performance\nTelemetry data & alarmevent generation
+== Send Notification for Faulty NF Depolyment ==
+apiserver ->> apiserver: Event occurs that\n matches subscription
+apiserver ->> apiconsumer: Send notification about new alarm(s)\nassociated to the faulty NF Deployment
+== Auto-healing (Criteria validation) of NF Deployment ==
+apiserver ->> apiserver:DMS detects a healing condition that\ntriggers the auto-healing of the NF Deployment.\nE:g by monitoring alarms for faults in virtualised resources/containerised\nworkloads of the NF Deployment,along with NF Deployment-specific\nindicators (e.g., health degradation) and performance data (via PM jobs/thresholds)
+apiserver ->> apiconsumer: <<O2dms>> Send VnfLcmOperationOccurrenceNotification(STARTING)
+== Confirm Healing Action /Grant Request /Placement Recommendations ==
+apiserver ->> apiserver: Confirm Healing Action (e.g.,terminate and create\nnew deployment item, restart a deployment item, etc.) from descriptor\nCheck granted resources,\n placement information
+opt Based on "Healing action" if RIC governed Intelligent Homing/placement is needed
+apiserver ->> apiconsumer:Send Grant Request
+apiconsumer ->> nonRT:Send request for Placement Suggestion\nbased on operational policies
+nonRT -->> nonRT: AI/ML Analysis
+nonRT -->> apiconsumer:Send response\n(Placement Suggestions based on healing\homing Policies & analysis) 
+apiconsumer -->> apiserver: Send Grant Response 
+end
+== Healing Action Implementation  ==
+apiserver ->> apiconsumer: <<O2dms>> Send VnfLcmOperationOccurrenceNotification(PROCESSING)
+apiserver ->> ns: NF Deployment auto-healing\n proceeds with termination,\n allocation and restart of\n necessary O-Cloud resources associated with NF deployment
+apiserver ->> apiserver: NF Deployment auto-healing\n is completed
+apiserver ->> apiconsumer: <<O2dms>> Send VnfLcmOperationOccurrenceNotification(COMPLETED)
+Note over ns
+   NF Deployment is recovered
+   from the failure
+End note
+== Send Clear Notification for Faulty NF Depolyment ==
+apiserver ->> apiconsumer: Send alarm clearance notification(s) regarding the previously faulty NF Deployment
+Note over apiconsumer, ns
+  Postcondition:
+  NF Deployment is automatically healed and in INSTANTIATED state
+End Note
+@enduml

@@ -1,0 +1,110 @@
+@startuml
+title Intelligent Auto Homing End-to-End Sequence Diagram
+
+skinparam sequenceMessageAlign center
+skinparam sequenceArrowThickness 2
+skinparam participant {
+    BackgroundColor LightBlue
+    BorderColor DarkBlue
+}
+
+    actor "Operator\n(or Auto trigger e.g., scale-out event, SLA violation)" as Trigger
+box SMO
+    participant  NonRT as "Non-RT RIC\n(rApps / Policies)"
+    participant NFO as "NFO\n(NF Orchestrator)"
+    participant FOCOM as "FOCOM\n(Federated O-Cloud Mgmt)"
+end box
+participant OSS as "OSS/BSS"
+participant "Vendor Repo\n(xNF Package / XnFD / Helm)" as Vendor
+participant "O-Cloud-DMS\n(ETSI Profile component)" as DMS
+participant "O-Cloud-IMS\n(Infrastructure Management)" as IMS
+participant "O-Cloud Site\n(K8s Cluster / DMS Runtime)" as OCloud
+note over  NonRT, FOCOM
+Devtron ??
+end note
+
+note over DMS
+Tacker 
+end note
+
+note over IMS, OCloud
+StarlingX
+end note
+
+note across
+Preconditions:
+1. SMO/NFO, Non-RT RIC, FOCOM integrated; O-Cloud exposes O2 (IMS/DMS).
+2. Vendor xNF package available in repo (if applicable).
+3. policies are pre-configured in OSS/BSS.
+end note
+
+
+== Policy & Trigger ==
+opt Auto Trigger Conditions like auto Healing/Scaling
+NonRT -> NFO: 1. NF Instatiate Request
+else Initiated by Operator
+Trigger -> NFO: 1. NF Instantiate Request\n(intent: NF type, slices, location hints)
+end
+NFO-> OSS: 2. Query Policies\n(e.g., energy prefs, user density)
+OSS --> NFO: 2.1. Return Policy Data
+
+== Descriptor & Manifest Footprint ==
+NFO -> Vendor: 3. Get xNF Package / XnFD / CN descriptors
+activate Vendor
+Vendor --> NFO: 3.1. Provide XnFD + CN descriptors (+ optional vendor artifacts)
+deactivate Vendor
+
+NFO -> NFO: 4. Extract NF Constraints & Requirement\n(e.g., latency <50ms, CPU>4cores;\nfrom NSD/VNFD)
+== Intelligent Homing Suggestion ==
+NFO-> NonRT: 5. Request Homing Recommendation\n(forward constraints, topology query)
+activate NonRT
+NonRT -> FOCOM: 6. Query Available Resources\n(O2: cluster inventory, load metrics)
+FOCOM -> IMS: 7. Check Resource Availability
+IMS --> FOCOM: 7.1. Resource Data
+FOCOM--> NonRT: 6.1. Return Resource Data
+NonRT -> FOCOM: 8. Query Infra Status\n(O2: capacity, faults, energy usage)
+FOCOM -> IMS: Check Infra Status
+IMS --> FOCOM: Infra Details
+FOCOM--> NonRT: 8.1 Return Infra Data
+NonRT -> NonRT: 10. AI/ML Analysis\n(rApp: predict optimal cluster;\nML model e.g., GNN for topology;\nconsider policies, historical data)
+NonRT --> NFO: 10.1 Return Recommended Cluster IDs\n (e.g., site-3, edge for low latency)
+
+== Resource Discovery & Homing Decision ==
+opt
+  NFO -> FOCOM: 11. Query federated O-Cloud inventory (candidate clusters)
+  activate FOCOM
+  FOCOM -> IMS: 12. Query site IMS inventories (flavors, accel, health)
+  activate IMS
+  IMS -> IMS: 12.1. Local capability check
+  IMS --> FOCOM: 12.2. Site Inventory Response
+  deactivate IMS
+  FOCOM --> NFO: 13. Federated Resource List (candidates)
+  deactivate FOCOM
+end
+NFO -> NFO: 14. Homing Decision — score candidates using final resource requirements + NonRT-RIC response
+
+== Deployment ==
+NFO -> DMS: 15. Deploy NF Request (O2-DMS): reference xNF package + parameterized manifests
+activate DMS
+
+DMS -> OCloud: 16. Instantiate CNF / Helm install (apply CPU pinning, DPDK, SR-IOV)
+activate OCloud
+OCloud -> OCloud: 16.1. Health probes and readiness checks
+
+alt Deployment Success
+    OCloud --> DMS: 17. Deployment ACK (NF ACTIVE)
+    DMS -> NFO: 18. Deployment Success + instance id / endpoint info
+else Deployment Failure
+    OCloud --> DMS: 17b. Deployment NACK (reason)
+deactivate OCloud
+    DMS -> NFO: 18b. Deployment Failed (reason)
+    DMS -> Trigger: 19. Notify operator (optional)
+end
+
+deactivate OCloud
+deactivate DMS
+
+note over Trigger, OCloud
+Post-Flow: re-homing allowed via heal/scale triggers; metric feed to Non-RT RIC for policy loop.
+end note
+@enduml
