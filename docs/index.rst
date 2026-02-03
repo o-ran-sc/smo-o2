@@ -14,6 +14,7 @@ Welcome to O-RAN SC SMO O2 Documentation
    release-notes.rst
    installation-guide.rst
    user-guide.rst
+   use-cases.rst
    api-docs.rst
 
 
