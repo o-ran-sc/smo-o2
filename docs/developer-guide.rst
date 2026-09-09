@@ -22,6 +22,416 @@ Developer-Guide
 ..   * This note must be removed after content has been added.
 
 
+Heal / Grant Interface Reference (ETSI NFV-SOL003)
+--------------------------------------------------
+
+**Scope:** Tacker (VNFM) <-> NFVO -- VNF **Heal** LCM operation and
+the associated **Grant** interface exchange.
+
+This section consolidates three views of the Heal/Grant flow:
+
+1. `Heal-Grant Sequence (Code Flow)`_
+2. `Heal Request-Response Parameters`_
+3. `Grant Request-Response Parameters`_
+
+Heal-Grant Sequence (Code Flow)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Participants
+""""""""""""
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+
+   * - Component
+     - Role
+   * - **NFVO**
+     - Grant + Notification API provider; consumer of the Heal API
+   * - **Tacker-Server**
+     - Receives the Heal REST request, validates and routes it
+   * - **InfraDriver**
+     - VIM-specific execution -- split into **K8s/Helm InfraDriver** and
+       **OpenStack InfraDriver**
+   * - **MgmtDriver**
+     - Runs VNF-package-specific management scripts during heal
+   * - **Tacker-Conductor**
+     - Backend worker that executes the LCM operation and drives the Grant
+       exchange
+
+Top-level API calls
+"""""""""""""""""""
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 25 65
+
+   * - #
+     - Direction
+     - API Call
+   * - 1
+     - NFVO -> Tacker-Server
+     - ``POST /vnf_instances/{id}/heal``
+   * - 2
+     - Tacker-Conductor -> NFVO
+     - ``POST /grants`` -- Grant Request
+   * - 3
+     - NFVO -> Tacker-Conductor
+     - ``201 Created`` -- Grant Response
+
+The following describes the flow of healing and grant Operations.
+
+.. image:: /_static/heal_grant_sequence.png
+   :align: center
+
+Heal Request-Response Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Interface:** Heal VNF task -- SOL003 Clause 5.4.9, Type: ``HealVnfRequest``
+(Table 5.5.2.9-1)
+
+Request -- ``POST /vnflcm/v2/vnf_instances/{vnfInstanceId}/heal``
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+**Direction:** NFVO -> VNFM (Tacker)
+
+.. list-table::
+   :header-rows: 1
+   :widths: 18 22 8 37 25
+
+   * - Parameter
+     - Data Type
+     - M/O
+     - Description
+     - SOL003 Reference
+   * - ``vnfInstanceId`` (path)
+     - String (UUID)
+     - M
+     - Identifier of the individual VNF instance to be healed.
+     - Clause 5.4.3 "Individual VNF instance" resource; URI template
+   * - ``cause``
+     - String
+     - O
+     - Free-text reason why Heal is requested (e.g. alarm correlation ID,
+       failure description).
+     - Type: ``HealVnfRequest`` (SOL002/SOL003, 3-attribute structure)
+   * - ``vnfcInstanceId[]``
+     - Array(String, identifier in vnfInstance)
+     - O
+     - List of VNFC instances (``vnfcResourceInfo[].id``) to be healed. If
+       omitted, the entire VNF instance is healed.
+     - Type: ``HealVnfRequest``
+   * - ``additionalParams``
+     - KeyValuePairs (object)
+     - O
+     - Additional parameters passed to the VNFM/VIM-specific heal
+       implementation; not part of the standardized schema.
+     - Type: ``HealVnfRequest``
+
+Response -- ``202 Accepted``
+""""""""""""""""""""""""""""
+
+**Direction:** VNFM (Tacker) -> NFVO
+
+.. list-table::
+   :header-rows: 1
+   :widths: 18 22 8 37 25
+
+   * - Parameter
+     - Data Type
+     - M/O
+     - Description
+     - SOL003 Reference
+   * - ``Location`` (HTTP header)
+     - String (URI)
+     - M
+     - URI of the newly created VNF LCM operation occurrence resource,
+       used to track Heal progress.
+     - Clause 5.4.9.3.1 (POST method behaviour, common to LCM task
+       resources)
+   * - ``vnfLcmOpOccId``
+     - String (UUID)
+     - M
+     - Identifier of the LCM operation occurrence created to track the
+       Heal request (embedded in the ``Location`` header).
+     - Clause 5.5.2.13, Type: ``VnfLcmOpOcc``
+   * - Response body
+     - Empty / not specified
+     - O
+     - SOL003 defines no mandatory response body for this ``202``; body
+       is empty on success.
+     - Clause 5.4.9.3.1
+
+Grant Request-Response Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Interface:** Grant interface (ETSI GS NFV-SOL003 v4.5.1) -- Clause
+9.5.2.2 ``GrantRequest`` / Clause 9.5.2.3 ``Grant``
+
+Request -- ``POST /grant/v1/grants`` (``GrantRequest``)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+**Direction:** VNFM (Tacker) -> NFVO
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 22 8 33 25
+
+   * - Parameter
+     - Data Type
+     - M/O
+     - Description
+     - SOL003 Reference
+   * - ``vnfInstanceId``
+     - String (identifier)
+     - M
+     - Identifier of the related VNF instance.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``GrantRequest``
+   * - ``vnfLcmOpOccId``
+     - String (identifier)
+     - M
+     - Identifier of the related VNF LCM operation occurrence (the Heal
+       occurrence).
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``vnfdId``
+     - String (identifier)
+     - M
+     - Identifier of the VNFD that defines the VNF for which the grant is
+       requested.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``operation``
+     - Enum: ``LcmOperationType`` = ``HEAL``
+     - M
+     - The lifecycle operation for which the grant is requested.
+     - Clause 9.5.2.2, Table 9.5.2.2-1 / Enumeration: ``LcmOperationType``
+   * - ``isAutomaticInvocation``
+     - Boolean
+     - M
+     - Whether the related LCM operation was automatically invoked.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``_links``
+     - Structure (HATEOAS)
+     - M
+     - Links to the VNF instance and the VNF LCM operation occurrence
+       related to this grant request.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``flavourId``
+     - IdentifierInVnfd
+     - O
+     - Identifier of the VNF deployment flavour applicable to the VNF
+       instance.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``instantiationLevelId``
+     - IdentifierInVnfd
+     - O
+     - Identifier of the instantiation level applicable to the VNF
+       instance.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``vimConnectionInfo``
+     - Map(VimConnectionInfo)
+     - O
+     - VIM connection information the VNFM is aware of and proposes for
+       use in relation to the granted resources.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``VimConnectionInfo``
+   * - ``addResources[]``
+     - Array(ResourceDefinition)
+     - O
+     - Resources proposed to be added (e.g. replacement compute resource
+       representing the new Pod).
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``ResourceDefinition``
+   * - ``tempResources[]``
+     - Array(ResourceDefinition)
+     - O
+     - Resources temporarily needed during the resource change (e.g.
+       transitional compute resource kept alive until the replacement is
+       confirmed healthy).
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``ResourceDefinition``
+   * - ``removeResources[]``
+     - Array(ResourceDefinition)
+     - O
+     - Resources proposed to be removed (the failed VNFC resource).
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``ResourceDefinition``
+   * - ``updateResources[]``
+     - Array(ResourceDefinition)
+     - O
+     - Resources proposed to be modified in place.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``ResourceDefinition``
+   * - ``placementConstraints[]``
+     - Array(PlacementConstraint)
+     - O
+     - Placement constraints (affinity/anti-affinity, zone) the NFVO
+       should respect when granting resources.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``PlacementConstraint``
+   * - ``vimConstraints[]``
+     - Array(VimConstraint)
+     - O
+     - Constraints related to the VIM/CISM resources requested.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``VimConstraint``
+   * - ``zones[]``
+     - Array(ZoneInfo)
+     - O
+     - Resource zone(s), already known to the VNFM, to which the
+       resources in this request relate.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``ZoneInfo``
+   * - ``zoneGroups[]``
+     - Array(ZoneGroupInfo)
+     - O
+     - Groups of zones that share specific properties, already known to
+       the VNFM.
+     - Clause 9.5.2.2, Table 9.5.2.2-1, Type: ``ZoneGroupInfo``
+   * - ``addResourcesToRemove[]``
+     - Array(ResourceDefinition ref. / Identifier)
+     - O
+     - Identifies resources previously granted via ``addResources`` /
+       ``tempResources`` in an earlier grant for the same operation that
+       should now be removed once the replacement resource is confirmed.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``additionalParams``
+     - KeyValuePairs
+     - O
+     - Additional parameters passed for the grant decision; not part of
+       the standardized schema.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``extensions``
+     - KeyValuePairs
+     - O
+     - VNF-provider-specific extensions for the ``GrantRequest``; not
+       part of the standardized schema.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+   * - ``vnfcCapacity[]``
+     - Array (VNFC capacity structure)
+     - O
+     - Capacity (e.g. compute/memory sizing, instance count) needed for
+       the VNFC(s) subject to the operation, enabling the NFVO to
+       evaluate resource sufficiency before granting.
+     - Clause 9.5.2.2, Table 9.5.2.2-1
+
+Response -- ``201 Created`` (``Grant``)
+"""""""""""""""""""""""""""""""""""""""
+
+**Direction:** NFVO -> VNFM (Tacker)
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 22 8 33 25
+
+   * - Parameter
+     - Data Type
+     - M/O
+     - Description
+     - SOL003 Reference
+   * - ``id``
+     - String (UUID)
+     - M
+     - Identifier of this grant.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``Grant``
+   * - ``vnfInstanceId``
+     - String (identifier)
+     - M
+     - Identifier of the related VNF instance.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+   * - ``vnfLcmOpOccId``
+     - String (identifier)
+     - M
+     - Identifier of the related VNF LCM operation occurrence.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+   * - ``vimConnectionInfo``
+     - Map(VimConnectionInfo)
+     - M
+     - Information needed by the VNFM to connect to the VIM/CISM (API
+       endpoint, credentials reference) for managing the granted
+       resources.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``VimConnectionInfo``
+   * - ``expiryTime``
+     - DateTime
+     - M
+     - Timestamp indicating when this grant expires; the VNFM must act
+       on the granted resources before this time or request a new
+       grant.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+   * - ``_links``
+     - Structure (HATEOAS)
+     - M
+     - Links to the VNF instance and the VNF LCM operation occurrence.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+   * - ``zones[]``
+     - Array(ZoneInfo)
+     - O
+     - Resource zones the VNFM can use for the resources in this grant.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``ZoneInfo``
+   * - ``zoneGroups[]``
+     - Array(ZoneGroupInfo)
+     - O
+     - Groups of zones that share specific properties.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``ZoneGroupInfo``
+   * - ``addResources[]``
+     - Array(GrantInfo)
+     - O
+     - Confirms (with optional VIM-level resource references) the
+       resources granted for addition.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``GrantInfo``
+   * - ``tempResources[]``
+     - Array(GrantInfo)
+     - O
+     - Confirms resources granted as temporary/transitional resources
+       for the duration of the operation.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``GrantInfo``
+   * - ``removeResources[]``
+     - Array(GrantInfo)
+     - O
+     - Confirms resources granted for removal.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``GrantInfo``
+   * - ``updateResources[]``
+     - Array(GrantInfo)
+     - O
+     - Confirms resources granted for update.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``GrantInfo``
+   * - ``vimAssets``
+     - Structure (``VimAssets``: computeResourceFlavours,
+       softwareImages)
+     - O
+     - VIM-specific identifiers of compute flavours / images to be used
+       for the granted resources.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``VimAssets``
+   * - ``extVirtualLinks[]``
+     - Array(ExtVirtualLinkData)
+     - O
+     - External virtual link data confirming/updating connectivity
+       resources relevant to the granted resources.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``ExtVirtualLinkData``
+   * - ``extManagedVirtualLinks[]``
+     - Array(ExtManagedVirtualLinkData)
+     - O
+     - Externally-managed virtual link data confirming/updating
+       connectivity resources relevant to the granted resources.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``ExtManagedVirtualLinkData``
+   * - ``mciopRepositoryInfo``
+     - Structure (``MciopRepositoryInfo``)
+     - O
+     - Repository information from which MCIOP artifacts (e.g. Helm
+       chart) for the granted resources can be obtained.
+     - Clause 9.5.2.3, Table 9.5.2.3-1, Type: ``MciopRepositoryInfo``
+   * - ``cirConnectionInfo``
+     - Structure (Container Image Registry connection info)
+     - O
+     - Connection information (endpoint, credentials reference) for the
+       container image registry the VNFM/VIM should use for the granted
+       resources.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+   * - ``additionalParams``
+     - KeyValuePairs
+     - O
+     - Additional parameters returned with the grant; implementation-
+       specific.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+   * - ``extensions``
+     - KeyValuePairs
+     - O
+     - VNF-provider-specific extensions for the ``Grant``; not part of
+       the standardized schema.
+     - Clause 9.5.2.3, Table 9.5.2.3-1
+
+
 Testing
 -------
 
@@ -266,7 +676,7 @@ The following steps are the procedure of API conformance test according to the s
 
       .. code:: bash
 
-         $ mkdir ~/notification_server 
+         $ mkdir ~/notification_server
          $ cd ~/notification_server
          $ cp /tmp/o2/tacker/tacker/tests/xtesting/callback_server2_pep8.py .
          $ cp /tmp/o2/tacker/tacker/tests/xtesting/gunicorn.conf.py .
